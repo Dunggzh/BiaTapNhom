@@ -32,16 +32,16 @@
             this.mnutrangchusv = new System.Windows.Forms.ToolStripMenuItem();
             this.mnutrangchuql = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuhocphan = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnudiem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnutrangchutk = new System.Windows.Forms.ToolStripMenuItem();
             this.mnutrangchuht = new System.Windows.Forms.ToolStripMenuItem();
             this.mnutrangchund = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuthongtin = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnudangxuat = new System.Windows.Forms.ToolStripMenuItem();
-            this.pnlform = new System.Windows.Forms.Panel();
-            this.mnuthoat = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnudoimk = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuchinhsua = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnudiem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnudangxuat = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnudoimk = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuthoat = new System.Windows.Forms.ToolStripMenuItem();
+            this.pnlform = new System.Windows.Forms.Panel();
             this.mnusinhvien.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -84,6 +84,13 @@
             this.mnuhocphan.Text = "Học phần";
             this.mnuhocphan.Click += new System.EventHandler(this.mnuhocphan_Click);
             // 
+            // mnudiem
+            // 
+            this.mnudiem.Name = "mnudiem";
+            this.mnudiem.Size = new System.Drawing.Size(224, 26);
+            this.mnudiem.Text = "Điểm";
+            this.mnudiem.Click += new System.EventHandler(this.mnudiem_Click);
+            // 
             // mnutrangchutk
             // 
             this.mnutrangchutk.Name = "mnutrangchutk";
@@ -115,6 +122,13 @@
             this.mnuthongtin.Text = "Thông tin cá nhân";
             this.mnuthongtin.Click += new System.EventHandler(this.thôngTinToolStripMenuItem_Click);
             // 
+            // mnuchinhsua
+            // 
+            this.mnuchinhsua.Name = "mnuchinhsua";
+            this.mnuchinhsua.Size = new System.Drawing.Size(224, 26);
+            this.mnuchinhsua.Text = "Chỉnh sửa";
+            this.mnuchinhsua.Click += new System.EventHandler(this.mnuchinhsua_Click);
+            // 
             // mnudangxuat
             // 
             this.mnudangxuat.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -123,6 +137,20 @@
             this.mnudangxuat.Size = new System.Drawing.Size(224, 26);
             this.mnudangxuat.Text = "Đăng xuất";
             this.mnudangxuat.Click += new System.EventHandler(this.đăngXuấtToolStripMenuItem1_Click);
+            // 
+            // mnudoimk
+            // 
+            this.mnudoimk.Name = "mnudoimk";
+            this.mnudoimk.Size = new System.Drawing.Size(224, 26);
+            this.mnudoimk.Text = "Đổi mật khẩu";
+            this.mnudoimk.Click += new System.EventHandler(this.mnudoimk_Click);
+            // 
+            // mnuthoat
+            // 
+            this.mnuthoat.Name = "mnuthoat";
+            this.mnuthoat.Size = new System.Drawing.Size(224, 26);
+            this.mnuthoat.Text = "Thoát";
+            this.mnuthoat.Click += new System.EventHandler(this.thoátToolStripMenuItem_Click);
             // 
             // pnlform
             // 
@@ -135,34 +163,6 @@
             this.pnlform.Size = new System.Drawing.Size(819, 417);
             this.pnlform.TabIndex = 2;
             // 
-            // mnuthoat
-            // 
-            this.mnuthoat.Name = "mnuthoat";
-            this.mnuthoat.Size = new System.Drawing.Size(224, 26);
-            this.mnuthoat.Text = "Thoát";
-            this.mnuthoat.Click += new System.EventHandler(this.thoátToolStripMenuItem_Click);
-            // 
-            // mnudoimk
-            // 
-            this.mnudoimk.Name = "mnudoimk";
-            this.mnudoimk.Size = new System.Drawing.Size(224, 26);
-            this.mnudoimk.Text = "Đổi mật khẩu";
-            this.mnudoimk.Click += new System.EventHandler(this.mnudoimk_Click);
-            // 
-            // mnuchinhsua
-            // 
-            this.mnuchinhsua.Name = "mnuchinhsua";
-            this.mnuchinhsua.Size = new System.Drawing.Size(224, 26);
-            this.mnuchinhsua.Text = "Chỉnh sửa";
-            this.mnuchinhsua.Click += new System.EventHandler(this.mnuchinhsua_Click);
-            // 
-            // mnudiem
-            // 
-            this.mnudiem.Name = "mnudiem";
-            this.mnudiem.Size = new System.Drawing.Size(224, 26);
-            this.mnudiem.Text = "Điểm";
-            this.mnudiem.Click += new System.EventHandler(this.mnudiem_Click);
-            // 
             // frmtrangchusv
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -171,6 +171,7 @@
             this.Controls.Add(this.pnlform);
             this.Controls.Add(this.mnusinhvien);
             this.Name = "frmtrangchusv";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Phần mềm quản lý điểm";
             this.mnusinhvien.ResumeLayout(false);
             this.mnusinhvien.PerformLayout();

@@ -13,13 +13,15 @@ namespace Thi_KTHP
 {
     public partial class frmdangnhap : Form
     {
+        public delegate void truyendl(string nd);
+        public truyendl truyenchocha;
         public frmdangnhap()
         {
-            InitializeComponent();
+            InitializeComponent();    
         }
 
         SqlDataReader reader;
-        SqlConnection conn = new SqlConnection("data source = LAPTOP-2LQNMVB4; database = Demo_QLD; user id = sa; password = 1;");
+        SqlConnection conn = new SqlConnection("Data Source=KHANG\\SQLEXPRESS;Initial Catalog=Demo_QLD;Integrated Security=True");
         private void reset()
         {
             txtusername.Text = "";
@@ -37,20 +39,7 @@ namespace Thi_KTHP
             errpass.Clear();
         }
 
-        private void mnutrangchu_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            frmtrangchu trangchu = new frmtrangchu();
-            trangchu.Show();
-        }
-
-        private void mnuthoat_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("Bạn Chắc Chắn Muốn Thoát Chương Trình", "Luu y", MessageBoxButtons.YesNo, MessageBoxIcon.None) == DialogResult.Yes)
-            {
-                Application.Exit();
-            }
-        }
+       
 
         private void btndangnhap_Click(object sender, EventArgs e)
         {
@@ -78,9 +67,14 @@ namespace Thi_KTHP
                 SqlDataReader reader = cmd.ExecuteReader();
                 if (reader.Read())
                 {
-                    this.Hide();
-                    frmtrangchusv sv = new frmtrangchusv(txtusername.Text, txtpass.Text);
-                    sv.ShowDialog();
+                    if (truyenchocha != null)
+                    {
+                        truyenchocha("tat");
+                        frmtrangchusv frmtrangchusv = new frmtrangchusv();
+                        frmtrangchusv.ShowDialog();
+                        Application.Exit();
+                    }
+                    
                 }
                 else
                 {

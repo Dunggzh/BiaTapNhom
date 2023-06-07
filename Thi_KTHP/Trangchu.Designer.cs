@@ -38,6 +38,9 @@
             // 
             // pnltrangchu
             // 
+            this.pnltrangchu.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnltrangchu.Location = new System.Drawing.Point(0, 63);
             this.pnltrangchu.Name = "pnltrangchu";
             this.pnltrangchu.Size = new System.Drawing.Size(800, 436);
@@ -61,6 +64,7 @@
             this.mnutrangchu.Name = "mnutrangchu";
             this.mnutrangchu.Size = new System.Drawing.Size(87, 24);
             this.mnutrangchu.Text = "Trang chủ";
+            this.mnutrangchu.Click += new System.EventHandler(this.mnutrangchu_Click);
             // 
             // mnudangnhap
             // 
@@ -84,7 +88,9 @@
             this.Controls.Add(this.pnltrangchu);
             this.Controls.Add(this.mnu1);
             this.Name = "frmtrangchu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Trang Chủ";
+            this.Load += new System.EventHandler(this.frmtrangchu_Load);
             this.mnu1.ResumeLayout(false);
             this.mnu1.PerformLayout();
             this.ResumeLayout(false);
