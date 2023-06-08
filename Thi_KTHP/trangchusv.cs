@@ -21,8 +21,6 @@ namespace Thi_KTHP
         public frmtrangchusv(string username, string pass)
         {
             InitializeComponent();
-            //this.ControlBox = false;
-            //this.Text = String.Empty;
             this.username = username;
             this.pass = pass;
         }
@@ -54,9 +52,8 @@ namespace Thi_KTHP
             if (MessageBox.Show("Bạn Chắc Chắn Muốn Đăng Xuất", "Lưu Ý", MessageBoxButtons.YesNo, MessageBoxIcon.None) == DialogResult.Yes)
             {
                 this.Hide();
-                frmdangnhap dangnhap = new frmdangnhap();
-                dangnhap.Show();
-
+                frmtrangchu frmtrangchu = new frmtrangchu(new frmdangnhap());
+                frmtrangchu.ShowDialog();      
             }
         }
 
@@ -85,6 +82,11 @@ namespace Thi_KTHP
         private void mnuhocphan_Click(object sender, EventArgs e)
         {
             Openformchild(new frmhocphansv());
+        }
+
+        private void đổiMậtKhẩuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Openformchild(new frmdoimatkhau(this.username, this.pass));
         }
     }
 }

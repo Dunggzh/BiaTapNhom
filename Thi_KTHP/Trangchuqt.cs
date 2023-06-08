@@ -16,6 +16,14 @@ namespace Thi_KTHP
         {
             InitializeComponent();
         }
+        private string username;
+        private string pass;
+        public frmtrangchuqt(string username, string pass)
+        {
+            InitializeComponent();
+            this.username = username;
+            this.pass = pass;
+        }
         private Form currentformchild;
         private void Openformchild(Form childform)
         {
@@ -84,6 +92,16 @@ namespace Thi_KTHP
         private void kỳHocToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Openformchild(new frmqtkyhoc());
+        }
+
+        private void đăngXuấtToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Bạn Chắc Chắn Muốn Đăng Xuất", "Lưu Ý", MessageBoxButtons.YesNo, MessageBoxIcon.None) == DialogResult.Yes)
+            {
+                this.Hide();
+                frmtrangchu frmtrangchu = new frmtrangchu(new frmdangnhap());
+                frmtrangchu.ShowDialog();
+            }
         }
     }
 }

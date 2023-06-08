@@ -18,7 +18,14 @@ namespace Thi_KTHP
         {
             InitializeComponent();
         }
-        public string a="";
+        public frmtrangchu(frmdangnhap dangnhap)
+        {
+            InitializeComponent();
+            mnudangnhap.Visible = false;
+            frmdangnhap dn = new frmdangnhap();
+            dn.truyenchocha = new frmdangnhap.truyendl(nhandl);
+            openformchild(dn);
+        }
         public Form currentformchild;
         public void openformchild(Form childform)
         {
@@ -60,9 +67,8 @@ namespace Thi_KTHP
             
             mnudangnhap.Visible=true;
         }
-   private void nhandl(string dl)
+   private void nhandl()
         {
-            a = dl;
             this.Hide();
         }
         private void frmtrangchu_Load(object sender, EventArgs e)

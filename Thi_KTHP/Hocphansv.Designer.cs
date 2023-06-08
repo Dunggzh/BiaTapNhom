@@ -30,10 +30,10 @@
         {
             this.dgvmainqlhp = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.cbokhoa = new System.Windows.Forms.ComboBox();
             this.cbonganh = new System.Windows.Forms.ComboBox();
+            this.cbokhoa = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvmainqlhp)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -45,32 +45,47 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvmainqlhp.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvmainqlhp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvmainqlhp.Location = new System.Drawing.Point(-2, 173);
+            this.dgvmainqlhp.Location = new System.Drawing.Point(0, 131);
             this.dgvmainqlhp.Name = "dgvmainqlhp";
             this.dgvmainqlhp.RowHeadersWidth = 51;
             this.dgvmainqlhp.RowTemplate.Height = 24;
-            this.dgvmainqlhp.Size = new System.Drawing.Size(800, 280);
+            this.dgvmainqlhp.Size = new System.Drawing.Size(800, 319);
             this.dgvmainqlhp.TabIndex = 1;
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.cbonganh);
             this.panel1.Controls.Add(this.cbokhoa);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(66, 25);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(401, 125);
+            this.panel1.Size = new System.Drawing.Size(800, 125);
             this.panel1.TabIndex = 2;
             // 
-            // label1
+            // cbonganh
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(40, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 16);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Khoa:";
+            this.cbonganh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbonganh.FormattingEnabled = true;
+            this.cbonganh.Location = new System.Drawing.Point(155, 69);
+            this.cbonganh.Name = "cbonganh";
+            this.cbonganh.Size = new System.Drawing.Size(121, 24);
+            this.cbonganh.TabIndex = 3;
+            this.cbonganh.SelectedIndexChanged += new System.EventHandler(this.cbonganh_SelectedIndexChanged);
+            // 
+            // cbokhoa
+            // 
+            this.cbokhoa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbokhoa.FormattingEnabled = true;
+            this.cbokhoa.Items.AddRange(new object[] {
+            "--"});
+            this.cbokhoa.Location = new System.Drawing.Point(155, 22);
+            this.cbokhoa.Name = "cbokhoa";
+            this.cbokhoa.Size = new System.Drawing.Size(121, 24);
+            this.cbokhoa.TabIndex = 2;
+            this.cbokhoa.SelectedIndexChanged += new System.EventHandler(this.cbokhoa_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -81,23 +96,14 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Ngành:";
             // 
-            // cbokhoa
+            // label1
             // 
-            this.cbokhoa.FormattingEnabled = true;
-            this.cbokhoa.Location = new System.Drawing.Point(155, 22);
-            this.cbokhoa.Name = "cbokhoa";
-            this.cbokhoa.Size = new System.Drawing.Size(121, 24);
-            this.cbokhoa.TabIndex = 2;
-            this.cbokhoa.SelectedIndexChanged += new System.EventHandler(this.cbokhoa_SelectedIndexChanged);
-            // 
-            // cbonganh
-            // 
-            this.cbonganh.FormattingEnabled = true;
-            this.cbonganh.Location = new System.Drawing.Point(155, 69);
-            this.cbonganh.Name = "cbonganh";
-            this.cbonganh.Size = new System.Drawing.Size(121, 24);
-            this.cbonganh.TabIndex = 3;
-            this.cbonganh.SelectedIndexChanged += new System.EventHandler(this.cbonganh_SelectedIndexChanged);
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(40, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(41, 16);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Khoa:";
             // 
             // frmhocphansv
             // 

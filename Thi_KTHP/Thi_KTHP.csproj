@@ -70,17 +70,17 @@
     <Compile Include="Doimatkhau.Designer.cs">
       <DependentUpon>Doimatkhau.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="Trangchuqt.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Trangchuqt.Designer.cs">
+      <DependentUpon>Trangchuqt.cs</DependentUpon>
     </Compile>
-    <Compile Include="phanmemquanlydiem.cs">
+    <Compile Include="trangchusv.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="phanmemquanlydiem.Designer.cs">
-      <DependentUpon>phanmemquanlydiem.cs</DependentUpon>
+    <Compile Include="trangchusv.Designer.cs">
+      <DependentUpon>trangchusv.cs</DependentUpon>
     </Compile>
     <Compile Include="Giangvien.cs">
       <SubType>Form</SubType>
@@ -168,11 +168,11 @@
     <EmbeddedResource Include="Doimatkhau.resx">
       <DependentUpon>Doimatkhau.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Trangchuqt.resx">
+      <DependentUpon>Trangchuqt.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="phanmemquanlydiem.resx">
-      <DependentUpon>phanmemquanlydiem.cs</DependentUpon>
+    <EmbeddedResource Include="trangchusv.resx">
+      <DependentUpon>trangchusv.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Giangvien.resx">
       <DependentUpon>Giangvien.cs</DependentUpon>

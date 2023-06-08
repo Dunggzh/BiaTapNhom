@@ -16,7 +16,7 @@ namespace Thi_KTHP
     {
         private string username;
         private string pass;
-        SqlConnection conn = new SqlConnection("data source = LAPTOP-2LQNMVB4; database = Demo_QLD; user id = sa; password = 1;");
+        SqlConnection conn = new SqlConnection("Data Source=KHANG\\SQLEXPRESS;Initial Catalog=Demo_QLD;Integrated Security=True");
         public frmthongtincanhan()
         {
             InitializeComponent();

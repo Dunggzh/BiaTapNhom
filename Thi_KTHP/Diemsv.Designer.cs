@@ -210,6 +210,7 @@
             // cbohocky
             // 
             this.cbohocky.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.cbohocky.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbohocky.FormattingEnabled = true;
             this.cbohocky.Items.AddRange(new object[] {
             "--"});

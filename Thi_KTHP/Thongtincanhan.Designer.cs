@@ -37,15 +37,15 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txtmsv = new System.Windows.Forms.TextBox();
-            this.txtht = new System.Windows.Forms.TextBox();
-            this.txtnoisinh = new System.Windows.Forms.TextBox();
-            this.txtquequan = new System.Windows.Forms.TextBox();
-            this.txttenlop = new System.Windows.Forms.TextBox();
-            this.txtghichu = new System.Windows.Forms.TextBox();
-            this.rdonam = new System.Windows.Forms.RadioButton();
-            this.rdonu = new System.Windows.Forms.RadioButton();
             this.dtpngaysinh = new System.Windows.Forms.DateTimePicker();
+            this.rdonu = new System.Windows.Forms.RadioButton();
+            this.rdonam = new System.Windows.Forms.RadioButton();
+            this.txtghichu = new System.Windows.Forms.TextBox();
+            this.txttenlop = new System.Windows.Forms.TextBox();
+            this.txtquequan = new System.Windows.Forms.TextBox();
+            this.txtnoisinh = new System.Windows.Forms.TextBox();
+            this.txtht = new System.Windows.Forms.TextBox();
+            this.txtmsv = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -145,59 +145,12 @@
             this.panel1.Size = new System.Drawing.Size(797, 299);
             this.panel1.TabIndex = 8;
             // 
-            // txtmsv
+            // dtpngaysinh
             // 
-            this.txtmsv.Location = new System.Drawing.Point(108, 10);
-            this.txtmsv.Name = "txtmsv";
-            this.txtmsv.Size = new System.Drawing.Size(242, 22);
-            this.txtmsv.TabIndex = 8;
-            // 
-            // txtht
-            // 
-            this.txtht.Location = new System.Drawing.Point(108, 39);
-            this.txtht.Name = "txtht";
-            this.txtht.Size = new System.Drawing.Size(242, 22);
-            this.txtht.TabIndex = 9;
-            // 
-            // txtnoisinh
-            // 
-            this.txtnoisinh.Location = new System.Drawing.Point(442, 69);
-            this.txtnoisinh.Name = "txtnoisinh";
-            this.txtnoisinh.Size = new System.Drawing.Size(242, 22);
-            this.txtnoisinh.TabIndex = 11;
-            // 
-            // txtquequan
-            // 
-            this.txtquequan.Location = new System.Drawing.Point(442, 37);
-            this.txtquequan.Name = "txtquequan";
-            this.txtquequan.Size = new System.Drawing.Size(242, 22);
-            this.txtquequan.TabIndex = 11;
-            // 
-            // txttenlop
-            // 
-            this.txttenlop.Location = new System.Drawing.Point(442, 5);
-            this.txttenlop.Name = "txttenlop";
-            this.txttenlop.Size = new System.Drawing.Size(242, 22);
-            this.txttenlop.TabIndex = 11;
-            // 
-            // txtghichu
-            // 
-            this.txtghichu.Location = new System.Drawing.Point(108, 139);
-            this.txtghichu.Multiline = true;
-            this.txtghichu.Name = "txtghichu";
-            this.txtghichu.Size = new System.Drawing.Size(434, 56);
-            this.txtghichu.TabIndex = 12;
-            // 
-            // rdonam
-            // 
-            this.rdonam.AutoSize = true;
-            this.rdonam.Location = new System.Drawing.Point(108, 73);
-            this.rdonam.Name = "rdonam";
-            this.rdonam.Size = new System.Drawing.Size(57, 20);
-            this.rdonam.TabIndex = 13;
-            this.rdonam.TabStop = true;
-            this.rdonam.Text = "Nam";
-            this.rdonam.UseVisualStyleBackColor = true;
+            this.dtpngaysinh.Location = new System.Drawing.Point(108, 98);
+            this.dtpngaysinh.Name = "dtpngaysinh";
+            this.dtpngaysinh.Size = new System.Drawing.Size(242, 22);
+            this.dtpngaysinh.TabIndex = 15;
             // 
             // rdonu
             // 
@@ -210,12 +163,59 @@
             this.rdonu.Text = "Nữ";
             this.rdonu.UseVisualStyleBackColor = true;
             // 
-            // dtpngaysinh
+            // rdonam
             // 
-            this.dtpngaysinh.Location = new System.Drawing.Point(108, 98);
-            this.dtpngaysinh.Name = "dtpngaysinh";
-            this.dtpngaysinh.Size = new System.Drawing.Size(242, 22);
-            this.dtpngaysinh.TabIndex = 15;
+            this.rdonam.AutoSize = true;
+            this.rdonam.Location = new System.Drawing.Point(108, 73);
+            this.rdonam.Name = "rdonam";
+            this.rdonam.Size = new System.Drawing.Size(57, 20);
+            this.rdonam.TabIndex = 13;
+            this.rdonam.TabStop = true;
+            this.rdonam.Text = "Nam";
+            this.rdonam.UseVisualStyleBackColor = true;
+            // 
+            // txtghichu
+            // 
+            this.txtghichu.Location = new System.Drawing.Point(108, 139);
+            this.txtghichu.Multiline = true;
+            this.txtghichu.Name = "txtghichu";
+            this.txtghichu.Size = new System.Drawing.Size(434, 56);
+            this.txtghichu.TabIndex = 12;
+            // 
+            // txttenlop
+            // 
+            this.txttenlop.Location = new System.Drawing.Point(442, 5);
+            this.txttenlop.Name = "txttenlop";
+            this.txttenlop.Size = new System.Drawing.Size(242, 22);
+            this.txttenlop.TabIndex = 11;
+            // 
+            // txtquequan
+            // 
+            this.txtquequan.Location = new System.Drawing.Point(442, 37);
+            this.txtquequan.Name = "txtquequan";
+            this.txtquequan.Size = new System.Drawing.Size(242, 22);
+            this.txtquequan.TabIndex = 11;
+            // 
+            // txtnoisinh
+            // 
+            this.txtnoisinh.Location = new System.Drawing.Point(442, 69);
+            this.txtnoisinh.Name = "txtnoisinh";
+            this.txtnoisinh.Size = new System.Drawing.Size(242, 22);
+            this.txtnoisinh.TabIndex = 11;
+            // 
+            // txtht
+            // 
+            this.txtht.Location = new System.Drawing.Point(108, 39);
+            this.txtht.Name = "txtht";
+            this.txtht.Size = new System.Drawing.Size(242, 22);
+            this.txtht.TabIndex = 9;
+            // 
+            // txtmsv
+            // 
+            this.txtmsv.Location = new System.Drawing.Point(108, 10);
+            this.txtmsv.Name = "txtmsv";
+            this.txtmsv.Size = new System.Drawing.Size(242, 22);
+            this.txtmsv.TabIndex = 8;
             // 
             // frmthongtincanhan
             // 
@@ -248,9 +248,9 @@
         private System.Windows.Forms.TextBox txtquequan;
         private System.Windows.Forms.TextBox txtnoisinh;
         private System.Windows.Forms.TextBox txtht;
-        private System.Windows.Forms.TextBox txtmsv;
         private System.Windows.Forms.DateTimePicker dtpngaysinh;
         private System.Windows.Forms.RadioButton rdonu;
         private System.Windows.Forms.RadioButton rdonam;
+        private System.Windows.Forms.TextBox txtmsv;
     }
 }

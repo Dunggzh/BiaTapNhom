@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,19 +14,19 @@ namespace Thi_KTHP
 {
     public partial class frmdangnhap : Form
     {
-        public delegate void truyendl(string nd);
+        public delegate void truyendl();
         public truyendl truyenchocha;
         public frmdangnhap()
         {
-            InitializeComponent();    
+            InitializeComponent();
+            reset();
         }
-
-        SqlDataReader reader;
+        private int k=0;
         SqlConnection conn = new SqlConnection("Data Source=KHANG\\SQLEXPRESS;Initial Catalog=Demo_QLD;Integrated Security=True");
         private void reset()
         {
-            txtusername.Text = "";
-            txtpass.Text = "";
+            txtusername.Text = "72DCHT20070";
+            txtpass.Text = "19012003";
             txtusername.Focus();
         }
 
@@ -38,8 +39,26 @@ namespace Thi_KTHP
         {
             errpass.Clear();
         }
-
-       
+        public void timkiem(string query,Form tg)
+        {
+            if (conn.State != ConnectionState.Open)
+            {
+                conn.Open();
+            }
+            SqlCommand cmd = new SqlCommand(query, conn);
+            SqlDataReader reader = cmd.ExecuteReader();
+            if (reader.Read())
+            {
+                if (truyenchocha != null)
+                {
+                    truyenchocha();
+                    tg.ShowDialog();
+                    Application.Exit();
+                }
+                k = 1;
+            }
+            reader.Close();
+        }
 
         private void btndangnhap_Click(object sender, EventArgs e)
         {
@@ -54,35 +73,23 @@ namespace Thi_KTHP
                 errpass.SetError(txtpass, "Chưa Nhập Pass");
                 b = 1;
             }
-            if (a == 0 || b == 0)
+            if (a == 0 && b == 0)
             {
-
+                frmtrangchuqt frmtrangchuqt = new frmtrangchuqt(txtusername.Text,txtpass.Text);
+                frmtrangchusv frmtrangchusv=new frmtrangchusv(txtusername.Text, txtpass.Text);
                 string query = "select * from TaiKhoan where Username='" + txtusername.Text.Trim() + "'  and  Pass= '" + txtpass.Text.Trim() + "'  and quyen = 0";
-
-                if (conn.State != ConnectionState.Open)
+                string query1 = "select * from TaiKhoan where Username='" + txtusername.Text.Trim() + "'  and  Pass= '" + txtpass.Text.Trim() + "'  and quyen = 1";
+                timkiem(query, frmtrangchusv);
+                timkiem(query1, frmtrangchuqt);
+                if (k == 0)
                 {
-                    conn.Open();
+                    MessageBox.Show("Khong tin thay tai khoan");
                 }
-                SqlCommand cmd = new SqlCommand(query, conn);
-                SqlDataReader reader = cmd.ExecuteReader();
-                if (reader.Read())
-                {
-                    if (truyenchocha != null)
-                    {
-                        truyenchocha("tat");
-                        frmtrangchusv frmtrangchusv = new frmtrangchusv();
-                        frmtrangchusv.ShowDialog();
-                        Application.Exit();
-                    }
-                    
-                }
-                else
-                {
-                    MessageBox.Show("Khong tim thay tai khoan ");
-                }
-                reset();
-                conn.Close();
             }
+
+            reset();
+                conn.Close();
+            
         }
     }
 }

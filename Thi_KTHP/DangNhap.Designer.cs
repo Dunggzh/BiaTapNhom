@@ -125,7 +125,6 @@
             this.txtpass.Name = "txtpass";
             this.txtpass.Size = new System.Drawing.Size(139, 22);
             this.txtpass.TabIndex = 4;
-            this.txtpass.Text = "19012003";
             this.txtpass.UseSystemPasswordChar = true;
             this.txtpass.TextChanged += new System.EventHandler(this.txtpass_TextChanged);
             // 
@@ -136,7 +135,6 @@
             this.txtusername.Name = "txtusername";
             this.txtusername.Size = new System.Drawing.Size(139, 22);
             this.txtusername.TabIndex = 3;
-            this.txtusername.Text = "72DCHT20070";
             this.txtusername.TextChanged += new System.EventHandler(this.txtusername_TextChanged);
             // 
             // errpass

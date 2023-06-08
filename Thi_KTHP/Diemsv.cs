@@ -28,8 +28,25 @@ namespace Thi_KTHP
             this.username = username;
             this.pass = pass;
         }
-        SqlConnection conn = new SqlConnection("data source = LAPTOP-2LQNMVB4; database = Demo_QLD; user id = sa; password = 1;");
-
+        SqlConnection conn = new SqlConnection("Data Source=KHANG\\SQLEXPRESS;Initial Catalog=Demo_QLD;Integrated Security=True");
+        private void bang(string query)
+        {
+            dgvmain.DataSource = null;
+            SqlCommand cmd = new SqlCommand(query, conn);
+            SqlDataAdapter data = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            data.Fill(dt);
+            dgvmain.DataSource = dt;
+            for (int i = 0; i <= dgvmain.Columns.Count - 1; i++)
+            {
+                dgvmain.Columns[i].ReadOnly = true;
+                dgvmain.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            }
+            if (conn.State == ConnectionState.Open)
+            {
+                conn.Close();
+            }
+        }
         private void Diemsv_Load(object sender, EventArgs e)
         {
 
@@ -56,7 +73,7 @@ namespace Thi_KTHP
 
             //do du lieu len label
             dgvmain.DataSource = null;
-            string query1 = "select * from SinhVien a,HocPhan b, Diem c,Nganh d,Lop e,KhoaHoc g where a.MaSinhVien=c.MaSinhVien and a.TenLop=e.TenLop and a.MaNganh=d.MaNganh and d.MaNganh=e.MaNganh and b.MaNganh=d.MaNganh and b.MaHP=c.MaHP and c.MaKhoaHoc=g.MaKhoaHoc and a.MaSinhVien='" + this.username + "'";
+            string query1 = "select * from Khoa,HocPhan,Nganh,nhomhp,GiangVien,KeHoachDaoTao,Lop,KhoaHoc,Diem,SinhVien where Nganh.MaKhoa=khoa.MaKhoa  and GiangVien.MaKhoa=Khoa.MaKhoa and GiangVien.MaGV=nhomhp.MaGV and nhomhp.MaHP=HocPhan.MaHP and KeHoachDaoTao.MaKHDT=nhomhp.MaKHDT and Lop.MaNganh=Nganh.MaNganh and lop.TenLop=KeHoachDaoTao.TenLop and KeHoachDaoTao.MaKhoaHoc=KhoaHoc.MaKhoaHoc and Diem.MaSinhVien=SinhVien.MaSinhVien and Diem.MaNhomHP=nhomhp.MaNhomHP and SinhVien.TenLop=Lop.TenLop  and SinhVien.MaSinhVien='" + this.username + "'";
             SqlCommand cmd1 = new SqlCommand(query1, conn);
             SqlDataAdapter data1 = new SqlDataAdapter(cmd1);
             DataTable dt1 = new DataTable();
@@ -69,92 +86,40 @@ namespace Thi_KTHP
                 lblhoten.Text = a.Cells["Hoten"].Value.ToString();
                 lblkhoahoc.Text = a.Cells["TenKhoahoc"].Value.ToString();
                 lbllop.Text = a.Cells["TenLop"].Value.ToString();
-                lblnganh.Text = a.Cells["TenNganh"].Value.ToString();
-                cbohocky.SelectedItem = "--";
-                if (cbohocky.SelectedItem.Equals("--"))
-                {
-                    dgvmain.DataSource = null;
-                    string query = "select b.MaHP as 'Mã học phần',TenHP as 'Tên học phần',SoTC as 'Số tín chỉ',a.MaSinhVien as 'Mã sinh viên',ChuyenCan as 'Chuyên cần',KiemTraGK as 'Kiểm tra GK',ThucHanh as'Thực hành',ThiKetThuc as'Thi Kết thúc',ThoaLuan as'Thảo luận',TongKetHP as'Tổng kết HP',DiemChu as 'Điểm chữ'  from SinhVien a,HocPhan b, Diem c,Nganh d,Lop e,KhoaHoc g\r\nwhere a.MaSinhVien=c.MaSinhVien and a.TenLop=e.TenLop and a.MaNganh=d.MaNganh and d.MaNganh=e.MaNganh and b.MaNganh=d.MaNganh and b.MaHP=c.MaHP and c.MaKhoaHoc=g.MaKhoaHoc and a.TenLop=e.TenLop and a.MaNganh=d.MaNganh and d.MaNganh=e.MaNganh and b.MaNganh=d.MaNganh and b.MaHP=c.MaHP and c.MaKhoaHoc=g.MaKhoaHoc and a.MaSinhVien='" + this.username + "'";
-                    SqlCommand cmd = new SqlCommand(query, conn);
-                    SqlDataAdapter data = new SqlDataAdapter(cmd);
-                    DataTable dt = new DataTable();
-                    data.Fill(dt);
-                    dgvmain.DataSource = dt;
-                    for (int i = 0; i <= dgvmain.Columns.Count - 1; i++)
-                    {
-                        dgvmain.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                    }
-                }
-                else
-                {
-                    dgvmain.DataSource = null;
-                    string query = "select b.MaHP as 'Mã học phần',TenHP as 'Tên học phần',SoTC as 'Số tín chỉ',a.MaSinhVien as 'Mã sinh viên',ChuyenCan as 'Chuyên cần',KiemTraGK as 'Kiểm tra GK',ThucHanh as'Thực hành',ThiKetThuc as'Thi Kết thúc',ThoaLuan as'Thảo luận',TongKetHP as'Tổng kết HP',DiemChu as 'Điểm chữ'  from SinhVien a,HocPhan b, Diem c,Nganh d,Lop e,KhoaHoc g\r\nwhere a.MaSinhVien=c.MaSinhVien and a.TenLop=e.TenLop and a.MaNganh=d.MaNganh and d.MaNganh=e.MaNganh and b.MaNganh=d.MaNganh and b.MaHP=c.MaHP and c.MaKhoaHoc=g.MaKhoaHoc and a.TenLop=e.TenLop and a.MaNganh=d.MaNganh and d.MaNganh=e.MaNganh and b.MaNganh=d.MaNganh and b.MaHP=c.MaHP and c.MaKhoaHoc=g.MaKhoaHoc and a.MaSinhVien='" + this.username + "'and g.KyHoc='" + cbohocky.SelectedItem + "'";
-                    SqlCommand cmd = new SqlCommand(query, conn);
-                    SqlDataAdapter data = new SqlDataAdapter(cmd);
-                    DataTable dt = new DataTable();
-                    data.Fill(dt);
-                    dgvmain.DataSource = dt;
-                    for (int i = 0; i <= dgvmain.Columns.Count - 1; i++)
-                    {
-                        dgvmain.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                    }
-                }
+                lblnganh.Text = a.Cells["TenNganh"].Value.ToString();          
+                
             }
             else
-            {
-                string query2 = "select *  from SinhVien a,HocPhan b,Nganh d,Lop e,KhoaHoc g\r\nwhere  a.TenLop=e.TenLop and a.MaNganh=d.MaNganh and d.MaNganh=e.MaNganh and b.MaNganh=d.MaNganh  and a.TenLop=e.TenLop and a.MaNganh=d.MaNganh and d.MaNganh=e.MaNganh and b.MaNganh=d.MaNganh  and a.MaSinhVien='" + this.username + "'";
-                SqlCommand cmd = new SqlCommand(query2, conn);
-                SqlDataAdapter data = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                data.Fill(dt);
-                dgvmain.DataSource = dt;
-                var b = dgvmain.Rows[0];
-                lblmasv.Text = b.Cells["MaSinhVien"].Value.ToString();
-                lblhoten.Text = b.Cells["Hoten"].Value.ToString();
-                lbllop.Text = b.Cells["TenLop"].Value.ToString();
-                lblnganh.Text = b.Cells["TenNganh"].Value.ToString();
-                dgvmain.DataSource = null;
+                {
+                string query2 = "select * from Khoa,HocPhan,Nganh,nhomhp,GiangVien,KeHoachDaoTao,Lop,KhoaHoc,Diem,SinhVien where Nganh.MaKhoa=khoa.MaKhoa  and GiangVien.MaKhoa=Khoa.MaKhoa and GiangVien.MaGV=nhomhp.MaGV and nhomhp.MaHP=HocPhan.MaHP and KeHoachDaoTao.MaKHDT=nhomhp.MaKHDT and Lop.MaNganh=Nganh.MaNganh and lop.TenLop=KeHoachDaoTao.TenLop and KeHoachDaoTao.MaKhoaHoc=KhoaHoc.MaKhoaHoc and Diem.MaSinhVien=SinhVien.MaSinhVien and Diem.MaNhomHP=nhomhp.MaNhomHP and SinhVien.TenLop=Lop.TenLop  and SinhVien.MaSinhVien='" + this.username + "'";
+                    SqlCommand cmd = new SqlCommand(query2, conn);
+                    SqlDataAdapter data = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    data.Fill(dt);
+                    dgvmain.DataSource = dt;
+                    var b = dgvmain.Rows[0];
+                    lblmasv.Text = b.Cells["MaSinhVien"].Value.ToString();
+                    lblhoten.Text = b.Cells["Hoten"].Value.ToString();
+                    lbllop.Text = b.Cells["TenLop"].Value.ToString();
+                    lblnganh.Text = b.Cells["TenNganh"].Value.ToString();
+                    dgvmain.DataSource = null;
+                }
+            string query = "select HocPhan.MaHP,HocPhan.TenHP,HocPhan.SoTC,HocPhan.SoTC,Diem.ChuyenCan,Diem.KiemTraGK,diem.ThucHanh,diem.ThiKetThuc,diem.ThoaLuan,diem.TongKetHP,Diem.DiemChu from Khoa,HocPhan,Nganh,nhomhp,GiangVien,KeHoachDaoTao,Lop,KhoaHoc,Diem,SinhVien where Nganh.MaKhoa=khoa.MaKhoa  and GiangVien.MaKhoa=Khoa.MaKhoa and GiangVien.MaGV=nhomhp.MaGV and nhomhp.MaHP=HocPhan.MaHP and KeHoachDaoTao.MaKHDT=nhomhp.MaKHDT and Lop.MaNganh=Nganh.MaNganh and lop.TenLop=KeHoachDaoTao.TenLop and KeHoachDaoTao.MaKhoaHoc=KhoaHoc.MaKhoaHoc and Diem.MaSinhVien=SinhVien.MaSinhVien and Diem.MaNhomHP=nhomhp.MaNhomHP and SinhVien.TenLop=Lop.TenLop  and SinhVien.MaSinhVien='" + this.username + "'";
+            bang(query);
             }
-
-
-
-
-            conn.Close();
-        }
 
         private void cbohocky_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cbohocky.SelectedItem.Equals("--"))
             {
-                dgvmain.DataSource = null;
-                string query = "select b.MaHP as 'Mã học phần',TenHP as 'Tên học phần',SoTC as 'Số tín chỉ',a.MaSinhVien as 'Mã sinh viên',ChuyenCan as 'Chuyên cần',KiemTraGK as 'Kiểm tra GK',ThucHanh as'Thực hành',ThiKetThuc as'Thi Kết thúc',ThoaLuan as'Thảo luận',TongKetHP as'Tổng kết HP',DiemChu as 'Điểm chữ'  from SinhVien a,HocPhan b, Diem c,Nganh d,Lop e,KhoaHoc g\r\nwhere a.MaSinhVien=c.MaSinhVien and a.TenLop=e.TenLop and a.MaNganh=d.MaNganh and d.MaNganh=e.MaNganh and b.MaNganh=d.MaNganh and b.MaHP=c.MaHP and c.MaKhoaHoc=g.MaKhoaHoc and a.TenLop=e.TenLop and a.MaNganh=d.MaNganh and d.MaNganh=e.MaNganh and b.MaNganh=d.MaNganh and b.MaHP=c.MaHP and c.MaKhoaHoc=g.MaKhoaHoc and a.MaSinhVien='" + this.username + "'";
-                SqlCommand cmd = new SqlCommand(query, conn);
-                SqlDataAdapter data = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                data.Fill(dt);
-                dgvmain.DataSource = dt;
-
-                for (int i = 0; i <= dgvmain.Columns.Count - 1; i++)
-                {
-                    dgvmain.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                }
+                string query = "select HocPhan.MaHP,HocPhan.TenHP,HocPhan.SoTC,HocPhan.SoTC,Diem.ChuyenCan,Diem.KiemTraGK,diem.ThucHanh,diem.ThiKetThuc,diem.ThoaLuan,diem.TongKetHP,Diem.DiemChu from Khoa,HocPhan,Nganh,nhomhp,GiangVien,KeHoachDaoTao,Lop,KhoaHoc,Diem,SinhVien where Nganh.MaKhoa=khoa.MaKhoa  and GiangVien.MaKhoa=Khoa.MaKhoa and GiangVien.MaGV=nhomhp.MaGV and nhomhp.MaHP=HocPhan.MaHP and KeHoachDaoTao.MaKHDT=nhomhp.MaKHDT and Lop.MaNganh=Nganh.MaNganh and lop.TenLop=KeHoachDaoTao.TenLop and KeHoachDaoTao.MaKhoaHoc=KhoaHoc.MaKhoaHoc and Diem.MaSinhVien=SinhVien.MaSinhVien and Diem.MaNhomHP=nhomhp.MaNhomHP and SinhVien.TenLop=Lop.TenLop  and SinhVien.MaSinhVien='" + this.username + "'";
+                bang(query);
             }
             else
             {
-                dgvmain.DataSource = null;
-                string query = "select b.MaHP as 'Mã học phần',TenHP as 'Tên học phần',SoTC as 'Số tín chỉ',a.MaSinhVien as 'Mã sinh viên',ChuyenCan as 'Chuyên cần',KiemTraGK as 'Kiểm tra GK',ThucHanh as'Thực hành',ThiKetThuc as'Thi Kết thúc',ThoaLuan as'Thảo luận',TongKetHP as'Tổng kết HP',DiemChu as 'Điểm chữ'  from SinhVien a,HocPhan b, Diem c,Nganh d,Lop e,KhoaHoc g\r\nwhere a.MaSinhVien=c.MaSinhVien and a.TenLop=e.TenLop and a.MaNganh=d.MaNganh and d.MaNganh=e.MaNganh and b.MaNganh=d.MaNganh and b.MaHP=c.MaHP and c.MaKhoaHoc=g.MaKhoaHoc and g.KyHoc='" + cbohocky.SelectedItem + "'and a.MaSinhVien='" + this.username + "'";
-                SqlCommand cmd = new SqlCommand(query, conn);
-                SqlDataAdapter data = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                data.Fill(dt);
-                dgvmain.DataSource = dt;
-
-                for (int i = 0; i <= dgvmain.Columns.Count - 1; i++)
-                {
-                    dgvmain.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                }
+                string query = "select HocPhan.MaHP,HocPhan.TenHP,HocPhan.SoTC,HocPhan.SoTC,Diem.ChuyenCan,Diem.KiemTraGK,diem.ThucHanh,diem.ThiKetThuc,diem.ThoaLuan,diem.TongKetHP,Diem.DiemChu from Khoa,HocPhan,Nganh,nhomhp,GiangVien,KeHoachDaoTao,Lop,KhoaHoc,Diem,SinhVien where Nganh.MaKhoa=khoa.MaKhoa  and GiangVien.MaKhoa=Khoa.MaKhoa and GiangVien.MaGV=nhomhp.MaGV and nhomhp.MaHP=HocPhan.MaHP and KeHoachDaoTao.MaKHDT=nhomhp.MaKHDT and Lop.MaNganh=Nganh.MaNganh and lop.TenLop=KeHoachDaoTao.TenLop and KeHoachDaoTao.MaKhoaHoc=KhoaHoc.MaKhoaHoc and Diem.MaSinhVien=SinhVien.MaSinhVien and Diem.MaNhomHP=nhomhp.MaNhomHP and SinhVien.TenLop=Lop.TenLop  and SinhVien.MaSinhVien='" + this.username + "'and KhoaHoc.KyHoc='" + cbohocky.SelectedItem.ToString() + "'";
+                bang(query);
             }
-            conn.Close();
         }
     }
 }
