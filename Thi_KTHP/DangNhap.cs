@@ -14,6 +14,7 @@ namespace Thi_KTHP
 {
     public partial class frmdangnhap : Form
     {
+
         public delegate void truyendl();
         public truyendl truyenchocha;
         public frmdangnhap()
@@ -93,3 +94,4 @@ namespace Thi_KTHP
         }
     }
 }
+//test up code 
