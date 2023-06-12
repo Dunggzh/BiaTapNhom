@@ -82,3 +82,31 @@ C:\Users\Dell\Source\Repos\BiaTapNhom\Thi_KTHP\obj\Debug\Thi_KTHP.csproj.Generat
 C:\Users\Dell\Source\Repos\BiaTapNhom\Thi_KTHP\obj\Debug\Thi_KTHP.csproj.CoreCompileInputs.cache
 C:\Users\Dell\Source\Repos\BiaTapNhom\Thi_KTHP\obj\Debug\Thi_KTHP.exe
 C:\Users\Dell\Source\Repos\BiaTapNhom\Thi_KTHP\obj\Debug\Thi_KTHP.pdb
+C:\Users\Nguyen Tien Dung\Source\Repos\BiaTapNhom\Thi_KTHP\bin\Debug\Thi_KTHP.exe.config
+C:\Users\Nguyen Tien Dung\Source\Repos\BiaTapNhom\Thi_KTHP\bin\Debug\Thi_KTHP.exe
+C:\Users\Nguyen Tien Dung\Source\Repos\BiaTapNhom\Thi_KTHP\bin\Debug\Thi_KTHP.pdb
+C:\Users\Nguyen Tien Dung\Source\Repos\BiaTapNhom\Thi_KTHP\obj\Debug\Thi_KTHP.csproj.AssemblyReference.cache
+C:\Users\Nguyen Tien Dung\Source\Repos\BiaTapNhom\Thi_KTHP\obj\Debug\Thi_KTHP.csproj.SuggestedBindingRedirects.cache
+C:\Users\Nguyen Tien Dung\Source\Repos\BiaTapNhom\Thi_KTHP\obj\Debug\Thi_KTHP.frmdangnhap.resources
+C:\Users\Nguyen Tien Dung\Source\Repos\BiaTapNhom\Thi_KTHP\obj\Debug\Thi_KTHP.frmqtdiem.resources
+C:\Users\Nguyen Tien Dung\Source\Repos\BiaTapNhom\Thi_KTHP\obj\Debug\Thi_KTHP.frmdiemsv.resources
+C:\Users\Nguyen Tien Dung\Source\Repos\BiaTapNhom\Thi_KTHP\obj\Debug\Thi_KTHP.frmdoimatkhau.resources
+C:\Users\Nguyen Tien Dung\Source\Repos\BiaTapNhom\Thi_KTHP\obj\Debug\Thi_KTHP.frmtrangchuqt.resources
+C:\Users\Nguyen Tien Dung\Source\Repos\BiaTapNhom\Thi_KTHP\obj\Debug\Thi_KTHP.frmtrangchusv.resources
+C:\Users\Nguyen Tien Dung\Source\Repos\BiaTapNhom\Thi_KTHP\obj\Debug\Thi_KTHP.frmqtgv.resources
+C:\Users\Nguyen Tien Dung\Source\Repos\BiaTapNhom\Thi_KTHP\obj\Debug\Thi_KTHP.frmqthocphan.resources
+C:\Users\Nguyen Tien Dung\Source\Repos\BiaTapNhom\Thi_KTHP\obj\Debug\Thi_KTHP.frmhocphansv.resources
+C:\Users\Nguyen Tien Dung\Source\Repos\BiaTapNhom\Thi_KTHP\obj\Debug\Thi_KTHP.frmqtkhoa.resources
+C:\Users\Nguyen Tien Dung\Source\Repos\BiaTapNhom\Thi_KTHP\obj\Debug\Thi_KTHP.frmqtkhoahoc.resources
+C:\Users\Nguyen Tien Dung\Source\Repos\BiaTapNhom\Thi_KTHP\obj\Debug\Thi_KTHP.frmqtkyhoc.resources
+C:\Users\Nguyen Tien Dung\Source\Repos\BiaTapNhom\Thi_KTHP\obj\Debug\Thi_KTHP.frmqtlop.resources
+C:\Users\Nguyen Tien Dung\Source\Repos\BiaTapNhom\Thi_KTHP\obj\Debug\Thi_KTHP.frmqtnganh.resources
+C:\Users\Nguyen Tien Dung\Source\Repos\BiaTapNhom\Thi_KTHP\obj\Debug\Thi_KTHP.Properties.Resources.resources
+C:\Users\Nguyen Tien Dung\Source\Repos\BiaTapNhom\Thi_KTHP\obj\Debug\Thi_KTHP.frmqtsv.resources
+C:\Users\Nguyen Tien Dung\Source\Repos\BiaTapNhom\Thi_KTHP\obj\Debug\Thi_KTHP.frmsuathongtincanhan.resources
+C:\Users\Nguyen Tien Dung\Source\Repos\BiaTapNhom\Thi_KTHP\obj\Debug\Thi_KTHP.frmthongtincanhan.resources
+C:\Users\Nguyen Tien Dung\Source\Repos\BiaTapNhom\Thi_KTHP\obj\Debug\Thi_KTHP.frmtrangchu.resources
+C:\Users\Nguyen Tien Dung\Source\Repos\BiaTapNhom\Thi_KTHP\obj\Debug\Thi_KTHP.csproj.GenerateResource.cache
+C:\Users\Nguyen Tien Dung\Source\Repos\BiaTapNhom\Thi_KTHP\obj\Debug\Thi_KTHP.csproj.CoreCompileInputs.cache
+C:\Users\Nguyen Tien Dung\Source\Repos\BiaTapNhom\Thi_KTHP\obj\Debug\Thi_KTHP.exe
+C:\Users\Nguyen Tien Dung\Source\Repos\BiaTapNhom\Thi_KTHP\obj\Debug\Thi_KTHP.pdb
