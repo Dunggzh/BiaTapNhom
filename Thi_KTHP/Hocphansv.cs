@@ -19,7 +19,7 @@ namespace Thi_KTHP
             dgvmainqlhp.AllowUserToAddRows = false;
             dgvmainqlhp.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
         }
-        SqlConnection conn = new SqlConnection("Data Source=KHANG\\SQLEXPRESS;Initial Catalog=Demo_QLD;Integrated Security=True");
+        SqlConnection conn = new SqlConnection("data source = LAPTOP-2LQNMVB4; database = Demo_QLD; user id = sa; password = 1;");
         private void bang(string query)
         {
             dgvmainqlhp.DataSource = null;
@@ -48,7 +48,7 @@ namespace Thi_KTHP
             {
                 cbokhoa.Items.Add(dgvmainqlhp.Rows[i].Cells["TenKhoa"].Value.ToString());
             }
-            string query = "select khoa.TenKhoa,Nganh.TenNganh,HocPhan.MaHP,HocPhan.TenHP,HocPhan.SoTiet,HocPhan.SoTC from Khoa,HocPhan,Nganh,nhomhp,GiangVien,KeHoachDaoTao,Lop,KhoaHoc where Nganh.MaKhoa=khoa.MaKhoa  and GiangVien.MaKhoa=Khoa.MaKhoa and GiangVien.MaGV=nhomhp.MaGV and nhomhp.MaHP=HocPhan.MaHP and KeHoachDaoTao.MaKHDT=nhomhp.MaKHDT and Lop.MaNganh=Nganh.MaNganh and lop.TenLop=KeHoachDaoTao.TenLop and KeHoachDaoTao.MaKhoaHoc=KhoaHoc.MaKhoaHoc";
+            string query = "select khoa.TenKhoa,Nganh.TenNganh,HocPhan.MaHP,HocPhan.TenHP,HocPhan.SoTiet,HocPhan.SoTC from Khoa,HocPhan,Nganh,NhomHP,GiangVien,KeHoachDaoTao,Lop,KhoaHoc where Nganh.MaKhoa=khoa.MaKhoa  and GiangVien.MaKhoa=Khoa.MaKhoa and GiangVien.MaGV=NhomHP.MaGV and NhomHP.MaHP=HocPhan.MaHP and KeHoachDaoTao.MaKHDT=NhomHP.MaKHDT and Lop.MaNganh=Nganh.MaNganh and lop.TenLop=KeHoachDaoTao.TenLop and KeHoachDaoTao.MaKhoaHoc=KhoaHoc.MaKhoaHoc";
             bang(query);
         }
 
@@ -67,7 +67,7 @@ namespace Thi_KTHP
             {
                 cbonganh.Items.Add(dgvmainqlhp.Rows[i].Cells["TenNganh"].Value.ToString());
             }
-            string query1 = "select Nganh.TenNganh,HocPhan.MaHP,HocPhan.TenHP,HocPhan.SoTiet,HocPhan.SoTC from Khoa,HocPhan,Nganh,nhomhp,GiangVien,KeHoachDaoTao,Lop,KhoaHoc where Nganh.MaKhoa=khoa.MaKhoa  and GiangVien.MaKhoa=Khoa.MaKhoa and GiangVien.MaGV=nhomhp.MaGV and nhomhp.MaHP=HocPhan.MaHP and KeHoachDaoTao.MaKHDT=nhomhp.MaKHDT and Lop.MaNganh=Nganh.MaNganh and lop.TenLop=KeHoachDaoTao.TenLop and KeHoachDaoTao.MaKhoaHoc=KhoaHoc.MaKhoaHoc and  Khoa.TenKhoa=N'" + cbokhoa.SelectedItem.ToString() + "'";
+            string query1 = "select Nganh.TenNganh,HocPhan.MaHP,HocPhan.TenHP,HocPhan.SoTiet,HocPhan.SoTC from Khoa,HocPhan,Nganh,NhomHP,GiangVien,KeHoachDaoTao,Lop,KhoaHoc where Nganh.MaKhoa=khoa.MaKhoa  and GiangVien.MaKhoa=Khoa.MaKhoa and GiangVien.MaGV=NhomHP.MaGV and NhomHP.MaHP=HocPhan.MaHP and KeHoachDaoTao.MaKHDT=NhomHP.MaKHDT and Lop.MaNganh=Nganh.MaNganh and lop.TenLop=KeHoachDaoTao.TenLop and KeHoachDaoTao.MaKhoaHoc=KhoaHoc.MaKhoaHoc and  Khoa.TenKhoa=N'" + cbokhoa.SelectedItem.ToString() + "'";
             bang(query1);
 
         }
@@ -76,12 +76,12 @@ namespace Thi_KTHP
         {
             if (cbonganh.SelectedItem.Equals("--"))
             {
-                string query2 = "select Nganh.TenNganh,HocPhan.MaHP,HocPhan.TenHP,HocPhan.SoTiet,HocPhan.SoTC from Khoa,HocPhan,Nganh,nhomhp,GiangVien,KeHoachDaoTao,Lop,KhoaHoc where Nganh.MaKhoa=khoa.MaKhoa  and GiangVien.MaKhoa=Khoa.MaKhoa and GiangVien.MaGV=nhomhp.MaGV and nhomhp.MaHP=HocPhan.MaHP and KeHoachDaoTao.MaKHDT=nhomhp.MaKHDT and Lop.MaNganh=Nganh.MaNganh and lop.TenLop=KeHoachDaoTao.TenLop and KeHoachDaoTao.MaKhoaHoc=KhoaHoc.MaKhoaHoc and  Khoa.TenKhoa=N'" + cbokhoa.SelectedItem.ToString() + "'";
+                string query2 = "select Nganh.TenNganh,HocPhan.MaHP,HocPhan.TenHP,HocPhan.SoTiet,HocPhan.SoTC from Khoa,HocPhan,Nganh,NhomHP,GiangVien,KeHoachDaoTao,Lop,KhoaHoc where Nganh.MaKhoa=khoa.MaKhoa  and GiangVien.MaKhoa=Khoa.MaKhoa and GiangVien.MaGV=NhomHP.MaGV and NhomHP.MaHP=HocPhan.MaHP and KeHoachDaoTao.MaKHDT=NhomHP.MaKHDT and Lop.MaNganh=Nganh.MaNganh and lop.TenLop=KeHoachDaoTao.TenLop and KeHoachDaoTao.MaKhoaHoc=KhoaHoc.MaKhoaHoc and  Khoa.TenKhoa=N'" + cbokhoa.SelectedItem.ToString() + "'";
                 bang(query2);
             }
             else
             {
-                string query3 = "select khoa.TenKhoa,Nganh.TenNganh,HocPhan.MaHP,HocPhan.TenHP,HocPhan.SoTiet,HocPhan.SoTC from Khoa,HocPhan,Nganh,nhomhp,GiangVien,KeHoachDaoTao,Lop,KhoaHoc where Nganh.MaKhoa=khoa.MaKhoa  and GiangVien.MaKhoa=Khoa.MaKhoa and GiangVien.MaGV=nhomhp.MaGV and nhomhp.MaHP=HocPhan.MaHP and KeHoachDaoTao.MaKHDT=nhomhp.MaKHDT and Lop.MaNganh=Nganh.MaNganh and lop.TenLop=KeHoachDaoTao.TenLop and KeHoachDaoTao.MaKhoaHoc=KhoaHoc.MaKhoaHoc and Khoa.TenKhoa=N'" + cbokhoa.SelectedItem + "'and Nganh.TenNganh=N'" + cbonganh.SelectedItem.ToString() + "'";
+                string query3 = "select khoa.TenKhoa,Nganh.TenNganh,HocPhan.MaHP,HocPhan.TenHP,HocPhan.SoTiet,HocPhan.SoTC from Khoa,HocPhan,Nganh,NhomHP,GiangVien,KeHoachDaoTao,Lop,KhoaHoc where Nganh.MaKhoa=khoa.MaKhoa  and GiangVien.MaKhoa=Khoa.MaKhoa and GiangVien.MaGV=NhomHP.MaGV and NhomHP.MaHP=HocPhan.MaHP and KeHoachDaoTao.MaKHDT=NhomHP.MaKHDT and Lop.MaNganh=Nganh.MaNganh and lop.TenLop=KeHoachDaoTao.TenLop and KeHoachDaoTao.MaKhoaHoc=KhoaHoc.MaKhoaHoc and Khoa.TenKhoa=N'" + cbokhoa.SelectedItem + "'and Nganh.TenNganh=N'" + cbonganh.SelectedItem.ToString() + "'";
                 bang(query3);
             }
         }

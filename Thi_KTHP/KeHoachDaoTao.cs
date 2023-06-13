@@ -11,11 +11,13 @@ using System.Windows.Forms;
 
 namespace Thi_KTHP
 {
-    public partial class frmqtkyhoc : Form
+    public partial class frmqtkhdt : Form
     {
-        public frmqtkyhoc()
+        public frmqtkhdt()
         {
             InitializeComponent();
+            Loadcboboxtenlop("SELECT * FROM Lop", "TenLop", "TenLop");
+            Loadcboboxmakhoahoc("SELECT * FROM KhoaHoc", "MaKhoaHoc", "MaKhoaHoc");
             Setstatus("reset");
             BindingData();
         }
@@ -24,6 +26,39 @@ namespace Thi_KTHP
         public static string connectionsString =
             "data source = LAPTOP-2LQNMVB4; database = Demo_QLD; user id = sa; password = 1;";
 
+        public void Loadcboboxtenlop(string query, string dis, string valu)
+        {
+            SqlConnection conn = new SqlConnection(connectionsString);
+            if (conn.State == ConnectionState.Closed)
+            {
+                conn.Open();
+            }
+            SqlCommand cmd = new SqlCommand(query, conn);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            conn.Close();
+            cboqttenlop.DataSource = ds.Tables[0];
+            cboqttenlop.DisplayMember = dis;
+            cboqttenlop.ValueMember = valu;
+        }
+        public void Loadcboboxmakhoahoc(string query, string dis, string valu)
+        {
+            SqlConnection conn = new SqlConnection(connectionsString);
+            if (conn.State == ConnectionState.Closed)
+            {
+                conn.Open();
+            }
+            SqlCommand cmd = new SqlCommand(query, conn);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            conn.Close();
+            cboqtmakhoahoc.DataSource = ds.Tables[0];
+            cboqtmakhoahoc.DisplayMember = dis;
+            cboqtmakhoahoc.ValueMember = valu;
+        }
+
         public void Setstatus(String state)
         {
             switch (state)
@@ -31,49 +66,44 @@ namespace Thi_KTHP
                 case "reset":
 
 
-                    btnqtthemkyhoc.Enabled = true;
-                    btnqtsuakyhoc.Enabled = true;
-                    btnqtxoakyhoc.Enabled = true;
-                    btnqtghikyhoc.Enabled = false;
-                    btnqthuykyhoc.Enabled = false;
+                    btnqtthemkhdt.Enabled = true;
+                    btnqtsuakhdt.Enabled = true;
+                    btnqtxoakhdt.Enabled = true;
+                    btnqtghikhdt.Enabled = false;
+                    btnqthuykhdt.Enabled = false;
 
-
-                    txtqtkyhoc.Enabled = false;
-                    txtqtghichu.Enabled = false;
+                    txtqtmakhdt.Enabled = false;
+                    cboqttenlop.Enabled = false;
+                    cboqtmakhoahoc.Enabled = false;
    
                     break;
                 case "insert":
-                    btnqtthemkyhoc.Enabled = false;
-                    btnqtsuakyhoc.Enabled = false;
-                    btnqtxoakyhoc.Enabled = false;
-                    btnqtghikyhoc.Enabled = true;
-                    btnqthuykyhoc.Enabled = true;
+                    btnqtthemkhdt.Enabled = false;
+                    btnqtsuakhdt.Enabled = false;
+                    btnqtxoakhdt.Enabled = false;
+                    btnqtghikhdt.Enabled = true;
+                    btnqthuykhdt.Enabled = true;
 
-
-                    txtqtkyhoc.Enabled = true;
-                    txtqtghichu.Enabled = true;
+                    txtqtmakhdt.Enabled = true;
+                    cboqttenlop.Enabled = true;
+                    cboqtmakhoahoc .Enabled = true;
      
+                    txtqtmakhdt.Text = "";
 
-
-                    txtqtkyhoc.Text = "";
-                    txtqtghichu.Text = "";
-
-
-                    txtqtkyhoc.Focus();
+                    txtqtmakhdt.Focus();
                     break;
                 case "edit":
+                    btnqtthemkhdt.Enabled = false;
+                    btnqtsuakhdt.Enabled = false;
+                    btnqtxoakhdt.Enabled = false;
+                    btnqtghikhdt.Enabled = true;
+                    btnqthuykhdt.Enabled = true;
 
-                    btnqtthemkyhoc.Enabled = false;
-                    btnqtsuakyhoc.Enabled = false;
-                    btnqtxoakyhoc.Enabled = false;
-                    btnqtghikyhoc.Enabled = true;
-                    btnqthuykyhoc.Enabled = true;
+                    txtqtmakhdt.Enabled = false;
+                    cboqttenlop .Enabled = true;
+                    cboqtmakhoahoc.Enabled = true;
 
-                    txtqtkyhoc.Enabled = false;
-                    txtqtghichu.Enabled = true;
- 
-
-                    txtqtghichu.Focus();
+                    cboqttenlop.Focus();
                     break;
                 default: break;
             }
@@ -88,23 +118,22 @@ namespace Thi_KTHP
                 {
                     conn.Open();
                 }
-                string query = "SELECT * FROM KyHoc";
+                string query = "SELECT * FROM KeHoachDaoTao";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataSet ds = new DataSet();
                 da.Fill(ds);
                 if (ds != null && ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
                 {
-                    dgvqtkyhoc.DataSource = ds.Tables[0];
+                    dgvqtkhdt.DataSource = ds.Tables[0];
 
-                    txtqtkyhoc.Text = ds.Tables[0].Rows[0]["KyHoc"].ToString();
-                    txtqtghichu.Text = ds.Tables[0].Rows[0]["GhiChu"].ToString();
-                    
-
+                    txtqtmakhdt.Text = ds.Tables[0].Rows[0]["MaKHDT"].ToString();
+                    cboqttenlop.SelectedValue = ds.Tables[0].Rows[0]["TenLop"].ToString();
+                    cboqtmakhoahoc.SelectedValue = ds.Tables[0].Rows[0]["MaKhoaHoc"].ToString();
                 }
                 else
                 {
-                    dgvqtkyhoc.DataSource = null;
+                    dgvqtkhdt.DataSource = null;
                 }
                 conn.Close();
             }
@@ -113,20 +142,19 @@ namespace Thi_KTHP
                 MessageBox.Show(ex.Message);
             }
         }
-
-        private void btnqtthemkyhoc_Click(object sender, EventArgs e)
+        private void btnqtthemkhdt_Click(object sender, EventArgs e)
         {
             status = "insert";
             Setstatus(status);
         }
 
-        private void btnqtsuakyhoc_Click(object sender, EventArgs e)
+        private void btnqtsuakhdt_Click(object sender, EventArgs e)
         {
             status = "edit";
             Setstatus(status);
         }
 
-        private void btnqtxoakyhoc_Click(object sender, EventArgs e)
+        private void btnqtxoakhdt_Click(object sender, EventArgs e)
         {
             try
             {
@@ -136,7 +164,7 @@ namespace Thi_KTHP
                     conn.Open();
                 }
 
-                string query = "DELETE dbo.KyHoc WHERE KyHoc='" + txtqtkyhoc.Text.Trim() + "'";
+                string query = "DELETE dbo.KeHoachDaoTao WHERE MaKHDT='" + txtqtmakhdt.Text.Trim() + "'";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 var result = cmd.ExecuteNonQuery();
                 if (result != 0)
@@ -157,17 +185,16 @@ namespace Thi_KTHP
             }
         }
 
-        private void btnqthuykyhoc_Click(object sender, EventArgs e)
+        private void btnqthuykhdt_Click(object sender, EventArgs e)
         {
-            txtqtkyhoc.Text = "";
-            txtqtghichu.Text = "";
+            txtqtmakhdt.Text = "";
 
             status = "reset";
             Setstatus(status);
             BindingData();
         }
 
-        private void btnqtghikyhoc_Click(object sender, EventArgs e)
+        private void btnqtghikhdt_Click(object sender, EventArgs e)
         {
             try
             {
@@ -179,7 +206,7 @@ namespace Thi_KTHP
                     {
                         conn.Open();
                     }
-                    string query = "INSERT INTO KyHoc (KyHoc,GhiChu) VALUES ('" + txtqtkyhoc.Text.Trim() + "',N'" + txtqtghichu.Text.Trim() + "')";
+                    string query = "INSERT INTO KeHoachDaoTao (MaKHDT,TenLop,MaKhoaHoc) VALUES ('" + txtqtmakhdt.Text.Trim() + "',N'" + cboqttenlop.SelectedValue.ToString() + "','" + cboqtmakhoahoc.SelectedValue.ToString() + "')";
                     SqlCommand cmd = new SqlCommand(query, conn);
                     var result = cmd.ExecuteNonQuery();
                     if (result != 0)
@@ -203,7 +230,7 @@ namespace Thi_KTHP
                     {
                         conn.Open();
                     }
-                    string query = "UPDATE dbo.KyHoc SET GhiChu=N'" + txtqtghichu.Text.Trim() + "' WHERE KyHoc='" + txtqtghichu.Text.Trim() + "'";
+                    string query = "UPDATE dbo.KeHoachDaoTao SET TenLop=N'" + cboqttenlop.SelectedValue.ToString() + "',MaKhoaHoc='" + cboqtmakhoahoc.SelectedValue.ToString() + "' WHERE MaKHDT='" + txtqtmakhdt.Text.Trim() + "'";
                     SqlCommand cmd = new SqlCommand(query, conn);
                     var result = cmd.ExecuteNonQuery();
                     if (result != 0)
@@ -228,13 +255,12 @@ namespace Thi_KTHP
             }
         }
 
-        private void dgvqtkyhoc_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvqtkhdt_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            var row = (DataGridViewRow)dgvqtkyhoc.Rows[e.RowIndex];
-            txtqtkyhoc.Text = row.Cells["KyHoc"].Value.ToString();
-            txtqtghichu.Text = row.Cells["GhiChu"].Value.ToString();
-    
+            var row = (DataGridViewRow)dgvqtkhdt.Rows[e.RowIndex];
+            txtqtmakhdt.Text = row.Cells["MaKHDT"].Value.ToString();
+            cboqttenlop.SelectedValue = row.Cells["TenLop"].Value.ToString();
+            cboqtmakhoahoc.SelectedValue = row.Cells["MaKhoaHoc"].Value.ToString();
         }
-
     }
 }

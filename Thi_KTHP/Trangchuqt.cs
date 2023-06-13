@@ -41,12 +41,7 @@ namespace Thi_KTHP
             childform.Show();
         }
 
-        private void khoaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Openformchild(new frmqtkhoa());
-        }
-
-        private void trangChủToolStripMenuItem_Click(object sender, EventArgs e)
+        private void mnutc_Click(object sender, EventArgs e)
         {
             if (currentformchild != null)
             {
@@ -54,47 +49,7 @@ namespace Thi_KTHP
             }
         }
 
-        private void ngànhToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Openformchild(new frmqtnganh());
-        }
-
-        private void họcPhẩnToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Openformchild(new frmqthocphan());
-        }
-
-        private void lớpToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Openformchild(new frmqtlop());
-        }
-
-        private void khóaHọcToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Openformchild(new frmqtkhoahoc());
-        }
-
-        private void giảngViênToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Openformchild(new frmqtgv());
-        }
-
-        private void sinhViênToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Openformchild(new frmqtsv());
-        }
-
-        private void điểmToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Openformchild(new frmqtdiem());
-        }
-
-        private void kỳHocToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Openformchild(new frmqtkyhoc());
-        }
-
-        private void đăngXuấtToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void mnunddx_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Bạn Chắc Chắn Muốn Đăng Xuất", "Lưu Ý", MessageBoxButtons.YesNo, MessageBoxIcon.None) == DialogResult.Yes)
             {
@@ -102,6 +57,61 @@ namespace Thi_KTHP
                 frmtrangchu frmtrangchu = new frmtrangchu(new frmdangnhap());
                 frmtrangchu.ShowDialog();
             }
+        }
+
+        private void mnuqlk_Click(object sender, EventArgs e)
+        {
+            Openformchild(new frmqtkhoa());
+        }
+
+        private void mnuqln_Click(object sender, EventArgs e)
+        {
+            Openformchild(new frmqtnganh());
+        }
+
+        private void mnuqlkhoahoc_Click(object sender, EventArgs e)
+        {
+            Openformchild(new frmqtkhoahoc());
+        }
+
+        private void mnuqlkyhoc_Click(object sender, EventArgs e)
+        {
+            Openformchild(new frmqtkhdt());
+        }
+
+        private void mnuqlhp_Click(object sender, EventArgs e)
+        {
+            Openformchild(new frmqthocphan());
+        }
+
+        private void mnuqllop_Click(object sender, EventArgs e)
+        {
+            Openformchild(new frmqtlop());
+        }
+
+        private void mnuqlgv_Click(object sender, EventArgs e)
+        {
+            Openformchild(new frmqtgv());
+        }
+
+        private void mnuqlsv_Click(object sender, EventArgs e)
+        {
+            Openformchild(new frmqtsv());
+        }
+
+        private void mnuqldiem_Click(object sender, EventArgs e)
+        {
+            Openformchild(new frmqtdiem());
+        }
+
+        private void mnuqlkhdt_Click(object sender, EventArgs e)
+        {
+            Openformchild(new frmqtkhdt());
+        }
+
+        private void mnuqlnhomhp_Click(object sender, EventArgs e)
+        {
+            Openformchild(new frmqtnhomhp());
         }
     }
 }

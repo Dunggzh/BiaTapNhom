@@ -242,12 +242,13 @@ namespace Thi_KTHP
                 MessageBox.Show(ex.Message);
             }
         }
-        private void dgvqtnganh_CellContentClick(object sender, DataGridViewCellEventArgs e)
+
+        private void dgvqtnganh_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             var row = (DataGridViewRow)dgvqtnganh.Rows[e.RowIndex];
-            txtqtmanganh.Text = row.Cells["MaNganh"].Value.ToString();
-            txtqttennganh.Text = row.Cells["TenNganh"].Value.ToString();
-            cboqtmakhoa.SelectedValue = row.Cells["MaKhoa"].Value.ToString();
+            txtqtmanganh.Text = row.Cells["Mã ngành"].Value.ToString();
+            txtqttennganh.Text = row.Cells["Tên ngành"].Value.ToString();
+            cboqtmakhoa.SelectedValue = row.Cells["Mã khoa"].Value.ToString();
         }
     }
 }

@@ -33,7 +33,7 @@
             this.pnlqttruong = new System.Windows.Forms.Panel();
             this.txtqtdiemkt = new System.Windows.Forms.TextBox();
             this.txtqtdiemchu = new System.Windows.Forms.TextBox();
-            this.cboqthocphan = new System.Windows.Forms.ComboBox();
+            this.cboqtnhomhocphan = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txtqtdiemtl = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -97,7 +97,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlqttruong.Controls.Add(this.txtqtdiemkt);
             this.pnlqttruong.Controls.Add(this.txtqtdiemchu);
-            this.pnlqttruong.Controls.Add(this.cboqthocphan);
+            this.pnlqttruong.Controls.Add(this.cboqtnhomhocphan);
             this.pnlqttruong.Controls.Add(this.label10);
             this.pnlqttruong.Controls.Add(this.txtqtdiemtl);
             this.pnlqttruong.Controls.Add(this.label9);
@@ -134,14 +134,14 @@
             this.txtqtdiemchu.Size = new System.Drawing.Size(101, 27);
             this.txtqtdiemchu.TabIndex = 23;
             // 
-            // cboqthocphan
+            // cboqtnhomhocphan
             // 
-            this.cboqthocphan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboqthocphan.FormattingEnabled = true;
-            this.cboqthocphan.Location = new System.Drawing.Point(336, 28);
-            this.cboqthocphan.Name = "cboqthocphan";
-            this.cboqthocphan.Size = new System.Drawing.Size(208, 28);
-            this.cboqthocphan.TabIndex = 22;
+            this.cboqtnhomhocphan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboqtnhomhocphan.FormattingEnabled = true;
+            this.cboqtnhomhocphan.Location = new System.Drawing.Point(336, 28);
+            this.cboqtnhomhocphan.Name = "cboqtnhomhocphan";
+            this.cboqtnhomhocphan.Size = new System.Drawing.Size(208, 28);
+            this.cboqtnhomhocphan.TabIndex = 22;
             // 
             // label10
             // 
@@ -278,9 +278,9 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(332, 5);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(110, 20);
+            this.label2.Size = new System.Drawing.Size(156, 20);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Mã học phần:";
+            this.label2.Text = "Mã nhóm học phần:";
             // 
             // floqtnut
             // 
@@ -372,7 +372,7 @@
         private System.Windows.Forms.Panel pnlqttruong;
         private System.Windows.Forms.TextBox txtqtdiemkt;
         private System.Windows.Forms.TextBox txtqtdiemchu;
-        private System.Windows.Forms.ComboBox cboqthocphan;
+        private System.Windows.Forms.ComboBox cboqtnhomhocphan;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtqtdiemtl;
         private System.Windows.Forms.Label label9;

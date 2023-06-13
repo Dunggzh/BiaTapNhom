@@ -35,11 +35,8 @@
             this.btnqtghisv = new System.Windows.Forms.Button();
             this.btnqthuysv = new System.Windows.Forms.Button();
             this.pnlqttruong = new System.Windows.Forms.Panel();
-            this.cboqtkhoahoc = new System.Windows.Forms.ComboBox();
-            this.label10 = new System.Windows.Forms.Label();
             this.txtqtghichu = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.cboqtmanganh = new System.Windows.Forms.ComboBox();
             this.txtqtnoisinhsv = new System.Windows.Forms.TextBox();
             this.rdoqtnu = new System.Windows.Forms.RadioButton();
             this.rdoqtnam = new System.Windows.Forms.RadioButton();
@@ -51,7 +48,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtqtquequansv = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtqttensv = new System.Windows.Forms.TextBox();
             this.txtqtmasv = new System.Windows.Forms.TextBox();
@@ -132,11 +128,8 @@
             // 
             this.pnlqttruong.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlqttruong.Controls.Add(this.cboqtkhoahoc);
-            this.pnlqttruong.Controls.Add(this.label10);
             this.pnlqttruong.Controls.Add(this.txtqtghichu);
             this.pnlqttruong.Controls.Add(this.label9);
-            this.pnlqttruong.Controls.Add(this.cboqtmanganh);
             this.pnlqttruong.Controls.Add(this.txtqtnoisinhsv);
             this.pnlqttruong.Controls.Add(this.rdoqtnu);
             this.pnlqttruong.Controls.Add(this.rdoqtnam);
@@ -148,39 +141,19 @@
             this.pnlqttruong.Controls.Add(this.label5);
             this.pnlqttruong.Controls.Add(this.txtqtquequansv);
             this.pnlqttruong.Controls.Add(this.label4);
-            this.pnlqttruong.Controls.Add(this.label3);
             this.pnlqttruong.Controls.Add(this.label1);
             this.pnlqttruong.Controls.Add(this.txtqttensv);
             this.pnlqttruong.Controls.Add(this.txtqtmasv);
             this.pnlqttruong.Controls.Add(this.label2);
             this.pnlqttruong.Location = new System.Drawing.Point(169, 3);
             this.pnlqttruong.Name = "pnlqttruong";
-            this.pnlqttruong.Size = new System.Drawing.Size(612, 271);
+            this.pnlqttruong.Size = new System.Drawing.Size(612, 232);
             this.pnlqttruong.TabIndex = 6;
-            // 
-            // cboqtkhoahoc
-            // 
-            this.cboqtkhoahoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboqtkhoahoc.FormattingEnabled = true;
-            this.cboqtkhoahoc.Location = new System.Drawing.Point(332, 241);
-            this.cboqtkhoahoc.Name = "cboqtkhoahoc";
-            this.cboqtkhoahoc.Size = new System.Drawing.Size(208, 28);
-            this.cboqtkhoahoc.TabIndex = 22;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(336, 219);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(84, 20);
-            this.label10.TabIndex = 21;
-            this.label10.Text = "Khóa hoc:";
             // 
             // txtqtghichu
             // 
             this.txtqtghichu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtqtghichu.Location = new System.Drawing.Point(28, 241);
+            this.txtqtghichu.Location = new System.Drawing.Point(25, 195);
             this.txtqtghichu.Name = "txtqtghichu";
             this.txtqtghichu.Size = new System.Drawing.Size(205, 27);
             this.txtqtghichu.TabIndex = 20;
@@ -189,20 +162,11 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(24, 219);
+            this.label9.Location = new System.Drawing.Point(24, 165);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(75, 20);
             this.label9.TabIndex = 19;
             this.label9.Text = "Ghi Chú:";
-            // 
-            // cboqtmanganh
-            // 
-            this.cboqtmanganh.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboqtmanganh.FormattingEnabled = true;
-            this.cboqtmanganh.Location = new System.Drawing.Point(25, 188);
-            this.cboqtmanganh.Name = "cboqtmanganh";
-            this.cboqtmanganh.Size = new System.Drawing.Size(208, 28);
-            this.cboqtmanganh.TabIndex = 18;
             // 
             // txtqtnoisinhsv
             // 
@@ -311,16 +275,6 @@
             this.label4.TabIndex = 5;
             this.label4.Text = "Ngày sinh:";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(23, 165);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(87, 20);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Mã ngành:";
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -364,9 +318,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlqtcsdl.BackColor = System.Drawing.SystemColors.Control;
             this.pnlqtcsdl.Controls.Add(this.dgvqtsv);
-            this.pnlqtcsdl.Location = new System.Drawing.Point(169, 280);
+            this.pnlqtcsdl.Location = new System.Drawing.Point(169, 241);
             this.pnlqtcsdl.Name = "pnlqtcsdl";
-            this.pnlqtcsdl.Size = new System.Drawing.Size(615, 220);
+            this.pnlqtcsdl.Size = new System.Drawing.Size(615, 259);
             this.pnlqtcsdl.TabIndex = 7;
             // 
             // dgvqtsv
@@ -383,9 +337,9 @@
             this.dgvqtsv.Name = "dgvqtsv";
             this.dgvqtsv.RowHeadersWidth = 51;
             this.dgvqtsv.RowTemplate.Height = 24;
-            this.dgvqtsv.Size = new System.Drawing.Size(609, 157);
+            this.dgvqtsv.Size = new System.Drawing.Size(609, 196);
             this.dgvqtsv.TabIndex = 4;
-            this.dgvqtsv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvqtsv_CellContentClick);
+            this.dgvqtsv.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvqtsv_CellClick);
             // 
             // frmqtsv
             // 
@@ -418,7 +372,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtqtquequansv;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtqttensv;
         private System.Windows.Forms.TextBox txtqtmasv;
@@ -433,10 +386,7 @@
         private System.Windows.Forms.DateTimePicker dtpngaysinhsv;
         private System.Windows.Forms.ComboBox cboqttenlop;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox cboqtmanganh;
         private System.Windows.Forms.TextBox txtqtghichu;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox cboqtkhoahoc;
-        private System.Windows.Forms.Label label10;
     }
 }

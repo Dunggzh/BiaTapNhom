@@ -35,14 +35,14 @@
             this.btnqtghilop = new System.Windows.Forms.Button();
             this.btnqthuylop = new System.Windows.Forms.Button();
             this.pnlqttruong = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.cboqtmanganh = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtqttenlop = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.pnlqtcsdl = new System.Windows.Forms.Panel();
             this.dgvqtlop = new System.Windows.Forms.DataGridView();
-            this.cboqtkhoahoc = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.txtqtghichu = new System.Windows.Forms.TextBox();
             this.floqtnut.SuspendLayout();
             this.pnlqttruong.SuspendLayout();
             this.pnlqtcsdl.SuspendLayout();
@@ -117,8 +117,8 @@
             // 
             this.pnlqttruong.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlqttruong.Controls.Add(this.txtqtghichu);
             this.pnlqttruong.Controls.Add(this.label3);
-            this.pnlqttruong.Controls.Add(this.cboqtkhoahoc);
             this.pnlqttruong.Controls.Add(this.cboqtmanganh);
             this.pnlqttruong.Controls.Add(this.label1);
             this.pnlqttruong.Controls.Add(this.txtqttenlop);
@@ -127,6 +127,16 @@
             this.pnlqttruong.Name = "pnlqttruong";
             this.pnlqttruong.Size = new System.Drawing.Size(615, 133);
             this.pnlqttruong.TabIndex = 4;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(21, 68);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(75, 20);
+            this.label3.TabIndex = 24;
+            this.label3.Text = "Ghi Chú:";
             // 
             // cboqtmanganh
             // 
@@ -193,26 +203,15 @@
             this.dgvqtlop.RowTemplate.Height = 24;
             this.dgvqtlop.Size = new System.Drawing.Size(609, 284);
             this.dgvqtlop.TabIndex = 4;
-            this.dgvqtlop.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvqtlop_CellContentClick);
+            this.dgvqtlop.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvqtlop_CellClick);
             // 
-            // cboqtkhoahoc
+            // txtqtghichu
             // 
-            this.cboqtkhoahoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboqtkhoahoc.FormattingEnabled = true;
-            this.cboqtkhoahoc.Location = new System.Drawing.Point(25, 98);
-            this.cboqtkhoahoc.Name = "cboqtkhoahoc";
-            this.cboqtkhoahoc.Size = new System.Drawing.Size(208, 28);
-            this.cboqtkhoahoc.TabIndex = 23;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(21, 68);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(84, 20);
-            this.label3.TabIndex = 24;
-            this.label3.Text = "Khóa hoc:";
+            this.txtqtghichu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtqtghichu.Location = new System.Drawing.Point(25, 98);
+            this.txtqtghichu.Name = "txtqtghichu";
+            this.txtqtghichu.Size = new System.Drawing.Size(208, 27);
+            this.txtqtghichu.TabIndex = 25;
             // 
             // frmqtlop
             // 
@@ -249,6 +248,6 @@
         private System.Windows.Forms.DataGridView dgvqtlop;
         private System.Windows.Forms.ComboBox cboqtmanganh;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox cboqtkhoahoc;
+        private System.Windows.Forms.TextBox txtqtghichu;
     }
 }

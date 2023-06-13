@@ -121,23 +121,24 @@ namespace Thi_KTHP
 
                     txtqtmagv.Text = ds.Tables[0].Rows[0]["MaGV"].ToString();
                     txtqttengv.Text = ds.Tables[0].Rows[0]["TenGV"].ToString();
-                    if (ds.Tables[0].Rows[0]["TrinhDo"].ToString() == "Thạc sĩ")
+                    if (ds.Tables[0].Rows[0]["TrinhDo"].ToString()=="Thạc sĩ")
                     {
                         cboqttrinhdogv.Text = "Thạc sĩ";
                     }
-                    else if (ds.Tables[0].Rows[0]["TrinhDo"].ToString() == "Tiến sĩ")
+                    else if (ds.Tables[0].Rows[0]["TrinhDo"].ToString()== "Tiến sĩ")
                     {
                         cboqttrinhdogv.Text = "Tiến sĩ";
                     }
-                    else
+                    else if (ds.Tables[0].Rows[0]["TrinhDo"].ToString()=="Giáo sư")
                     {
                         cboqttrinhdogv.Text = "Giáo sư";
                     }
+                    else
+                    {
+                        cboqttrinhdogv.Text = "Khác";
+                    }
                     txtqtsodtgv.Text = ds.Tables[0].Rows[0]["SoDT"].ToString();
                     cboqtmakhoa.SelectedValue = ds.Tables[0].Rows[0]["MaKhoa"].ToString();
-
-
-
                 }
                 else
                 {
@@ -214,13 +215,17 @@ namespace Thi_KTHP
                 {
                     trinhdo = "Thạc sĩ";
                 }
-                else if (cboqttrinhdogv.SelectedItem.Equals("Tiến Sĩ"))
+                else if (cboqttrinhdogv.SelectedItem.Equals("Tiến sĩ"))
                 {
                     trinhdo = "Tiến sĩ";
                 }
-                else
+                else if(cboqttrinhdogv.SelectedItem.Equals("Giáo sư"))
                 {
                     trinhdo = "Giáo sư";
+                }
+                else
+                {
+                    trinhdo = "Khác";
                 }
 
                 if (status == "insert")
@@ -277,7 +282,7 @@ namespace Thi_KTHP
             }
         }
 
-        private void dgvqtgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvqtgv_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             var row = (DataGridViewRow)dgvqtgv.Rows[e.RowIndex];
             txtqtmagv.Text = row.Cells["MaGV"].Value.ToString();
@@ -291,9 +296,13 @@ namespace Thi_KTHP
             {
                 cboqttrinhdogv.Text = "Tiến sĩ";
             }
-            else
+            else if (row.Cells["TrinhDo"].Value.ToString() == "Giáo sư")
             {
                 cboqttrinhdogv.Text = "Giáo sư";
+            }
+            else
+            {
+                cboqttrinhdogv.Text = "Khác";
             }
             txtqtsodtgv.Text = row.Cells["SoDT"].Value.ToString();
             cboqtmakhoa.SelectedValue = row.Cells["MaKhoa"].Value.ToString();

@@ -35,12 +35,14 @@
             this.btnqtghikhoahoc = new System.Windows.Forms.Button();
             this.btnqthuykhoahoc = new System.Windows.Forms.Button();
             this.pnlqttruong = new System.Windows.Forms.Panel();
-            this.txtqtghichu = new System.Windows.Forms.TextBox();
+            this.txtqtkyhoc = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtqtkhoahoc = new System.Windows.Forms.TextBox();
+            this.txtqtmakhoahoc = new System.Windows.Forms.TextBox();
             this.pnlqtcsdl = new System.Windows.Forms.Panel();
             this.dgvqtkhoahoc = new System.Windows.Forms.DataGridView();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtqttenkhoahoc = new System.Windows.Forms.TextBox();
             this.floqtnut.SuspendLayout();
             this.pnlqttruong.SuspendLayout();
             this.pnlqtcsdl.SuspendLayout();
@@ -115,22 +117,24 @@
             // 
             this.pnlqttruong.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlqttruong.Controls.Add(this.txtqtghichu);
+            this.pnlqttruong.Controls.Add(this.txtqttenkhoahoc);
+            this.pnlqttruong.Controls.Add(this.label2);
+            this.pnlqttruong.Controls.Add(this.txtqtkyhoc);
             this.pnlqttruong.Controls.Add(this.label3);
             this.pnlqttruong.Controls.Add(this.label1);
-            this.pnlqttruong.Controls.Add(this.txtqtkhoahoc);
+            this.pnlqttruong.Controls.Add(this.txtqtmakhoahoc);
             this.pnlqttruong.Location = new System.Drawing.Point(170, 3);
             this.pnlqttruong.Name = "pnlqttruong";
             this.pnlqttruong.Size = new System.Drawing.Size(615, 147);
             this.pnlqttruong.TabIndex = 4;
             // 
-            // txtqtghichu
+            // txtqtkyhoc
             // 
-            this.txtqtghichu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtqtghichu.Location = new System.Drawing.Point(25, 101);
-            this.txtqtghichu.Name = "txtqtghichu";
-            this.txtqtghichu.Size = new System.Drawing.Size(208, 27);
-            this.txtqtghichu.TabIndex = 5;
+            this.txtqtkyhoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtqtkyhoc.Location = new System.Drawing.Point(25, 101);
+            this.txtqtkyhoc.Name = "txtqtkyhoc";
+            this.txtqtkyhoc.Size = new System.Drawing.Size(208, 27);
+            this.txtqtkyhoc.TabIndex = 5;
             // 
             // label3
             // 
@@ -138,9 +142,9 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(21, 78);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(72, 20);
+            this.label3.Size = new System.Drawing.Size(65, 20);
             this.label3.TabIndex = 4;
-            this.label3.Text = "Ghi chú:";
+            this.label3.Text = "Kỳ học:";
             // 
             // label1
             // 
@@ -148,17 +152,17 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(21, 6);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(84, 20);
+            this.label1.Size = new System.Drawing.Size(109, 20);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Khóa học:";
+            this.label1.Text = "Mã khóa học:";
             // 
-            // txtqtkhoahoc
+            // txtqtmakhoahoc
             // 
-            this.txtqtkhoahoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtqtkhoahoc.Location = new System.Drawing.Point(25, 38);
-            this.txtqtkhoahoc.Name = "txtqtkhoahoc";
-            this.txtqtkhoahoc.Size = new System.Drawing.Size(208, 27);
-            this.txtqtkhoahoc.TabIndex = 2;
+            this.txtqtmakhoahoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtqtmakhoahoc.Location = new System.Drawing.Point(25, 38);
+            this.txtqtmakhoahoc.Name = "txtqtmakhoahoc";
+            this.txtqtmakhoahoc.Size = new System.Drawing.Size(208, 27);
+            this.txtqtmakhoahoc.TabIndex = 2;
             // 
             // pnlqtcsdl
             // 
@@ -188,7 +192,25 @@
             this.dgvqtkhoahoc.RowTemplate.Height = 24;
             this.dgvqtkhoahoc.Size = new System.Drawing.Size(609, 284);
             this.dgvqtkhoahoc.TabIndex = 4;
-            this.dgvqtkhoahoc.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvqtkhoahoc_CellContentClick);
+            this.dgvqtkhoahoc.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvqtkhoahoc_CellClick);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(316, 6);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(114, 20);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Tên khóa học:";
+            // 
+            // txtqttenkhoahoc
+            // 
+            this.txtqttenkhoahoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtqttenkhoahoc.Location = new System.Drawing.Point(320, 38);
+            this.txtqttenkhoahoc.Name = "txtqttenkhoahoc";
+            this.txtqttenkhoahoc.Size = new System.Drawing.Size(208, 27);
+            this.txtqttenkhoahoc.TabIndex = 7;
             // 
             // frmqtkhoahoc
             // 
@@ -219,10 +241,12 @@
         private System.Windows.Forms.Button btnqthuykhoahoc;
         private System.Windows.Forms.Panel pnlqttruong;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtqtkhoahoc;
+        private System.Windows.Forms.TextBox txtqtmakhoahoc;
         private System.Windows.Forms.Panel pnlqtcsdl;
         private System.Windows.Forms.DataGridView dgvqtkhoahoc;
-        private System.Windows.Forms.TextBox txtqtghichu;
+        private System.Windows.Forms.TextBox txtqtkyhoc;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtqttenkhoahoc;
+        private System.Windows.Forms.Label label2;
     }
 }

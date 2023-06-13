@@ -17,7 +17,6 @@ namespace Thi_KTHP
         {
             InitializeComponent();
             Loadcboboxnganh("SELECT * FROM Nganh", "MaNganh", "MaNganh");
-            Loadcboboxkhoahoc("SELECT * FROM Khoahoc", "KhoaHoc", "KhoaHoc");
             Setstatus("reset");
             BindingData();
         }
@@ -41,22 +40,6 @@ namespace Thi_KTHP
             cboqtmanganh.DisplayMember = dis;
             cboqtmanganh.ValueMember = valu;
         }
-        public void Loadcboboxkhoahoc(string query, string dis, string valu)
-        {
-            SqlConnection conn = new SqlConnection(connectionsString);
-            if (conn.State == ConnectionState.Closed)
-            {
-                conn.Open();
-            }
-            SqlCommand cmd = new SqlCommand(query, conn);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataSet ds = new DataSet();
-            da.Fill(ds);
-            conn.Close();
-            cboqtkhoahoc.DataSource = ds.Tables[0];
-            cboqtkhoahoc.DisplayMember = dis;
-            cboqtkhoahoc.ValueMember = valu;
-        }
         public void Setstatus(String state)
         {
             switch (state)
@@ -72,7 +55,7 @@ namespace Thi_KTHP
 
                     txtqttenlop.Enabled = false;
                     cboqtmanganh.Enabled = false;
-                    cboqtkhoahoc.Enabled = false;
+                    txtqtghichu.Enabled = false;
                     break;
                 case "insert":
                     btnqtthemlop.Enabled = false;
@@ -84,10 +67,10 @@ namespace Thi_KTHP
 
                     txtqttenlop.Enabled = true;
                     cboqtmanganh.Enabled = true;
-                    cboqtkhoahoc.Enabled = true;
+                    txtqtghichu .Enabled = true;
 
                     txtqttenlop.Text = "";
-
+                    txtqtghichu.Text = "";
                     txtqttenlop.Focus();
                     break;
                 case "edit":
@@ -101,7 +84,7 @@ namespace Thi_KTHP
 
                     txtqttenlop.Enabled = false;
                     cboqtmanganh.Enabled = true;
-                    cboqtkhoahoc.Enabled = true;
+                    txtqtghichu.Enabled= true;
 
                     cboqtmanganh.Focus();
                     break;
@@ -129,7 +112,7 @@ namespace Thi_KTHP
 
                     txtqttenlop.Text = ds.Tables[0].Rows[0]["TenLop"].ToString();
                     cboqtmanganh.SelectedValue = ds.Tables[0].Rows[0]["MaNganh"].ToString();
-                    cboqtkhoahoc.SelectedValue = ds.Tables[0].Rows[0]["KhoaHoc"].ToString();
+                    txtqtghichu.Text = ds.Tables[0].Rows[0]["GhiChu"].ToString();
                 }
                 else
                 {
@@ -189,6 +172,7 @@ namespace Thi_KTHP
         private void btnqthuylop_Click(object sender, EventArgs e)
         {
             txtqttenlop.Text = "";
+            txtqtghichu.Text = "";
 
             status = "reset";
             Setstatus(status);
@@ -207,7 +191,7 @@ namespace Thi_KTHP
                     {
                         conn.Open();
                     }
-                    string query = "INSERT INTO Lop (TenLop,MaNganh,KhoaHoc) VALUES (N'" + txtqttenlop.Text.Trim() + "','" + cboqtmanganh.SelectedValue.ToString() + "','" + cboqtkhoahoc.SelectedValue.ToString() + "')";
+                    string query = "INSERT INTO Lop (TenLop,MaNganh,GhiChu) VALUES (N'" + txtqttenlop.Text.Trim() + "','" + cboqtmanganh.SelectedValue.ToString() + "',N'" + txtqtghichu.Text.Trim() + "')";
                     SqlCommand cmd = new SqlCommand(query, conn);
                     var result = cmd.ExecuteNonQuery();
                     if (result != 0)
@@ -231,7 +215,7 @@ namespace Thi_KTHP
                     {
                         conn.Open();
                     }
-                    string query = "UPDATE dbo.Lop SET MaNganh='" + cboqtmanganh.SelectedValue.ToString() + "',KhoaHoc=N'" + cboqtmanganh.SelectedValue.ToString() + "' WHERE TenLop='" + txtqttenlop.Text.Trim() + "'";
+                    string query = "UPDATE dbo.Lop SET MaNganh='" + cboqtmanganh.SelectedValue.ToString() + "',GhiChu=N'" + txtqtghichu.Text.Trim() + "' WHERE TenLop=N'" + txtqttenlop.Text.Trim() + "'";
                     SqlCommand cmd = new SqlCommand(query, conn);
                     var result = cmd.ExecuteNonQuery();
                     if (result != 0)
@@ -255,12 +239,13 @@ namespace Thi_KTHP
                 MessageBox.Show(ex.Message);
             }
         }
-        private void dgvqtlop_CellContentClick(object sender, DataGridViewCellEventArgs e)
+
+        private void dgvqtlop_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             var row = (DataGridViewRow)dgvqtlop.Rows[e.RowIndex];
             txtqttenlop.Text = row.Cells["TenLop"].Value.ToString();
             cboqtmanganh.SelectedValue = row.Cells["MaNganh"].Value.ToString();
-            cboqtkhoahoc.SelectedValue = row.Cells["KhoaHoc"].Value.ToString();
+            txtqtghichu.Text = row.Cells["GhiChu"].Value.ToString();
         }
     }
 } 

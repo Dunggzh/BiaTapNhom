@@ -23,11 +23,11 @@ namespace Thi_KTHP
             reset();
         }
         private int k=0;
-        SqlConnection conn = new SqlConnection("Data Source=KHANG\\SQLEXPRESS;Initial Catalog=Demo_QLD;Integrated Security=True");
+        SqlConnection conn = new SqlConnection("data source = LAPTOP-2LQNMVB4; database = Demo_QLD; user id = sa; password = 1;");
         private void reset()
         {
-            txtusername.Text = "72DCHT20070";
-            txtpass.Text = "19012003";
+            txtusername.Text = "72DCHT20082";
+            txtpass.Text = "14092003";
             txtusername.Focus();
         }
 

@@ -41,6 +41,10 @@
             this.txtqtmakhoa = new System.Windows.Forms.TextBox();
             this.txtqttenkhoa = new System.Windows.Forms.TextBox();
             this.pnlqttruong = new System.Windows.Forms.Panel();
+            this.txtqtsdt = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtqtghichu = new System.Windows.Forms.TextBox();
             this.pnlqtcsdl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvqtkhoa)).BeginInit();
             this.floqtnut.SuspendLayout();
@@ -54,9 +58,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlqtcsdl.BackColor = System.Drawing.SystemColors.Control;
             this.pnlqtcsdl.Controls.Add(this.dgvqtkhoa);
-            this.pnlqtcsdl.Location = new System.Drawing.Point(167, 96);
+            this.pnlqtcsdl.Location = new System.Drawing.Point(167, 177);
             this.pnlqtcsdl.Name = "pnlqtcsdl";
-            this.pnlqtcsdl.Size = new System.Drawing.Size(615, 407);
+            this.pnlqtcsdl.Size = new System.Drawing.Size(615, 326);
             this.pnlqtcsdl.TabIndex = 1;
             // 
             // dgvqtkhoa
@@ -73,9 +77,9 @@
             this.dgvqtkhoa.Name = "dgvqtkhoa";
             this.dgvqtkhoa.RowHeadersWidth = 51;
             this.dgvqtkhoa.RowTemplate.Height = 24;
-            this.dgvqtkhoa.Size = new System.Drawing.Size(609, 344);
+            this.dgvqtkhoa.Size = new System.Drawing.Size(609, 263);
             this.dgvqtkhoa.TabIndex = 4;
-            this.dgvqtkhoa.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvqtkhoa_CellContentClick);
+            this.dgvqtkhoa.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvqtkhoa_CellClick);
             // 
             // floqtnut
             // 
@@ -181,14 +185,54 @@
             // 
             this.pnlqttruong.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlqttruong.Controls.Add(this.txtqtghichu);
+            this.pnlqttruong.Controls.Add(this.label4);
+            this.pnlqttruong.Controls.Add(this.txtqtsdt);
+            this.pnlqttruong.Controls.Add(this.label3);
             this.pnlqttruong.Controls.Add(this.label1);
             this.pnlqttruong.Controls.Add(this.txtqttenkhoa);
             this.pnlqttruong.Controls.Add(this.txtqtmakhoa);
             this.pnlqttruong.Controls.Add(this.label2);
             this.pnlqttruong.Location = new System.Drawing.Point(167, 3);
             this.pnlqttruong.Name = "pnlqttruong";
-            this.pnlqttruong.Size = new System.Drawing.Size(615, 87);
+            this.pnlqttruong.Size = new System.Drawing.Size(615, 168);
             this.pnlqttruong.TabIndex = 3;
+            // 
+            // txtqtsdt
+            // 
+            this.txtqtsdt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtqtsdt.Location = new System.Drawing.Point(25, 120);
+            this.txtqtsdt.Name = "txtqtsdt";
+            this.txtqtsdt.Size = new System.Drawing.Size(208, 27);
+            this.txtqtsdt.TabIndex = 5;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(21, 78);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(111, 20);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Số điện thoại:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(331, 78);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(72, 20);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Ghi chú:";
+            // 
+            // txtqtghichu
+            // 
+            this.txtqtghichu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtqtghichu.Location = new System.Drawing.Point(335, 120);
+            this.txtqtghichu.Name = "txtqtghichu";
+            this.txtqtghichu.Size = new System.Drawing.Size(208, 27);
+            this.txtqtghichu.TabIndex = 7;
             // 
             // frmqtkhoa
             // 
@@ -223,5 +267,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel pnlqttruong;
+        private System.Windows.Forms.TextBox txtqtsdt;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtqtghichu;
+        private System.Windows.Forms.Label label4;
     }
 }

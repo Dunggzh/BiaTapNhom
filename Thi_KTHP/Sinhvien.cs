@@ -16,31 +16,14 @@ namespace Thi_KTHP
         public frmqtsv()
         {
             InitializeComponent();
-            Loadcboboxnganh("SELECT * FROM Nganh", "MaNganh", "MaNganh");
             Loadcboboxlop("SELECT * FROM Lop", "TenLop", "TenLop");
-            Loadcboboxkhoahoc("SELECT * FROM Khoahoc", "KhoaHoc", "KhoaHoc");
             Setstatus("reset");
             BindingData();
         }
         public static string status = "";
         public static string connectionsString =
             "data source = LAPTOP-2LQNMVB4; database = Demo_QLD; user id = sa; password = 1;";
-        public void Loadcboboxnganh(string query, string dis, string valu)
-        {
-            SqlConnection conn = new SqlConnection(connectionsString);
-            if (conn.State == ConnectionState.Closed)
-            {
-                conn.Open();
-            }
-            SqlCommand cmd = new SqlCommand(query, conn);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataSet ds = new DataSet();
-            da.Fill(ds);
-            conn.Close();
-            cboqtmanganh.DataSource = ds.Tables[0];
-            cboqtmanganh.DisplayMember = dis;
-            cboqtmanganh.ValueMember = valu;
-        }
+        
         public void Loadcboboxlop(string query, string dis, string valu)
         {
             SqlConnection conn = new SqlConnection(connectionsString);
@@ -56,22 +39,6 @@ namespace Thi_KTHP
             cboqttenlop.DataSource = ds.Tables[0];
             cboqttenlop.DisplayMember = dis;
             cboqttenlop.ValueMember = valu;
-        }
-        public void Loadcboboxkhoahoc(string query, string dis, string valu)
-        {
-            SqlConnection conn = new SqlConnection(connectionsString);
-            if (conn.State == ConnectionState.Closed)
-            {
-                conn.Open();
-            }
-            SqlCommand cmd = new SqlCommand(query, conn);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataSet ds = new DataSet();
-            da.Fill(ds);
-            conn.Close();
-            cboqtkhoahoc.DataSource = ds.Tables[0];
-            cboqtkhoahoc.DisplayMember = dis;
-            cboqtkhoahoc.ValueMember = valu;
         }
         public void Setstatus(String state)
         {
@@ -94,10 +61,9 @@ namespace Thi_KTHP
                     txtqtnoisinhsv.Enabled = false;
                     rdoqtnam.Enabled = false;
                     rdoqtnu.Enabled = false;
-                    cboqtmanganh.Enabled = false;
                     cboqttenlop.Enabled = false;
                     txtqtghichu.Enabled = false;
-                    cboqtkhoahoc.Enabled = false;
+
 
                     break;
                 case "insert":
@@ -116,10 +82,8 @@ namespace Thi_KTHP
                     txtqtnoisinhsv.Enabled = true;
                     rdoqtnam.Enabled = true;
                     rdoqtnu.Enabled = true;
-                    cboqtmanganh.Enabled = true;
                     cboqttenlop.Enabled = true;
                     txtqtghichu.Enabled = true;
-                    cboqtkhoahoc.Enabled= true;
 
                     txtqtmasv.Text = "";
                     txtqttensv.Text = "";
@@ -145,10 +109,8 @@ namespace Thi_KTHP
                     txtqtnoisinhsv.Enabled = true;
                     rdoqtnam.Enabled = true;
                     rdoqtnu.Enabled = true;
-                    cboqtmanganh.Enabled = true;
                     cboqttenlop.Enabled = true;
                     txtqtghichu.Enabled = true;
-                    cboqtkhoahoc.Enabled = true;
 
                     txtqttensv.Focus();
                     break;
@@ -179,7 +141,7 @@ namespace Thi_KTHP
                     txtqtquequansv.Text = ds.Tables[0].Rows[0]["QueQuan"].ToString();
                     dtpngaysinhsv.Value = Convert.ToDateTime(ds.Tables[0].Rows[0]["NgaySinh"]);
                     txtqtnoisinhsv.Text = ds.Tables[0].Rows[0]["NoiSinh"].ToString();
-                    if (ds.Tables[0].Rows[0]["GioiTinh"].ToString() == "Nam")
+                    if (ds.Tables[0].Rows[0]["GioiTinh"].ToString() == "NAM")
                     {
                         rdoqtnam.Checked = true;
                         rdoqtnu.Checked = false;
@@ -190,9 +152,7 @@ namespace Thi_KTHP
                         rdoqtnu.Checked = true;
                     } 
                     cboqttenlop.SelectedValue = ds.Tables[0].Rows[0]["TenLop"].ToString();
-                    cboqtmanganh.SelectedValue = ds.Tables[0].Rows[0]["MaNganh"].ToString();
                     txtqtghichu.Text = ds.Tables[0].Rows[0]["GhiChu"].ToString();
-                    cboqtkhoahoc.SelectedValue = ds.Tables[0].Rows[0]["KhoaHoc"].ToString();
                 }
                 else
                 {
@@ -269,12 +229,12 @@ namespace Thi_KTHP
                 string gt = "";
                 if (rdoqtnam.Checked)
                 {
-                    gt = "Nam";
+                    gt = "NAM";
 
                 }
                 else
                 {
-                    gt = "Nữ";
+                    gt = "NỮ";
                 }
                 if (status == "insert")
                 {
@@ -283,7 +243,7 @@ namespace Thi_KTHP
                     {
                         conn.Open();
                     }
-                    string query = "INSERT INTO SinhVien (MaSinhVien,TenLop,MaNganh,KhoaHoc,Hoten,QueQuan,NgaySinh,NoiSinh,GioiTinh,GhiChu) VALUES ('" + txtqtmasv.Text.Trim() + "','" + cboqttenlop.SelectedValue.ToString() + "','" + cboqtmanganh.SelectedValue.ToString() + "','" + cboqtkhoahoc.SelectedValue.ToString() + "',N'" + txtqttensv.Text.Trim() + "',N'" + txtqtquequansv.Text.Trim() + "','" + dtpngaysinhsv.Value + "',N'" + txtqtnoisinhsv.Text.Trim() + "',N'" + gt + "',N'" + txtqtghichu.Text.Trim() + "')";
+                    string query = "INSERT INTO SinhVien (MaSinhVien,TenLop,Hoten,QueQuan,NgaySinh,NoiSinh,GioiTinh,GhiChu) VALUES ('" + txtqtmasv.Text.Trim() + "','" + cboqttenlop.SelectedValue.ToString() + "',N'" + txtqttensv.Text.Trim() + "',N'" + txtqtquequansv.Text.Trim() + "','" + dtpngaysinhsv.Value + "',N'" + txtqtnoisinhsv.Text.Trim() + "',N'" + gt + "',N'" + txtqtghichu.Text.Trim() + "')";
                     SqlCommand cmd = new SqlCommand(query, conn);
                     var result = cmd.ExecuteNonQuery();
                     if (result != 0)
@@ -307,7 +267,7 @@ namespace Thi_KTHP
                     {
                         conn.Open();
                     }
-                    string query = "UPDATE dbo.SinhVien SET TenLop=N'" + cboqttenlop.SelectedValue.ToString() + "',MaNganh= '" + cboqtmanganh.SelectedValue.ToString() + "',KhoaHoc='" + cboqtkhoahoc.SelectedValue.ToString() + "',Hoten=N'" + txtqttensv.Text.Trim() + "',QueQuan=N'" + txtqtquequansv.Text.Trim() + "',NgaySinh='" + dtpngaysinhsv.Value + "',NoiSinh=N'" + txtqtnoisinhsv.Text.Trim() + "',GioiTinh=N'" + gt + "',GhiChu=N'" + txtqtghichu.Text.Trim() + "' WHERE MaSinhVien='" + txtqtmasv.Text.Trim() + "'";
+                    string query = "UPDATE dbo.SinhVien SET TenLop=N'" + cboqttenlop.SelectedValue.ToString() + "',Hoten=N'" + txtqttensv.Text.Trim() + "',QueQuan=N'" + txtqtquequansv.Text.Trim() + "',NgaySinh='" + dtpngaysinhsv.Value + "',NoiSinh=N'" + txtqtnoisinhsv.Text.Trim() + "',GioiTinh=N'" + gt + "',GhiChu=N'" + txtqtghichu.Text.Trim() + "' WHERE MaSinhVien='" + txtqtmasv.Text.Trim() + "'";
                     SqlCommand cmd = new SqlCommand(query, conn);
                     var result = cmd.ExecuteNonQuery();
                     if (result != 0)
@@ -331,7 +291,8 @@ namespace Thi_KTHP
                 MessageBox.Show(ex.Message);
             }
         }
-        private void dgvqtsv_CellContentClick(object sender, DataGridViewCellEventArgs e)
+
+        private void dgvqtsv_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             var row = (DataGridViewRow)dgvqtsv.Rows[e.RowIndex];
             txtqtmasv.Text = row.Cells["MaSinhVien"].Value.ToString();
@@ -339,7 +300,7 @@ namespace Thi_KTHP
             txtqtquequansv.Text = row.Cells["QueQuan"].Value.ToString();
             dtpngaysinhsv.Value = Convert.ToDateTime(row.Cells["NgaySinh"].Value);
             txtqtnoisinhsv.Text = row.Cells["NoiSinh"].Value.ToString();
-            if (row.Cells["GioiTinh"].Value.ToString() == "Nam")
+            if (row.Cells["GioiTinh"].Value.ToString() == "NAM")
             {
                 rdoqtnam.Checked = true;
                 rdoqtnu.Checked = false;
@@ -351,8 +312,6 @@ namespace Thi_KTHP
             }
 
             cboqttenlop.SelectedValue = row.Cells["TenLop"].Value.ToString();
-            cboqtmanganh.SelectedValue = row.Cells["MaNganh"].Value.ToString();
-            cboqtkhoahoc.SelectedValue = row.Cells["KhoaHoc"].Value.ToString();
             txtqtghichu.Text = row.Cells["GhiChu"].Value.ToString();
         }
     }

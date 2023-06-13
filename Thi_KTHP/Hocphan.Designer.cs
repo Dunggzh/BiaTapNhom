@@ -35,20 +35,16 @@
             this.btnqtghihp = new System.Windows.Forms.Button();
             this.btnqthuyhp = new System.Windows.Forms.Button();
             this.pnlqttruong = new System.Windows.Forms.Panel();
-            this.cboqtkyhoc = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.cboqtsotinchi = new System.Windows.Forms.ComboBox();
-            this.cboqtmanganh = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtqttenhp = new System.Windows.Forms.TextBox();
             this.txtqtmahp = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.pnlqtcsdl = new System.Windows.Forms.Panel();
             this.dgvqthp = new System.Windows.Forms.DataGridView();
-            this.label6 = new System.Windows.Forms.Label();
-            this.cboqtkhoahoc = new System.Windows.Forms.ComboBox();
+            this.txtqtsotiet = new System.Windows.Forms.TextBox();
             this.floqtnut.SuspendLayout();
             this.pnlqttruong.SuspendLayout();
             this.pnlqtcsdl.SuspendLayout();
@@ -123,41 +119,28 @@
             // 
             this.pnlqttruong.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlqttruong.Controls.Add(this.cboqtkhoahoc);
-            this.pnlqttruong.Controls.Add(this.cboqtkyhoc);
-            this.pnlqttruong.Controls.Add(this.label6);
+            this.pnlqttruong.Controls.Add(this.txtqtsotiet);
             this.pnlqttruong.Controls.Add(this.label5);
             this.pnlqttruong.Controls.Add(this.cboqtsotinchi);
-            this.pnlqttruong.Controls.Add(this.cboqtmanganh);
             this.pnlqttruong.Controls.Add(this.label4);
-            this.pnlqttruong.Controls.Add(this.label3);
             this.pnlqttruong.Controls.Add(this.label1);
             this.pnlqttruong.Controls.Add(this.txtqttenhp);
             this.pnlqttruong.Controls.Add(this.txtqtmahp);
             this.pnlqttruong.Controls.Add(this.label2);
             this.pnlqttruong.Location = new System.Drawing.Point(171, 3);
             this.pnlqttruong.Name = "pnlqttruong";
-            this.pnlqttruong.Size = new System.Drawing.Size(612, 206);
+            this.pnlqttruong.Size = new System.Drawing.Size(612, 147);
             this.pnlqttruong.TabIndex = 4;
-            // 
-            // cboqtkyhoc
-            // 
-            this.cboqtkyhoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboqtkyhoc.FormattingEnabled = true;
-            this.cboqtkyhoc.Location = new System.Drawing.Point(335, 165);
-            this.cboqtkyhoc.Name = "cboqtkyhoc";
-            this.cboqtkyhoc.Size = new System.Drawing.Size(208, 28);
-            this.cboqtkyhoc.TabIndex = 9;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(336, 142);
+            this.label5.Location = new System.Drawing.Point(243, 78);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(65, 20);
+            this.label5.Size = new System.Drawing.Size(62, 20);
             this.label5.TabIndex = 8;
-            this.label5.Text = "Kỳ hoc:";
+            this.label5.Text = "Số tiết:";
             // 
             // cboqtsotinchi
             // 
@@ -167,39 +150,20 @@
             "2",
             "3",
             "4"});
-            this.cboqtsotinchi.Location = new System.Drawing.Point(335, 111);
+            this.cboqtsotinchi.Location = new System.Drawing.Point(25, 101);
             this.cboqtsotinchi.Name = "cboqtsotinchi";
             this.cboqtsotinchi.Size = new System.Drawing.Size(111, 28);
             this.cboqtsotinchi.TabIndex = 7;
-            // 
-            // cboqtmanganh
-            // 
-            this.cboqtmanganh.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboqtmanganh.FormattingEnabled = true;
-            this.cboqtmanganh.Location = new System.Drawing.Point(25, 111);
-            this.cboqtmanganh.Name = "cboqtmanganh";
-            this.cboqtmanganh.Size = new System.Drawing.Size(208, 28);
-            this.cboqtmanganh.TabIndex = 6;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(336, 88);
+            this.label4.Location = new System.Drawing.Point(21, 78);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(84, 20);
             this.label4.TabIndex = 5;
             this.label4.Text = "Số tín chỉ:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(21, 88);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(87, 20);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Mã ngành:";
             // 
             // label1
             // 
@@ -214,9 +178,9 @@
             // txtqttenhp
             // 
             this.txtqttenhp.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtqttenhp.Location = new System.Drawing.Point(335, 38);
+            this.txtqttenhp.Location = new System.Drawing.Point(247, 38);
             this.txtqttenhp.Name = "txtqttenhp";
-            this.txtqttenhp.Size = new System.Drawing.Size(208, 27);
+            this.txtqttenhp.Size = new System.Drawing.Size(352, 27);
             this.txtqttenhp.TabIndex = 3;
             // 
             // txtqtmahp
@@ -231,7 +195,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(331, 6);
+            this.label2.Location = new System.Drawing.Point(243, 6);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(115, 20);
             this.label2.TabIndex = 1;
@@ -244,9 +208,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlqtcsdl.BackColor = System.Drawing.SystemColors.Control;
             this.pnlqtcsdl.Controls.Add(this.dgvqthp);
-            this.pnlqtcsdl.Location = new System.Drawing.Point(171, 215);
+            this.pnlqtcsdl.Location = new System.Drawing.Point(171, 156);
             this.pnlqtcsdl.Name = "pnlqtcsdl";
-            this.pnlqtcsdl.Size = new System.Drawing.Size(615, 291);
+            this.pnlqtcsdl.Size = new System.Drawing.Size(615, 350);
             this.pnlqtcsdl.TabIndex = 5;
             // 
             // dgvqthp
@@ -263,28 +227,17 @@
             this.dgvqthp.Name = "dgvqthp";
             this.dgvqthp.RowHeadersWidth = 51;
             this.dgvqthp.RowTemplate.Height = 24;
-            this.dgvqthp.Size = new System.Drawing.Size(609, 228);
+            this.dgvqthp.Size = new System.Drawing.Size(609, 287);
             this.dgvqthp.TabIndex = 4;
-            this.dgvqthp.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvqthp_CellContentClick);
+            this.dgvqthp.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvqthp_CellClick);
             // 
-            // label6
+            // txtqtsotiet
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(24, 142);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(84, 20);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "Khóa hoc:";
-            // 
-            // cboqtkhoahoc
-            // 
-            this.cboqtkhoahoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboqtkhoahoc.FormattingEnabled = true;
-            this.cboqtkhoahoc.Location = new System.Drawing.Point(25, 165);
-            this.cboqtkhoahoc.Name = "cboqtkhoahoc";
-            this.cboqtkhoahoc.Size = new System.Drawing.Size(208, 28);
-            this.cboqtkhoahoc.TabIndex = 11;
+            this.txtqtsotiet.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtqtsotiet.Location = new System.Drawing.Point(247, 98);
+            this.txtqtsotiet.Name = "txtqtsotiet";
+            this.txtqtsotiet.Size = new System.Drawing.Size(111, 27);
+            this.txtqtsotiet.TabIndex = 12;
             // 
             // frmqthocphan
             // 
@@ -321,12 +274,8 @@
         private System.Windows.Forms.Panel pnlqtcsdl;
         private System.Windows.Forms.DataGridView dgvqthp;
         private System.Windows.Forms.ComboBox cboqtsotinchi;
-        private System.Windows.Forms.ComboBox cboqtmanganh;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox cboqtkyhoc;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox cboqtkhoahoc;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtqtsotiet;
     }
 }

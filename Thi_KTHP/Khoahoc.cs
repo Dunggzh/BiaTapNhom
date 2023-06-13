@@ -38,8 +38,9 @@ namespace Thi_KTHP
                     btnqthuykhoahoc.Enabled = false;
 
 
-                    txtqtkhoahoc.Enabled = false;
-                    txtqtghichu.Enabled = false;
+                    txtqtmakhoahoc.Enabled = false;
+                    txtqttenkhoahoc.Enabled = false;
+                    txtqtkyhoc.Enabled = false;
                     break;
                 case "insert":
                     btnqtthemkhoahoc.Enabled = false;
@@ -49,15 +50,17 @@ namespace Thi_KTHP
                     btnqthuykhoahoc.Enabled = true;
 
 
-                    txtqtkhoahoc.Enabled = true;
-                    txtqtghichu.Enabled = true;
+                    txtqtmakhoahoc.Enabled = true;
+                    txtqttenkhoahoc.Enabled = true;
+                    txtqtkyhoc.Enabled = true;
 
 
-                    txtqtkhoahoc.Text = "";
-                    txtqtghichu.Text = "";
+                    txtqtmakhoahoc.Text = "";
+                    txtqttenkhoahoc.Text = "";
+                    txtqtkyhoc.Text = "";
 
 
-                    txtqtkhoahoc.Focus();
+                    txtqtmakhoahoc.Focus();
                     break;
                 case "edit":
 
@@ -67,10 +70,11 @@ namespace Thi_KTHP
                     btnqtghikhoahoc.Enabled = true;
                     btnqthuykhoahoc.Enabled = true;
 
-                    txtqtkhoahoc.Enabled = false;
-                    txtqtghichu.Enabled = true;
+                    txtqtmakhoahoc.Enabled = false;
+                    txtqttenkhoahoc.Enabled = true;
+                    txtqtkyhoc.Enabled = true;
 
-                    txtqtghichu.Focus();
+                    txtqttenkhoahoc.Focus();
                     break;
                 default: break;
             }
@@ -85,7 +89,7 @@ namespace Thi_KTHP
                 {
                     conn.Open();
                 }
-                string query = "SELECT * FROM Khoahoc";
+                string query = "SELECT * FROM KhoaHoc";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataSet ds = new DataSet();
@@ -94,8 +98,9 @@ namespace Thi_KTHP
                 {
                     dgvqtkhoahoc.DataSource = ds.Tables[0];
 
-                    txtqtkhoahoc.Text = ds.Tables[0].Rows[0]["KhoaHoc"].ToString();
-                    txtqtghichu.Text = ds.Tables[0].Rows[0]["GhiChu"].ToString();
+                    txtqtmakhoahoc.Text = ds.Tables[0].Rows[0]["MaKhoaHoc"].ToString();
+                    txtqttenkhoahoc.Text = ds.Tables[0].Rows[0]["TenKhoaHoc"].ToString();
+                    txtqtkyhoc.Text = ds.Tables[0].Rows[0]["KyHoc"].ToString();
 
                 }
                 else
@@ -133,7 +138,7 @@ namespace Thi_KTHP
                     conn.Open();
                 }
 
-                string query = "DELETE dbo.KhoaHoc WHERE KhoaHoc='" + txtqtkhoahoc.Text.Trim() + "'";
+                string query = "DELETE dbo.KhoaHoc WHERE KhoaHoc='" + txtqtmakhoahoc.Text.Trim() + "'";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 var result = cmd.ExecuteNonQuery();
                 if (result != 0)
@@ -156,8 +161,9 @@ namespace Thi_KTHP
 
         private void btnqthuykhoahoc_Click(object sender, EventArgs e)
         {
-            txtqtkhoahoc.Text = "";
-            txtqtghichu.Text = "";
+            txtqtmakhoahoc.Text = "";
+            txtqttenkhoahoc.Text = "";
+            txtqtkyhoc.Text = "";
 
             status = "reset";
             Setstatus(status);
@@ -176,7 +182,7 @@ namespace Thi_KTHP
                     {
                         conn.Open();
                     }
-                    string query = "INSERT INTO KhoaHoc (KhoaHoc,GhiChu) VALUES ('" + txtqtkhoahoc.Text.Trim() + "',N'" + txtqtghichu.Text.Trim()+"')";
+                    string query = "INSERT INTO KhoaHoc (KhoaHoc,TenKhoaHoc,KyHoc) VALUES ('" + txtqtmakhoahoc.Text.Trim() + "',N'" + txtqttenkhoahoc.Text.Trim()+ "','" + txtqtkyhoc.Text.Trim()+"')";
                     SqlCommand cmd = new SqlCommand(query, conn);
                     var result = cmd.ExecuteNonQuery();
                     if (result != 0)
@@ -200,7 +206,7 @@ namespace Thi_KTHP
                     {
                         conn.Open();
                     }
-                    string query = "UPDATE dbo.KhoaHoc SET GhiChu=N'" + txtqtghichu.Text.Trim()+"' WHERE KhoaHoc='" + txtqtkhoahoc.Text.Trim() + "'";
+                    string query = "UPDATE dbo.KhoaHoc SET TenKhoaHoc=N'" + txtqttenkhoahoc.Text.Trim()+ "',KyHoc='" + txtqtkyhoc.Text.Trim()+"' WHERE KhoaHoc='" + txtqtmakhoahoc.Text.Trim() + "'";
                     SqlCommand cmd = new SqlCommand(query, conn);
                     var result = cmd.ExecuteNonQuery();
                     if (result != 0)
@@ -224,11 +230,13 @@ namespace Thi_KTHP
                 MessageBox.Show(ex.Message);
             }
         }
-        private void dgvqtkhoahoc_CellContentClick(object sender, DataGridViewCellEventArgs e)
+
+        private void dgvqtkhoahoc_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             var row = (DataGridViewRow)dgvqtkhoahoc.Rows[e.RowIndex];
-            txtqtkhoahoc.Text = row.Cells["KhoaHoc"].Value.ToString();
-            txtqtghichu.Text = row.Cells["GhiChu"].Value.ToString();
+            txtqtmakhoahoc.Text = row.Cells["MaKhoaHoc"].Value.ToString();
+            txtqttenkhoahoc.Text = row.Cells["TenKhoaHoc"].Value.ToString();
+            txtqtkyhoc.Text = row.Cells["KyHoc"].Value.ToString();
         }
     }
 }

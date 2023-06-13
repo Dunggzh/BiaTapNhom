@@ -16,9 +16,6 @@ namespace Thi_KTHP
         public frmqthocphan()
         {
             InitializeComponent();
-            Loadcboboxnganh("SELECT * FROM Nganh", "MaNganh", "MaNganh");
-            Loadcboboxkyhoc("SELECT * FROM KyHoc ", "KyHoc", "KyHoc");
-            Loadcboboxkhoahoc("SELECT * FROM Khoahoc", "KhoaHoc", "KhoaHoc");
             Setstatus("reset");
             BindingData();
         }
@@ -26,54 +23,6 @@ namespace Thi_KTHP
         public static string connectionsString =
             "data source = LAPTOP-2LQNMVB4; database = Demo_QLD; user id = sa; password = 1;";
 
-        public void Loadcboboxnganh(string query, string dis, string valu)
-        {
-            SqlConnection conn = new SqlConnection(connectionsString);
-            if (conn.State == ConnectionState.Closed)
-            {
-                conn.Open();
-            }
-            SqlCommand cmd = new SqlCommand(query, conn);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataSet ds = new DataSet();
-            da.Fill(ds);
-            conn.Close();
-            cboqtmanganh.DataSource = ds.Tables[0];
-            cboqtmanganh.DisplayMember = dis;
-            cboqtmanganh.ValueMember = valu;
-        }
-        public void Loadcboboxkyhoc(string query, string dis, string valu)
-        {
-            SqlConnection conn = new SqlConnection(connectionsString);
-            if (conn.State == ConnectionState.Closed)
-            {
-                conn.Open();
-            }
-            SqlCommand cmd = new SqlCommand(query, conn);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataSet ds = new DataSet();
-            da.Fill(ds);
-            conn.Close();
-            cboqtkyhoc.DataSource = ds.Tables[0];
-            cboqtkyhoc.DisplayMember = dis;
-            cboqtkyhoc.ValueMember = valu;
-        }
-        public void Loadcboboxkhoahoc(string query, string dis, string valu)
-        {
-            SqlConnection conn = new SqlConnection(connectionsString);
-            if (conn.State == ConnectionState.Closed)
-            {
-                conn.Open();
-            }
-            SqlCommand cmd = new SqlCommand(query, conn);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataSet ds = new DataSet();
-            da.Fill(ds);
-            conn.Close();
-            cboqtkhoahoc.DataSource = ds.Tables[0];
-            cboqtkhoahoc.DisplayMember = dis;
-            cboqtkhoahoc.ValueMember = valu;
-        }
         public void Setstatus(String state)
         {
             switch (state)
@@ -90,10 +39,8 @@ namespace Thi_KTHP
 
                     txtqtmahp.Enabled = false;
                     txtqttenhp.Enabled = false;
-                    cboqtmanganh.Enabled = false;
+                    txtqtsotiet.Enabled = false;
                     cboqtsotinchi.Enabled = false;
-                    cboqtkyhoc.Enabled = false;
-                    cboqtkhoahoc.Enabled = false;
                     break;
                 case "insert":
                     btnqtthemhp.Enabled = false;
@@ -104,13 +51,12 @@ namespace Thi_KTHP
 
                     txtqtmahp.Enabled = true;
                     txtqttenhp.Enabled = true;
-                    cboqtmanganh.Enabled = true;
+                    txtqtsotiet.Enabled = true;
                     cboqtsotinchi.Enabled = true;
-                    cboqtkyhoc.Enabled = true;
-                    cboqtkhoahoc.Enabled = true;
 
                     txtqtmahp.Text = "";
                     txtqttenhp.Text = "";
+                    txtqtsotiet.Text = "";
 
                     txtqtmahp.Focus();
                     break;
@@ -124,10 +70,8 @@ namespace Thi_KTHP
 
                     txtqtmahp.Enabled = false;
                     txtqttenhp.Enabled = true;
-                    cboqtmanganh.Enabled = true;
+                    txtqtsotiet.Enabled = true;
                     cboqtsotinchi.Enabled = true;
-                    cboqtkyhoc.Enabled= true;
-                    cboqtkhoahoc.Enabled= true;
 
                     txtqttenhp.Focus();
                     break;
@@ -154,9 +98,7 @@ namespace Thi_KTHP
                     dgvqthp.DataSource = ds.Tables[0];
 
                     txtqtmahp.Text = ds.Tables[0].Rows[0]["MaHP"].ToString();
-                    
                     txtqttenhp.Text = ds.Tables[0].Rows[0]["TenHP"].ToString();
-                    cboqtmanganh.SelectedValue = ds.Tables[0].Rows[0]["MaNganh"].ToString();
                     if (Convert.ToInt32(ds.Tables[0].Rows[0]["SoTC"])==2)
                     {
                         cboqtsotinchi.Text = "2";
@@ -168,8 +110,7 @@ namespace Thi_KTHP
                     {
                         cboqtsotinchi.Text = "4";
                     }
-                    cboqtkyhoc.SelectedValue = ds.Tables[0].Rows[0]["KyHoc"].ToString();
-                    cboqtkhoahoc.SelectedValue = ds.Tables[0].Rows[0]["Khoahoc"].ToString();
+                    txtqtsotiet.Text = ds.Tables[0].Rows[0]["SoTiet"].ToString();
                 }
                 else
                 {
@@ -230,6 +171,7 @@ namespace Thi_KTHP
         {
             txtqtmahp.Text = "";
             txtqttenhp.Text = "";
+            txtqtsotiet.Text = "";
 
             status = "reset";
             Setstatus(status);
@@ -261,7 +203,7 @@ namespace Thi_KTHP
                     {
                         conn.Open();
                     }
-                    string query = "INSERT INTO HocPhan (MaHP,MaNganh,KyHoc,KhoaHoc,TenHP,SoTC) VALUES ('" + txtqtmahp.Text.Trim() + "','" + cboqtmanganh.SelectedValue.ToString() + "','"+cboqtkyhoc.SelectedValue.ToString()+ "','"+cboqtkhoahoc.SelectedValue.ToString()+"',N'" + txtqttenhp.Text.Trim() + "','" + sotc + "')";
+                    string query = "INSERT INTO HocPhan (MaHP,TenHP,SoTC,SoTiet) VALUES ('" + txtqtmahp.Text.Trim() + "',N'" + txtqttenhp.Text.Trim() + "','"+ sotc + "','"+txtqtsotiet.Text.Trim()+"')";
                     SqlCommand cmd = new SqlCommand(query, conn);
                     var result = cmd.ExecuteNonQuery();
                     if (result != 0)
@@ -285,7 +227,7 @@ namespace Thi_KTHP
                     {
                         conn.Open();
                     }
-                    string query = "UPDATE dbo.HocPhan SET MaNganh='" + cboqtmanganh.SelectedValue.ToString() + "',KyHoc='"+cboqtkyhoc.SelectedValue.ToString()+ "',KhoaHoc='"+cboqtkhoahoc.SelectedValue.ToString()+"',TenHP=N'" + txtqttenhp.Text.Trim() + "',SoTC='" + sotc + "' WHERE MaHP='" + txtqtmahp.Text.Trim() + "'";
+                    string query = "UPDATE dbo.HocPhan SET TenHP=N'" + txtqttenhp.Text.Trim() + "',SoTC='" + sotc + "',SoTiet='" + txtqtsotiet.Text.Trim() + "' WHERE MaHP='" + txtqtmahp.Text.Trim() + "'";
                     SqlCommand cmd = new SqlCommand(query, conn);
                     var result = cmd.ExecuteNonQuery();
                     if (result != 0)
@@ -309,12 +251,12 @@ namespace Thi_KTHP
                 MessageBox.Show(ex.Message);
             }
         }
-        private void dgvqthp_CellContentClick(object sender, DataGridViewCellEventArgs e)
+
+        private void dgvqthp_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             var row = (DataGridViewRow)dgvqthp.Rows[e.RowIndex];
             txtqtmahp.Text = row.Cells["MaHP"].Value.ToString();
             txtqttenhp.Text = row.Cells["TenHP"].Value.ToString();
-            cboqtmanganh.SelectedValue = row.Cells["MaNganh"].Value.ToString();
             if (Convert.ToInt32(row.Cells["SoTC"].Value) == 2)
             {
                 cboqtsotinchi.Text = "2";
@@ -327,8 +269,7 @@ namespace Thi_KTHP
             {
                 cboqtsotinchi.Text = "4";
             }
-            cboqtkyhoc.SelectedValue = row.Cells["KyHoc"].Value.ToString();
-            cboqtkhoahoc.SelectedValue = row.Cells["KhoaHoc"].Value.ToString();
+            txtqtsotiet.Text = row.Cells["SoTiet"].Value.ToString();
         }
     }
 }

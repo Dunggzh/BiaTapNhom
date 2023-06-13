@@ -98,7 +98,6 @@ C:\Users\Nguyen Tien Dung\Source\Repos\BiaTapNhom\Thi_KTHP\obj\Debug\Thi_KTHP.fr
 C:\Users\Nguyen Tien Dung\Source\Repos\BiaTapNhom\Thi_KTHP\obj\Debug\Thi_KTHP.frmhocphansv.resources
 C:\Users\Nguyen Tien Dung\Source\Repos\BiaTapNhom\Thi_KTHP\obj\Debug\Thi_KTHP.frmqtkhoa.resources
 C:\Users\Nguyen Tien Dung\Source\Repos\BiaTapNhom\Thi_KTHP\obj\Debug\Thi_KTHP.frmqtkhoahoc.resources
-C:\Users\Nguyen Tien Dung\Source\Repos\BiaTapNhom\Thi_KTHP\obj\Debug\Thi_KTHP.frmqtkyhoc.resources
 C:\Users\Nguyen Tien Dung\Source\Repos\BiaTapNhom\Thi_KTHP\obj\Debug\Thi_KTHP.frmqtlop.resources
 C:\Users\Nguyen Tien Dung\Source\Repos\BiaTapNhom\Thi_KTHP\obj\Debug\Thi_KTHP.frmqtnganh.resources
 C:\Users\Nguyen Tien Dung\Source\Repos\BiaTapNhom\Thi_KTHP\obj\Debug\Thi_KTHP.Properties.Resources.resources
@@ -110,3 +109,5 @@ C:\Users\Nguyen Tien Dung\Source\Repos\BiaTapNhom\Thi_KTHP\obj\Debug\Thi_KTHP.cs
 C:\Users\Nguyen Tien Dung\Source\Repos\BiaTapNhom\Thi_KTHP\obj\Debug\Thi_KTHP.csproj.CoreCompileInputs.cache
 C:\Users\Nguyen Tien Dung\Source\Repos\BiaTapNhom\Thi_KTHP\obj\Debug\Thi_KTHP.exe
 C:\Users\Nguyen Tien Dung\Source\Repos\BiaTapNhom\Thi_KTHP\obj\Debug\Thi_KTHP.pdb
+C:\Users\Nguyen Tien Dung\source\repos\BiaTapNhom\Thi_KTHP\obj\Debug\Thi_KTHP.frmqtnhomhp.resources
+C:\Users\Nguyen Tien Dung\source\repos\BiaTapNhom\Thi_KTHP\obj\Debug\Thi_KTHP.frmqtkhdt.resources

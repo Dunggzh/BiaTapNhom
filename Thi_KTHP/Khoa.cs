@@ -40,6 +40,8 @@ namespace Thi_KTHP
 
                     txtqtmakhoa.Enabled = false;
                     txtqttenkhoa.Enabled = false;
+                    txtqtsdt.Enabled = false;
+                    txtqtghichu.Enabled = false;
                     break;
                 case "insert":
                     btnqtthemkhoa.Enabled = false;
@@ -51,10 +53,13 @@ namespace Thi_KTHP
 
                     txtqtmakhoa.Enabled = true;
                     txtqttenkhoa.Enabled = true;
+                    txtqtsdt.Enabled = true;
+                    txtqtghichu.Enabled = true;
 
                     txtqtmakhoa.Text = "";
                     txtqttenkhoa.Text = "";
-
+                    txtqtsdt.Text = "";
+                    txtqtghichu.Text = "";
                     txtqtmakhoa.Focus();
                     break;
                 case "edit":
@@ -67,6 +72,8 @@ namespace Thi_KTHP
 
                     txtqtmakhoa.Enabled = false;
                     txtqttenkhoa.Enabled = true;
+                    txtqtsdt.Enabled = true;
+                    txtqtghichu.Enabled = true;
 
                     txtqttenkhoa.Focus();
                     break;
@@ -94,7 +101,8 @@ namespace Thi_KTHP
 
                     txtqtmakhoa.Text = ds.Tables[0].Rows[0]["MaKhoa"].ToString();
                     txtqttenkhoa.Text = ds.Tables[0].Rows[0]["TenKhoa"].ToString();
-
+                    txtqtsdt.Text = ds.Tables[0].Rows[0]["SoDienThoai"].ToString();
+                    txtqtghichu.Text = ds.Tables[0].Rows[0]["GhiChu"].ToString();
                 }
                 else
                 {
@@ -155,6 +163,8 @@ namespace Thi_KTHP
         {
             txtqtmakhoa.Text = "";
             txtqttenkhoa.Text = "";
+            txtqtsdt.Text = "";
+            txtqtghichu.Text = "";
 
             status = "reset";
             Setstatus(status);
@@ -173,7 +183,7 @@ namespace Thi_KTHP
                     {
                         conn.Open();
                     }
-                    string query = "INSERT INTO Khoa (MaKhoa,TenKhoa) VALUES ('" + txtqtmakhoa.Text.Trim() + "',N'" + txtqttenkhoa.Text.Trim() + "')";
+                    string query = "INSERT INTO Khoa (MaKhoa,TenKhoa,SoDienThoai,GhiChu) VALUES ('" + txtqtmakhoa.Text.Trim() + "',N'" + txtqttenkhoa.Text.Trim() + "','" + txtqtsdt.Text.Trim() + "',N'" + txtqtghichu.Text.Trim() + "')";
                     SqlCommand cmd = new SqlCommand(query, conn);
                     var result = cmd.ExecuteNonQuery();
                     if (result != 0)
@@ -197,7 +207,7 @@ namespace Thi_KTHP
                     {
                         conn.Open();
                     }
-                    string query = "UPDATE dbo.Khoa SET TenKhoa=N'" + txtqttenkhoa.Text.Trim() + "' WHERE MaKhoa='" + txtqtmakhoa.Text.Trim() + "'";
+                    string query = "UPDATE dbo.Khoa SET TenKhoa=N'" + txtqttenkhoa.Text.Trim() + "',SoDienThoai='" + txtqtsdt.Text.Trim() + "',GhiChu=N'" + txtqtghichu.Text.Trim() + "' WHERE MaKhoa='" + txtqtmakhoa.Text.Trim() + "'";
                     SqlCommand cmd = new SqlCommand(query, conn);
                     var result = cmd.ExecuteNonQuery();
                     if (result != 0)
@@ -221,11 +231,14 @@ namespace Thi_KTHP
                 MessageBox.Show(ex.Message);
             }
         }
-        private void dgvqtkhoa_CellContentClick(object sender, DataGridViewCellEventArgs e)
+
+        private void dgvqtkhoa_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             var row = (DataGridViewRow)dgvqtkhoa.Rows[e.RowIndex];
             txtqtmakhoa.Text = row.Cells["MaKhoa"].Value.ToString();
             txtqttenkhoa.Text = row.Cells["TenKhoa"].Value.ToString();
+            txtqtsdt.Text = row.Cells["SoDienThoai"].Value.ToString();
+            txtqtghichu.Text = row.Cells["GhiChu"].Value.ToString();
         }
     }
 }

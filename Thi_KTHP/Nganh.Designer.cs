@@ -211,7 +211,7 @@
             this.dgvqtnganh.RowTemplate.Height = 24;
             this.dgvqtnganh.Size = new System.Drawing.Size(602, 270);
             this.dgvqtnganh.TabIndex = 4;
-            this.dgvqtnganh.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvqtnganh_CellContentClick);
+            this.dgvqtnganh.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvqtnganh_CellClick);
             // 
             // frmqtnganh
             // 

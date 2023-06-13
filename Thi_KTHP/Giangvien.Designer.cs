@@ -143,8 +143,9 @@
             this.cboqttrinhdogv.Items.AddRange(new object[] {
             "Thạc sĩ",
             "Tiến sĩ",
-            "Giáo sư"});
-            this.cboqttrinhdogv.Location = new System.Drawing.Point(25, 82);
+            "Giáo sư",
+            "Khác"});
+            this.cboqttrinhdogv.Location = new System.Drawing.Point(335, 85);
             this.cboqttrinhdogv.Name = "cboqttrinhdogv";
             this.cboqttrinhdogv.Size = new System.Drawing.Size(113, 28);
             this.cboqttrinhdogv.TabIndex = 9;
@@ -153,7 +154,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(23, 59);
+            this.label5.Location = new System.Drawing.Point(336, 59);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(75, 20);
             this.label5.TabIndex = 8;
@@ -162,7 +163,7 @@
             // txtqtsodtgv
             // 
             this.txtqtsodtgv.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtqtsodtgv.Location = new System.Drawing.Point(340, 83);
+            this.txtqtsodtgv.Location = new System.Drawing.Point(27, 85);
             this.txtqtsodtgv.Name = "txtqtsodtgv";
             this.txtqtsodtgv.Size = new System.Drawing.Size(208, 27);
             this.txtqtsodtgv.TabIndex = 7;
@@ -180,7 +181,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(336, 59);
+            this.label4.Location = new System.Drawing.Point(23, 59);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(111, 20);
             this.label4.TabIndex = 5;
@@ -260,7 +261,7 @@
             this.dgvqtgv.RowTemplate.Height = 24;
             this.dgvqtgv.Size = new System.Drawing.Size(609, 261);
             this.dgvqtgv.TabIndex = 4;
-            this.dgvqtgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvqtgv_CellContentClick);
+            this.dgvqtgv.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvqtgv_CellClick);
             // 
             // frmqtgv
             // 

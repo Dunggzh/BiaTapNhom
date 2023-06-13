@@ -53,9 +53,9 @@ namespace Thi_KTHP
             DataSet ds = new DataSet();
             da.Fill(ds);
             conn.Close();
-            cboqthocphan.DataSource = ds.Tables[0];
-            cboqthocphan.DisplayMember = dis;
-            cboqthocphan.ValueMember = valu;
+            cboqtnhomhocphan.DataSource = ds.Tables[0];
+            cboqtnhomhocphan.DisplayMember = dis;
+            cboqtnhomhocphan.ValueMember = valu;
         }
         public void Setstatus(String state)
         {
@@ -77,7 +77,7 @@ namespace Thi_KTHP
                     txtqtdiemtongket.Enabled = false;
                     txtqtdiemchu.Enabled = false;
                     cboqtmasv.Enabled = false;
-                    cboqthocphan.Enabled = false;
+                    cboqtnhomhocphan.Enabled = false;
   
 
                     break;
@@ -97,7 +97,7 @@ namespace Thi_KTHP
                     txtqtdiemtongket.Enabled = true;
                     txtqtdiemchu.Enabled = true;
                     cboqtmasv.Enabled = true;
-                    cboqthocphan.Enabled = true;
+                    cboqtnhomhocphan.Enabled = true;
 
 
 
@@ -127,7 +127,7 @@ namespace Thi_KTHP
                     txtqtdiemtongket.Enabled = true;
                     txtqtdiemchu.Enabled = true;
                     cboqtmasv.Enabled = false;
-                    cboqthocphan.Enabled = true;
+                    cboqtnhomhocphan.Enabled = true;
 
                     txtqtdiemcc.Focus();
                     break;
@@ -162,7 +162,7 @@ namespace Thi_KTHP
                     txtqtdiemchu.Text = ds.Tables[0].Rows[0]["DiemChu"].ToString();
 
                     cboqtmasv.SelectedValue = ds.Tables[0].Rows[0]["MaSinhVien"].ToString();
-                    cboqthocphan.SelectedValue = ds.Tables[0].Rows[0]["MaHP"].ToString();
+                    cboqtnhomhocphan.SelectedValue = ds.Tables[0].Rows[0]["MaHP"].ToString();
                 }
                 else
                 {
@@ -246,7 +246,7 @@ namespace Thi_KTHP
                     {
                         conn.Open();
                     }
-                    string query = "INSERT INTO Diem (ChuyenCan,KiemTraGK,ThucHanh,ThiKetthuc,ThaoLuan,TongKetHP,DiemChu,MaSinhVien,MaHP) VALUES ('" +float.Parse(txtqtdiemcc.Text.ToString()) + "','" + float.Parse(txtqtdiemgk.Text.Trim()) + "','" + float.Parse(txtqtdiemth.Text.Trim()) + "','" + float.Parse(txtqtdiemkt.Text.Trim()) + "','" + float.Parse(txtqtdiemtl.Text.Trim()) + "','" + float.Parse(txtqtdiemtongket.Text.Trim()) + "','" + txtqtdiemchu.Text.Trim() + "','" + cboqtmasv.SelectedValue.ToString() + "','" + cboqthocphan.SelectedValue.ToString() + "')";
+                    string query = "INSERT INTO Diem (ChuyenCan,KiemTraGK,ThucHanh,ThiKetthuc,ThaoLuan,TongKetHP,DiemChu,MaSinhVien,MaHP) VALUES ('" +float.Parse(txtqtdiemcc.Text.ToString()) + "','" + float.Parse(txtqtdiemgk.Text.Trim()) + "','" + float.Parse(txtqtdiemth.Text.Trim()) + "','" + float.Parse(txtqtdiemkt.Text.Trim()) + "','" + float.Parse(txtqtdiemtl.Text.Trim()) + "','" + float.Parse(txtqtdiemtongket.Text.Trim()) + "','" + txtqtdiemchu.Text.Trim() + "','" + cboqtmasv.SelectedValue.ToString() + "','" + cboqtnhomhocphan.SelectedValue.ToString() + "')";
                     SqlCommand cmd = new SqlCommand(query, conn);
                     var result = cmd.ExecuteNonQuery();
                     if (result != 0)
@@ -270,7 +270,7 @@ namespace Thi_KTHP
                     {
                         conn.Open();
                     }
-                    string query = "UPDATE dbo.SinhVien SET ChuyenCan='" + float.Parse(txtqtdiemcc.Text.Trim()) + "',KiemTraGK='" + float.Parse(txtqtdiemgk.Text.Trim()) + "',ThucHanh='" + float.Parse(txtqtdiemth.Text.Trim()) + "',ThiKetThuc='" + float.Parse(txtqtdiemkt.Text.Trim()) + "',ThaoLuan='" + float.Parse(txtqtdiemtl.Text.Trim()) + "',TongKetHP='" + float.Parse(txtqtdiemtongket.Text.Trim()) + "',DiemChu='" + txtqtdiemchu.Text.Trim() + "',MaHP='" + cboqthocphan.SelectedValue.ToString() + "' WHERE MaSinhVien = '" + cboqtmasv.SelectedValue.ToString() + "'";
+                    string query = "UPDATE dbo.SinhVien SET ChuyenCan='" + float.Parse(txtqtdiemcc.Text.Trim()) + "',KiemTraGK='" + float.Parse(txtqtdiemgk.Text.Trim()) + "',ThucHanh='" + float.Parse(txtqtdiemth.Text.Trim()) + "',ThiKetThuc='" + float.Parse(txtqtdiemkt.Text.Trim()) + "',ThaoLuan='" + float.Parse(txtqtdiemtl.Text.Trim()) + "',TongKetHP='" + float.Parse(txtqtdiemtongket.Text.Trim()) + "',DiemChu='" + txtqtdiemchu.Text.Trim() + "',MaHP='" + cboqtnhomhocphan.SelectedValue.ToString() + "' WHERE MaSinhVien = '" + cboqtmasv.SelectedValue.ToString() + "'";
                     SqlCommand cmd = new SqlCommand(query, conn);
                     var result = cmd.ExecuteNonQuery();
                     if (result != 0)
@@ -307,7 +307,7 @@ namespace Thi_KTHP
             txtqtdiemchu.Text = row.Cells["DiemChu"].Value.ToString();
 
             cboqtmasv.SelectedValue = row.Cells["MaSinhVien"].Value.ToString();
-            cboqthocphan.SelectedValue = row.Cells["MaHP"].Value.ToString();
+            cboqtnhomhocphan.SelectedValue = row.Cells["MaHP"].Value.ToString();
         }
     }
 }
