@@ -89,7 +89,7 @@
             this.dgvqtdiem.RowTemplate.Height = 24;
             this.dgvqtdiem.Size = new System.Drawing.Size(609, 253);
             this.dgvqtdiem.TabIndex = 4;
-            this.dgvqtdiem.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvqtdiem_CellContentClick);
+            this.dgvqtdiem.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvqtdiem_CellClick);
             // 
             // pnlqttruong
             // 

@@ -17,7 +17,7 @@ namespace Thi_KTHP
         {
             InitializeComponent();
             Loadcboboxmasv("select * from SinhVien", "MaSinhVien", "MaSinhVien");
-            Loadcboboxmahp("SELECT * FROM HocPhan", "MaHP", "MaHP");
+            Loadcboboxmahp("SELECT * FROM NhomHP", "MaNhomHP", "MaNhomHP");
             Setstatus("reset");
             BindingData();
         }
@@ -162,7 +162,7 @@ namespace Thi_KTHP
                     txtqtdiemchu.Text = ds.Tables[0].Rows[0]["DiemChu"].ToString();
 
                     cboqtmasv.SelectedValue = ds.Tables[0].Rows[0]["MaSinhVien"].ToString();
-                    cboqtnhomhocphan.SelectedValue = ds.Tables[0].Rows[0]["MaHP"].ToString();
+                    cboqtnhomhocphan.SelectedValue = ds.Tables[0].Rows[0]["MaNhomHP"].ToString();
                 }
                 else
                 {
@@ -180,7 +180,6 @@ namespace Thi_KTHP
         {
             status = "insert";
             Setstatus(status);
-            //Console.WriteLine("b="+cboqtmasv.Text);
         }
 
         private void btnqtsuadiem_Click(object sender, EventArgs e)
@@ -239,6 +238,7 @@ namespace Thi_KTHP
         {
             try
             {
+
                 if (status == "insert")
                 {
                     SqlConnection conn = new SqlConnection(connectionsString);
@@ -246,7 +246,7 @@ namespace Thi_KTHP
                     {
                         conn.Open();
                     }
-                    string query = "INSERT INTO Diem (ChuyenCan,KiemTraGK,ThucHanh,ThiKetthuc,ThaoLuan,TongKetHP,DiemChu,MaSinhVien,MaHP) VALUES ('" +float.Parse(txtqtdiemcc.Text.ToString()) + "','" + float.Parse(txtqtdiemgk.Text.Trim()) + "','" + float.Parse(txtqtdiemth.Text.Trim()) + "','" + float.Parse(txtqtdiemkt.Text.Trim()) + "','" + float.Parse(txtqtdiemtl.Text.Trim()) + "','" + float.Parse(txtqtdiemtongket.Text.Trim()) + "','" + txtqtdiemchu.Text.Trim() + "','" + cboqtmasv.SelectedValue.ToString() + "','" + cboqtnhomhocphan.SelectedValue.ToString() + "')";
+                    string query = "INSERT INTO Diem (ChuyenCan,KiemTraGK,ThucHanh,ThiKetthuc,ThaoLuan,TongKetHP,DiemChu,MaSinhVien,MaNhomHP) VALUES ('" +float.Parse(txtqtdiemcc.Text.ToString()) + "','" + float.Parse(txtqtdiemgk.Text.Trim()) + "','" + float.Parse(txtqtdiemth.Text.Trim()) + "','" + float.Parse(txtqtdiemkt.Text.Trim()) + "','" + float.Parse(txtqtdiemtl.Text.Trim()) + "','" + float.Parse(txtqtdiemtongket.Text.Trim()) + "','" + txtqtdiemchu.Text.Trim() + "','" + cboqtmasv.SelectedValue.ToString() + "','" + cboqtnhomhocphan.SelectedValue.ToString() + "')";
                     SqlCommand cmd = new SqlCommand(query, conn);
                     var result = cmd.ExecuteNonQuery();
                     if (result != 0)
@@ -270,7 +270,7 @@ namespace Thi_KTHP
                     {
                         conn.Open();
                     }
-                    string query = "UPDATE dbo.SinhVien SET ChuyenCan='" + float.Parse(txtqtdiemcc.Text.Trim()) + "',KiemTraGK='" + float.Parse(txtqtdiemgk.Text.Trim()) + "',ThucHanh='" + float.Parse(txtqtdiemth.Text.Trim()) + "',ThiKetThuc='" + float.Parse(txtqtdiemkt.Text.Trim()) + "',ThaoLuan='" + float.Parse(txtqtdiemtl.Text.Trim()) + "',TongKetHP='" + float.Parse(txtqtdiemtongket.Text.Trim()) + "',DiemChu='" + txtqtdiemchu.Text.Trim() + "',MaHP='" + cboqtnhomhocphan.SelectedValue.ToString() + "' WHERE MaSinhVien = '" + cboqtmasv.SelectedValue.ToString() + "'";
+                    string query = "UPDATE dbo.SinhVien SET ChuyenCan='" + float.Parse(txtqtdiemcc.Text.Trim()) + "',KiemTraGK='" + float.Parse(txtqtdiemgk.Text.Trim()) + "',ThucHanh='" + float.Parse(txtqtdiemth.Text.Trim()) + "',ThiKetThuc='" + float.Parse(txtqtdiemkt.Text.Trim()) + "',ThaoLuan='" + float.Parse(txtqtdiemtl.Text.Trim()) + "',TongKetHP='" + float.Parse(txtqtdiemtongket.Text.Trim()) + "',DiemChu='" + txtqtdiemchu.Text.Trim() + "',MaNhomHP='" + cboqtnhomhocphan.SelectedValue.ToString() + "' WHERE MaSinhVien = '" + cboqtmasv.SelectedValue.ToString() + "'";
                     SqlCommand cmd = new SqlCommand(query, conn);
                     var result = cmd.ExecuteNonQuery();
                     if (result != 0)
@@ -295,19 +295,26 @@ namespace Thi_KTHP
             }
         }
 
-        private void dgvqtdiem_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvqtdiem_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            var row = (DataGridViewRow)dgvqtdiem.Rows[e.RowIndex];
-            txtqtdiemcc.Text = row.Cells["ChuyenCan"].Value.ToString();
-            txtqtdiemgk.Text = row.Cells["KiemTraGK"].Value.ToString();
-            txtqtdiemth.Text = row.Cells["ThucHanh"].Value.ToString();
-            txtqtdiemkt.Text = row.Cells["ThiKetthuc"].Value.ToString();
-            txtqtdiemtl.Text = row.Cells["ThaoLuan"].Value.ToString();
-            txtqtdiemtongket.Text = row.Cells["TongKetHP"].Value.ToString();
-            txtqtdiemchu.Text = row.Cells["DiemChu"].Value.ToString();
+            try
+            {
+                var row = (DataGridViewRow)dgvqtdiem.Rows[e.RowIndex];
+                txtqtdiemcc.Text = row.Cells["ChuyenCan"].Value.ToString();
+                txtqtdiemgk.Text = row.Cells["KiemTraGK"].Value.ToString();
+                txtqtdiemth.Text = row.Cells["ThucHanh"].Value.ToString();
+                txtqtdiemkt.Text = row.Cells["ThiKetthuc"].Value.ToString();
+                txtqtdiemtl.Text = row.Cells["ThaoLuan"].Value.ToString();
+                txtqtdiemtongket.Text = row.Cells["TongKetHP"].Value.ToString();
+                txtqtdiemchu.Text = row.Cells["DiemChu"].Value.ToString();
 
-            cboqtmasv.SelectedValue = row.Cells["MaSinhVien"].Value.ToString();
-            cboqtnhomhocphan.SelectedValue = row.Cells["MaHP"].Value.ToString();
+                cboqtmasv.SelectedValue = row.Cells["MaSinhVien"].Value.ToString();
+                cboqtnhomhocphan.SelectedValue = row.Cells["MaNhomHP"].Value.ToString();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Arranged");
+            }
         }
     }
 }

@@ -18,7 +18,7 @@ namespace Thi_KTHP
             InitializeComponent();
             Loadcboboxmahp("SELECT * FROM HocPhan", "MaHP", "MaHP");
             Loadcboboxmagv("SELECT * FROM GiangVien", "MaGV", "MaGV");
-            //Loadcboboxmakhdt("SELECT * FROM KeHoachDaoTao", "MaKHDT", "MaKHDT");
+            Loadcboboxmakhdt("SELECT * FROM KeHoachDaoTao", "MaKHDT", "MaKHDT");
             Setstatus("reset");
             BindingData();
         }
@@ -59,22 +59,22 @@ namespace Thi_KTHP
             cboqtmagv.DisplayMember = dis;
             cboqtmagv.ValueMember = valu;
         }
-        //public void Loadcboboxmakhdt(string query, string dis, string valu)
-        //{
-        //    SqlConnection conn = new SqlConnection(connectionsString);
-        //    if (conn.State == ConnectionState.Closed)
-        //    {
-        //        conn.Open();
-        //    }
-        //    SqlCommand cmd = new SqlCommand(query, conn);
-        //    SqlDataAdapter da = new SqlDataAdapter(cmd);
-        //    DataSet ds = new DataSet();
-        //    da.Fill(ds);
-        //    conn.Close();
-        //    cboqtmakhdt.DataSource = ds.Tables[0];
-        //    cboqtmakhdt.DisplayMember = dis;
-        //    cboqtmakhdt.ValueMember = valu;
-        //}
+        public void Loadcboboxmakhdt(string query, string dis, string valu)
+        {
+            SqlConnection conn = new SqlConnection(connectionsString);
+            if (conn.State == ConnectionState.Closed)
+            {
+                conn.Open();
+            }
+            SqlCommand cmd = new SqlCommand(query, conn);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            conn.Close();
+            cboqtmakhdt.DataSource = ds.Tables[0];
+            cboqtmakhdt.DisplayMember = dis;
+            cboqtmakhdt.ValueMember = valu;
+        }
 
         public void Setstatus(String state)
         {
@@ -283,12 +283,20 @@ namespace Thi_KTHP
 
         private void dgvqtnhp_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            var row = (DataGridViewRow)dgvqtnhp.Rows[e.RowIndex];
-            txtqtmanhp.Text = row.Cells["MaNhomHP"].Value.ToString();
-            txtqttennhp.Text = row.Cells["TenNhomHP"].Value.ToString();
-            cboqtmahp.SelectedValue = row.Cells["MaHP"].Value.ToString();
-            cboqtmagv.SelectedValue = row.Cells["MaGV"].Value.ToString();
-            cboqtmakhdt.SelectedValue = row.Cells["MaKHDT"].Value.ToString();
+            try
+            {
+                var row = (DataGridViewRow)dgvqtnhp.Rows[e.RowIndex];
+                txtqtmanhp.Text = row.Cells["MaNhomHP"].Value.ToString();
+                txtqttennhp.Text = row.Cells["TenNhomHP"].Value.ToString();
+                cboqtmahp.SelectedValue = row.Cells["MaHP"].Value.ToString();
+                cboqtmagv.SelectedValue = row.Cells["MaGV"].Value.ToString();
+                cboqtmakhdt.SelectedValue = row.Cells["MaKHDT"].Value.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Arranged");
+            }
+
         }
     }
 }

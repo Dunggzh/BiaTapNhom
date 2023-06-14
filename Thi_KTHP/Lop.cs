@@ -242,10 +242,18 @@ namespace Thi_KTHP
 
         private void dgvqtlop_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            var row = (DataGridViewRow)dgvqtlop.Rows[e.RowIndex];
-            txtqttenlop.Text = row.Cells["TenLop"].Value.ToString();
-            cboqtmanganh.SelectedValue = row.Cells["MaNganh"].Value.ToString();
-            txtqtghichu.Text = row.Cells["GhiChu"].Value.ToString();
+            try
+            {
+                var row = (DataGridViewRow)dgvqtlop.Rows[e.RowIndex];
+                txtqttenlop.Text = row.Cells["TenLop"].Value.ToString();
+                cboqtmanganh.SelectedValue = row.Cells["MaNganh"].Value.ToString();
+                txtqtghichu.Text = row.Cells["GhiChu"].Value.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Arranged");
+            }
+
         }
     }
 } 

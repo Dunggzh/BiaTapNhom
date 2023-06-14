@@ -290,7 +290,7 @@
             this.txtqttensv.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtqttensv.Location = new System.Drawing.Point(332, 29);
             this.txtqttensv.Name = "txtqttensv";
-            this.txtqttensv.Size = new System.Drawing.Size(208, 27);
+            this.txtqttensv.Size = new System.Drawing.Size(269, 27);
             this.txtqttensv.TabIndex = 3;
             // 
             // txtqtmasv

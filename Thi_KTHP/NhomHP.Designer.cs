@@ -37,16 +37,16 @@
             this.btnqtghinhp = new System.Windows.Forms.Button();
             this.btnqthuynhp = new System.Windows.Forms.Button();
             this.pnlqttruong = new System.Windows.Forms.Panel();
+            this.cboqtmakhdt = new System.Windows.Forms.ComboBox();
+            this.cboqtmagv = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.cboqtmahp = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtqttennhp = new System.Windows.Forms.TextBox();
             this.txtqtmanhp = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.cboqtmagv = new System.Windows.Forms.ComboBox();
-            this.cboqtmakhdt = new System.Windows.Forms.ComboBox();
             this.pnlqtcsdl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvqtnhp)).BeginInit();
             this.floqtnut.SuspendLayout();
@@ -166,6 +166,44 @@
             this.pnlqttruong.Size = new System.Drawing.Size(608, 222);
             this.pnlqttruong.TabIndex = 7;
             // 
+            // cboqtmakhdt
+            // 
+            this.cboqtmakhdt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboqtmakhdt.FormattingEnabled = true;
+            this.cboqtmakhdt.Location = new System.Drawing.Point(335, 176);
+            this.cboqtmakhdt.Name = "cboqtmakhdt";
+            this.cboqtmakhdt.Size = new System.Drawing.Size(263, 28);
+            this.cboqtmakhdt.TabIndex = 9;
+            // 
+            // cboqtmagv
+            // 
+            this.cboqtmagv.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboqtmagv.FormattingEnabled = true;
+            this.cboqtmagv.Location = new System.Drawing.Point(335, 119);
+            this.cboqtmagv.Name = "cboqtmagv";
+            this.cboqtmagv.Size = new System.Drawing.Size(208, 28);
+            this.cboqtmagv.TabIndex = 8;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(331, 153);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(89, 20);
+            this.label5.TabIndex = 7;
+            this.label5.Text = "Mã KHDT:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(331, 88);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(117, 20);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Mã giảng viên:";
+            // 
             // cboqtmahp
             // 
             this.cboqtmahp.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -220,44 +258,6 @@
             this.label2.Size = new System.Drawing.Size(117, 20);
             this.label2.TabIndex = 1;
             this.label2.Text = "Tên nhóm HP:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(331, 88);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(117, 20);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Mã giảng viên:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(331, 153);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(89, 20);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "Mã KHDT:";
-            // 
-            // cboqtmagv
-            // 
-            this.cboqtmagv.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboqtmagv.FormattingEnabled = true;
-            this.cboqtmagv.Location = new System.Drawing.Point(335, 119);
-            this.cboqtmagv.Name = "cboqtmagv";
-            this.cboqtmagv.Size = new System.Drawing.Size(208, 28);
-            this.cboqtmagv.TabIndex = 8;
-            // 
-            // cboqtmakhdt
-            // 
-            this.cboqtmakhdt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboqtmakhdt.FormattingEnabled = true;
-            this.cboqtmakhdt.Location = new System.Drawing.Point(335, 176);
-            this.cboqtmakhdt.Name = "cboqtmakhdt";
-            this.cboqtmakhdt.Size = new System.Drawing.Size(208, 28);
-            this.cboqtmakhdt.TabIndex = 9;
             // 
             // frmqtnhomhp
             // 
