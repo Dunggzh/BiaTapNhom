@@ -21,7 +21,7 @@ namespace Thi_KTHP
             Setstatus("reset");
             BindingData();
         }
-
+        //dung
         public static string status = "";
         public static string connectionsString =
             "data source = LAPTOP-2LQNMVB4; database = Demo_QLD; user id = sa; password = 1;";
