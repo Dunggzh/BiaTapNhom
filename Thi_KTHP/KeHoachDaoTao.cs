@@ -21,7 +21,6 @@ namespace Thi_KTHP
             Setstatus("reset");
             BindingData();
         }
-        //dung
         public static string status = "";
         public static string connectionsString =
             "data source = LAPTOP-2LQNMVB4; database = Demo_QLD; user id = sa; password = 1;";
@@ -257,10 +256,18 @@ namespace Thi_KTHP
 
         private void dgvqtkhdt_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            var row = (DataGridViewRow)dgvqtkhdt.Rows[e.RowIndex];
-            txtqtmakhdt.Text = row.Cells["MaKHDT"].Value.ToString();
-            cboqttenlop.SelectedValue = row.Cells["TenLop"].Value.ToString();
-            cboqtmakhoahoc.SelectedValue = row.Cells["MaKhoaHoc"].Value.ToString();
+            try
+            {
+                var row = (DataGridViewRow)dgvqtkhdt.Rows[e.RowIndex];
+                txtqtmakhdt.Text = row.Cells["MaKHDT"].Value.ToString();
+                cboqttenlop.SelectedValue = row.Cells["TenLop"].Value.ToString();
+                cboqtmakhoahoc.SelectedValue = row.Cells["MaKhoaHoc"].Value.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Arranged");
+            }
+
         }
     }
 }

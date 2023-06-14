@@ -245,10 +245,18 @@ namespace Thi_KTHP
 
         private void dgvqtnganh_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            var row = (DataGridViewRow)dgvqtnganh.Rows[e.RowIndex];
-            txtqtmanganh.Text = row.Cells["Mã ngành"].Value.ToString();
-            txtqttennganh.Text = row.Cells["Tên ngành"].Value.ToString();
-            cboqtmakhoa.SelectedValue = row.Cells["Mã khoa"].Value.ToString();
+            try
+            {
+                var row = (DataGridViewRow)dgvqtnganh.Rows[e.RowIndex];
+                txtqtmanganh.Text = row.Cells["Mã ngành"].Value.ToString();
+                txtqttennganh.Text = row.Cells["Tên ngành"].Value.ToString();
+                cboqtmakhoa.SelectedValue = row.Cells["Mã khoa"].Value.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Arranged");
+            }
+
         }
     }
 }

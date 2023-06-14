@@ -233,10 +233,18 @@ namespace Thi_KTHP
 
         private void dgvqtkhoahoc_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            var row = (DataGridViewRow)dgvqtkhoahoc.Rows[e.RowIndex];
-            txtqtmakhoahoc.Text = row.Cells["MaKhoaHoc"].Value.ToString();
-            txtqttenkhoahoc.Text = row.Cells["TenKhoaHoc"].Value.ToString();
-            txtqtkyhoc.Text = row.Cells["KyHoc"].Value.ToString();
+            try
+            {
+                var row = (DataGridViewRow)dgvqtkhoahoc.Rows[e.RowIndex];
+                txtqtmakhoahoc.Text = row.Cells["MaKhoaHoc"].Value.ToString();
+                txtqttenkhoahoc.Text = row.Cells["TenKhoaHoc"].Value.ToString();
+                txtqtkyhoc.Text = row.Cells["KyHoc"].Value.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Arranged");
+            }
+
         }
     }
 }

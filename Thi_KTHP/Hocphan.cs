@@ -254,22 +254,30 @@ namespace Thi_KTHP
 
         private void dgvqthp_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            var row = (DataGridViewRow)dgvqthp.Rows[e.RowIndex];
-            txtqtmahp.Text = row.Cells["MaHP"].Value.ToString();
-            txtqttenhp.Text = row.Cells["TenHP"].Value.ToString();
-            if (Convert.ToInt32(row.Cells["SoTC"].Value) == 2)
+            try
             {
-                cboqtsotinchi.Text = "2";
+                var row = (DataGridViewRow)dgvqthp.Rows[e.RowIndex];
+                txtqtmahp.Text = row.Cells["MaHP"].Value.ToString();
+                txtqttenhp.Text = row.Cells["TenHP"].Value.ToString();
+                if (Convert.ToInt32(row.Cells["SoTC"].Value) == 2)
+                {
+                    cboqtsotinchi.Text = "2";
+                }
+                else if (Convert.ToInt32(row.Cells["SoTC"].Value) == 3)
+                {
+                    cboqtsotinchi.Text = "3";
+                }
+                else
+                {
+                    cboqtsotinchi.Text = "4";
+                }
+                txtqtsotiet.Text = row.Cells["SoTiet"].Value.ToString();
             }
-            else if (Convert.ToInt32(row.Cells["SoTC"].Value) == 3)
+            catch (Exception ex)
             {
-                cboqtsotinchi.Text = "3";
+                MessageBox.Show("Arranged");
             }
-            else
-            {
-                cboqtsotinchi.Text = "4";
-            }
-            txtqtsotiet.Text = row.Cells["SoTiet"].Value.ToString();
+
         }
     }
 }

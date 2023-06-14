@@ -284,28 +284,36 @@ namespace Thi_KTHP
 
         private void dgvqtgv_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            var row = (DataGridViewRow)dgvqtgv.Rows[e.RowIndex];
-            txtqtmagv.Text = row.Cells["MaGV"].Value.ToString();
-            txtqttengv.Text = row.Cells["TenGV"].Value.ToString();
+            try
+            {
+                var row = (DataGridViewRow)dgvqtgv.Rows[e.RowIndex];
+                txtqtmagv.Text = row.Cells["MaGV"].Value.ToString();
+                txtqttengv.Text = row.Cells["TenGV"].Value.ToString();
 
-            if (row.Cells["TrinhDo"].Value.ToString() == "Thạc sĩ")
-            {
-                cboqttrinhdogv.Text = "Thạc sĩ";
+                if (row.Cells["TrinhDo"].Value.ToString() == "Thạc sĩ")
+                {
+                    cboqttrinhdogv.Text = "Thạc sĩ";
+                }
+                else if (row.Cells["TrinhDo"].Value.ToString() == "Tiến sĩ")
+                {
+                    cboqttrinhdogv.Text = "Tiến sĩ";
+                }
+                else if (row.Cells["TrinhDo"].Value.ToString() == "Giáo sư")
+                {
+                    cboqttrinhdogv.Text = "Giáo sư";
+                }
+                else
+                {
+                    cboqttrinhdogv.Text = "Khác";
+                }
+                txtqtsodtgv.Text = row.Cells["SoDT"].Value.ToString();
+                cboqtmakhoa.SelectedValue = row.Cells["MaKhoa"].Value.ToString();
             }
-            else if (row.Cells["TrinhDo"].Value.ToString() == "Tiến sĩ")
+            catch (Exception ex)
             {
-                cboqttrinhdogv.Text = "Tiến sĩ";
+                MessageBox.Show("Arranged");
             }
-            else if (row.Cells["TrinhDo"].Value.ToString() == "Giáo sư")
-            {
-                cboqttrinhdogv.Text = "Giáo sư";
-            }
-            else
-            {
-                cboqttrinhdogv.Text = "Khác";
-            }
-            txtqtsodtgv.Text = row.Cells["SoDT"].Value.ToString();
-            cboqtmakhoa.SelectedValue = row.Cells["MaKhoa"].Value.ToString();
+            
         }
     }
 }
