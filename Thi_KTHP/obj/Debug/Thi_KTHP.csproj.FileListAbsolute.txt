@@ -70,7 +70,6 @@ C:\Users\Dell\Source\Repos\BiaTapNhom\Thi_KTHP\obj\Debug\Thi_KTHP.frmqthocphan.r
 C:\Users\Dell\Source\Repos\BiaTapNhom\Thi_KTHP\obj\Debug\Thi_KTHP.frmhocphansv.resources
 C:\Users\Dell\Source\Repos\BiaTapNhom\Thi_KTHP\obj\Debug\Thi_KTHP.frmqtkhoa.resources
 C:\Users\Dell\Source\Repos\BiaTapNhom\Thi_KTHP\obj\Debug\Thi_KTHP.frmqtkhoahoc.resources
-C:\Users\Dell\Source\Repos\BiaTapNhom\Thi_KTHP\obj\Debug\Thi_KTHP.frmqtkyhoc.resources
 C:\Users\Dell\Source\Repos\BiaTapNhom\Thi_KTHP\obj\Debug\Thi_KTHP.frmqtlop.resources
 C:\Users\Dell\Source\Repos\BiaTapNhom\Thi_KTHP\obj\Debug\Thi_KTHP.frmqtnganh.resources
 C:\Users\Dell\Source\Repos\BiaTapNhom\Thi_KTHP\obj\Debug\Thi_KTHP.Properties.Resources.resources
@@ -111,3 +110,5 @@ C:\Users\Nguyen Tien Dung\Source\Repos\BiaTapNhom\Thi_KTHP\obj\Debug\Thi_KTHP.ex
 C:\Users\Nguyen Tien Dung\Source\Repos\BiaTapNhom\Thi_KTHP\obj\Debug\Thi_KTHP.pdb
 C:\Users\Nguyen Tien Dung\source\repos\BiaTapNhom\Thi_KTHP\obj\Debug\Thi_KTHP.frmqtnhomhp.resources
 C:\Users\Nguyen Tien Dung\source\repos\BiaTapNhom\Thi_KTHP\obj\Debug\Thi_KTHP.frmqtkhdt.resources
+C:\Users\Dell\Source\Repos\BiaTapNhom\Thi_KTHP\obj\Debug\Thi_KTHP.frmqtnhomhp.resources
+C:\Users\Dell\Source\Repos\BiaTapNhom\Thi_KTHP\obj\Debug\Thi_KTHP.frmqtkhdt.resources

@@ -16,7 +16,7 @@ namespace Thi_KTHP
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmtrangchu());
+            Application.Run(new frmtrangchugv());
         }
     }
 }

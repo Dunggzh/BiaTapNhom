@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\C#\\QLtrangchugv\\QLtrangchugv\\QLtrangchugv.csproj": {}
+    "C:\\Users\\Dell\\source\\repos\\BiaTapNhom\\QLtrangchugv\\QLtrangchugv\\QLtrangchugv.csproj": {}
   },
   "projects": {
-    "D:\\C#\\QLtrangchugv\\QLtrangchugv\\QLtrangchugv.csproj": {
+    "C:\\Users\\Dell\\source\\repos\\BiaTapNhom\\QLtrangchugv\\QLtrangchugv\\QLtrangchugv.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\C#\\QLtrangchugv\\QLtrangchugv\\QLtrangchugv.csproj",
+        "projectUniqueName": "C:\\Users\\Dell\\source\\repos\\BiaTapNhom\\QLtrangchugv\\QLtrangchugv\\QLtrangchugv.csproj",
         "projectName": "QLtrangchugv",
-        "projectPath": "D:\\C#\\QLtrangchugv\\QLtrangchugv\\QLtrangchugv.csproj",
-        "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
-        "outputPath": "D:\\C#\\QLtrangchugv\\QLtrangchugv\\obj\\",
+        "projectPath": "C:\\Users\\Dell\\source\\repos\\BiaTapNhom\\QLtrangchugv\\QLtrangchugv\\QLtrangchugv.csproj",
+        "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Dell\\Source\\Repos\\BiaTapNhom\\QLtrangchugv\\QLtrangchugv\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\LENOVO\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -64,7 +64,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     }
