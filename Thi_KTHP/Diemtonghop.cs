@@ -64,14 +64,7 @@ namespace Thi_KTHP
                 hocky[i]= hhocky(dgvdiemth.Rows[i].Cells["KyHoc"].Value.ToString());
                 
                 diem[i]=new diemth() { NamHoc = namhoc[i],HocKy=hocky[i] };
-            }
-            string query1 = "select * from Khoa,HocPhan,Nganh,NhomHP,GiangVien,KeHoachDaoTao,Lop,KhoaHoc,Diem,SinhVien where Nganh.MaKhoa=khoa.MaKhoa  and GiangVien.MaKhoa=Khoa.MaKhoa and GiangVien.MaGV=NhomHP.MaGV and NhomHP.MaHP=HocPhan.MaHP and KeHoachDaoTao.MaKHDT=NhomHP.MaKHDT and Lop.MaNganh=Nganh.MaNganh and lop.TenLop=KeHoachDaoTao.TenLop and KeHoachDaoTao.MaKhoaHoc=KhoaHoc.MaKhoaHoc and Diem.MaSinhVien=SinhVien.MaSinhVien and Diem.MaNhomHP=NhomHP.MaNhomHP and SinhVien.TenLop=Lop.TenLop  and SinhVien.MaSinhVien='" + this.username + "'and ";
-            bang(query1);
-            for (int i = 0; i < dgvdiemth.Rows.Count; i++)
-            {
-                sotc[i] = 0;
-                sotc[i] = 1;
-
+                sotc[i] = hsotc(sotc[i], dgvdiemth.Rows[i].Cells["KyHoc"].Value.ToString());
                 diem[i] = new diemth() { SoTC = sotc[i] };
                 ds.Add(diem[i]);
             }
@@ -87,20 +80,22 @@ namespace Thi_KTHP
         string kq = a.Substring(a.Length - 1);
         return kq;
     }
-        public int hsotc(int a)
+        public int hsotc(int a,string hocky)
         {
             if (conn.State != ConnectionState.Open)
             {
                 conn.Open();
             }
-            string query1 = "select * from Khoa,HocPhan,Nganh,NhomHP,GiangVien,KeHoachDaoTao,Lop,KhoaHoc,Diem,SinhVien where Nganh.MaKhoa=khoa.MaKhoa  and GiangVien.MaKhoa=Khoa.MaKhoa and GiangVien.MaGV=NhomHP.MaGV and NhomHP.MaHP=HocPhan.MaHP and KeHoachDaoTao.MaKHDT=NhomHP.MaKHDT and Lop.MaNganh=Nganh.MaNganh and lop.TenLop=KeHoachDaoTao.TenLop and KeHoachDaoTao.MaKhoaHoc=KhoaHoc.MaKhoaHoc and Diem.MaSinhVien=SinhVien.MaSinhVien and Diem.MaNhomHP=NhomHP.MaNhomHP and SinhVien.TenLop=Lop.TenLop  and SinhVien.MaSinhVien='" + this.username + "'";
+            string query1 = "select * from Khoa,HocPhan,Nganh,NhomHP,GiangVien,KeHoachDaoTao,Lop,KhoaHoc,Diem,SinhVien where Nganh.MaKhoa=khoa.MaKhoa  and GiangVien.MaKhoa=Khoa.MaKhoa and GiangVien.MaGV=NhomHP.MaGV and NhomHP.MaHP=HocPhan.MaHP and KeHoachDaoTao.MaKHDT=NhomHP.MaKHDT and Lop.MaNganh=Nganh.MaNganh and lop.TenLop=KeHoachDaoTao.TenLop and KeHoachDaoTao.MaKhoaHoc=KhoaHoc.MaKhoaHoc and Diem.MaSinhVien=SinhVien.MaSinhVien and Diem.MaNhomHP=NhomHP.MaNhomHP and SinhVien.TenLop=Lop.TenLop  and SinhVien.MaSinhVien='" + this.username + "'and KyHoc='"+hocky+"'";
             SqlCommand cmd = new SqlCommand(query1, conn);
             SqlDataAdapter data = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             data.Fill(dt);
-            dgvdiemth.DataSource = dt;
-
-            return 1;
+            for(int i=0;i<dt.Rows.Count;i++)
+            {
+                a= a+Convert.ToInt32( dt.Rows[i]["SoTC"].ToString().Trim());
+            }
+            return a;
         }
 }
 }
