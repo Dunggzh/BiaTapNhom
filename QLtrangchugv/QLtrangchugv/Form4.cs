@@ -19,6 +19,7 @@ namespace QLtrangchugv
         public frmtthp()
         {
             InitializeComponent();
+            dgvqlhp.AllowUserToAddRows = false;
         }
         SqlConnection conn = new SqlConnection("Data Source=DESKTOP-NVIUQTM\\SQLEXPRESS;Initial Catalog=Demo_QLD;Integrated Security=True");
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

@@ -25,3 +25,4 @@ D:\C#\QLtrangchugv\QLtrangchugv\obj\Debug\net6.0-windows\QLtrangchugv.genruntime
 D:\C#\QLtrangchugv\QLtrangchugv\obj\Debug\net6.0-windows\ref\QLtrangchugv.dll
 D:\C#\QLtrangchugv\QLtrangchugv\obj\Debug\net6.0-windows\QLtrangchugv.frmqlsinhvien.resources
 D:\C#\QLtrangchugv\QLtrangchugv\obj\Debug\net6.0-windows\QLtrangchugv.frmtthp.resources
+D:\C#\QLtrangchugv\QLtrangchugv\obj\Debug\net6.0-windows\QLtrangchugv.frmqldiemsv.resources
