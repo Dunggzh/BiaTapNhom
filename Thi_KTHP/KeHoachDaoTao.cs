@@ -16,63 +16,36 @@ namespace Thi_KTHP
         public frmqtkhdt()
         {
             InitializeComponent();
-            Loadcboboxtenlop("SELECT * FROM Lop", "TenLop", "TenLop");
-            Loadcboboxmakhoahoc("SELECT * FROM KhoaHoc", "MaKhoaHoc", "MaKhoaHoc");
             Setstatus("reset");
             BindingData();
         }
         public static string status = "";
         SqlConnection conn = new SqlConnection(ConnectionString.connectionsString);
-
-        public void Loadcboboxtenlop(string query, string dis, string valu)
-        {
-        
-            if (conn.State == ConnectionState.Closed)
-            {
-                conn.Open();
-            }
-            SqlCommand cmd = new SqlCommand(query, conn);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataSet ds = new DataSet();
-            da.Fill(ds);
-            conn.Close();
-            cboqttenlop.DataSource = ds.Tables[0];
-            cboqttenlop.DisplayMember = dis;
-            cboqttenlop.ValueMember = valu;
-        }
-        public void Loadcboboxmakhoahoc(string query, string dis, string valu)
-        {
-            if (conn.State == ConnectionState.Closed)
-            {
-                conn.Open();
-            }
-            SqlCommand cmd = new SqlCommand(query, conn);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataSet ds = new DataSet();
-            da.Fill(ds);
-            conn.Close();
-            cboqtmakhoahoc.DataSource = ds.Tables[0];
-            cboqtmakhoahoc.DisplayMember = dis;
-            cboqtmakhoahoc.ValueMember = valu;
-        }
+        // để export excell
+        static DataSet dss;
 
         public void Setstatus(String state)
         {
             switch (state)
             {
                 case "reset":
-
-
                     btnqtthemkhdt.Enabled = true;
                     btnqtsuakhdt.Enabled = true;
                     btnqtxoakhdt.Enabled = true;
                     btnqtghikhdt.Enabled = false;
-                    btnqthuykhdt.Enabled = false;
+                    btnqthuykhdt.Enabled = true;
+                    btnqtxuatexcell.Enabled = true;
+                    btnqttkkhdt.Enabled = true;
 
-                    txtqtmakhdt.Enabled = false;
+                    dgvqtkhdt.Enabled = true;
+
+                    cboqttenkhoa.Enabled = false;
+                    cboqttennganh.Enabled = false;
                     cboqttenlop.Enabled = false;
+                    cboqttenkhoahoc.Enabled = false;
                     cboqtmakhoahoc.Enabled = false;
-   
+                    txtqtmakhdt.Enabled = false;
+                    txtqttkkhdt.Enabled = true;
                     break;
                 case "insert":
                     btnqtthemkhdt.Enabled = false;
@@ -80,12 +53,21 @@ namespace Thi_KTHP
                     btnqtxoakhdt.Enabled = false;
                     btnqtghikhdt.Enabled = true;
                     btnqthuykhdt.Enabled = true;
+                    btnqtxuatexcell.Enabled = false;
+                    btnqttkkhdt.Enabled = false;
 
-                    txtqtmakhdt.Enabled = true;
+                    dgvqtkhdt.Enabled = false;
+
+                    cboqttenkhoa.Enabled = true;
+                    cboqttennganh.Enabled = true;
                     cboqttenlop.Enabled = true;
-                    cboqtmakhoahoc .Enabled = true;
-     
+                    cboqttenkhoahoc.Enabled = true;
+                    cboqtmakhoahoc.Enabled = true;
+                    txtqtmakhdt.Enabled = true;
+                    txtqttkkhdt.Enabled = false;
+
                     txtqtmakhdt.Text = "";
+                    txtqttkkhdt.Text = "";
 
                     txtqtmakhdt.Focus();
                     break;
@@ -95,12 +77,20 @@ namespace Thi_KTHP
                     btnqtxoakhdt.Enabled = false;
                     btnqtghikhdt.Enabled = true;
                     btnqthuykhdt.Enabled = true;
+                    btnqtxuatexcell.Enabled = false;
+                    btnqttkkhdt.Enabled = false;
 
                     txtqtmakhdt.Enabled = false;
-                    cboqttenlop .Enabled = true;
+                    cboqttenkhoa.Enabled = true;
+                    cboqttennganh.Enabled = true;
+                    cboqttenlop.Enabled = true;
+                    cboqttenkhoahoc.Enabled = true;
                     cboqtmakhoahoc.Enabled = true;
+                    txtqttkkhdt.Enabled = false;
 
-                    cboqttenlop.Focus();
+                    txtqttkkhdt.Text = "";
+
+                    cboqttenkhoa.Focus();
                     break;
                 default: break;
             }
@@ -114,18 +104,24 @@ namespace Thi_KTHP
                 {
                     conn.Open();
                 }
-                string query = "SELECT * FROM KeHoachDaoTao";
+                string query = "SELECT MaKHDT as'Mã Kế Hoạch Đào Tạo', TenLop as'Tên Lớp', MaKhoaHoc as'Mã Khóa Học' FROM KeHoachDaoTao";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataSet ds = new DataSet();
+                //export excell
+                dss = ds;
                 da.Fill(ds);
                 if (ds != null && ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
                 {
                     dgvqtkhdt.DataSource = ds.Tables[0];
 
-                    txtqtmakhdt.Text = ds.Tables[0].Rows[0]["MaKHDT"].ToString();
-                    cboqttenlop.SelectedValue = ds.Tables[0].Rows[0]["TenLop"].ToString();
-                    cboqtmakhoahoc.SelectedValue = ds.Tables[0].Rows[0]["MaKhoaHoc"].ToString();
+                    txtqtmakhdt.Text = ds.Tables[0].Rows[0]["Mã Kế Hoạch Đào Tạo"].ToString();
+                    cboqttenlop.Text = ds.Tables[0].Rows[0]["Tên Lớp"].ToString();
+                    cboqtmakhoahoc.SelectedValue = ds.Tables[0].Rows[0]["Mã Khóa Học"].ToString();
+
+                    //bắt lỗi ghi sửa
+                    a = dss.Tables[0].Rows[0]["Tên Lớp"].ToString();
+                    b = dss.Tables[0].Rows[0]["Mã Khóa Học"].ToString();
                 }
                 else
                 {
@@ -135,7 +131,7 @@ namespace Thi_KTHP
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message + "\n Lỗi rồi! Liên hệ 098***** :<\n Chúng tôi sẽ cố gắng sửa lỗi này một cách sớm nhất!");
             }
         }
         private void btnqtthemkhdt_Click(object sender, EventArgs e)
@@ -154,53 +150,78 @@ namespace Thi_KTHP
         {
             try
             {
-                if (conn.State == ConnectionState.Closed)
+                if (MessageBox.Show("Bạn Chắc Chắn Muốn Xóa Chứ!", "Thông Báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    conn.Open();
-                }
+                    if (conn.State == ConnectionState.Closed)
+                    {
+                        conn.Open();
+                    }
 
-                string query = "DELETE dbo.KeHoachDaoTao WHERE MaKHDT='" + txtqtmakhdt.Text.Trim() + "'";
-                SqlCommand cmd = new SqlCommand(query, conn);
-                var result = cmd.ExecuteNonQuery();
-                if (result != 0)
-                {
-                    MessageBox.Show("Delete success");
-                    status = "reset";
-                    Setstatus(status);
-                    BindingData();
-                }
-                else
-                {
-                    MessageBox.Show("Delete error");
+                    string query = "DELETE dbo.KeHoachDaoTao WHERE MaKHDT='" + txtqtmakhdt.Text.Trim() + "'";
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    var result = cmd.ExecuteNonQuery();
+                    if (result != 0)
+                    {
+                        MessageBox.Show("Delete success");
+                        status = "reset";
+                        Setstatus(status);
+                        BindingData();
+                        txtqttkkhdt.Text = "";
+                    }
+                    else
+                    {
+                        MessageBox.Show("Delete error");
+                    }
+                    conn.Close();
                 }
             }
             catch (Exception ex)
+
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message + "\n Vui lòng xóa dữ liệu Khoa này ở bảng Ngành để tránh dư thừa dữ liệu!");
             }
         }
 
         private void btnqthuykhdt_Click(object sender, EventArgs e)
         {
-            txtqtmakhdt.Text = "";
+            try
+            {
+                errorbatloi.Clear();
 
-            status = "reset";
-            Setstatus(status);
-            BindingData();
+                txtqtmakhdt.Text = "";
+                txtqttkkhdt.Text = "";
+
+                status = "reset";
+                Setstatus(status);
+                BindingData();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + "\nLỗi rồi! Liên hệ 098***** :<\n Chúng tôi sẽ cố gắng sửa lỗi này một cách sớm nhất!");
+            }
+
+            
         }
 
         private void btnqtghikhdt_Click(object sender, EventArgs e)
         {
             try
             {
+                errorbatloi.Clear();
+                bool check = true;
+                if (txtqtmakhdt.Text == "")
+                {
+                    check = false;
+                    errorbatloi.SetError(txtqtmakhdt, "Bạn Chưa Nhập Dữ Liệu Trường Này");
+                }
 
-                if (status == "insert")
+                if (status == "insert" &&check==true)
                 {
                     if (conn.State == ConnectionState.Closed)
                     {
                         conn.Open();
                     }
-                    string query = "INSERT INTO KeHoachDaoTao (MaKHDT,TenLop,MaKhoaHoc) VALUES ('" + txtqtmakhdt.Text.Trim() + "',N'" + cboqttenlop.SelectedValue.ToString() + "','" + cboqtmakhoahoc.SelectedValue.ToString() + "')";
+                    string query = "INSERT INTO KeHoachDaoTao (MaKHDT,TenLop,MaKhoaHoc) VALUES ('" + txtqtmakhdt.Text.Trim() + "',N'" + cboqttenlop.SelectedItem.ToString() + "','" + cboqtmakhoahoc.SelectedValue.ToString() + "')";
                     SqlCommand cmd = new SqlCommand(query, conn);
                     var result = cmd.ExecuteNonQuery();
                     if (result != 0)
@@ -217,51 +238,222 @@ namespace Thi_KTHP
                     }
                     conn.Close();
                 }
-                if (status == "edit")
+                if (status == "edit" && check == true)
                 {
-                    if (conn.State == ConnectionState.Closed)
+                    if (cboqttenlop.Text.Equals(a) && cboqtmakhoahoc.Text.Equals(b))
                     {
-                        conn.Open();
-                    }
-                    string query = "UPDATE dbo.KeHoachDaoTao SET TenLop=N'" + cboqttenlop.SelectedValue.ToString() + "',MaKhoaHoc='" + cboqtmakhoahoc.SelectedValue.ToString() + "' WHERE MaKHDT='" + txtqtmakhdt.Text.Trim() + "'";
-                    SqlCommand cmd = new SqlCommand(query, conn);
-                    var result = cmd.ExecuteNonQuery();
-                    if (result != 0)
-                    {
-                        MessageBox.Show("Update success");
-
-                        status = "reset";
-                        Setstatus(status);
-                        BindingData();
+                        MessageBox.Show("Bạn Chưa Thay Đổi Dữ Liệu");
+                        cboqttenkhoa.Focus();
                     }
                     else
                     {
-                        MessageBox.Show("UpDate error");
+                        if (conn.State == ConnectionState.Closed)
+                        {
+                            conn.Open();
+                        }
+                        string query = "UPDATE dbo.KeHoachDaoTao SET TenLop=N'" + cboqttenlop.SelectedItem.ToString() + "',MaKhoaHoc='" + cboqtmakhoahoc.SelectedValue.ToString() + "' WHERE MaKHDT='" + txtqtmakhdt.Text.Trim() + "'";
+                        SqlCommand cmd = new SqlCommand(query, conn);
+                        var result = cmd.ExecuteNonQuery();
+                        if (result != 0)
+                        {
+                            MessageBox.Show("Update success");
+
+                            status = "reset";
+                            Setstatus(status);
+                            BindingData();
+                        }
+                        else
+                        {
+                            MessageBox.Show("UpDate error");
+                        }
+                        conn.Close();
                     }
+                    
                 }
 
 
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message + "\n Mã KHDT đã tồn tại!");
+                txtqtmakhdt.Focus();
             }
         }
-
+        static string a = null;
+        static string b = null;
         private void dgvqtkhdt_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+
             try
             {
                 var row = (DataGridViewRow)dgvqtkhdt.Rows[e.RowIndex];
-                txtqtmakhdt.Text = row.Cells["MaKHDT"].Value.ToString();
-                cboqttenlop.SelectedValue = row.Cells["TenLop"].Value.ToString();
-                cboqtmakhoahoc.SelectedValue = row.Cells["MaKhoaHoc"].Value.ToString();
+                txtqtmakhdt.Text = row.Cells["Mã Kế Hoạch Đào Tạo"].Value.ToString();
+                cboqttenlop.SelectedItem = row.Cells["Tên Lớp"].Value.ToString();
+                cboqtmakhoahoc.SelectedValue = row.Cells["Mã Khóa Học"].Value.ToString();
+
+                a = row.Cells["Tên Lớp"].Value.ToString();
+                b = row.Cells["Mã Khóa Học"].Value.ToString();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Arranged");
+                MessageBox.Show(ex.Message + "\n\t Sắp Xếp");
+            }
+        }
+
+        private void btnqtxuatexcell_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Thi_KTHP.Excell obj = new Thi_KTHP.Excell();
+                obj.WriteDataTableToExcel(dss.Tables[0], "Person Details", "D:\\Exceldata.xlsx", "Bảng KHDT");
+                MessageBox.Show("Excel created D: \tExceldata.xlsx", "Thông Báo");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + "\n Lỗi rồi! Liên hệ 098***** :<\n Chúng tôi sẽ cố gắng sửa lỗi này một cách sớm nhất!");
+            }
+        }
+
+        private void btnqttkkhdt_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                bool check = true;
+                if (txtqttkkhdt.Text == "")
+                {
+                    check = false;
+                    MessageBox.Show("Vui lòng nhập thông tin tìm kiếm!");
+                    txtqttkkhdt.Focus();
+                }
+                if (check == true)
+                {
+                    if (conn.State == ConnectionState.Closed)
+                    {
+                        conn.Open();
+                    }
+                    string query = "SELECT MaKHDT as'Mã Kế Hoạch Đào Tạo', TenLop as'Tên Lớp', MaKhoaHoc as'Mã Khóa Học' FROM dbo.KeHoachDaoTao WHERE MaKHDT LIKE '%" + txtqttkkhdt.Text.Trim() + "%' OR TenLop LIKE '%" + txtqttkkhdt.Text.Trim() + "%' OR MakHoaHoc LIKE N'%" + txtqttkkhdt.Text.Trim() + "%'  ";
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    DataSet ds = new DataSet();
+                    //export excell
+                    dss = ds;
+                    da.Fill(ds);
+                    if (ds != null && ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
+                    {
+                        status = "reset";
+                        Setstatus(status);
+                        txtqttkkhdt.Focus();
+
+                        dgvqtkhdt.DataSource = ds.Tables[0];
+
+                        txtqtmakhdt.Text = ds.Tables[0].Rows[0]["Mã Kế Hoạch Đào Tạo"].ToString();
+                        cboqttenlop.Text = ds.Tables[0].Rows[0]["Tên Lớp "].ToString();
+                        cboqtmakhoahoc.Text = ds.Tables[0].Rows[0]["Mã Khóa Học"].ToString();
+
+                        //bắt lỗi ghi sửa
+                        a = dss.Tables[0].Rows[0]["Tên Lớp"].ToString();
+                        b = dss.Tables[0].Rows[0]["Mã Khóa Học"].ToString();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Không Tìm Thấy Thông Tin");
+                    }
+                    conn.Close();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + "\n Lỗi rồi! Liên hệ 098***** :<\n Chúng tôi sẽ cố gắng sửa lỗi này một cách sớm nhất!");
+            }
+        }
+
+        private void frmqtkhdt_Load(object sender, EventArgs e)
+        {
+            cboqttenkhoa.SelectedItem = "--";
+            cboqttennganh.SelectedItem = "--";
+            cboqttenlop.SelectedItem= "--";
+            string query = "select * from Khoa";
+            SqlCommand cmd = new SqlCommand(query, conn);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            for (int i = 0; i <= ds.Tables[0].Rows.Count - 1; i++)
+            {
+                cboqttenkhoa.Items.Add(ds.Tables[0].Rows[i]["TenKhoa"].ToString());
+            }
+            cboqttenkhoahoc.SelectedItem= "--";
+            cboqtmakhoahoc.SelectedItem= "--"; 
+            string query1 = "select * from KhoaHoc";
+            SqlCommand cmd1 = new SqlCommand(query1, conn);
+            SqlDataAdapter da1 = new SqlDataAdapter(cmd1);
+            DataSet ds1 = new DataSet();
+            da1.Fill(ds1);
+            for (int i = 0; i <= ds1.Tables[0].Rows.Count - 1; i++)
+            {
+                cboqttenkhoahoc.Items.Add(ds1.Tables[0].Rows[i]["TenKhoaHoc"].ToString());
             }
 
+        }
+
+        private void cboqttenkhoa_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cboqttennganh.Items.Clear();
+            cboqttennganh.Items.Add("--");
+            cboqttennganh.SelectedItem="--";
+            if (conn.State == ConnectionState.Closed)
+            {
+                conn.Open();
+            }
+            string query = "select * from Nganh,Khoa where Nganh.MaKhoa=Khoa.MaKhoa and Khoa.TenKhoa=N'" + cboqttenkhoa.SelectedItem.ToString() + "'";
+            SqlCommand cmd = new SqlCommand(query, conn);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            for (int i = 0; i <= ds.Tables[0].Rows.Count - 1; i++)
+            {
+                cboqttennganh.Items.Add(ds.Tables[0].Rows[i]["TenNganh"].ToString());
+            }
+        }
+
+        private void cboqttennganh_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cboqttenlop.Items.Clear();
+            cboqttenlop.Items.Add("--");
+            cboqttenlop.SelectedItem = "--";
+            if (conn.State == ConnectionState.Closed)
+            {
+                conn.Open();
+            }
+            string query = "select * from Lop,Nganh where Nganh.MaNganh=Lop.MaNganh and Nganh.TenNganh=N'" + cboqttennganh.SelectedItem.ToString() + "'";
+            SqlCommand cmd = new SqlCommand(query, conn);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            for (int i = 0; i <= ds.Tables[0].Rows.Count - 1; i++)
+            {
+                cboqttenlop.Items.Add(ds.Tables[0].Rows[i]["TenLop"].ToString());
+            }
+        }
+
+        private void cboqttenkhoahoc_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cboqtmakhoahoc.Items.Clear();
+            cboqtmakhoahoc.Items.Add("--");
+            cboqtmakhoahoc.SelectedItem = "--";
+            if (conn.State == ConnectionState.Closed)
+            {
+                conn.Open();
+            }
+            string query = "select * from KeHoachDaoTao,KhoaHoc where KeHoachDaoTao.MaKhoaHoc=KhoaHoc.MaKhoaHoc and KhoaHoc.TenKhoaHoc='" + cboqttenkhoahoc.SelectedItem.ToString() + "'";
+            SqlCommand cmd = new SqlCommand(query, conn);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            for (int i = 0; i <= ds.Tables[0].Rows.Count - 1; i++)
+            {
+                cboqtmakhoahoc.Items.Add(ds.Tables[0].Rows[i]["MaKhoaHoc"].ToString());
+            }
         }
     }
 }

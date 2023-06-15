@@ -162,3 +162,4 @@ C:\Users\Dell\source\repos\BiaTapNhom1\Thi_KTHP\obj\Debug\Thi_KTHP.csproj.CoreCo
 C:\Users\Dell\source\repos\BiaTapNhom1\Thi_KTHP\obj\Debug\Thi_KTHP.exe
 C:\Users\Dell\source\repos\BiaTapNhom1\Thi_KTHP\obj\Debug\Thi_KTHP.pdb
 C:\Users\Dell\source\repos\BiaTapNhom1\Thi_KTHP\obj\Debug\Thi_KTHP.frmdiemtonghop.resources
+C:\Users\Nguyen Tien Dung\source\repos\BiaTapNhom\Thi_KTHP\obj\Debug\Thi_KTHP.frmdiemtonghop.resources

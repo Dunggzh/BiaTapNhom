@@ -83,6 +83,8 @@ namespace Thi_KTHP
                     txtqtkyhoc.Enabled = true;
                     txtqttkkhoahoc.Enabled= false;
 
+                    txtqttkkhoahoc.Text = "";
+
                     txtqttenkhoahoc.Focus();
                     break;
                 default: break;
@@ -161,6 +163,7 @@ namespace Thi_KTHP
                         status = "reset";
                         Setstatus(status);
                         BindingData();
+                        txtqttkkhoahoc.Text = "";
                     }
                     else
                     {
@@ -294,9 +297,9 @@ namespace Thi_KTHP
                 a = row.Cells["Tên Khóa Học"].Value.ToString();
                 b = row.Cells["Kỳ Học"].Value.ToString();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Arranged");
+                MessageBox.Show(ex.Message + "\n\t Sắp Xếp");
             }
 
         }
@@ -350,6 +353,10 @@ namespace Thi_KTHP
                         txtqtmakhoahoc.Text = ds.Tables[0].Rows[0]["Mã Khóa Học"].ToString();
                         txtqttenkhoahoc.Text = ds.Tables[0].Rows[0]["Tên Khóa Học"].ToString();
                         txtqtkyhoc.Text = ds.Tables[0].Rows[0]["Kỳ Học"].ToString();
+
+                        //bắt lỗi ghi sửa
+                        a = dss.Tables[0].Rows[0]["Tên Khóa Học"].ToString();
+                        b = dss.Tables[0].Rows[0]["Kỳ Học"].ToString();
                     }
                     else
                     {

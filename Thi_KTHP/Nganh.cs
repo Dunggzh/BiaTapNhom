@@ -68,7 +68,7 @@ namespace Thi_KTHP
                     btnqtghinganh.Enabled = true;
                     btnqthuynganh.Enabled = true;
                     btnqtxuatexcell.Enabled = false;
-                    txtqttknganh.Enabled = false;
+                    btnqttknganh.Enabled = false;
 
                     dgvqtnganh.Enabled = false;
 
@@ -97,6 +97,8 @@ namespace Thi_KTHP
                     txtqttennganh.Enabled = true;
                     cboqtmakhoa.Enabled = true;
                     txtqttknganh.Enabled = false;
+
+                    txtqttknganh.Text = "";
 
                     txtqttennganh.Focus();
                     break;
@@ -177,6 +179,7 @@ namespace Thi_KTHP
                         status = "reset";
                         Setstatus(status);
                         BindingData();
+                        txtqttknganh.Text = "";
                     }
                     else
                     {
@@ -307,9 +310,9 @@ namespace Thi_KTHP
                 a = row.Cells["Tên Ngành"].Value.ToString();
                 b = row.Cells["Mã Khoa"].Value.ToString();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Arranged");
+                MessageBox.Show(ex.Message+"\n\t Sắp Xếp");
             }
 
         }
@@ -363,6 +366,10 @@ namespace Thi_KTHP
                         txtqtmanganh.Text = ds.Tables[0].Rows[0]["Mã Ngành"].ToString();
                         txtqttennganh.Text = ds.Tables[0].Rows[0]["Tên Ngành"].ToString();
                         cboqtmakhoa.SelectedValue = ds.Tables[0].Rows[0]["Mã Khoa"].ToString();
+
+                        //bắt lỗi ghi sửa
+                        a = dss.Tables[0].Rows[0]["Tên Ngành"].ToString();
+                        b = dss.Tables[0].Rows[0]["Mã Khoa"].ToString();
                     }
                     else
                     {

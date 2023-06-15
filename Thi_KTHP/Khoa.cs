@@ -86,6 +86,8 @@ namespace Thi_KTHP
                     txtqtghichu.Enabled = true;
                     txtqttkkhoa.Enabled = false;
 
+                    txtqttkkhoa.Text = "";
+
                     txtqttenkhoa.Focus();
                     break;
                 default: break;
@@ -163,6 +165,7 @@ namespace Thi_KTHP
                         status = "reset";
                         Setstatus(status);
                         BindingData();
+                        txtqttkkhoa.Text = "";
                     }
                     else
                     {
@@ -309,9 +312,9 @@ namespace Thi_KTHP
                 b = row.Cells["Số Điện Thoại"].Value.ToString();
                 c = row.Cells["Ghi Chú"].Value.ToString();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Arranged");
+                MessageBox.Show(ex.Message + "\n\t Sắp Xếp");
             }
         }
 
@@ -365,6 +368,11 @@ namespace Thi_KTHP
                         txtqttenkhoa.Text = ds.Tables[0].Rows[0]["Tên Khoa"].ToString();
                         txtqtsdt.Text = ds.Tables[0].Rows[0]["Số Điện Thoại"].ToString();
                         txtqtghichu.Text = ds.Tables[0].Rows[0]["Ghi Chú"].ToString();
+
+                        //bắt lỗi ghi sửa
+                        a = dss.Tables[0].Rows[0]["Tên Khoa"].ToString();
+                        b = dss.Tables[0].Rows[0]["Số Điện Thoại"].ToString();
+                        c = dss.Tables[0].Rows[0]["Ghi Chú"].ToString();
                     }
                     else
                     {

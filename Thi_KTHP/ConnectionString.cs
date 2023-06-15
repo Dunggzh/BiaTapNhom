@@ -9,6 +9,6 @@ namespace Thi_KTHP
     class ConnectionString
     {
         //"data source = LAPTOP-2LQNMVB4; database = Demo_QLD; user id = sa; password = 1;";
-        public static string connectionsString = "Data Source=KHANG\\SQLEXPRESS;Initial Catalog=Demo_QLD;Integrated Security=True";
+        public static string connectionsString = "data source = LAPTOP-2LQNMVB4; database = Demo_QLD; user id = sa; password = 1;";
     }
 }

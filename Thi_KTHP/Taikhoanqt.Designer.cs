@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pnlqtcsdl = new System.Windows.Forms.Panel();
             this.dgvqttaikhoan = new System.Windows.Forms.DataGridView();
             this.floqtnut = new System.Windows.Forms.FlowLayoutPanel();
@@ -37,16 +38,22 @@
             this.btnqtghitk = new System.Windows.Forms.Button();
             this.btnqthuytk = new System.Windows.Forms.Button();
             this.pnlqttruong = new System.Windows.Forms.Panel();
+            this.txtqtquyen = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtqtpass = new System.Windows.Forms.TextBox();
             this.txtqtusername = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtqtquyen = new System.Windows.Forms.TextBox();
+            this.btnqtxuatexcell = new System.Windows.Forms.Button();
+            this.btnqttktaikhoan = new System.Windows.Forms.Button();
+            this.txtqttktaikhoan = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.errorbatloi = new System.Windows.Forms.ErrorProvider(this.components);
             this.pnlqtcsdl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvqttaikhoan)).BeginInit();
             this.floqtnut.SuspendLayout();
             this.pnlqttruong.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorbatloi)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlqtcsdl
@@ -58,7 +65,7 @@
             this.pnlqtcsdl.Controls.Add(this.dgvqttaikhoan);
             this.pnlqtcsdl.Location = new System.Drawing.Point(172, 159);
             this.pnlqtcsdl.Name = "pnlqtcsdl";
-            this.pnlqtcsdl.Size = new System.Drawing.Size(609, 315);
+            this.pnlqtcsdl.Size = new System.Drawing.Size(609, 386);
             this.pnlqtcsdl.TabIndex = 8;
             // 
             // dgvqttaikhoan
@@ -75,7 +82,7 @@
             this.dgvqttaikhoan.Name = "dgvqttaikhoan";
             this.dgvqttaikhoan.RowHeadersWidth = 51;
             this.dgvqttaikhoan.RowTemplate.Height = 24;
-            this.dgvqttaikhoan.Size = new System.Drawing.Size(603, 252);
+            this.dgvqttaikhoan.Size = new System.Drawing.Size(603, 323);
             this.dgvqttaikhoan.TabIndex = 4;
             this.dgvqttaikhoan.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvqttaikhoan_CellClick);
             // 
@@ -88,9 +95,11 @@
             this.floqtnut.Controls.Add(this.btnqtxoatk);
             this.floqtnut.Controls.Add(this.btnqtghitk);
             this.floqtnut.Controls.Add(this.btnqthuytk);
+            this.floqtnut.Controls.Add(this.btnqtxuatexcell);
+            this.floqtnut.Controls.Add(this.btnqttktaikhoan);
             this.floqtnut.Location = new System.Drawing.Point(3, 1);
             this.floqtnut.Name = "floqtnut";
-            this.floqtnut.Size = new System.Drawing.Size(163, 470);
+            this.floqtnut.Size = new System.Drawing.Size(163, 541);
             this.floqtnut.TabIndex = 6;
             // 
             // btnqtthemtk
@@ -148,6 +157,8 @@
             this.pnlqttruong.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlqttruong.Controls.Add(this.txtqtquyen);
+            this.pnlqttruong.Controls.Add(this.txtqttktaikhoan);
+            this.pnlqttruong.Controls.Add(this.label5);
             this.pnlqttruong.Controls.Add(this.label3);
             this.pnlqttruong.Controls.Add(this.label1);
             this.pnlqttruong.Controls.Add(this.txtqtpass);
@@ -157,6 +168,14 @@
             this.pnlqttruong.Name = "pnlqttruong";
             this.pnlqttruong.Size = new System.Drawing.Size(609, 152);
             this.pnlqttruong.TabIndex = 7;
+            // 
+            // txtqtquyen
+            // 
+            this.txtqtquyen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtqtquyen.Location = new System.Drawing.Point(25, 111);
+            this.txtqtquyen.Name = "txtqtquyen";
+            this.txtqtquyen.Size = new System.Drawing.Size(208, 27);
+            this.txtqtquyen.TabIndex = 5;
             // 
             // label3
             // 
@@ -181,7 +200,7 @@
             // txtqtpass
             // 
             this.txtqtpass.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtqtpass.Location = new System.Drawing.Point(335, 38);
+            this.txtqtpass.Location = new System.Drawing.Point(250, 38);
             this.txtqtpass.Name = "txtqtpass";
             this.txtqtpass.Size = new System.Drawing.Size(208, 27);
             this.txtqtpass.TabIndex = 3;
@@ -198,25 +217,59 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(331, 6);
+            this.label2.Location = new System.Drawing.Point(246, 3);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(88, 20);
             this.label2.TabIndex = 1;
             this.label2.Text = "Password:";
             // 
-            // txtqtquyen
+            // btnqtxuatexcell
             // 
-            this.txtqtquyen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtqtquyen.Location = new System.Drawing.Point(25, 111);
-            this.txtqtquyen.Name = "txtqtquyen";
-            this.txtqtquyen.Size = new System.Drawing.Size(208, 27);
-            this.txtqtquyen.TabIndex = 5;
+            this.btnqtxuatexcell.Location = new System.Drawing.Point(3, 378);
+            this.btnqtxuatexcell.Name = "btnqtxuatexcell";
+            this.btnqtxuatexcell.Size = new System.Drawing.Size(144, 69);
+            this.btnqtxuatexcell.TabIndex = 14;
+            this.btnqtxuatexcell.Text = "Export Excell";
+            this.btnqtxuatexcell.UseVisualStyleBackColor = true;
+            this.btnqtxuatexcell.Click += new System.EventHandler(this.btnqtxuatexcell_Click);
+            // 
+            // btnqttktaikhoan
+            // 
+            this.btnqttktaikhoan.Location = new System.Drawing.Point(3, 453);
+            this.btnqttktaikhoan.Name = "btnqttktaikhoan";
+            this.btnqttktaikhoan.Size = new System.Drawing.Size(144, 69);
+            this.btnqttktaikhoan.TabIndex = 15;
+            this.btnqttktaikhoan.Text = "Tìm Kiếm";
+            this.btnqttktaikhoan.UseVisualStyleBackColor = true;
+            this.btnqttktaikhoan.Click += new System.EventHandler(this.btnqttktaikhoan_Click);
+            // 
+            // txtqttktaikhoan
+            // 
+            this.txtqttktaikhoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtqttktaikhoan.Location = new System.Drawing.Point(250, 111);
+            this.txtqttktaikhoan.Name = "txtqttktaikhoan";
+            this.txtqttktaikhoan.Size = new System.Drawing.Size(314, 27);
+            this.txtqttktaikhoan.TabIndex = 17;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(246, 88);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(85, 20);
+            this.label5.TabIndex = 16;
+            this.label5.Text = "Tìm Kiếm:";
+            // 
+            // errorbatloi
+            // 
+            this.errorbatloi.ContainerControl = this;
             // 
             // frmqttaikhoan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(782, 469);
+            this.ClientSize = new System.Drawing.Size(782, 540);
             this.Controls.Add(this.pnlqtcsdl);
             this.Controls.Add(this.floqtnut);
             this.Controls.Add(this.pnlqttruong);
@@ -227,6 +280,7 @@
             this.floqtnut.ResumeLayout(false);
             this.pnlqttruong.ResumeLayout(false);
             this.pnlqttruong.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorbatloi)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -248,5 +302,10 @@
         private System.Windows.Forms.TextBox txtqtusername;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtqtquyen;
+        private System.Windows.Forms.Button btnqtxuatexcell;
+        private System.Windows.Forms.Button btnqttktaikhoan;
+        private System.Windows.Forms.TextBox txtqttktaikhoan;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ErrorProvider errorbatloi;
     }
 }
