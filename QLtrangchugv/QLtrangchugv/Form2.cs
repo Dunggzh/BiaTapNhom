@@ -19,6 +19,7 @@ namespace QLtrangchugv
         public frmttcn()
         {
             InitializeComponent();
+            dgvttcn.AllowUserToAddRows = false;
         }
 
         private void label1_Click(object sender, EventArgs e)
