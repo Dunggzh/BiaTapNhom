@@ -33,6 +33,7 @@
             this.mnutrangchuql = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuhocphan = new System.Windows.Forms.ToolStripMenuItem();
             this.mnudiem = new System.Windows.Forms.ToolStripMenuItem();
+            this.điểmTổngHợpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnutrangchutk = new System.Windows.Forms.ToolStripMenuItem();
             this.mnutrangchuht = new System.Windows.Forms.ToolStripMenuItem();
             this.mnutrangchund = new System.Windows.Forms.ToolStripMenuItem();
@@ -41,7 +42,6 @@
             this.đổiMậtKhẩuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuthoat = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlform = new System.Windows.Forms.Panel();
-            this.điểmTổngHợpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnusinhvien.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -81,16 +81,23 @@
             // mnuhocphan
             // 
             this.mnuhocphan.Name = "mnuhocphan";
-            this.mnuhocphan.Size = new System.Drawing.Size(224, 26);
+            this.mnuhocphan.Size = new System.Drawing.Size(193, 26);
             this.mnuhocphan.Text = "Học phần";
             this.mnuhocphan.Click += new System.EventHandler(this.mnuhocphan_Click);
             // 
             // mnudiem
             // 
             this.mnudiem.Name = "mnudiem";
-            this.mnudiem.Size = new System.Drawing.Size(224, 26);
+            this.mnudiem.Size = new System.Drawing.Size(193, 26);
             this.mnudiem.Text = "Điểm";
             this.mnudiem.Click += new System.EventHandler(this.mnudiem_Click);
+            // 
+            // điểmTổngHợpToolStripMenuItem
+            // 
+            this.điểmTổngHợpToolStripMenuItem.Name = "điểmTổngHợpToolStripMenuItem";
+            this.điểmTổngHợpToolStripMenuItem.Size = new System.Drawing.Size(193, 26);
+            this.điểmTổngHợpToolStripMenuItem.Text = "Điểm tổng hợp";
+            this.điểmTổngHợpToolStripMenuItem.Click += new System.EventHandler(this.điểmTổngHợpToolStripMenuItem_Click);
             // 
             // mnutrangchutk
             // 
@@ -103,6 +110,7 @@
             this.mnutrangchuht.Name = "mnutrangchuht";
             this.mnutrangchuht.Size = new System.Drawing.Size(66, 52);
             this.mnutrangchuht.Text = "Hỗ trợ";
+            this.mnutrangchuht.Click += new System.EventHandler(this.mnutrangchuht_Click);
             // 
             // mnutrangchund
             // 
@@ -151,13 +159,6 @@
             this.pnlform.Name = "pnlform";
             this.pnlform.Size = new System.Drawing.Size(819, 525);
             this.pnlform.TabIndex = 2;
-            // 
-            // điểmTổngHợpToolStripMenuItem
-            // 
-            this.điểmTổngHợpToolStripMenuItem.Name = "điểmTổngHợpToolStripMenuItem";
-            this.điểmTổngHợpToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.điểmTổngHợpToolStripMenuItem.Text = "Điểm tổng hợp";
-            this.điểmTổngHợpToolStripMenuItem.Click += new System.EventHandler(this.điểmTổngHợpToolStripMenuItem_Click);
             // 
             // frmtrangchusv
             // 

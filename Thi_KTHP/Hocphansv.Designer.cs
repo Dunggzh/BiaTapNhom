@@ -43,13 +43,13 @@
             this.dgvmainqlhp.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvmainqlhp.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvmainqlhp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvmainqlhp.Location = new System.Drawing.Point(0, 131);
+            this.dgvmainqlhp.Location = new System.Drawing.Point(0, 182);
             this.dgvmainqlhp.Name = "dgvmainqlhp";
+            this.dgvmainqlhp.RowHeadersVisible = false;
             this.dgvmainqlhp.RowHeadersWidth = 51;
             this.dgvmainqlhp.RowTemplate.Height = 24;
-            this.dgvmainqlhp.Size = new System.Drawing.Size(800, 319);
+            this.dgvmainqlhp.Size = new System.Drawing.Size(800, 268);
             this.dgvmainqlhp.TabIndex = 1;
             // 
             // panel1

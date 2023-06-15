@@ -19,6 +19,7 @@ namespace Thi_KTHP
         {
             InitializeComponent();
             dgvmain.AllowUserToAddRows = false;
+
         }
 
         public frmdiemsv(string username, string pass)
@@ -109,6 +110,15 @@ namespace Thi_KTHP
             }
 
         private void cbohocky_SelectedIndexChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbohocky_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             if (cbohocky.SelectedItem.Equals("--"))
             {

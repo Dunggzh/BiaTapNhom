@@ -93,5 +93,10 @@ namespace Thi_KTHP
         {
             Openformchild(new frmdiemtonghop(this.username,this.pass));
         }
+
+        private void mnutrangchuht_Click(object sender, EventArgs e)
+        {
+            Openformchild(new frmHotrosv());
+        }
     }
 }

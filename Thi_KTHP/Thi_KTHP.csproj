@@ -111,6 +111,12 @@
     <Compile Include="Hotroqt.Designer.cs">
       <DependentUpon>Hotroqt.cs</DependentUpon>
     </Compile>
+    <Compile Include="Hotrosv.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hotrosv.Designer.cs">
+      <DependentUpon>Hotrosv.cs</DependentUpon>
+    </Compile>
     <Compile Include="NhomHP.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -259,6 +265,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Hotroqt.resx">
       <DependentUpon>Hotroqt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hotrosv.resx">
+      <DependentUpon>Hotrosv.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NhomHP.resx">
       <DependentUpon>NhomHP.cs</DependentUpon>

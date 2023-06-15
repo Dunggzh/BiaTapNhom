@@ -26,8 +26,8 @@ namespace Thi_KTHP
         SqlConnection conn = new SqlConnection(ConnectionString.connectionsString);
         private void reset()
         {
-            txtusername.Text = "72DCHT20072";
-            txtpass.Text = "11122003";
+            txtusername.Text = "72DCHT20070";
+            txtpass.Text = "19012003";
             txtusername.Focus();
         }
 
