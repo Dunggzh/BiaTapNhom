@@ -273,7 +273,7 @@ namespace Thi_KTHP
                 }
                 txtqtsotiet.Text = row.Cells["SoTiet"].Value.ToString();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("Arranged");
             }

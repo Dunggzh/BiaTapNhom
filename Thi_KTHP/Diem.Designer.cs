@@ -131,6 +131,7 @@
             this.txtqtdiemchu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtqtdiemchu.Location = new System.Drawing.Point(410, 140);
             this.txtqtdiemchu.Name = "txtqtdiemchu";
+            this.txtqtdiemchu.ReadOnly = true;
             this.txtqtdiemchu.Size = new System.Drawing.Size(101, 27);
             this.txtqtdiemchu.TabIndex = 23;
             // 
@@ -269,6 +270,7 @@
             this.txtqtdiemtongket.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtqtdiemtongket.Location = new System.Drawing.Point(410, 82);
             this.txtqtdiemtongket.Name = "txtqtdiemtongket";
+            this.txtqtdiemtongket.ReadOnly = true;
             this.txtqtdiemtongket.Size = new System.Drawing.Size(101, 27);
             this.txtqtdiemtongket.TabIndex = 2;
             // 

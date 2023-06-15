@@ -23,7 +23,7 @@ namespace Thi_KTHP
             reset();
         }
         private int k=0;
-        SqlConnection conn = new SqlConnection("data source = LAPTOP-2LQNMVB4; database = Demo_QLD; user id = sa; password = 1;");
+        SqlConnection conn = new SqlConnection(ConnectionString.connectionsString);
         private void reset()
         {
             txtusername.Text = "72DCHT20072";
@@ -91,6 +91,18 @@ namespace Thi_KTHP
             reset();
                 conn.Close();
             
+        }
+
+        private void chkshowpass_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkshowpass.Checked)
+            {
+                txtpass.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                txtpass.UseSystemPasswordChar = true;
+            }
         }
     }
 }

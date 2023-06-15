@@ -292,7 +292,7 @@ namespace Thi_KTHP
                 cboqtmagv.SelectedValue = row.Cells["MaGV"].Value.ToString();
                 cboqtmakhdt.SelectedValue = row.Cells["MaKHDT"].Value.ToString();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("Arranged");
             }

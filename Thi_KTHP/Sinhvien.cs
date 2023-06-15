@@ -294,25 +294,13 @@ namespace Thi_KTHP
 
         private void dgvqtsv_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-                var row = (DataGridViewRow)dgvqtsv.Rows[e.RowIndex];
-                txtqtmasv.Text = row.Cells["MaSinhVien"].Value.ToString();
-                txtqttensv.Text = row.Cells["TenSV"].Value.ToString();
-                txtqtquequansv.Text = row.Cells["QueQuan"].Value.ToString();
-                dtpngaysinhsv.Value = Convert.ToDateTime(row.Cells["NgaySinh"].Value);
-                txtqtnoisinhsv.Text = row.Cells["NoiSinh"].Value.ToString();
-                if (row.Cells["GioiTinh"].Value.ToString() == "NAM")
-                {
-                    rdoqtnam.Checked = true;
-                    rdoqtnu.Checked = false;
-                }
-                else
-                {
-                    rdoqtnam.Checked = false;
-                    rdoqtnu.Checked = true;
-                }
+            try
+            {
 
-                cboqttenlop.SelectedValue = row.Cells["TenLop"].Value.ToString();
-                txtqtghichu.Text = row.Cells["GhiChu"].Value.ToString();
+            }catch(Exception)
+            {
+                MessageBox.Show("Arranged");
+            }
         }
     }
 }

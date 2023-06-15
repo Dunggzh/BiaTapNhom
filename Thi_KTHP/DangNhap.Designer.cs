@@ -40,6 +40,7 @@
             this.txtusername = new System.Windows.Forms.TextBox();
             this.errpass = new System.Windows.Forms.ErrorProvider(this.components);
             this.errusername = new System.Windows.Forms.ErrorProvider(this.components);
+            this.chkshowpass = new System.Windows.Forms.CheckBox();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errpass)).BeginInit();
@@ -75,21 +76,22 @@
             // 
             this.panel4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel4.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panel4.Controls.Add(this.chkshowpass);
             this.panel4.Controls.Add(this.label1);
             this.panel4.Controls.Add(this.btndangnhap);
             this.panel4.Controls.Add(this.label2);
             this.panel4.Controls.Add(this.txtpass);
             this.panel4.Controls.Add(this.txtusername);
-            this.panel4.Location = new System.Drawing.Point(262, 144);
+            this.panel4.Location = new System.Drawing.Point(233, 144);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(274, 118);
+            this.panel4.Size = new System.Drawing.Size(362, 118);
             this.panel4.TabIndex = 6;
             // 
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 14);
+            this.label1.Location = new System.Drawing.Point(53, 14);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(76, 16);
             this.label1.TabIndex = 1;
@@ -99,7 +101,7 @@
             // btndangnhap
             // 
             this.btndangnhap.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btndangnhap.Location = new System.Drawing.Point(87, 87);
+            this.btndangnhap.Location = new System.Drawing.Point(131, 87);
             this.btndangnhap.Name = "btndangnhap";
             this.btndangnhap.Size = new System.Drawing.Size(104, 28);
             this.btndangnhap.TabIndex = 5;
@@ -111,7 +113,7 @@
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 48);
+            this.label2.Location = new System.Drawing.Point(53, 48);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(38, 16);
             this.label2.TabIndex = 2;
@@ -121,7 +123,7 @@
             // txtpass
             // 
             this.txtpass.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtpass.Location = new System.Drawing.Point(109, 45);
+            this.txtpass.Location = new System.Drawing.Point(153, 45);
             this.txtpass.Name = "txtpass";
             this.txtpass.Size = new System.Drawing.Size(139, 22);
             this.txtpass.TabIndex = 4;
@@ -131,7 +133,7 @@
             // txtusername
             // 
             this.txtusername.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtusername.Location = new System.Drawing.Point(109, 14);
+            this.txtusername.Location = new System.Drawing.Point(153, 14);
             this.txtusername.Name = "txtusername";
             this.txtusername.Size = new System.Drawing.Size(139, 22);
             this.txtusername.TabIndex = 3;
@@ -144,6 +146,17 @@
             // errusername
             // 
             this.errusername.ContainerControl = this;
+            // 
+            // chkshowpass
+            // 
+            this.chkshowpass.AutoSize = true;
+            this.chkshowpass.Location = new System.Drawing.Point(297, 48);
+            this.chkshowpass.Name = "chkshowpass";
+            this.chkshowpass.Size = new System.Drawing.Size(62, 20);
+            this.chkshowpass.TabIndex = 6;
+            this.chkshowpass.Text = "Show";
+            this.chkshowpass.UseVisualStyleBackColor = true;
+            this.chkshowpass.CheckedChanged += new System.EventHandler(this.chkshowpass_CheckedChanged);
             // 
             // frmdangnhap
             // 
@@ -174,5 +187,6 @@
         private System.Windows.Forms.TextBox txtusername;
         private System.Windows.Forms.ErrorProvider errpass;
         private System.Windows.Forms.ErrorProvider errusername;
+        private System.Windows.Forms.CheckBox chkshowpass;
     }
 }

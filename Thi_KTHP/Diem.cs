@@ -198,7 +198,7 @@ namespace Thi_KTHP
                     conn.Open();
                 }
 
-                string query = "DELETE dbo.Diem WHERE MaSinhVien='" + cboqtmasv.SelectedValue.ToString() + "'";
+                string query = "DELETE dbo.Diem WHERE MaSinhVien='" + cboqtmasv.SelectedValue.ToString() + "' AND MaNhomHP= '" + cboqtnhomhocphan.SelectedValue.ToString() + "'";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 var result = cmd.ExecuteNonQuery();
                 if (result != 0)
@@ -233,61 +233,194 @@ namespace Thi_KTHP
             Setstatus(status);
             BindingData();
         }
+        static Double diemcc = 0;
+        static Double diemgk = 0;
+        static Double diemthikt = 0;
+        static Double diemth = 0;
+        static Double diemtl = 0;
+        static double diemtongket = 0;
+        static bool check1 = false;
+        static bool check2 = false;
+        static bool check3 = false;
 
+        public void TinhDiem()
+        {
+            try
+            {
+                check1 = false;
+                check2 = false;
+                check3 = false;
+                if (txtqtdiemth.Text == "" && txtqtdiemtl.Text == "")
+                {
+                    check1 = true;
+                }
+                else if (txtqtdiemth.Text != "" && txtqtdiemtl.Text == "")
+                {
+                    check2 = true;
+                    diemth = Double.Parse(txtqtdiemth.Text.Trim());
+                }
+                else if (txtqtdiemth.Text == "" && txtqtdiemtl.Text != "")
+                {
+                    check3 = true;
+                    diemtl = Double.Parse(txtqtdiemtl.Text.Trim());
+                }
+                else
+                {
+                    MessageBox.Show("Vui Lòng Kiểm Tra Lại Trường Thực Hành Và Trường Thảo Luận");
+                }
+                diemcc = Double.Parse(txtqtdiemcc.Text.Trim());
+                diemgk = Double.Parse(txtqtdiemgk.Text.Trim());
+                diemthikt = Double.Parse(txtqtdiemkt.Text.Trim());
+
+                
+                if (check1 == true)
+                {
+                    diemtongket = diemcc * 0.1 + diemgk * 0.2 + diemthikt * 0.7;
+                }
+                else if (check2 == true)
+                {
+                    diemtongket = diemcc * 0.1 + diemgk * 0.1 + diemth * 0.1 + diemthikt * 0.7;
+                }
+                else if (check3 == true)
+                {
+                    diemtongket = diemcc * 0.1 + diemgk * 0.1 + diemtl * 0.1 + diemthikt * 0.7;
+                }
+                
+                if(check1== true|| check2 == true|| check3 == true)
+                {
+                    string diemchu = "";
+                    txtqtdiemtongket.Text = diemtongket.ToString();
+                    if (diemtongket >= 8.5)
+                    {
+                        diemchu = "A";
+                    }else if(diemtongket < 8.5 && diemtongket >= 8)
+                    {
+                        diemchu = "B+";
+                    }else if(diemtongket < 8 && diemtongket >= 7.5)
+                    {
+                        diemchu= "B";
+                    }else if(diemtongket < 7.5 && diemtongket >= 6)
+                    {
+                        diemchu = "C+";
+                    }else if(diemtongket < 6 && diemtongket >=5.5)
+                    {
+                        diemchu= "C";
+                    }else if(diemtongket < 5.5 && diemtongket >= 5)
+                    {
+                        diemchu= "D+";
+                    }else if(diemtongket < 5 && diemtongket >= 4)
+                    {
+                        diemchu= "D";
+                    }
+                    else
+                    {
+                        diemchu= "F";
+                    }
+                    txtqtdiemchu.Text = diemchu;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
         private void btnqtghidiem_Click(object sender, EventArgs e)
         {
             try
             {
-
+                TinhDiem();
                 if (status == "insert")
                 {
-                    SqlConnection conn = new SqlConnection(connectionsString);
-                    if (conn.State == ConnectionState.Closed)
+                    string query = ""; bool check4 = true;
+                    if (check1 == true)
                     {
-                        conn.Open();
+                        query = "INSERT INTO Diem (ChuyenCan,KiemTraGK,ThiKetthuc,TongKetHP,DiemChu,MaSinhVien,MaNhomHP) VALUES ('" + float.Parse(txtqtdiemcc.Text.ToString()) + "','" + float.Parse(txtqtdiemgk.Text.Trim()) + "','" + float.Parse(txtqtdiemkt.Text.Trim()) + "','" + float.Parse(txtqtdiemtongket.Text.Trim()) + "','" + txtqtdiemchu.Text.Trim() + "','" + cboqtmasv.SelectedValue.ToString() + "','" + cboqtnhomhocphan.SelectedValue.ToString() + "')";
                     }
-                    string query = "INSERT INTO Diem (ChuyenCan,KiemTraGK,ThucHanh,ThiKetthuc,ThaoLuan,TongKetHP,DiemChu,MaSinhVien,MaNhomHP) VALUES ('" +float.Parse(txtqtdiemcc.Text.ToString()) + "','" + float.Parse(txtqtdiemgk.Text.Trim()) + "','" + float.Parse(txtqtdiemth.Text.Trim()) + "','" + float.Parse(txtqtdiemkt.Text.Trim()) + "','" + float.Parse(txtqtdiemtl.Text.Trim()) + "','" + float.Parse(txtqtdiemtongket.Text.Trim()) + "','" + txtqtdiemchu.Text.Trim() + "','" + cboqtmasv.SelectedValue.ToString() + "','" + cboqtnhomhocphan.SelectedValue.ToString() + "')";
-                    SqlCommand cmd = new SqlCommand(query, conn);
-                    var result = cmd.ExecuteNonQuery();
-                    if (result != 0)
+                    else if (check2 == true)
                     {
-                        MessageBox.Show("Insert success");
-                        status = "reset";
-                        Setstatus(status);
-                        BindingData();
-
+                        query = "INSERT INTO Diem (ChuyenCan,KiemTraGK,ThucHanh,ThiKetthuc,TongKetHP,DiemChu,MaSinhVien,MaNhomHP) VALUES ('" + float.Parse(txtqtdiemcc.Text.ToString()) + "','" + float.Parse(txtqtdiemgk.Text.Trim()) + "','" + float.Parse(txtqtdiemth.Text.Trim()) + "','" + float.Parse(txtqtdiemkt.Text.Trim()) + "','" + float.Parse(txtqtdiemtongket.Text.Trim()) + "','" + txtqtdiemchu.Text.Trim() + "','" + cboqtmasv.SelectedValue.ToString() + "','" + cboqtnhomhocphan.SelectedValue.ToString() + "')";
+                    }
+                    else if (check3 == true)
+                    {
+                        query = "INSERT INTO Diem (ChuyenCan,KiemTraGK,ThiKetthuc,ThaoLuan,TongKetHP,DiemChu,MaSinhVien,MaNhomHP) VALUES ('" + float.Parse(txtqtdiemcc.Text.ToString()) + "','" + float.Parse(txtqtdiemgk.Text.Trim()) + "','" + float.Parse(txtqtdiemkt.Text.Trim()) + "','" + float.Parse(txtqtdiemtl.Text.Trim()) + "','" + float.Parse(txtqtdiemtongket.Text.Trim()) + "','" + txtqtdiemchu.Text.Trim() + "','" + cboqtmasv.SelectedValue.ToString() + "','" + cboqtnhomhocphan.SelectedValue.ToString() + "')";
                     }
                     else
                     {
-                        MessageBox.Show("Insert error");
+                        check4= false;
                     }
-                    conn.Close();
+
+                    if(check4 == true)
+                    {
+                        SqlConnection conn = new SqlConnection(connectionsString);
+                        if (conn.State == ConnectionState.Closed)
+                        {
+                            conn.Open();
+                        }
+                        //string query = "INSERT INTO Diem (ChuyenCan,KiemTraGK,ThucHanh,ThiKetthuc,ThaoLuan,TongKetHP,DiemChu,MaSinhVien,MaNhomHP) VALUES ('" +float.Parse(txtqtdiemcc.Text.ToString()) + "','" + float.Parse(txtqtdiemgk.Text.Trim()) + "','" + float.Parse(txtqtdiemth.Text.Trim()) + "','" + float.Parse(txtqtdiemkt.Text.Trim()) + "','" + float.Parse(txtqtdiemtl.Text.Trim()) + "','" + float.Parse(txtqtdiemtongket.Text.Trim()) + "','" + txtqtdiemchu.Text.Trim() + "','" + cboqtmasv.SelectedValue.ToString() + "','" + cboqtnhomhocphan.SelectedValue.ToString() + "')";
+                        SqlCommand cmd = new SqlCommand(query, conn);
+                        var result = cmd.ExecuteNonQuery();
+                        if (result != 0)
+                        {
+                            //query = "";
+                            MessageBox.Show("Insert success");
+                            status = "reset";
+                            Setstatus(status);
+                            BindingData();
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("Insert error");
+                        }
+                        conn.Close();
+                    }
+                    
                 }
                 if (status == "edit")
                 {
-                    SqlConnection conn = new SqlConnection(connectionsString);
-                    if (conn.State == ConnectionState.Closed)
+                    string query = ""; bool check5 = true;
+                    if (check1 == true)
                     {
-                        conn.Open();
-                    }
-                    string query = "UPDATE dbo.SinhVien SET ChuyenCan='" + float.Parse(txtqtdiemcc.Text.Trim()) + "',KiemTraGK='" + float.Parse(txtqtdiemgk.Text.Trim()) + "',ThucHanh='" + float.Parse(txtqtdiemth.Text.Trim()) + "',ThiKetThuc='" + float.Parse(txtqtdiemkt.Text.Trim()) + "',ThaoLuan='" + float.Parse(txtqtdiemtl.Text.Trim()) + "',TongKetHP='" + float.Parse(txtqtdiemtongket.Text.Trim()) + "',DiemChu='" + txtqtdiemchu.Text.Trim() + "',MaNhomHP='" + cboqtnhomhocphan.SelectedValue.ToString() + "' WHERE MaSinhVien = '" + cboqtmasv.SelectedValue.ToString() + "'";
-                    SqlCommand cmd = new SqlCommand(query, conn);
-                    var result = cmd.ExecuteNonQuery();
-                    if (result != 0)
+                        query = "UPDATE dbo.Diem SET ChuyenCan='" + float.Parse(txtqtdiemcc.Text.Trim()) + "',KiemTraGK='" + float.Parse(txtqtdiemgk.Text.Trim()) + "',ThiKetThuc='" + float.Parse(txtqtdiemkt.Text.Trim()) + "',TongKetHP='" + float.Parse(txtqtdiemtongket.Text.Trim()) + "',DiemChu='" + txtqtdiemchu.Text.Trim() + "',MaNhomHP='" + cboqtnhomhocphan.SelectedValue.ToString() + "' WHERE MaSinhVien = '" + cboqtmasv.SelectedValue.ToString() + "'";
+                    }else if(check2 == true)
                     {
-                        MessageBox.Show("Update success");
-
-                        status = "reset";
-                        Setstatus(status);
-                        BindingData();
+                        query = "UPDATE dbo.Diem SET ChuyenCan='" + float.Parse(txtqtdiemcc.Text.Trim()) + "',KiemTraGK='" + float.Parse(txtqtdiemgk.Text.Trim()) + "',ThucHanh='" + float.Parse(txtqtdiemth.Text.Trim()) + "',ThiKetThuc='" + float.Parse(txtqtdiemkt.Text.Trim()) + "',TongKetHP='" + float.Parse(txtqtdiemtongket.Text.Trim()) + "',DiemChu='" + txtqtdiemchu.Text.Trim() + "',MaNhomHP='" + cboqtnhomhocphan.SelectedValue.ToString() + "' WHERE MaSinhVien = '" + cboqtmasv.SelectedValue.ToString() + "'";
+                    }else if(check3 == true)
+                    {
+                        query = "UPDATE dbo.Diem SET ChuyenCan='" + float.Parse(txtqtdiemcc.Text.Trim()) + "',KiemTraGK='" + float.Parse(txtqtdiemgk.Text.Trim()) + "',ThiKetThuc='" + float.Parse(txtqtdiemkt.Text.Trim()) + "',ThaoLuan='" + float.Parse(txtqtdiemtl.Text.Trim()) + "',TongKetHP='" + float.Parse(txtqtdiemtongket.Text.Trim()) + "',DiemChu='" + txtqtdiemchu.Text.Trim() + "',MaNhomHP='" + cboqtnhomhocphan.SelectedValue.ToString() + "' WHERE MaSinhVien = '" + cboqtmasv.SelectedValue.ToString() + "'";
                     }
                     else
                     {
-                        MessageBox.Show("UpDate error");
+                        check5 = false;
                     }
+
+                    if(check5 == true)
+                    {
+                        SqlConnection conn = new SqlConnection(connectionsString);
+                        if (conn.State == ConnectionState.Closed)
+                        {
+                            conn.Open();
+                        }
+                        //query = "UPDATE dbo.SinhVien SET ChuyenCan='" + float.Parse(txtqtdiemcc.Text.Trim()) + "',KiemTraGK='" + float.Parse(txtqtdiemgk.Text.Trim()) + "',ThucHanh='" + float.Parse(txtqtdiemth.Text.Trim()) + "',ThiKetThuc='" + float.Parse(txtqtdiemkt.Text.Trim()) + "',ThaoLuan='" + float.Parse(txtqtdiemtl.Text.Trim()) + "',TongKetHP='" + float.Parse(txtqtdiemtongket.Text.Trim()) + "',DiemChu='" + txtqtdiemchu.Text.Trim() + "',MaNhomHP='" + cboqtnhomhocphan.SelectedValue.ToString() + "' WHERE MaSinhVien = '" + cboqtmasv.SelectedValue.ToString() + "'";
+                        SqlCommand cmd = new SqlCommand(query, conn);
+                        var result = cmd.ExecuteNonQuery();
+                        if (result != 0)
+                        {
+                            MessageBox.Show("Update success");
+
+                            status = "reset";
+                            Setstatus(status);
+                            BindingData();
+                        }
+                        else
+                        {
+                            MessageBox.Show("UpDate error");
+                        }
+                        conn.Close();
+                    }
+                    
                 }
-
-
             }
             catch (Exception ex)
             {
@@ -311,7 +444,7 @@ namespace Thi_KTHP
                 cboqtmasv.SelectedValue = row.Cells["MaSinhVien"].Value.ToString();
                 cboqtnhomhocphan.SelectedValue = row.Cells["MaNhomHP"].Value.ToString();
             }
-            catch(Exception ex)
+            catch(Exception)
             {
                 MessageBox.Show("Arranged");
             }

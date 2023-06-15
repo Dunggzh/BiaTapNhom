@@ -22,8 +22,7 @@ namespace Thi_KTHP
         }
 
         public static string status = "";
-        public static string connectionsString =
-            "data source = LAPTOP-2LQNMVB4; database = Demo_QLD; user id = sa; password = 1;";
+        SqlConnection conn = new SqlConnection(ConnectionString.connectionsString);
         // để export excell
         static DataSet dss;
         public void Setstatus(String state)
@@ -31,8 +30,6 @@ namespace Thi_KTHP
             switch (state)
             {
                 case "reset":
-
-
                     btnqtthemkhoa.Enabled = true;
                     btnqtsuakhoa.Enabled = true;
                     btnqtxoakhoa.Enabled = true;
@@ -40,6 +37,7 @@ namespace Thi_KTHP
                     btnqthuykhoa.Enabled = true;
                     btnqtxuatexcell.Enabled = true;
                     btnqttkkhoa.Enabled = true;
+
                     dgvqtkhoa.Enabled = true;
 
                     txtqtmakhoa.Enabled = false;
@@ -56,8 +54,8 @@ namespace Thi_KTHP
                     btnqthuykhoa.Enabled = true;
                     btnqtxuatexcell.Enabled = false;
                     btnqttkkhoa.Enabled = false;
-                    dgvqtkhoa.Enabled = false;
 
+                    dgvqtkhoa.Enabled = false;
 
                     txtqtmakhoa.Enabled = true;
                     txtqttenkhoa.Enabled = true;
@@ -70,10 +68,10 @@ namespace Thi_KTHP
                     txtqtsdt.Text = "";
                     txtqtghichu.Text = "";
                     txtqttkkhoa.Text = "";
+
                     txtqtmakhoa.Focus();
                     break;
                 case "edit":
-
                     btnqtthemkhoa.Enabled = false;
                     btnqtsuakhoa.Enabled = false;
                     btnqtxoakhoa.Enabled = false;
@@ -93,17 +91,15 @@ namespace Thi_KTHP
                 default: break;
             }
         }
-
         public void BindingData()
         {
             try
             {
-                SqlConnection conn = new SqlConnection(connectionsString);
                 if (conn.State == ConnectionState.Closed)
                 {
                     conn.Open();
                 }
-                string query = "SELECT * FROM Khoa";
+                string query = "SELECT MaKhoa as'Mã Khoa',TenKhoa as'Tên Khoa', SoDienThoai as'Số Điện Thoại',GhiChu as'Ghi Chú' FROM Khoa";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataSet ds = new DataSet();
@@ -114,15 +110,15 @@ namespace Thi_KTHP
                 {
                     dgvqtkhoa.DataSource = ds.Tables[0];
 
-                    txtqtmakhoa.Text = ds.Tables[0].Rows[0]["MaKhoa"].ToString();
-                    txtqttenkhoa.Text = ds.Tables[0].Rows[0]["TenKhoa"].ToString();
-                    txtqtsdt.Text = ds.Tables[0].Rows[0]["SoDienThoai"].ToString();
-                    txtqtghichu.Text = ds.Tables[0].Rows[0]["GhiChu"].ToString();
+                    txtqtmakhoa.Text = ds.Tables[0].Rows[0]["Mã Khoa"].ToString();
+                    txtqttenkhoa.Text = ds.Tables[0].Rows[0]["Tên Khoa"].ToString();
+                    txtqtsdt.Text = ds.Tables[0].Rows[0]["Số Điện Thoại"].ToString();
+                    txtqtghichu.Text = ds.Tables[0].Rows[0]["Ghi Chú"].ToString();
 
                     //bắt lỗi ghi sửa
-                    a = dss.Tables[0].Rows[0]["TenKhoa"].ToString();
-                    b = dss.Tables[0].Rows[0]["SoDienThoai"].ToString();
-                    c = dss.Tables[0].Rows[0]["GhiChu"].ToString();
+                    a = dss.Tables[0].Rows[0]["Tên Khoa"].ToString();
+                    b = dss.Tables[0].Rows[0]["Số Điện Thoại"].ToString();
+                    c = dss.Tables[0].Rows[0]["Ghi Chú"].ToString();
                 }
                 else
                 {
@@ -132,7 +128,7 @@ namespace Thi_KTHP
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message+"\n Lỗi rồi! Liên hệ 098***** :<\n Chúng tôi sẽ cố gắng sửa lỗi này một cách sớm nhất!");
             }
         }
 
@@ -152,14 +148,12 @@ namespace Thi_KTHP
         {
             try
             {
-                if(MessageBox.Show("Bạn Chắc Chắn Muốn Xóa Chứ!","Lưu Ý",MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if(MessageBox.Show("Bạn Chắc Chắn Muốn Xóa Chứ!","Thông Báo",MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    SqlConnection conn = new SqlConnection(connectionsString);
                     if (conn.State == ConnectionState.Closed)
                     {
                         conn.Open();
                     }
-
                     string query = "DELETE dbo.Khoa WHERE MaKhoa='" + txtqtmakhoa.Text.Trim() + "'";
                     SqlCommand cmd = new SqlCommand(query, conn);
                     var result = cmd.ExecuteNonQuery();
@@ -176,36 +170,67 @@ namespace Thi_KTHP
                     }
                     conn.Close();
                 }
-                
+            }
+            catch (Exception ex)
+
+            {
+                MessageBox.Show(ex.Message+"\n Vui lòng xóa dữ liệu Khoa này ở bảng Ngành để tránh dư thừa dữ liệu!");
+            }
+        }
+        private void btnqthuykhoa_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                errorbatloi.Clear();
+
+                txtqtmakhoa.Text = "";
+                txtqttenkhoa.Text = "";
+                txtqtsdt.Text = "";
+                txtqtghichu.Text = "";
+                txtqttkkhoa.Text = "";
+
+                status = "reset";
+                Setstatus(status);
+                BindingData();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Vui Lòng Xóa Khoa Này Ở Bảng Ngành");
+                MessageBox.Show(ex.Message+"\nLỗi rồi! Liên hệ 098***** :<\n Chúng tôi sẽ cố gắng sửa lỗi này một cách sớm nhất!");
             }
-        }
-
-        private void btnqthuykhoa_Click(object sender, EventArgs e)
-        {
-            txtqtmakhoa.Text = "";
-            txtqttenkhoa.Text = "";
-            txtqtsdt.Text = "";
-            txtqtghichu.Text = "";
-            txtqttkkhoa.Text = "";
-
-            status = "reset";
-            Setstatus(status);
-            BindingData();
         }
 
         private void btnqtghikhoa_Click(object sender, EventArgs e)
         {
             try
             {
-                
-
-                if (status == "insert")
+                errorbatloi.Clear();
+                bool check= true;int output;
+                if (txtqtmakhoa.Text == "")
                 {
-                    SqlConnection conn = new SqlConnection(connectionsString);
+                    check= false;
+                    errorbatloi.SetError(txtqtmakhoa, "Bạn Chưa Nhập Dữ Liệu Trường Này");
+                }
+                if (txtqttenkhoa.Text == "")
+                {
+                    check = false;
+                    errorbatloi.SetError(txtqttenkhoa, "Bạn Chưa Nhập Dữ Liệu Trường Này");
+                }
+                if (txtqtsdt.Text == "")
+                {
+                    check = false;
+                    errorbatloi.SetError(txtqtsdt, "Bạn Chưa Nhập Dữ Liệu Trường Này");
+                }
+                else
+                {
+                    if(int.TryParse(txtqtsdt.Text,out output) == false)
+                    {
+                        check = false;
+                        errorbatloi.SetError(txtqtsdt, "Sai Định Dạng");
+                    }
+                }   
+
+                if (status == "insert" && check== true)
+                {
                     if (conn.State == ConnectionState.Closed)
                     {
                         conn.Open();
@@ -227,16 +252,15 @@ namespace Thi_KTHP
                     }
                     conn.Close();
                 }
-                if (status == "edit")
+                if (status == "edit" && check == true)
                 {
                     if (txtqttenkhoa.Text.Equals(a) && txtqtsdt.Text.Equals(b) && txtqtghichu.Text.Equals(c))
                     {
-                        MessageBox.Show("Bạn Chưa Update");
+                        MessageBox.Show("Bạn Chưa Thay Đổi Dữ Liệu");
                         txtqttenkhoa.Focus();
                     }
                     else
                     {
-                        SqlConnection conn = new SqlConnection(connectionsString);
                         if (conn.State == ConnectionState.Closed)
                         {
                             conn.Open();
@@ -260,12 +284,11 @@ namespace Thi_KTHP
                     }
                     
                 }
-
-
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message+"\n Mã Khoa đã tồn tại!");
+                txtqtmakhoa.Focus();
             }
         }
 
@@ -277,27 +300,33 @@ namespace Thi_KTHP
             try
             {
                 var row = (DataGridViewRow)dgvqtkhoa.Rows[e.RowIndex];
-                txtqtmakhoa.Text = row.Cells["MaKhoa"].Value.ToString();
-                txtqttenkhoa.Text = row.Cells["TenKhoa"].Value.ToString();
-                txtqtsdt.Text = row.Cells["SoDienThoai"].Value.ToString();
-                txtqtghichu.Text = row.Cells["GhiChu"].Value.ToString();
+                txtqtmakhoa.Text = row.Cells["Mã Khoa"].Value.ToString();
+                txtqttenkhoa.Text = row.Cells["Tên Khoa"].Value.ToString();
+                txtqtsdt.Text = row.Cells["Số Điện Thoại"].Value.ToString();
+                txtqtghichu.Text = row.Cells["Ghi Chú"].Value.ToString();
 
-                a = row.Cells["TenKhoa"].Value.ToString();
-                b = row.Cells["SoDienThoai"].Value.ToString();
-                c = row.Cells["GhiChu"].Value.ToString();
+                a = row.Cells["Tên Khoa"].Value.ToString();
+                b = row.Cells["Số Điện Thoại"].Value.ToString();
+                c = row.Cells["Ghi Chú"].Value.ToString();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("Arranged");
             }
-
         }
 
         private void btnqtxuatexcell_Click(object sender, EventArgs e)
         {
-            Thi_KTHP.Excell obj = new Thi_KTHP.Excell();
-            obj.WriteDataTableToExcel(dss.Tables[0], "Person Details", "D:\\Exceldata.xlsx", "Bảng Khoa");
-            MessageBox.Show("Excel created D:\tExceldata.xlsx");
+            try
+            {
+                Thi_KTHP.Excell obj = new Thi_KTHP.Excell();
+                obj.WriteDataTableToExcel(dss.Tables[0], "Person Details", "D:\\Exceldata.xlsx", "Bảng Khoa");
+                MessageBox.Show("Excel created D: \tExceldata.xlsx","Thông Báo");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message+"\n Lỗi rồi! Liên hệ 098***** :<\n Chúng tôi sẽ cố gắng sửa lỗi này một cách sớm nhất!");
+            }
         }
 
         private void btnqttkkhoa_Click(object sender, EventArgs e)
@@ -313,16 +342,15 @@ namespace Thi_KTHP
                 }
                 if(check==true)
                 {
-                    SqlConnection conn = new SqlConnection(connectionsString);
                     if (conn.State == ConnectionState.Closed)
                     {
                         conn.Open();
                     }
-                    string query = "SELECT * FROM dbo.Khoa WHERE MaKhoa LIKE '%" + txtqttkkhoa.Text.Trim() + "%' OR SoDienThoai LIKE '%" + Convert.ToString(txtqttkkhoa.Text) + "%' OR TenKhoa LIKE N'%" + txtqttkkhoa.Text.Trim() + "%' OR GhiChu LIKE '%" + txtqttkkhoa.Text.Trim() + "%'  ";
+                    string query = "SELECT MaKhoa as'Mã Khoa',TenKhoa as'Tên Khoa', SoDienThoai as'Số Điện Thoại',GhiChu as'Ghi Chú' FROM dbo.Khoa WHERE MaKhoa LIKE '%" + txtqttkkhoa.Text.Trim() + "%' OR SoDienThoai LIKE '%" + Convert.ToString(txtqttkkhoa.Text) + "%' OR TenKhoa LIKE N'%" + txtqttkkhoa.Text.Trim() + "%' OR GhiChu LIKE N'%" + txtqttkkhoa.Text.Trim() + "%'  ";
                     SqlCommand cmd = new SqlCommand(query, conn);
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
                     DataSet ds = new DataSet();
-
+                    //export excell
                     dss = ds;
                     da.Fill(ds);
                     if (ds != null && ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
@@ -333,10 +361,10 @@ namespace Thi_KTHP
 
                         dgvqtkhoa.DataSource = ds.Tables[0];
 
-                        txtqtmakhoa.Text = ds.Tables[0].Rows[0]["MaKhoa"].ToString();
-                        txtqttenkhoa.Text = ds.Tables[0].Rows[0]["TenKhoa"].ToString();
-                        txtqtsdt.Text = ds.Tables[0].Rows[0]["SoDienThoai"].ToString();
-                        txtqtghichu.Text = ds.Tables[0].Rows[0]["GhiChu"].ToString();
+                        txtqtmakhoa.Text = ds.Tables[0].Rows[0]["Mã Khoa"].ToString();
+                        txtqttenkhoa.Text = ds.Tables[0].Rows[0]["Tên Khoa"].ToString();
+                        txtqtsdt.Text = ds.Tables[0].Rows[0]["Số Điện Thoại"].ToString();
+                        txtqtghichu.Text = ds.Tables[0].Rows[0]["Ghi Chú"].ToString();
                     }
                     else
                     {
@@ -348,7 +376,7 @@ namespace Thi_KTHP
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message+"\n Lỗi rồi! Liên hệ 098***** :<\n Chúng tôi sẽ cố gắng sửa lỗi này một cách sớm nhất!");
             }
         }
     }

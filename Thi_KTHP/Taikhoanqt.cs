@@ -11,53 +11,27 @@ using System.Windows.Forms;
 
 namespace Thi_KTHP
 {
-    public partial class frmqtkhdt : Form
+    public partial class frmqttaikhoan : Form
     {
-        public frmqtkhdt()
+        private string username;
+        private string pass;
+        public frmqttaikhoan()
         {
             InitializeComponent();
-            Loadcboboxtenlop("SELECT * FROM Lop", "TenLop", "TenLop");
-            Loadcboboxmakhoahoc("SELECT * FROM KhoaHoc", "MaKhoaHoc", "MaKhoaHoc");
+
+        }
+        public frmqttaikhoan(string username, string pass)
+        {
+            InitializeComponent();
             Setstatus("reset");
             BindingData();
+            this.username = username;
+            this.pass = pass;
         }
+
         public static string status = "";
         public static string connectionsString =
             "data source = LAPTOP-2LQNMVB4; database = Demo_QLD; user id = sa; password = 1;";
-
-        public void Loadcboboxtenlop(string query, string dis, string valu)
-        {
-            SqlConnection conn = new SqlConnection(connectionsString);
-            if (conn.State == ConnectionState.Closed)
-            {
-                conn.Open();
-            }
-            SqlCommand cmd = new SqlCommand(query, conn);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataSet ds = new DataSet();
-            da.Fill(ds);
-            conn.Close();
-            cboqttenlop.DataSource = ds.Tables[0];
-            cboqttenlop.DisplayMember = dis;
-            cboqttenlop.ValueMember = valu;
-        }
-        public void Loadcboboxmakhoahoc(string query, string dis, string valu)
-        {
-            SqlConnection conn = new SqlConnection(connectionsString);
-            if (conn.State == ConnectionState.Closed)
-            {
-                conn.Open();
-            }
-            SqlCommand cmd = new SqlCommand(query, conn);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataSet ds = new DataSet();
-            da.Fill(ds);
-            conn.Close();
-            cboqtmakhoahoc.DataSource = ds.Tables[0];
-            cboqtmakhoahoc.DisplayMember = dis;
-            cboqtmakhoahoc.ValueMember = valu;
-        }
-
         public void Setstatus(String state)
         {
             switch (state)
@@ -65,44 +39,46 @@ namespace Thi_KTHP
                 case "reset":
 
 
-                    btnqtthemkhdt.Enabled = true;
-                    btnqtsuakhdt.Enabled = true;
-                    btnqtxoakhdt.Enabled = true;
-                    btnqtghikhdt.Enabled = false;
-                    btnqthuykhdt.Enabled = false;
+                    btnqtthemtk.Enabled = true;
+                    btnqtsuatk.Enabled = true;
+                    btnqtxoatk.Enabled = true;
+                    btnqtghitk.Enabled = false;
+                    btnqthuytk.Enabled = true;
 
-                    txtqtmakhdt.Enabled = false;
-                    cboqttenlop.Enabled = false;
-                    cboqtmakhoahoc.Enabled = false;
-   
+                    txtqtusername.Enabled = false;
+                    txtqtpass.Enabled = false;
+                    txtqtquyen.Enabled = false;
                     break;
                 case "insert":
-                    btnqtthemkhdt.Enabled = false;
-                    btnqtsuakhdt.Enabled = false;
-                    btnqtxoakhdt.Enabled = false;
-                    btnqtghikhdt.Enabled = true;
-                    btnqthuykhdt.Enabled = true;
+                    btnqtthemtk.Enabled = false;
+                    btnqtsuatk.Enabled = false;
+                    btnqtxoatk.Enabled = false;
+                    btnqtghitk.Enabled = true;
+                    btnqthuytk.Enabled = true;
 
-                    txtqtmakhdt.Enabled = true;
-                    cboqttenlop.Enabled = true;
-                    cboqtmakhoahoc .Enabled = true;
-     
-                    txtqtmakhdt.Text = "";
+                    txtqtusername.Enabled = true;
+                    txtqtpass.Enabled = true;
+                    txtqtquyen.Enabled = true;
 
-                    txtqtmakhdt.Focus();
+                    txtqtusername.Text = "";
+                    txtqtpass.Text = "";
+                    txtqtquyen.Text = "";
+
+                    txtqtusername.Focus();
                     break;
                 case "edit":
-                    btnqtthemkhdt.Enabled = false;
-                    btnqtsuakhdt.Enabled = false;
-                    btnqtxoakhdt.Enabled = false;
-                    btnqtghikhdt.Enabled = true;
-                    btnqthuykhdt.Enabled = true;
 
-                    txtqtmakhdt.Enabled = false;
-                    cboqttenlop .Enabled = true;
-                    cboqtmakhoahoc.Enabled = true;
+                    btnqtthemtk.Enabled = false;
+                    btnqtsuatk.Enabled = false;
+                    btnqtxoatk.Enabled = false;
+                    btnqtghitk.Enabled = true;
+                    btnqthuytk.Enabled = true;
 
-                    cboqttenlop.Focus();
+                    txtqtusername.Enabled = false;
+                    txtqtpass.Enabled = true;
+                    txtqtquyen.Enabled = true;
+
+                    txtqtpass.Focus();
                     break;
                 default: break;
             }
@@ -117,22 +93,22 @@ namespace Thi_KTHP
                 {
                     conn.Open();
                 }
-                string query = "SELECT * FROM KeHoachDaoTao";
+                string query = "SELECT * FROM TaiKhoan";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataSet ds = new DataSet();
                 da.Fill(ds);
                 if (ds != null && ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
                 {
-                    dgvqtkhdt.DataSource = ds.Tables[0];
+                    dgvqttaikhoan.DataSource = ds.Tables[0];
 
-                    txtqtmakhdt.Text = ds.Tables[0].Rows[0]["MaKHDT"].ToString();
-                    cboqttenlop.SelectedValue = ds.Tables[0].Rows[0]["TenLop"].ToString();
-                    cboqtmakhoahoc.SelectedValue = ds.Tables[0].Rows[0]["MaKhoaHoc"].ToString();
+                    txtqtusername.Text = ds.Tables[0].Rows[0]["UserName"].ToString();
+                    txtqtpass.Text = ds.Tables[0].Rows[0]["pass"].ToString();
+                    txtqtquyen.Text = ds.Tables[0].Rows[0]["Quyen"].ToString();
                 }
                 else
                 {
-                    dgvqtkhdt.DataSource = null;
+                    dgvqttaikhoan.DataSource = null;
                 }
                 conn.Close();
             }
@@ -141,19 +117,20 @@ namespace Thi_KTHP
                 MessageBox.Show(ex.Message);
             }
         }
-        private void btnqtthemkhdt_Click(object sender, EventArgs e)
+
+        private void btnqtthemtk_Click(object sender, EventArgs e)
         {
             status = "insert";
             Setstatus(status);
         }
 
-        private void btnqtsuakhdt_Click(object sender, EventArgs e)
+        private void btnqtsuatk_Click(object sender, EventArgs e)
         {
             status = "edit";
             Setstatus(status);
         }
 
-        private void btnqtxoakhdt_Click(object sender, EventArgs e)
+        private void btnqtxoatk_Click(object sender, EventArgs e)
         {
             try
             {
@@ -163,7 +140,7 @@ namespace Thi_KTHP
                     conn.Open();
                 }
 
-                string query = "DELETE dbo.KeHoachDaoTao WHERE MaKHDT='" + txtqtmakhdt.Text.Trim() + "'";
+                string query = "DELETE dbo.TaiKhoan WHERE UserName='" + txtqtusername.Text.Trim() + "'";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 var result = cmd.ExecuteNonQuery();
                 if (result != 0)
@@ -184,16 +161,18 @@ namespace Thi_KTHP
             }
         }
 
-        private void btnqthuykhdt_Click(object sender, EventArgs e)
+        private void btnqthuytk_Click(object sender, EventArgs e)
         {
-            txtqtmakhdt.Text = "";
+            txtqtusername.Text = "";
+            txtqtpass.Text = "";
+            txtqtquyen.Text = "";
 
             status = "reset";
             Setstatus(status);
             BindingData();
         }
 
-        private void btnqtghikhdt_Click(object sender, EventArgs e)
+        private void btnqtghitk_Click(object sender, EventArgs e)
         {
             try
             {
@@ -205,7 +184,7 @@ namespace Thi_KTHP
                     {
                         conn.Open();
                     }
-                    string query = "INSERT INTO KeHoachDaoTao (MaKHDT,TenLop,MaKhoaHoc) VALUES ('" + txtqtmakhdt.Text.Trim() + "',N'" + cboqttenlop.SelectedValue.ToString() + "','" + cboqtmakhoahoc.SelectedValue.ToString() + "')";
+                    string query = "INSERT INTO TaiKhoan (UserName,pass,Quyen) VALUES ('" + txtqtusername.Text.Trim() + "','" + txtqtpass.Text.Trim() + "','" + txtqtquyen.Text.Trim() + "')";
                     SqlCommand cmd = new SqlCommand(query, conn);
                     var result = cmd.ExecuteNonQuery();
                     if (result != 0)
@@ -229,7 +208,7 @@ namespace Thi_KTHP
                     {
                         conn.Open();
                     }
-                    string query = "UPDATE dbo.KeHoachDaoTao SET TenLop=N'" + cboqttenlop.SelectedValue.ToString() + "',MaKhoaHoc='" + cboqtmakhoahoc.SelectedValue.ToString() + "' WHERE MaKHDT='" + txtqtmakhdt.Text.Trim() + "'";
+                    string query = "UPDATE dbo.TaiKhoan SET pass='" + txtqtpass.Text.Trim() + "',Quyen='" + txtqtquyen.Text.Trim()+ "' WHERE UserName='" + txtqtusername.Text.Trim() + "'";
                     SqlCommand cmd = new SqlCommand(query, conn);
                     var result = cmd.ExecuteNonQuery();
                     if (result != 0)
@@ -254,20 +233,19 @@ namespace Thi_KTHP
             }
         }
 
-        private void dgvqtkhdt_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvqttaikhoan_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
-                var row = (DataGridViewRow)dgvqtkhdt.Rows[e.RowIndex];
-                txtqtmakhdt.Text = row.Cells["MaKHDT"].Value.ToString();
-                cboqttenlop.SelectedValue = row.Cells["TenLop"].Value.ToString();
-                cboqtmakhoahoc.SelectedValue = row.Cells["MaKhoaHoc"].Value.ToString();
+                var row = (DataGridViewRow)dgvqttaikhoan.Rows[e.RowIndex];
+                txtqtusername.Text = row.Cells["UserName"].Value.ToString();
+                txtqtpass.Text = row.Cells["pass"].Value.ToString();
+                txtqtquyen.Text = row.Cells["Quyen"].Value.ToString();
             }
             catch (Exception)
             {
                 MessageBox.Show("Arranged");
             }
-
         }
     }
 }

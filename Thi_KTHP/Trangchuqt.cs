@@ -51,7 +51,7 @@ namespace Thi_KTHP
 
         private void mnunddx_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Bạn Chắc Chắn Muốn Đăng Xuất", "Lưu Ý", MessageBoxButtons.YesNo, MessageBoxIcon.None) == DialogResult.Yes)
+            if (MessageBox.Show("Bạn Chắc Chắn Muốn Đăng Xuất", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 this.Hide();
                 frmtrangchu frmtrangchu = new frmtrangchu(new frmdangnhap());
@@ -73,12 +73,6 @@ namespace Thi_KTHP
         {
             Openformchild(new frmqtkhoahoc());
         }
-
-        private void mnuqlkyhoc_Click(object sender, EventArgs e)
-        {
-            Openformchild(new frmqtkhdt());
-        }
-
         private void mnuqlhp_Click(object sender, EventArgs e)
         {
             Openformchild(new frmqthocphan());
@@ -112,6 +106,35 @@ namespace Thi_KTHP
         private void mnuqlnhomhp_Click(object sender, EventArgs e)
         {
             Openformchild(new frmqtnhomhp());
+        }
+
+        private void mnundthoat_Click(object sender, EventArgs e)
+        {
+            if(MessageBox.Show("Bạn Chắc Chắn Muốn Thoát Khỏi Hệ Thống?","Thông Báo",MessageBoxButtons.YesNo,MessageBoxIcon.Question)== DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
+
+        private void mnunddoimk_Click(object sender, EventArgs e)
+        {
+            Openformchild(new frmqtdoimk(username, pass));
+        }
+
+        private void mnuht_Click(object sender, EventArgs e)
+        {
+            Openformchild(new frmqthotro());
+            
+        }
+
+        private void mnuqltaikhoan_Click(object sender, EventArgs e)
+        {
+            Openformchild(new frmqttaikhoan(username, pass));
+        }
+
+        private void mnundtk_Click(object sender, EventArgs e)
+        {
+            Openformchild(new frmthongtintk(username, pass));
         }
     }
 }

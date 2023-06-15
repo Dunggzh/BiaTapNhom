@@ -35,6 +35,7 @@
             this.btnqtghilop = new System.Windows.Forms.Button();
             this.btnqthuylop = new System.Windows.Forms.Button();
             this.pnlqttruong = new System.Windows.Forms.Panel();
+            this.txtqtghichu = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.cboqtmanganh = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -42,7 +43,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pnlqtcsdl = new System.Windows.Forms.Panel();
             this.dgvqtlop = new System.Windows.Forms.DataGridView();
-            this.txtqtghichu = new System.Windows.Forms.TextBox();
+            this.btnqtxuatexcell = new System.Windows.Forms.Button();
+            this.btnqttklop = new System.Windows.Forms.Button();
+            this.txtqttklop = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.floqtnut.SuspendLayout();
             this.pnlqttruong.SuspendLayout();
             this.pnlqtcsdl.SuspendLayout();
@@ -58,9 +62,11 @@
             this.floqtnut.Controls.Add(this.btnqtxoalop);
             this.floqtnut.Controls.Add(this.btnqtghilop);
             this.floqtnut.Controls.Add(this.btnqthuylop);
+            this.floqtnut.Controls.Add(this.btnqtxuatexcell);
+            this.floqtnut.Controls.Add(this.btnqttklop);
             this.floqtnut.Location = new System.Drawing.Point(1, 3);
             this.floqtnut.Name = "floqtnut";
-            this.floqtnut.Size = new System.Drawing.Size(163, 497);
+            this.floqtnut.Size = new System.Drawing.Size(163, 545);
             this.floqtnut.TabIndex = 3;
             // 
             // btnqtthemlop
@@ -117,6 +123,8 @@
             // 
             this.pnlqttruong.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlqttruong.Controls.Add(this.txtqttklop);
+            this.pnlqttruong.Controls.Add(this.label5);
             this.pnlqttruong.Controls.Add(this.txtqtghichu);
             this.pnlqttruong.Controls.Add(this.label3);
             this.pnlqttruong.Controls.Add(this.cboqtmanganh);
@@ -127,6 +135,14 @@
             this.pnlqttruong.Name = "pnlqttruong";
             this.pnlqttruong.Size = new System.Drawing.Size(615, 133);
             this.pnlqttruong.TabIndex = 4;
+            // 
+            // txtqtghichu
+            // 
+            this.txtqtghichu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtqtghichu.Location = new System.Drawing.Point(25, 98);
+            this.txtqtghichu.Name = "txtqtghichu";
+            this.txtqtghichu.Size = new System.Drawing.Size(208, 27);
+            this.txtqtghichu.TabIndex = 25;
             // 
             // label3
             // 
@@ -142,7 +158,7 @@
             // 
             this.cboqtmanganh.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboqtmanganh.FormattingEnabled = true;
-            this.cboqtmanganh.Location = new System.Drawing.Point(335, 37);
+            this.cboqtmanganh.Location = new System.Drawing.Point(256, 38);
             this.cboqtmanganh.Name = "cboqtmanganh";
             this.cboqtmanganh.Size = new System.Drawing.Size(208, 28);
             this.cboqtmanganh.TabIndex = 6;
@@ -169,7 +185,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(331, 6);
+            this.label2.Location = new System.Drawing.Point(252, 6);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(90, 20);
             this.label2.TabIndex = 1;
@@ -184,7 +200,7 @@
             this.pnlqtcsdl.Controls.Add(this.dgvqtlop);
             this.pnlqtcsdl.Location = new System.Drawing.Point(170, 156);
             this.pnlqtcsdl.Name = "pnlqtcsdl";
-            this.pnlqtcsdl.Size = new System.Drawing.Size(615, 347);
+            this.pnlqtcsdl.Size = new System.Drawing.Size(615, 395);
             this.pnlqtcsdl.TabIndex = 5;
             // 
             // dgvqtlop
@@ -201,23 +217,51 @@
             this.dgvqtlop.Name = "dgvqtlop";
             this.dgvqtlop.RowHeadersWidth = 51;
             this.dgvqtlop.RowTemplate.Height = 24;
-            this.dgvqtlop.Size = new System.Drawing.Size(609, 284);
+            this.dgvqtlop.Size = new System.Drawing.Size(609, 332);
             this.dgvqtlop.TabIndex = 4;
             this.dgvqtlop.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvqtlop_CellClick);
             // 
-            // txtqtghichu
+            // btnqtxuatexcell
             // 
-            this.txtqtghichu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtqtghichu.Location = new System.Drawing.Point(25, 98);
-            this.txtqtghichu.Name = "txtqtghichu";
-            this.txtqtghichu.Size = new System.Drawing.Size(208, 27);
-            this.txtqtghichu.TabIndex = 25;
+            this.btnqtxuatexcell.Location = new System.Drawing.Point(3, 378);
+            this.btnqtxuatexcell.Name = "btnqtxuatexcell";
+            this.btnqtxuatexcell.Size = new System.Drawing.Size(144, 69);
+            this.btnqtxuatexcell.TabIndex = 10;
+            this.btnqtxuatexcell.Text = "Export Excell";
+            this.btnqtxuatexcell.UseVisualStyleBackColor = true;
+            // 
+            // btnqttklop
+            // 
+            this.btnqttklop.Location = new System.Drawing.Point(3, 453);
+            this.btnqttklop.Name = "btnqttklop";
+            this.btnqttklop.Size = new System.Drawing.Size(144, 69);
+            this.btnqttklop.TabIndex = 11;
+            this.btnqttklop.Text = "Tìm Kiếm";
+            this.btnqttklop.UseVisualStyleBackColor = true;
+            // 
+            // txtqttklop
+            // 
+            this.txtqttklop.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtqttklop.Location = new System.Drawing.Point(256, 98);
+            this.txtqttklop.Name = "txtqttklop";
+            this.txtqttklop.Size = new System.Drawing.Size(314, 27);
+            this.txtqttklop.TabIndex = 27;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(252, 76);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(85, 20);
+            this.label5.TabIndex = 26;
+            this.label5.Text = "Tìm Kiếm:";
             // 
             // frmqtlop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(782, 503);
+            this.ClientSize = new System.Drawing.Size(782, 551);
             this.Controls.Add(this.pnlqtcsdl);
             this.Controls.Add(this.floqtnut);
             this.Controls.Add(this.pnlqttruong);
@@ -249,5 +293,9 @@
         private System.Windows.Forms.ComboBox cboqtmanganh;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtqtghichu;
+        private System.Windows.Forms.Button btnqtxuatexcell;
+        private System.Windows.Forms.Button btnqttklop;
+        private System.Windows.Forms.TextBox txtqttklop;
+        private System.Windows.Forms.Label label5;
     }
 }

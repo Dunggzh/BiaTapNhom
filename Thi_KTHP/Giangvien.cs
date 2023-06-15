@@ -309,7 +309,7 @@ namespace Thi_KTHP
                 txtqtsodtgv.Text = row.Cells["SoDT"].Value.ToString();
                 cboqtmakhoa.SelectedValue = row.Cells["MaKhoa"].Value.ToString();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("Arranged");
             }

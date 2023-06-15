@@ -66,6 +66,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConnectionString.cs" />
     <Compile Include="DangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,7 +91,19 @@
     <Compile Include="Doimatkhau.Designer.cs">
       <DependentUpon>Doimatkhau.cs</DependentUpon>
     </Compile>
+    <Compile Include="Doimatkhauqt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Doimatkhauqt.Designer.cs">
+      <DependentUpon>Doimatkhauqt.cs</DependentUpon>
+    </Compile>
     <Compile Include="Excell.cs" />
+    <Compile Include="Hotroqt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hotroqt.Designer.cs">
+      <DependentUpon>Hotroqt.cs</DependentUpon>
+    </Compile>
     <Compile Include="NhomHP.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,11 +116,23 @@
     <Compile Include="Quanlysinhvien.Designer.cs">
       <DependentUpon>Quanlysinhvien.cs</DependentUpon>
     </Compile>
+    <Compile Include="Taikhoanqt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Taikhoanqt.Designer.cs">
+      <DependentUpon>Taikhoanqt.cs</DependentUpon>
+    </Compile>
     <Compile Include="thongtinhocphan.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="thongtinhocphan.Designer.cs">
       <DependentUpon>thongtinhocphan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Thongtintaikhoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Thongtintaikhoan.Designer.cs">
+      <DependentUpon>Thongtintaikhoan.cs</DependentUpon>
     </Compile>
     <Compile Include="Thôngtincanhangv.cs">
       <SubType>Form</SubType>
@@ -219,14 +244,26 @@
     <EmbeddedResource Include="Doimatkhau.resx">
       <DependentUpon>Doimatkhau.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Doimatkhauqt.resx">
+      <DependentUpon>Doimatkhauqt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hotroqt.resx">
+      <DependentUpon>Hotroqt.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NhomHP.resx">
       <DependentUpon>NhomHP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Quanlysinhvien.resx">
       <DependentUpon>Quanlysinhvien.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Taikhoanqt.resx">
+      <DependentUpon>Taikhoanqt.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="thongtinhocphan.resx">
       <DependentUpon>thongtinhocphan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Thongtintaikhoan.resx">
+      <DependentUpon>Thongtintaikhoan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Thôngtincanhangv.resx">
       <DependentUpon>Thôngtincanhangv.cs</DependentUpon>
