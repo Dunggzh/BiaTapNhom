@@ -19,7 +19,7 @@ namespace Thi_KTHP
             dgvmainqlhp.AllowUserToAddRows = false;
             dgvmainqlhp.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
         }
-        SqlConnection conn = new SqlConnection("data source = LAPTOP-2LQNMVB4; database = Demo_QLD; user id = sa; password = 1;");
+        SqlConnection conn = new SqlConnection(ConnectionString.connectionsString);
         private void bang(string query)
         {
             dgvmainqlhp.DataSource = null;

@@ -16,6 +16,14 @@ namespace Thi_KTHP
         {
             InitializeComponent();
         }
+        private string username;
+        private string pass;
+        public frmtrangchugv(string username, string pass)
+        {
+            InitializeComponent();
+            this.username = username;
+            this.pass = pass;
+        }
         private Form currentformchild;
         private void Openformchild(Form childform)
         {
@@ -32,26 +40,31 @@ namespace Thi_KTHP
             childform.BringToFront();
             childform.Show();
         }
-      
-
-        private void mnsttcn_Click(object sender, EventArgs e)
-        {
-            Openformchild(new frmthongtingv());
-        }
-
-        private void quảnLýSinhViênToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Openformchild(new frmquanlysinhvien());
-        }
-
-        private void thôngTinKhoáHọcToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Openformchild(new frmthongtinhp());
-        }
+ 
 
         private void frmtrangchugv_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void quảnLýSinhViênToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            Openformchild(new frmquanlysinhvien());
+        }
+
+        private void quảnLýĐiểmSinhToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void thôngTinHọcToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Openformchild(new frmthongtinhp());
+        }
+
+        private void thôngTinCáNhânToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Openformchild(new frmthongtingv());
         }
     }
 }

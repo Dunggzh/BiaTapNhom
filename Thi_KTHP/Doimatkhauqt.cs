@@ -20,8 +20,7 @@ namespace Thi_KTHP
         {
             InitializeComponent();
         }
-        public static string connectionsString =
-            "data source = LAPTOP-2LQNMVB4; database = Demo_QLD; user id = sa; password = 1;";
+        SqlConnection conn = new SqlConnection(ConnectionString.connectionsString);
         public frmqtdoimk(string username, string pass)
         {
             InitializeComponent();
@@ -49,7 +48,6 @@ namespace Thi_KTHP
             {
                 if (txtmkcu.Text.Equals(this.pass))
                 {
-                    SqlConnection conn = new SqlConnection(connectionsString);
                     if (conn.State == ConnectionState.Closed)
                     {
                         conn.Open();

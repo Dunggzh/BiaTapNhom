@@ -66,24 +66,28 @@ namespace Thi_KTHP
             this.quảnLýSinhViênToolStripMenuItem.Name = "quảnLýSinhViênToolStripMenuItem";
             this.quảnLýSinhViênToolStripMenuItem.Size = new System.Drawing.Size(134, 24);
             this.quảnLýSinhViênToolStripMenuItem.Text = "Quản lý sinh viên";
+            this.quảnLýSinhViênToolStripMenuItem.Click += new System.EventHandler(this.quảnLýSinhViênToolStripMenuItem_Click_1);
             // 
             // quảnLýĐiểmSinhToolStripMenuItem
             // 
             this.quảnLýĐiểmSinhToolStripMenuItem.Name = "quảnLýĐiểmSinhToolStripMenuItem";
             this.quảnLýĐiểmSinhToolStripMenuItem.Size = new System.Drawing.Size(145, 24);
             this.quảnLýĐiểmSinhToolStripMenuItem.Text = "Quản lý điểm sinh ";
+            this.quảnLýĐiểmSinhToolStripMenuItem.Click += new System.EventHandler(this.quảnLýĐiểmSinhToolStripMenuItem_Click);
             // 
             // thôngTinHọcToolStripMenuItem
             // 
             this.thôngTinHọcToolStripMenuItem.Name = "thôngTinHọcToolStripMenuItem";
             this.thôngTinHọcToolStripMenuItem.Size = new System.Drawing.Size(118, 24);
             this.thôngTinHọcToolStripMenuItem.Text = "Thông tin học ";
+            this.thôngTinHọcToolStripMenuItem.Click += new System.EventHandler(this.thôngTinHọcToolStripMenuItem_Click);
             // 
             // thôngTinCáNhânToolStripMenuItem
             // 
             this.thôngTinCáNhânToolStripMenuItem.Name = "thôngTinCáNhânToolStripMenuItem";
             this.thôngTinCáNhânToolStripMenuItem.Size = new System.Drawing.Size(141, 24);
             this.thôngTinCáNhânToolStripMenuItem.Text = "Thông tin cá nhân";
+            this.thôngTinCáNhânToolStripMenuItem.Click += new System.EventHandler(this.thôngTinCáNhânToolStripMenuItem_Click);
             // 
             // pnlqlgv
             // 

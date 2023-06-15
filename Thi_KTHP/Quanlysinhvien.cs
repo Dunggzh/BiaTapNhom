@@ -28,7 +28,7 @@ namespace Thi_KTHP
         {
 
         }
-        SqlConnection conn = new SqlConnection("Data Source=DESKTOP-NVIUQTM\\SQLEXPRESS;Initial Catalog=Demo_QLD;Integrated Security=True");
+        SqlConnection conn = new SqlConnection(ConnectionString.connectionsString);
         private void frmquanlysinhvien_Load(object sender, EventArgs e)
         {
             cbbtenlop.Items.Add("--");

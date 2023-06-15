@@ -25,7 +25,7 @@ namespace Thi_KTHP
             this.username = username;
             this.pass = pass;
         }
-        SqlConnection conn = new SqlConnection("data source = LAPTOP-2LQNMVB4; database = Demo_QLD; user id = sa; password = 1;");
+        SqlConnection conn = new SqlConnection(ConnectionString.connectionsString);
 
         private void btndoimk_Click(object sender, EventArgs e)
         {

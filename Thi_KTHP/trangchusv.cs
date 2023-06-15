@@ -88,5 +88,10 @@ namespace Thi_KTHP
         {
             Openformchild(new frmdoimatkhau(this.username, this.pass));
         }
+
+        private void điểmTổngHợpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Openformchild(new frmdiemtonghop(this.username,this.pass));
+        }
     }
 }

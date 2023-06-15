@@ -21,12 +21,10 @@ namespace Thi_KTHP
             BindingData();
         }
         public static string status = "";
-        public static string connectionsString =
-            "data source = LAPTOP-2LQNMVB4; database = Demo_QLD; user id = sa; password = 1;";
+        SqlConnection conn = new SqlConnection(ConnectionString.connectionsString);
 
         public void Loadcboboxkhoa(string query, string dis, string valu)
         {
-            SqlConnection conn = new SqlConnection(connectionsString);
             if (conn.State == ConnectionState.Closed)
             {
                 conn.Open();
@@ -105,7 +103,6 @@ namespace Thi_KTHP
         {
             try
             {
-                SqlConnection conn = new SqlConnection(connectionsString);
                 if (conn.State == ConnectionState.Closed)
                 {
                     conn.Open();
@@ -168,7 +165,6 @@ namespace Thi_KTHP
         {
             try
             {
-                SqlConnection conn = new SqlConnection(connectionsString);
                 if (conn.State == ConnectionState.Closed)
                 {
                     conn.Open();
@@ -230,7 +226,6 @@ namespace Thi_KTHP
 
                 if (status == "insert")
                 {
-                    SqlConnection conn = new SqlConnection(connectionsString);
                     if (conn.State == ConnectionState.Closed)
                     {
                         conn.Open();
@@ -254,7 +249,6 @@ namespace Thi_KTHP
                 }
                 if (status == "edit")
                 {
-                    SqlConnection conn = new SqlConnection(connectionsString);
                     if (conn.State == ConnectionState.Closed)
                     {
                         conn.Open();

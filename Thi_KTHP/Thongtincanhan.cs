@@ -16,7 +16,7 @@ namespace Thi_KTHP
     {
         private string username;
         private string pass;
-        SqlConnection conn = new SqlConnection("data source = LAPTOP-2LQNMVB4; database = Demo_QLD; user id = sa; password = 1;");
+        SqlConnection conn = new SqlConnection(ConnectionString.connectionsString);
         public frmthongtincanhan()
         {
             InitializeComponent();
@@ -43,11 +43,11 @@ namespace Thi_KTHP
             if (dt1.Rows.Count > 0)
             {
                 txtmsv.Text = dt1.Rows[0]["MaSinhVien"].ToString();
-                txtht.Text = dt1.Rows[0]["Hoten"].ToString();
+                txtht.Text = dt1.Rows[0]["Tensv"].ToString();
                 txttenlop.Text = dt1.Rows[0]["TenLop"].ToString();
                 txtquequan.Text = dt1.Rows[0]["QueQuan"].ToString();
                 txtnoisinh.Text = dt1.Rows[0]["NoiSinh"].ToString();
-                if (dt1.Rows[0]["GioiTinh"].ToString().Equals("Nam"))
+                if (dt1.Rows[0]["GioiTinh"].ToString().Equals("NAM"))
                 {
                     rdonam.Checked= true;
                     rdonu.Checked = false;

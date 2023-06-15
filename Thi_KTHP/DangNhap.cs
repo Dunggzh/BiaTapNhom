@@ -26,8 +26,8 @@ namespace Thi_KTHP
         SqlConnection conn = new SqlConnection(ConnectionString.connectionsString);
         private void reset()
         {
-            txtusername.Text = "72DCHT20072";
-            txtpass.Text = "11122003";
+            txtusername.Text = "72DCHT20070";
+            txtpass.Text = "19012003";
             txtusername.Focus();
         }
 
@@ -78,10 +78,14 @@ namespace Thi_KTHP
             {
                 frmtrangchuqt frmtrangchuqt = new frmtrangchuqt(txtusername.Text,txtpass.Text);
                 frmtrangchusv frmtrangchusv=new frmtrangchusv(txtusername.Text, txtpass.Text);
-                string query = "select * from TaiKhoan where Username='" + txtusername.Text.Trim() + "'  and  Pass= '" + txtpass.Text.Trim() + "'  and quyen = 0";
-                string query1 = "select * from TaiKhoan where Username='" + txtusername.Text.Trim() + "'  and  Pass= '" + txtpass.Text.Trim() + "'  and quyen = 1";
-                timkiem(query, frmtrangchusv);
-                timkiem(query1, frmtrangchuqt);
+                frmtrangchugv frmtrangchugv = new frmtrangchugv(txtusername.Text, txtpass.Text);
+                string querysv = "select * from TaiKhoan where Username='" + txtusername.Text.Trim() + "'  and  Pass= '" + txtpass.Text.Trim() + "'  and quyen = 0";
+                string queryqt = "select * from TaiKhoan where Username='" + txtusername.Text.Trim() + "'  and  Pass= '" + txtpass.Text.Trim() + "'  and quyen = 1";
+                string querygv = "select * from TaiKhoan where Username='" + txtusername.Text.Trim() + "'  and  Pass= '" + txtpass.Text.Trim() + "'  and quyen = 2";
+
+                timkiem(querysv, frmtrangchusv);
+                timkiem(queryqt, frmtrangchuqt);
+                timkiem(querygv, frmtrangchugv);
                 if (k == 0)
                 {
                     MessageBox.Show("Khong tin thay tai khoan");
