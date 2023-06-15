@@ -169,6 +169,7 @@ namespace Thi_KTHP
                     {
                         MessageBox.Show("Delete error");
                     }
+                    conn.Close();
                 }
                 
             }

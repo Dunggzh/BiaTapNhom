@@ -64,6 +64,7 @@ namespace Thi_KTHP
         {
             dgvdiemth.DataSource = null;
             string query1 = "select * from HocPhan,Nganh,KeHoachDaoTao,Lop,KhoaHoc,SinhVien where  Lop.MaNganh=Nganh.MaNganh and lop.TenLop=KeHoachDaoTao.TenLop and KeHoachDaoTao.MaKhoaHoc=KhoaHoc.MaKhoaHoc   and SinhVien.TenLop=Lop.TenLop  and SinhVien.MaSinhVien='" + this.username + "'";
+
             SqlCommand cmd1 = new SqlCommand(query1, conn);
             SqlDataAdapter data1 = new SqlDataAdapter(cmd1);
             DataTable dt1 = new DataTable();

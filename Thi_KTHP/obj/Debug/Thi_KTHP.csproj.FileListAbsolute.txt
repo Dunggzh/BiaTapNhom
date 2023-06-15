@@ -202,3 +202,4 @@ C:\Users\Dell\Source\Repos\BiaTapNhom2\Thi_KTHP\obj\Debug\Thi_KTHP.csproj.CoreCo
 C:\Users\Dell\Source\Repos\BiaTapNhom2\Thi_KTHP\obj\Debug\Thi_KTHP.exe
 C:\Users\Dell\Source\Repos\BiaTapNhom2\Thi_KTHP\obj\Debug\Thi_KTHP.pdb
 C:\Users\Dell\Source\Repos\BiaTapNhom2\Thi_KTHP\obj\Debug\Thi_KTHP.frmHotrosv.resources
+C:\Users\Nguyen Tien Dung\source\repos\BiaTapNhom\Thi_KTHP\obj\Debug\Thi_KTHP.frmHotrosv.resources

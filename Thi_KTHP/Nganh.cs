@@ -185,6 +185,7 @@ namespace Thi_KTHP
                     {
                         MessageBox.Show("Delete error");
                     }
+                    conn.Close();
                 }
                     
             }
@@ -283,7 +284,7 @@ namespace Thi_KTHP
                         else
                         {
                             MessageBox.Show("UpDate error");
-                        }
+                        }conn.Close();
                     }
                     
                 }
