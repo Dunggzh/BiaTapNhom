@@ -44,7 +44,7 @@ namespace Thi_KTHP
             if (dt.Rows.Count > 0)
             {
                 txtmsv.Text = dt.Rows[0]["MaSinhVien"].ToString();
-                txtht.Text = dt.Rows[0]["Hoten"].ToString();
+                txtht.Text = dt.Rows[0]["TenSV"].ToString();
                 txttenlop.Text = dt.Rows[0]["TenLop"].ToString();
                 txtquequan.Text = dt.Rows[0]["QueQuan"].ToString();
                 txtnoisinh.Text = dt.Rows[0]["NoiSinh"].ToString();
@@ -70,18 +70,18 @@ namespace Thi_KTHP
             string gt;
             if (rdonam.Checked)
             {
-                gt = "Nam";
+                gt = "NAM";
             }
             else
             {
-                gt = "Nu";
+                gt = "NU";
             }
             if (conn.State != ConnectionState.Open)
             {
                 conn.Open();
             }
             DataTable dt1 = new DataTable();
-            string query1 = "update SinhVien set NgaySinh='" + Convert.ToDateTime(dtpngaysinh.Text).ToString("MM/dd/yyyy") + "',QueQuan=N'" + txtquequan.Text + "',NoiSinh=N'" + txtnoisinh.Text + "',GioiTinh='" + gt + "',GhiChu=N'" + txtghichu.Text.Trim() + "' where MaSinhVien='" + this.username + "'";
+            string query1 = "update SinhVien set NgaySinh='" + Convert.ToDateTime(dtpngaysinh.Text).ToString("MM/dd/yyyy") + "',QueQuan=N'" + txtquequan.Text.Trim() + "',NoiSinh=N'" + txtnoisinh.Text.Trim() + "',GioiTinh='" + gt + "',GhiChu=N'" + txtghichu.Text.Trim() + "' where MaSinhVien='" + this.username + "'";
             SqlCommand cmd1 = new SqlCommand(query1, conn);
             var result = cmd1.ExecuteNonQuery();
             if (result != 0)

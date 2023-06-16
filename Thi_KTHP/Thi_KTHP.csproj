@@ -123,6 +123,12 @@
     <Compile Include="NhomHP.Designer.cs">
       <DependentUpon>NhomHP.cs</DependentUpon>
     </Compile>
+    <Compile Include="QuanLyDiem_gv.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLyDiem_gv.Designer.cs">
+      <DependentUpon>QuanLyDiem_gv.cs</DependentUpon>
+    </Compile>
     <Compile Include="Quanlysinhvien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -271,6 +277,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NhomHP.resx">
       <DependentUpon>NhomHP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLyDiem_gv.resx">
+      <DependentUpon>QuanLyDiem_gv.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Quanlysinhvien.resx">
       <DependentUpon>Quanlysinhvien.cs</DependentUpon>

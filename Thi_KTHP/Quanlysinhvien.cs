@@ -13,6 +13,15 @@ namespace Thi_KTHP
 {
     public partial class frmquanlysinhvien : Form
     {
+        private string username;
+        private string pass;
+        public frmquanlysinhvien(string username, string pass)
+        {
+            InitializeComponent();
+            dgvqlsv.AllowUserToAddRows = false;
+            this.username = username;
+            this.pass = pass;
+        }
         public frmquanlysinhvien()
         {
             InitializeComponent();
@@ -29,7 +38,23 @@ namespace Thi_KTHP
 
         }
         SqlConnection conn = new SqlConnection(ConnectionString.connectionsString);
-        private void frmquanlysinhvien_Load(object sender, EventArgs e)
+
+        private void cbbtenlop_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void cbbmasv_SelectedIndexChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void dgvqlsv_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+         
+
+        }
+
+        private void frmquanlysinhvien_Load_1(object sender, EventArgs e)
         {
             cbbtenlop.Items.Add("--");
             string queryt = "select * from Lop";
@@ -55,10 +80,26 @@ namespace Thi_KTHP
             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             adapter.Fill(dt);
             dgvqlsv.DataSource = dt;
+            for (int i = 0; i <= dgvqlsv.Columns.Count - 1; i++)
+            {
+                dgvqlsv.Columns[i].ReadOnly = true;
+                dgvqlsv.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            }
             conn.Close();
         }
 
-        private void cbbtenlop_SelectedIndexChanged(object sender, EventArgs e)
+        private void dgvqlsv_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var i = dgvqlsv.Rows[e.RowIndex];
+            txtmasv.Text = i.Cells[0].Value.ToString();
+            txthoten.Text = i.Cells[2].Value.ToString();
+            txtquequan.Text = i.Cells[3].Value.ToString();
+            dtpngaysinh.Value = Convert.ToDateTime(i.Cells[4].Value);
+            txtnoisinh.Text = i.Cells[5].Value.ToString();
+            txtgioitinh.Text = i.Cells[6].Value.ToString();
+        }
+
+        private void cbbtenlop_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             cbbmasv.Items.Clear();
             cbbmasv.Items.Add("--");
@@ -89,6 +130,11 @@ namespace Thi_KTHP
                     SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                     adapter.Fill(dt);
                     dgvqlsv.DataSource = dt;
+                    for (int i = 0; i <= dgvqlsv.Columns.Count - 1; i++)
+                    {
+                        dgvqlsv.Columns[i].ReadOnly = true;
+                        dgvqlsv.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                    }
                     conn.Close();
                 }
                 else
@@ -99,6 +145,11 @@ namespace Thi_KTHP
                     SqlDataAdapter data = new SqlDataAdapter(cmd);
                     data.Fill(dt);
                     dgvqlsv.DataSource = dt;
+                    for (int i = 0; i <= dgvqlsv.Columns.Count - 1; i++)
+                    {
+                        dgvqlsv.Columns[i].ReadOnly = true;
+                        dgvqlsv.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                    }
                     conn.Close();
                 }
             }
@@ -108,27 +159,21 @@ namespace Thi_KTHP
             }
         }
 
-        private void cbbmasv_SelectedIndexChanged(object sender, EventArgs e)
+        private void cbbmasv_SelectedIndexChanged_1(object sender, EventArgs e)
         {
+
             DataTable dt = new DataTable();
             string query = "select * from SinhVien where MaSinhVien='" + cbbmasv.Text + "'";
             SqlCommand cmd = new SqlCommand(query, conn);
             SqlDataAdapter data = new SqlDataAdapter(cmd);
             data.Fill(dt);
             dgvqlsv.DataSource = dt;
+            for (int i = 0; i <= dgvqlsv.Columns.Count - 1; i++)
+            {
+                dgvqlsv.Columns[i].ReadOnly = true;
+                dgvqlsv.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            }
             conn.Close();
-        }
-
-        private void dgvqlsv_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            var i = dgvqlsv.Rows[e.RowIndex];
-            txtmasv.Text = i.Cells[0].Value.ToString();
-            txthoten.Text = i.Cells[2].Value.ToString();
-            txtquequan.Text = i.Cells[3].Value.ToString();
-            dtpngaysinh.Value = Convert.ToDateTime(i.Cells[4].Value);
-            txtnoisinh.Text = i.Cells[5].Value.ToString();
-            txtgioitinh.Text = i.Cells[6].Value.ToString();
-
         }
     }
 }

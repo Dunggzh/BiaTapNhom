@@ -11,13 +11,19 @@ using System.Windows.Forms;
 
 namespace Thi_KTHP
 {
-    public partial class frmthongtingv : Form
+    public partial class frmthongtin_gv : Form
     {
 
-        string tk = "NguyenthiA";
-        string mk = "a";
-        int quyen = 1;
-        public frmthongtingv()
+        private string username;
+        private string pass;
+
+        public frmthongtin_gv(string username, string pass)
+        {
+            InitializeComponent();
+            this.username = username;
+            this.pass = pass;
+        }
+        public frmthongtin_gv()
         {
             InitializeComponent();
         }
@@ -29,23 +35,26 @@ namespace Thi_KTHP
         SqlConnection conn = new SqlConnection(ConnectionString.connectionsString);
         private void frmthongtingv_Load(object sender, EventArgs e)
         {
-            conn.Open();
+            if (conn.State != ConnectionState.Open)
+            {
+                conn.Open();
+            }
             DataTable dt = new DataTable();
-            string query = "select MaGV,TenGV,SoDT,TrinhDo,MaKhoa from GiangVien Where UseName='" + tk + "'";
+            string query = "select * from GiangVien Where MaGV='" + this.username + "'";
             SqlCommand cmd = new SqlCommand(query, conn);
             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             adapter.Fill(dt);
-            dgvttcn.DataSource = dt;
+            if (dt.Rows.Count > 0)
+            {
+                lblmagv.Text = dt.Rows[0]["MaGV"].ToString();
+                lbltengv.Text = dt.Rows[0]["TenGV"].ToString();
+                lblmakhoa.Text = dt.Rows[0]["MaKhoa"].ToString();
+                lblsdt.Text = dt.Rows[0]["SoDT"].ToString();
+                lbltrinhdo.Text = dt.Rows[0]["TrinhDo"].ToString();
+
+            }
             conn.Close();
         }
-        private void dgvttcn_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            var i = dgvttcn.Rows[e.RowIndex];
-            txtmagv.Text = i.Cells[0].Value.ToString();
-            txttengv.Text = i.Cells[1].Value.ToString();
-            txtsdt.Text = i.Cells[2].Value.ToString();
-            txttrinhdo.Text = i.Cells[3].Value.ToString();
-            txtmakhoa.Text = i.Cells[4].Value.ToString();
-        }
+
     }
 }

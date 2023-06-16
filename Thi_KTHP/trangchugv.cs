@@ -49,22 +49,22 @@ namespace Thi_KTHP
 
         private void quảnLýSinhViênToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            Openformchild(new frmquanlysinhvien());
+            Openformchild(new frmquanlysinhvien(this.username, this.pass));
         }
 
         private void quảnLýĐiểmSinhToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+            Openformchild(new QuanLyDiem_gv(this.username, this.pass));
         }
 
         private void thôngTinHọcToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Openformchild(new frmthongtinhp());
+            Openformchild(new frmthongtinhp(this.username, this.pass));
         }
 
         private void thôngTinCáNhânToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Openformchild(new frmthongtingv());
+            Openformchild(new frmthongtin_gv(this.username,this.pass));
         }
     }
 }

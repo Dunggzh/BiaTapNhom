@@ -21,6 +21,7 @@ namespace Thi_KTHP
         public frmtrangchusv(string username, string pass)
         {
             InitializeComponent();
+            
             this.username = username;
             this.pass = pass;
         }
@@ -44,7 +45,10 @@ namespace Thi_KTHP
 
         private void thoátToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            if (MessageBox.Show("Bạn Chắc Chắn Muốn Thoát Khỏi Hệ Thống?", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
 
         private void đăngXuấtToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -59,7 +63,7 @@ namespace Thi_KTHP
 
         private void thôngTinToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Openformchild(new frmthongtincanhan(this.username, this.pass));
+            
         }
 
         private void mnuchinhsua_Click(object sender, EventArgs e)
@@ -97,6 +101,16 @@ namespace Thi_KTHP
         private void mnutrangchuht_Click(object sender, EventArgs e)
         {
             Openformchild(new frmHotrosv());
+        }
+
+        private void xemThôngTinCáNhânToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Openformchild(new frmthongtincanhan(this.username, this.pass));
+        }
+
+        private void sửaThôngTinCáNhânToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Openformchild(new frmsuathongtincanhan(this.username, this.pass));
         }
     }
 }

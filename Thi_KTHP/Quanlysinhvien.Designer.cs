@@ -167,6 +167,7 @@
             this.cbbmasv.Name = "cbbmasv";
             this.cbbmasv.Size = new System.Drawing.Size(121, 24);
             this.cbbmasv.TabIndex = 3;
+            this.cbbmasv.SelectedIndexChanged += new System.EventHandler(this.cbbmasv_SelectedIndexChanged_1);
             // 
             // cbbtenlop
             // 
@@ -175,6 +176,7 @@
             this.cbbtenlop.Name = "cbbtenlop";
             this.cbbtenlop.Size = new System.Drawing.Size(121, 24);
             this.cbbtenlop.TabIndex = 4;
+            this.cbbtenlop.SelectedIndexChanged += new System.EventHandler(this.cbbtenlop_SelectedIndexChanged_1);
             // 
             // dtpngaysinh
             // 
@@ -186,12 +188,14 @@
             // dgvqlsv
             // 
             this.dgvqlsv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvqlsv.Location = new System.Drawing.Point(551, 184);
+            this.dgvqlsv.Location = new System.Drawing.Point(438, 184);
             this.dgvqlsv.Name = "dgvqlsv";
+            this.dgvqlsv.RowHeadersVisible = false;
             this.dgvqlsv.RowHeadersWidth = 51;
             this.dgvqlsv.RowTemplate.Height = 24;
-            this.dgvqlsv.Size = new System.Drawing.Size(420, 270);
+            this.dgvqlsv.Size = new System.Drawing.Size(568, 311);
             this.dgvqlsv.TabIndex = 6;
+            this.dgvqlsv.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvqlsv_CellClick);
             // 
             // frmquanlysinhvien
             // 
@@ -217,6 +221,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frmquanlysinhvien";
             this.Text = "Quanlysinhvien";
+            this.Load += new System.EventHandler(this.frmquanlysinhvien_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dgvqlsv)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

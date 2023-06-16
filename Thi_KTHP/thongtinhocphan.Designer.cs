@@ -81,10 +81,12 @@
             this.dgvqlhp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvqlhp.Location = new System.Drawing.Point(333, 65);
             this.dgvqlhp.Name = "dgvqlhp";
+            this.dgvqlhp.RowHeadersVisible = false;
             this.dgvqlhp.RowHeadersWidth = 51;
             this.dgvqlhp.RowTemplate.Height = 24;
             this.dgvqlhp.Size = new System.Drawing.Size(434, 322);
             this.dgvqlhp.TabIndex = 1;
+            this.dgvqlhp.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvqlhp_CellClick);
             // 
             // txttenhp
             // 

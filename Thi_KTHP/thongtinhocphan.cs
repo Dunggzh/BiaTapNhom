@@ -13,14 +13,20 @@ namespace Thi_KTHP
 {
     public partial class frmthongtinhp : Form
     {
-        string tk = "NguyenthiA";
-        string mk = "a";
-        int quyen = 1;
+        private string username;
+        private string pass;
         public frmthongtinhp()
         {
             InitializeComponent();
         }
-        SqlConnection conn = new SqlConnection("Data Source=DESKTOP-NVIUQTM\\SQLEXPRESS;Initial Catalog=Demo_QLD;Integrated Security=True");
+        public frmthongtinhp(string username, string pass)
+        {
+            InitializeComponent();
+            dgvqlhp.AllowUserToAddRows = false;
+            this.username = username;
+            this.pass = pass;
+        }
+        SqlConnection conn = new SqlConnection(ConnectionString.connectionsString);
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             var i = dgvqlhp.Rows[e.RowIndex];
@@ -33,12 +39,27 @@ namespace Thi_KTHP
         {
             conn.Open();
             DataTable dt = new DataTable();
-            string query = "select HocPhan.MaHP,Hocphan.TenHP,HocPhan.SoTC,HocPhan.SoTiet from HocPhan,nhomhp,GiangVien where GiangVien.MaGV=nhomhp.MaGV and HocPhan.MaHP=nhomhp.MaHP and GiangVien.UseName='" + tk + "'";
+            string query = "select HocPhan.MaHP,Hocphan.TenHP,HocPhan.SoTC,HocPhan.SoTiet from HocPhan,nhomhp,GiangVien where GiangVien.MaGV=nhomhp.MaGV and HocPhan.MaHP=nhomhp.MaHP and GiangVien.MaGV='" + this.username + "'";
             SqlCommand cmd = new SqlCommand(query, conn);
             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             adapter.Fill(dt);
             dgvqlhp.DataSource = dt;
+            for (int i = 0; i <= dgvqlhp.Columns.Count - 1; i++)
+            {
+                dgvqlhp.Columns[i].ReadOnly = true;
+                dgvqlhp.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            }
             conn.Close();
+        }
+
+        private void dgvqlhp_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var i = dgvqlhp.Rows[e.RowIndex];
+            txtmahp.Text = i.Cells["MaHP"].Value.ToString();
+            txttenhp.Text = i.Cells["TenHP"].Value.ToString();
+            txtsotc.Text = i.Cells["SoTC"].Value.ToString();
+            txtsotiet.Text = i.Cells["Sotiet"].Value.ToString();
+
         }
     }
 }

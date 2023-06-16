@@ -20,7 +20,6 @@ namespace Thi_KTHP
         {
             InitializeComponent();
             dgvmain.AllowUserToAddRows = false;
-
         }
 
         public frmdiemsv(string username, string pass)
@@ -91,26 +90,6 @@ namespace Thi_KTHP
                 lblnganh.Text = a.Cells["TenNganh"].Value.ToString();
 
             }
-            else
-            {
-                try {
-                    string query2 = "select * from Khoa,HocPhan,Nganh,NhomHP,GiangVien,KeHoachDaoTao,Lop,KhoaHoc,SinhVien where Nganh.MaKhoa=khoa.MaKhoa  and GiangVien.MaKhoa=Khoa.MaKhoa and GiangVien.MaGV=NhomHP.MaGV and NhomHP.MaHP=HocPhan.MaHP and KeHoachDaoTao.MaKHDT=NhomHP.MaKHDT and Lop.MaNganh=Nganh.MaNganh and lop.TenLop=KeHoachDaoTao.TenLop and KeHoachDaoTao.MaKhoaHoc=KhoaHoc.MaKhoaHoc and SinhVien.TenLop=Lop.TenLop  and SinhVien.MaSinhVien='" + this.username + "'";
-                    SqlCommand cmd = new SqlCommand(query2, conn);
-                    SqlDataAdapter data = new SqlDataAdapter(cmd);
-                    DataTable dt = new DataTable();
-                    data.Fill(dt);
-                    dgvmain.DataSource = dt;
-                    var b = dgvmain.Rows[0];
-                    lblmasv.Text = b.Cells["MaSinhVien"].Value.ToString();
-                    lblhoten.Text = b.Cells["Tensv"].Value.ToString();
-                    lbllop.Text = b.Cells["TenLop"].Value.ToString();
-                    lblnganh.Text = b.Cells["TenNganh"].Value.ToString();
-                    dgvmain.DataSource = null;
-                }catch(Exception ex)
-                {
-
-                }
-                }
             string queryth = "select HocPhan.MaHP,HocPhan.TenHP,HocPhan.SoTC,Diem.ChuyenCan,Diem.KiemTraGK,Diem.ThucHanh,Diem.ThiKetThuc,Diem.ThaoLuan,Diem.TongKetHP,Diem.DiemChu from Khoa,HocPhan,Nganh,nhomhp,GiangVien,KeHoachDaoTao,Lop,KhoaHoc,Diem,SinhVien where Nganh.MaKhoa=khoa.MaKhoa  and GiangVien.MaKhoa=Khoa.MaKhoa and GiangVien.MaGV=NhomHP.MaGV and NhomHP.MaHP=HocPhan.MaHP and KeHoachDaoTao.MaKHDT=NhomHP.MaKHDT and Lop.MaNganh=Nganh.MaNganh and lop.TenLop=KeHoachDaoTao.TenLop and KeHoachDaoTao.MaKhoaHoc=KhoaHoc.MaKhoaHoc and Diem.MaSinhVien=SinhVien.MaSinhVien and Diem.MaNhomHP=NhomHP.MaNhomHP and SinhVien.TenLop=Lop.TenLop  and SinhVien.MaSinhVien='" + this.username + "'";
             bang(queryth);
             }
