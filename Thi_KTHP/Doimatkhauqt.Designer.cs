@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.grbdoimk = new System.Windows.Forms.GroupBox();
             this.txtusername = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -37,7 +38,9 @@
             this.txtmkcu = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.errorbatloi = new System.Windows.Forms.ErrorProvider(this.components);
             this.grbdoimk.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorbatloi)).BeginInit();
             this.SuspendLayout();
             // 
             // grbdoimk
@@ -130,6 +133,10 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Mật Khẩu Cũ:";
             // 
+            // errorbatloi
+            // 
+            this.errorbatloi.ContainerControl = this;
+            // 
             // frmqtdoimk
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -141,6 +148,7 @@
             this.Text = "Đổi mật khẩu";
             this.grbdoimk.ResumeLayout(false);
             this.grbdoimk.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorbatloi)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -156,5 +164,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtusername;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ErrorProvider errorbatloi;
     }
 }

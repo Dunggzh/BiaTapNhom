@@ -46,30 +46,51 @@ namespace Thi_KTHP
         {
             try
             {
-
-                if (txtmkcu.Text.Equals(this.pass))
+                errorbatloi.Clear();
+                bool check = true;
+                if (txtusername.Text == "")
                 {
-                    if (conn.State == ConnectionState.Closed)
-                    {
-                        conn.Open();
-                    }
+                    check = false;
+                    errorbatloi.SetError(txtusername, "Bạn Chưa Nhập Dữ Liệu Trường Này");
+                }
+                if (txtmkcu.Text == "")
+                {
+                    check = false;
+                    errorbatloi.SetError(txtmkcu, "Bạn Chưa Nhập Dữ Liệu Trường Này");
+                }
+                if (txtmkmoi.Text == "")
+                {
+                    check = false;
+                    errorbatloi.SetError(txtmkmoi, "Bạn Chưa Nhập Dữ Liệu Trường Này");
+                }
 
-                    string query = "update TaiKhoan set pass='" + txtmkmoi.Text.Trim() + "' where UserName='" + this.username + "'";
-                    SqlCommand cmd = new SqlCommand(query, conn);
-                    var result = cmd.ExecuteNonQuery();
-                    if (result != 0)
+                if(check==true)
+                {
+                    if (txtmkcu.Text.Equals(this.pass))
                     {
-                        MessageBox.Show("Update success");
+                        if (conn.State == ConnectionState.Closed)
+                        {
+                            conn.Open();
+                        }
+
+                        string query = "update TaiKhoan set pass='" + txtmkmoi.Text.Trim() + "' where UserName='" + this.username + "'";
+                        SqlCommand cmd = new SqlCommand(query, conn);
+                        var result = cmd.ExecuteNonQuery();
+                        if (result != 0)
+                        {
+                            MessageBox.Show("Update success");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Update error");
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Update error");
+                        MessageBox.Show("Mật Khẩu Cũ Không Đúng!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
-                else
-                {
-                    MessageBox.Show("Mật Khẩu Cũ Không Đúng!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                
             }
             catch(Exception ex)
             {
