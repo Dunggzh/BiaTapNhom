@@ -66,5 +66,33 @@ namespace Thi_KTHP
         {
             Openformchild(new frmthongtin_gv(this.username,this.pass));
         }
+
+        private void thôngTinCáNhânToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Openformchild(new frmthongtin_gv(this.username, this.pass));
+        }
+
+        private void sửaThôngTinCáNhânToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Openformchild(new frmsuathongtincanhan_gv(this.username, this.pass));
+        }
+
+        private void đăngXuấtThoátToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Bạn Chắc Chắn Muốn Đăng Xuất", "Lưu Ý", MessageBoxButtons.YesNo, MessageBoxIcon.None) == DialogResult.Yes)
+            {
+                this.Hide();
+                frmtrangchu frmtrangchu = new frmtrangchu(new frmdangnhap());
+                frmtrangchu.ShowDialog();
+            }
+        }
+
+        private void thoátToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Bạn Chắc Chắn Muốn Thoát Khỏi Hệ Thống?", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
     }
 }

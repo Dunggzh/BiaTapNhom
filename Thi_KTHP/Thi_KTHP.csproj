@@ -135,6 +135,12 @@
     <Compile Include="Quanlysinhvien.Designer.cs">
       <DependentUpon>Quanlysinhvien.cs</DependentUpon>
     </Compile>
+    <Compile Include="SuaThongTinCaNhan_GV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SuaThongTinCaNhan_GV.Designer.cs">
+      <DependentUpon>SuaThongTinCaNhan_GV.cs</DependentUpon>
+    </Compile>
     <Compile Include="Taikhoanqt.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -283,6 +289,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Quanlysinhvien.resx">
       <DependentUpon>Quanlysinhvien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SuaThongTinCaNhan_GV.resx">
+      <DependentUpon>SuaThongTinCaNhan_GV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Taikhoanqt.resx">
       <DependentUpon>Taikhoanqt.cs</DependentUpon>
