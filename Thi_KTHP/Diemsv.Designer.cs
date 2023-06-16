@@ -42,6 +42,7 @@
             this.cbohocky = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnexcel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvmain)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -203,6 +204,7 @@
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.btnexcel);
             this.groupBox1.Controls.Add(this.lblmasv);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
@@ -223,6 +225,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Điểm chi tiết sinh viên";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // btnexcel
+            // 
+            this.btnexcel.Location = new System.Drawing.Point(734, 160);
+            this.btnexcel.Name = "btnexcel";
+            this.btnexcel.Size = new System.Drawing.Size(75, 38);
+            this.btnexcel.TabIndex = 29;
+            this.btnexcel.Text = "in excel";
+            this.btnexcel.UseVisualStyleBackColor = true;
+            this.btnexcel.Click += new System.EventHandler(this.btnexcel_Click);
             // 
             // frmdiemsv
             // 
@@ -257,5 +269,6 @@
         private System.Windows.Forms.ComboBox cbohocky;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btnexcel;
     }
 }

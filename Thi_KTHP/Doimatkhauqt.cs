@@ -46,6 +46,7 @@ namespace Thi_KTHP
         {
             try
             {
+
                 if (txtmkcu.Text.Equals(this.pass))
                 {
                     if (conn.State == ConnectionState.Closed)

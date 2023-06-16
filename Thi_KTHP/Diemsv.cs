@@ -21,7 +21,7 @@ namespace Thi_KTHP
             InitializeComponent();
             dgvmain.AllowUserToAddRows = false;
         }
-
+        
         public frmdiemsv(string username, string pass)
         {
             InitializeComponent();
@@ -29,15 +29,17 @@ namespace Thi_KTHP
             this.username = username;
             this.pass = pass;
         }
+        DataSet ds;
         SqlConnection conn = new SqlConnection(ConnectionString.connectionsString);
         private void bang(string query)
         {
             dgvmain.DataSource = null;
             SqlCommand cmd = new SqlCommand(query, conn);
             SqlDataAdapter data = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
+            DataSet dt=new DataSet();
+            
             data.Fill(dt);
-            dgvmain.DataSource = dt;
+            dgvmain.DataSource = dt.Tables[0];
             for (int i = 0; i <= dgvmain.Columns.Count - 1; i++)
             {
                 dgvmain.Columns[i].ReadOnly = true;
@@ -47,6 +49,7 @@ namespace Thi_KTHP
             {
                 conn.Close();
             }
+            ds = dt;
         }
         private void Diemsv_Load(object sender, EventArgs e)
         {
@@ -114,6 +117,20 @@ namespace Thi_KTHP
             {
                 string query = "select HocPhan.MaHP,HocPhan.TenHP,HocPhan.SoTC,Diem.ChuyenCan,Diem.KiemTraGK,Diem.ThucHanh,Diem.ThiKetThuc,Diem.ThaoLuan,Diem.TongKetHP,Diem.DiemChu from Khoa,HocPhan,Nganh,NhomHP,GiangVien,KeHoachDaoTao,Lop,KhoaHoc,Diem,SinhVien where Nganh.MaKhoa=khoa.MaKhoa  and GiangVien.MaKhoa=Khoa.MaKhoa and GiangVien.MaGV=NhomHP.MaGV and NhomHP.MaHP=HocPhan.MaHP and KeHoachDaoTao.MaKHDT=NhomHP.MaKHDT and Lop.MaNganh=Nganh.MaNganh and lop.TenLop=KeHoachDaoTao.TenLop and KeHoachDaoTao.MaKhoaHoc=KhoaHoc.MaKhoaHoc and Diem.MaSinhVien=SinhVien.MaSinhVien and Diem.MaNhomHP=NhomHP.MaNhomHP and SinhVien.TenLop=Lop.TenLop  and SinhVien.MaSinhVien='" + this.username + "'and KhoaHoc.KyHoc='" + cbohocky.SelectedItem.ToString() + "'";
                 bang(query);
+            }
+        }
+
+        private void btnexcel_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Thi_KTHP.Excell obj = new Thi_KTHP.Excell();
+                obj.WriteDataTableToExcel(ds.Tables[0], "Person Details", "D:\\Exceldata.xlsx", "Bảng Điểm");
+                MessageBox.Show("Excel created D: \tExceldata.xlsx", "Thông Báo");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + "\n Lỗi rồi! Liên hệ 098***** :<\n Chúng tôi sẽ cố gắng sửa lỗi này một cách sớm nhất!");
             }
         }
     }
