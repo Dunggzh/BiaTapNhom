@@ -49,6 +49,7 @@
             this.pnlqtcsdl = new System.Windows.Forms.Panel();
             this.dgvqtlop = new System.Windows.Forms.DataGridView();
             this.errorbatloi = new System.Windows.Forms.ErrorProvider(this.components);
+            this.label4 = new System.Windows.Forms.Label();
             this.floqtnut.SuspendLayout();
             this.pnlqttruong.SuspendLayout();
             this.pnlqtcsdl.SuspendLayout();
@@ -75,6 +76,9 @@
             // 
             // btnqtthemlop
             // 
+            this.btnqtthemlop.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnqtthemlop.Image = global::Thi_KTHP.Properties.Resources.Them;
+            this.btnqtthemlop.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnqtthemlop.Location = new System.Drawing.Point(3, 3);
             this.btnqtthemlop.Name = "btnqtthemlop";
             this.btnqtthemlop.Size = new System.Drawing.Size(144, 69);
@@ -85,6 +89,9 @@
             // 
             // btnqtsualop
             // 
+            this.btnqtsualop.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnqtsualop.Image = global::Thi_KTHP.Properties.Resources.sửa;
+            this.btnqtsualop.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnqtsualop.Location = new System.Drawing.Point(3, 78);
             this.btnqtsualop.Name = "btnqtsualop";
             this.btnqtsualop.Size = new System.Drawing.Size(144, 69);
@@ -95,6 +102,9 @@
             // 
             // btnqtxoalop
             // 
+            this.btnqtxoalop.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnqtxoalop.Image = global::Thi_KTHP.Properties.Resources.xoa;
+            this.btnqtxoalop.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnqtxoalop.Location = new System.Drawing.Point(3, 153);
             this.btnqtxoalop.Name = "btnqtxoalop";
             this.btnqtxoalop.Size = new System.Drawing.Size(144, 69);
@@ -105,6 +115,9 @@
             // 
             // btnqtghilop
             // 
+            this.btnqtghilop.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnqtghilop.Image = global::Thi_KTHP.Properties.Resources.ghi;
+            this.btnqtghilop.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnqtghilop.Location = new System.Drawing.Point(3, 228);
             this.btnqtghilop.Name = "btnqtghilop";
             this.btnqtghilop.Size = new System.Drawing.Size(144, 69);
@@ -115,6 +128,9 @@
             // 
             // btnqthuylop
             // 
+            this.btnqthuylop.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnqthuylop.Image = global::Thi_KTHP.Properties.Resources.huy;
+            this.btnqthuylop.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnqthuylop.Location = new System.Drawing.Point(3, 303);
             this.btnqthuylop.Name = "btnqthuylop";
             this.btnqthuylop.Size = new System.Drawing.Size(144, 69);
@@ -125,16 +141,22 @@
             // 
             // btnqtxuatexcell
             // 
+            this.btnqtxuatexcell.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnqtxuatexcell.Image = global::Thi_KTHP.Properties.Resources.excel;
+            this.btnqtxuatexcell.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnqtxuatexcell.Location = new System.Drawing.Point(3, 378);
             this.btnqtxuatexcell.Name = "btnqtxuatexcell";
             this.btnqtxuatexcell.Size = new System.Drawing.Size(144, 69);
             this.btnqtxuatexcell.TabIndex = 10;
-            this.btnqtxuatexcell.Text = "Export Excell";
+            this.btnqtxuatexcell.Text = "Excell";
             this.btnqtxuatexcell.UseVisualStyleBackColor = true;
             this.btnqtxuatexcell.Click += new System.EventHandler(this.btnqtxuatexcell_Click);
             // 
             // btnqttklop
             // 
+            this.btnqttklop.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnqttklop.Image = global::Thi_KTHP.Properties.Resources.timkiem;
+            this.btnqttklop.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnqttklop.Location = new System.Drawing.Point(3, 453);
             this.btnqttklop.Name = "btnqttklop";
             this.btnqttklop.Size = new System.Drawing.Size(144, 69);
@@ -148,6 +170,7 @@
             this.pnlqttruong.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlqttruong.BackColor = System.Drawing.Color.LightBlue;
+            this.pnlqttruong.Controls.Add(this.label4);
             this.pnlqttruong.Controls.Add(this.txtqttklop);
             this.pnlqttruong.Controls.Add(this.label5);
             this.pnlqttruong.Controls.Add(this.txtqtghichu);
@@ -164,7 +187,7 @@
             // txtqttklop
             // 
             this.txtqttklop.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtqttklop.Location = new System.Drawing.Point(256, 98);
+            this.txtqttklop.Location = new System.Drawing.Point(254, 144);
             this.txtqttklop.Name = "txtqttklop";
             this.txtqttklop.Size = new System.Drawing.Size(314, 27);
             this.txtqttklop.TabIndex = 27;
@@ -173,7 +196,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(252, 76);
+            this.label5.Location = new System.Drawing.Point(250, 122);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(85, 20);
             this.label5.TabIndex = 26;
@@ -182,7 +205,7 @@
             // txtqtghichu
             // 
             this.txtqtghichu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtqtghichu.Location = new System.Drawing.Point(25, 98);
+            this.txtqtghichu.Location = new System.Drawing.Point(23, 144);
             this.txtqtghichu.Name = "txtqtghichu";
             this.txtqtghichu.Size = new System.Drawing.Size(208, 27);
             this.txtqtghichu.TabIndex = 25;
@@ -191,7 +214,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(21, 68);
+            this.label3.Location = new System.Drawing.Point(19, 114);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(75, 20);
             this.label3.TabIndex = 24;
@@ -201,7 +224,7 @@
             // 
             this.cboqtmanganh.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboqtmanganh.FormattingEnabled = true;
-            this.cboqtmanganh.Location = new System.Drawing.Point(256, 38);
+            this.cboqtmanganh.Location = new System.Drawing.Point(254, 84);
             this.cboqtmanganh.Name = "cboqtmanganh";
             this.cboqtmanganh.Size = new System.Drawing.Size(208, 28);
             this.cboqtmanganh.TabIndex = 6;
@@ -210,7 +233,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(21, 6);
+            this.label1.Location = new System.Drawing.Point(19, 52);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(69, 20);
             this.label1.TabIndex = 0;
@@ -219,7 +242,7 @@
             // txtqttenlop
             // 
             this.txtqttenlop.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtqttenlop.Location = new System.Drawing.Point(25, 38);
+            this.txtqttenlop.Location = new System.Drawing.Point(23, 84);
             this.txtqttenlop.Name = "txtqttenlop";
             this.txtqttenlop.Size = new System.Drawing.Size(208, 27);
             this.txtqttenlop.TabIndex = 2;
@@ -228,7 +251,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(252, 6);
+            this.label2.Location = new System.Drawing.Point(250, 52);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(90, 20);
             this.label2.TabIndex = 1;
@@ -267,6 +290,16 @@
             // errorbatloi
             // 
             this.errorbatloi.ContainerControl = this;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(18, 6);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(184, 29);
+            this.label4.TabIndex = 28;
+            this.label4.Text = "Thông Tin Lớp";
             // 
             // frmqtlop
             // 
@@ -310,5 +343,6 @@
         private System.Windows.Forms.TextBox txtqttklop;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ErrorProvider errorbatloi;
+        private System.Windows.Forms.Label label4;
     }
 }

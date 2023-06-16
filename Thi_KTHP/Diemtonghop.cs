@@ -34,6 +34,7 @@ namespace Thi_KTHP
         SqlConnection conn = new SqlConnection(ConnectionString.connectionsString);
         List<diemth> ds = new List<diemth>();
         private diemth[] diem = new diemth[20];
+        DataSet dss;
         private void bang(string query)
         {
             try
@@ -42,9 +43,9 @@ namespace Thi_KTHP
                 dgvdiemth.DataSource = null;
                 SqlCommand cmd = new SqlCommand(query, conn);
                 SqlDataAdapter data = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
+                DataSet dt = new DataSet();
                 data.Fill(dt);
-                dgvdiemth.DataSource = dt;
+                dgvdiemth.DataSource = dt.Tables[0];
                 for (int i = 0; i <= dgvdiemth.Columns.Count - 1; i++)
                 {
                     dgvdiemth.Columns[i].ReadOnly = true;
@@ -54,6 +55,7 @@ namespace Thi_KTHP
                 {
                     conn.Close();
                 }
+                dss = dt;
             }
             catch (Exception ex)
             {
@@ -136,6 +138,21 @@ namespace Thi_KTHP
             }
             return a;
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Thi_KTHP.Excell obj = new Thi_KTHP.Excell();
+                obj.WriteDataTableToExcel(dss.Tables[0], "Person Details", "D:\\Exceldata.xlsx", "Bảng Điểm1");
+                MessageBox.Show("Excel created D: \tExceldata.xlsx", "Thông Báo");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + "\n Lỗi rồi! Liên hệ 098***** :<\n Chúng tôi sẽ cố gắng sửa lỗi này một cách sớm nhất!");
+            }
+        }
+
         public float htbche10(string hocky)
         {
             int a = 0;
