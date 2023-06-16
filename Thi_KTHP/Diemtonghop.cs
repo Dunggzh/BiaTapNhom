@@ -98,7 +98,7 @@ namespace Thi_KTHP
                 {
                     tbche10[i] = htbche10(dgvdiemth.Rows[i].Cells["KyHoc"].Value.ToString());
                     tbche4[i] = htbche4(dgvdiemth.Rows[i].Cells["KyHoc"].Value.ToString());
-                    diem[i].TBCHe10 = tbche10[i] / diem[i].SoTC;
+                    diem[i].TBCHe10 = (tbche10[i] / diem[i].SoTC)*(float)1.00;
                     diem[i].TBCHe4 = tbche4[i] / diem[i].SoTC;
                 }
                 ds.Add(diem[i]);

@@ -302,11 +302,6 @@ namespace Thi_KTHP
                     check = false;
                     errorbatloi.SetError(txtqtquequansv, "Bạn Chưa Nhập Dữ Liệu Trường Này");
                 }
-                if (txtqtghichu.Text == "")
-                {
-                    check = false;
-                    errorbatloi.SetError(txtqtghichu, "Bạn Chưa Nhập Dữ Liệu Trường Này");
-                }
 
 
 
@@ -528,7 +523,7 @@ namespace Thi_KTHP
                     {
                         conn.Open();
                     }
-                    string query = "SELECT MaSinhVien as'Mã Sinh Viên', TenSV as'Tên Sinh Viên', QueQuan as'Quê Quán', NgaySinh as'Ngày Sinh', NoiSinh as'Nơi Sinh', GioiTinh as'Giới Tính', TenLop as'Tên Lớp', GhiChu as'Ghi Chú' FROM dbo.SinhVien WHERE MaSinhVien LIKE '%" + txtqttksv.Text.Trim() + "%' OR TenSV LIKE N'%" + txtqttksv.Text.Trim() + "%' OR TenLop LIKE '%" + txtqttksv.Text.Trim() + "%' OR NoiSinh LIKE '%" + txtqttksv.Text.Trim() + "%' OR QueQuan LIKE '%" + txtqttksv.Text.Trim() + "%' OR GhiChu LIKE '%" + txtqttksv.Text.Trim() + "%' ";
+                    string query = "SELECT MaSinhVien as'Mã Sinh Viên', TenSV as'Tên Sinh Viên', QueQuan as'Quê Quán', NgaySinh as'Ngày Sinh', NoiSinh as'Nơi Sinh', GioiTinh as'Giới Tính', TenLop as'Tên Lớp', GhiChu as'Ghi Chú' FROM dbo.SinhVien WHERE MaSinhVien LIKE '%" + txtqttksv.Text.Trim() + "%' OR TenSV LIKE N'%" + txtqttksv.Text.Trim() + "%' OR TenLop LIKE '%" + txtqttksv.Text.Trim() + "%' OR NoiSinh LIKE N'%" + txtqttksv.Text.Trim() + "%' OR QueQuan LIKE N'%" + txtqttksv.Text.Trim() + "%' OR GhiChu LIKE '%" + txtqttksv.Text.Trim() + "%' ";
                     SqlCommand cmd = new SqlCommand(query, conn);
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
                     DataSet ds = new DataSet();

@@ -223,6 +223,7 @@ namespace Thi_KTHP
                     check = false;
                     errorbatloi.SetError(txtqtsdt, "Bạn Chưa Nhập Dữ Liệu Trường Này");
                 }
+               
                 else
                 {
                     if(int.TryParse(txtqtsdt.Text,out output) == false)

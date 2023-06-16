@@ -50,6 +50,8 @@
             this.dgvqtlop = new System.Windows.Forms.DataGridView();
             this.errorbatloi = new System.Windows.Forms.ErrorProvider(this.components);
             this.label4 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.cboqttenkhoa = new System.Windows.Forms.ComboBox();
             this.floqtnut.SuspendLayout();
             this.pnlqttruong.SuspendLayout();
             this.pnlqtcsdl.SuspendLayout();
@@ -170,6 +172,8 @@
             this.pnlqttruong.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlqttruong.BackColor = System.Drawing.Color.LightBlue;
+            this.pnlqttruong.Controls.Add(this.cboqttenkhoa);
+            this.pnlqttruong.Controls.Add(this.label6);
             this.pnlqttruong.Controls.Add(this.label4);
             this.pnlqttruong.Controls.Add(this.txtqttklop);
             this.pnlqttruong.Controls.Add(this.label5);
@@ -301,6 +305,28 @@
             this.label4.TabIndex = 28;
             this.label4.Text = "Thông Tin Lớp";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(472, 52);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(65, 16);
+            this.label6.TabIndex = 29;
+            this.label6.Text = "Tên Khoa";
+            // 
+            // cboqttenkhoa
+            // 
+            this.cboqttenkhoa.FormattingEnabled = true;
+            this.cboqttenkhoa.Items.AddRange(new object[] {
+            "CK",
+            "CNTT",
+            "CT",
+            "KTVT"});
+            this.cboqttenkhoa.Location = new System.Drawing.Point(490, 87);
+            this.cboqttenkhoa.Name = "cboqttenkhoa";
+            this.cboqttenkhoa.Size = new System.Drawing.Size(121, 24);
+            this.cboqttenkhoa.TabIndex = 30;
+            // 
             // frmqtlop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -344,5 +370,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ErrorProvider errorbatloi;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox cboqttenkhoa;
+        private System.Windows.Forms.Label label6;
     }
 }
