@@ -41,6 +41,7 @@ namespace Thi_KTHP
             this.sửaThôngTinCáNhânToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.đăngXuấtThoátToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thoátToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.thôngKêToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,7 +53,8 @@ namespace Thi_KTHP
             this.quảnLýSinhViênToolStripMenuItem,
             this.quảnLýĐiểmSinhToolStripMenuItem,
             this.thôngTinHọcToolStripMenuItem,
-            this.ngườiDùngToolStripMenuItem});
+            this.ngườiDùngToolStripMenuItem,
+            this.thôngKêToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 28);
@@ -133,6 +135,13 @@ namespace Thi_KTHP
             this.thoátToolStripMenuItem.Text = "Thoát";
             this.thoátToolStripMenuItem.Click += new System.EventHandler(this.thoátToolStripMenuItem_Click);
             // 
+            // thôngKêToolStripMenuItem
+            // 
+            this.thôngKêToolStripMenuItem.Name = "thôngKêToolStripMenuItem";
+            this.thôngKêToolStripMenuItem.Size = new System.Drawing.Size(86, 24);
+            this.thôngKêToolStripMenuItem.Text = "Thông Kê";
+            this.thôngKêToolStripMenuItem.Click += new System.EventHandler(this.thôngKêToolStripMenuItem_Click);
+            // 
             // frmtrangchugv
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -164,5 +173,6 @@ namespace Thi_KTHP
         private ToolStripMenuItem sửaThôngTinCáNhânToolStripMenuItem;
         private ToolStripMenuItem đăngXuấtThoátToolStripMenuItem;
         private ToolStripMenuItem thoátToolStripMenuItem;
+        private ToolStripMenuItem thôngKêToolStripMenuItem;
     }
 }

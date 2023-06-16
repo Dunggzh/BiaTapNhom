@@ -244,3 +244,4 @@ C:\Users\Dell\Source\Repos\BiaTapNhom16\6\Thi_KTHP\obj\Debug\Thi_KTHP.pdb
 C:\Users\Dell\Source\Repos\BiaTapNhom16\6\Thi_KTHP\obj\Debug\Thi_KTHP.frmthongtin_gv.resources
 C:\Users\Dell\Source\Repos\BiaTapNhom16\6\Thi_KTHP\obj\Debug\Thi_KTHP.QuanLyDiem_gv.resources
 C:\Users\Dell\Source\Repos\BiaTapNhom16\6\Thi_KTHP\obj\Debug\Thi_KTHP.frmsuathongtincanhan_gv.resources
+C:\Users\Dell\Source\Repos\BiaTapNhom16\6\Thi_KTHP\obj\Debug\Thi_KTHP.ThongKediem_Gv.resources

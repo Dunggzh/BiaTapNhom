@@ -52,7 +52,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(89, 157);
+            this.label2.Location = new System.Drawing.Point(89, 168);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(48, 16);
             this.label2.TabIndex = 0;
@@ -97,7 +97,7 @@
             // 
             // txtmahp
             // 
-            this.txtmahp.Location = new System.Drawing.Point(193, 157);
+            this.txtmahp.Location = new System.Drawing.Point(193, 168);
             this.txtmahp.Name = "txtmahp";
             this.txtmahp.Size = new System.Drawing.Size(100, 22);
             this.txtmahp.TabIndex = 3;

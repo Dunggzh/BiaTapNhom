@@ -54,13 +54,15 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.dgv_qldsv = new System.Windows.Forms.DataGridView();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtmanhomhp = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_qldsv)).BeginInit();
             this.SuspendLayout();
             // 
             // txtgiuaki_qldsv
             // 
             this.txtgiuaki_qldsv.Enabled = false;
-            this.txtgiuaki_qldsv.Location = new System.Drawing.Point(118, 168);
+            this.txtgiuaki_qldsv.Location = new System.Drawing.Point(128, 171);
             this.txtgiuaki_qldsv.Name = "txtgiuaki_qldsv";
             this.txtgiuaki_qldsv.Size = new System.Drawing.Size(100, 22);
             this.txtgiuaki_qldsv.TabIndex = 30;
@@ -68,7 +70,7 @@
             // txtchuyencan_qldcsv
             // 
             this.txtchuyencan_qldcsv.Enabled = false;
-            this.txtchuyencan_qldcsv.Location = new System.Drawing.Point(118, 120);
+            this.txtchuyencan_qldcsv.Location = new System.Drawing.Point(125, 120);
             this.txtchuyencan_qldcsv.Name = "txtchuyencan_qldcsv";
             this.txtchuyencan_qldcsv.Size = new System.Drawing.Size(100, 22);
             this.txtchuyencan_qldcsv.TabIndex = 29;
@@ -85,7 +87,7 @@
             // lblmasv_qldsv
             // 
             this.lblmasv_qldsv.AutoSize = true;
-            this.lblmasv_qldsv.Location = new System.Drawing.Point(122, 78);
+            this.lblmasv_qldsv.Location = new System.Drawing.Point(125, 78);
             this.lblmasv_qldsv.Name = "lblmasv_qldsv";
             this.lblmasv_qldsv.Size = new System.Drawing.Size(16, 16);
             this.lblmasv_qldsv.TabIndex = 27;
@@ -296,11 +298,29 @@
             this.dgv_qldsv.TabIndex = 48;
             this.dgv_qldsv.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_qldsv_CellClick);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(35, 211);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(87, 16);
+            this.label5.TabIndex = 49;
+            this.label5.Text = "Mã Nhóm HP";
+            // 
+            // txtmanhomhp
+            // 
+            this.txtmanhomhp.Enabled = false;
+            this.txtmanhomhp.Location = new System.Drawing.Point(128, 208);
+            this.txtmanhomhp.Name = "txtmanhomhp";
+            this.txtmanhomhp.Size = new System.Drawing.Size(100, 22);
+            this.txtmanhomhp.TabIndex = 30;
+            // 
             // QuanLyDiem_gv
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1042, 500);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.dgv_qldsv);
             this.Controls.Add(this.cbbluachon_qldsv);
             this.Controls.Add(this.txtthiketthuc_qldsv);
@@ -319,6 +339,7 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
+            this.Controls.Add(this.txtmanhomhp);
             this.Controls.Add(this.txtgiuaki_qldsv);
             this.Controls.Add(this.txtchuyencan_qldcsv);
             this.Controls.Add(this.cbbkyhoc_qldsv);
@@ -364,5 +385,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DataGridView dgv_qldsv;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtmanhomhp;
     }
 }

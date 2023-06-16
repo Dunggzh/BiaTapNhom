@@ -94,5 +94,10 @@ namespace Thi_KTHP
                 Application.Exit();
             }
         }
+
+        private void thôngKêToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Openformchild(new ThongKediem_Gv(this.username, this.pass));
+        }
     }
 }

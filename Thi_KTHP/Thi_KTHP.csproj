@@ -86,6 +86,7 @@
       <DependentUpon>Diemsv.cs</DependentUpon>
     </Compile>
     <Compile Include="diemth.cs" />
+    <Compile Include="diemthongke.cs" />
     <Compile Include="Diemtonghop.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,6 +147,12 @@
     </Compile>
     <Compile Include="Taikhoanqt.Designer.cs">
       <DependentUpon>Taikhoanqt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThongKediem_Gv.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThongKediem_Gv.Designer.cs">
+      <DependentUpon>ThongKediem_Gv.cs</DependentUpon>
     </Compile>
     <Compile Include="thongtinhocphan.cs">
       <SubType>Form</SubType>
@@ -295,6 +302,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Taikhoanqt.resx">
       <DependentUpon>Taikhoanqt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThongKediem_Gv.resx">
+      <DependentUpon>ThongKediem_Gv.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="thongtinhocphan.resx">
       <DependentUpon>thongtinhocphan.cs</DependentUpon>

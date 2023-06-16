@@ -48,7 +48,7 @@ namespace Thi_KTHP
             }
             conn.Open();
             DataTable dt = new DataTable();
-            string query = "select Diem.MaSinhVien,Diem.ChuyenCan,Diem.KiemTraGK,Diem.ThucHanh,Diem.ThiKetThuc,Diem.ThaoLuan,Diem.TongKetHP,Diem.DiemChu from Diem,Nhomhp,GiangVien Where GiangVien.MaGV=Nhomhp.MaGV and Diem.MaNhomHP=Nhomhp.MaNhomHP and GiangVien.MaGV= '" + this.username + "'";
+            string query = "select Diem.MaSinhVien,Diem.ChuyenCan,Diem.KiemTraGK,Diem.ThucHanh,Diem.ThiKetThuc,Diem.ThaoLuan,Diem.TongKetHP,Diem.DiemChu,Diem.MaNhomHP from Diem,Nhomhp,GiangVien Where GiangVien.MaGV=Nhomhp.MaGV and Diem.MaNhomHP=Nhomhp.MaNhomHP and GiangVien.MaGV= '" + this.username + "'";
             SqlCommand cmd = new SqlCommand(query, conn);
             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             adapter.Fill(dt);
@@ -130,7 +130,7 @@ namespace Thi_KTHP
                 if (cbblop_qldsv.SelectedItem.Equals("--"))
                 {
                     DataTable dt = new DataTable();
-                    string query = "select Diem.MaSinhVien,Diem.ChuyenCan,Diem.KiemTraGK,Diem.ThucHanh,Diem.ThiKetThuc,Diem.ThaoLuan,Diem.TongKetHP,Diem.DiemChu from Diem,KhoaHoc,GiangVien,Nhomhp,KeHoachDaoTao Where KhoaHoc.KyHoc='" + cbbkyhoc_qldsv.SelectedItem.ToString() + "' and KhoaHoc.MaKhoaHoc=KeHoachDaoTao.MaKhoaHoc and KeHoachDaoTao.MaKHDT=Nhomhp.MaKHDT and Nhomhp.MaGV=GiangVien.MaGV and Nhomhp.MaNhomHP=Diem.MaNhomHP and GiangVien.MaGV='" + this.username + "'";
+                    string query = "select Diem.MaSinhVien,Diem.ChuyenCan,Diem.KiemTraGK,Diem.ThucHanh,Diem.ThiKetThuc,Diem.ThaoLuan,Diem.TongKetHP,Diem.DiemChu,Diem.MaNhomHP from Diem,KhoaHoc,GiangVien,Nhomhp,KeHoachDaoTao Where KhoaHoc.KyHoc='" + cbbkyhoc_qldsv.SelectedItem.ToString() + "' and KhoaHoc.MaKhoaHoc=KeHoachDaoTao.MaKhoaHoc and KeHoachDaoTao.MaKHDT=Nhomhp.MaKHDT and Nhomhp.MaGV=GiangVien.MaGV and Nhomhp.MaNhomHP=Diem.MaNhomHP and GiangVien.MaGV='" + this.username + "'";
                     SqlCommand cmd = new SqlCommand(query, conn);
                     SqlDataAdapter data = new SqlDataAdapter(cmd);
                     data.Fill(dt);
@@ -140,7 +140,7 @@ namespace Thi_KTHP
                 else
                 {
                     DataTable dt = new DataTable();
-                    string query = "select Diem.MaSinhVien,Diem.ChuyenCan,Diem.KiemTraGK,Diem.ThucHanh,Diem.ThiKetThuc,Diem.ThaoLuan,Diem.TongKetHP,Diem.DiemChu from Diem,KhoaHoc,GiangVien,Nhomhp,KeHoachDaoTao,SinhVien Where KhoaHoc.KyHoc='" + cbbkyhoc_qldsv.SelectedItem.ToString() + "' and KhoaHoc.MaKhoaHoc=KeHoachDaoTao.MaKhoaHoc and KeHoachDaoTao.MaKHDT=Nhomhp.MaKHDT and Nhomhp.MaGV=GiangVien.MaGV and Nhomhp.MaNhomHP=Diem.MaNhomHP and GiangVien.MaGV='" + this.username + "' and SinhVien.MaSinhVien=Diem.MaSinhVien and SinhVien.TenLop='" + cbblop_qldsv.SelectedItem.ToString() + "'";
+                    string query = "select Diem.MaSinhVien,Diem.ChuyenCan,Diem.KiemTraGK,Diem.ThucHanh,Diem.ThiKetThuc,Diem.ThaoLuan,Diem.TongKetHP,Diem.DiemChu,Diem.MaNhomHP from Diem,KhoaHoc,GiangVien,Nhomhp,KeHoachDaoTao,SinhVien Where KhoaHoc.KyHoc='" + cbbkyhoc_qldsv.SelectedItem.ToString() + "' and KhoaHoc.MaKhoaHoc=KeHoachDaoTao.MaKhoaHoc and KeHoachDaoTao.MaKHDT=Nhomhp.MaKHDT and Nhomhp.MaGV=GiangVien.MaGV and Nhomhp.MaNhomHP=Diem.MaNhomHP and GiangVien.MaGV='" + this.username + "' and SinhVien.MaSinhVien=Diem.MaSinhVien and SinhVien.TenLop='" + cbblop_qldsv.SelectedItem.ToString() + "'";
                     SqlCommand cmd = new SqlCommand(query, conn);
                     SqlDataAdapter data = new SqlDataAdapter(cmd);
                     data.Fill(dt);
@@ -162,7 +162,7 @@ namespace Thi_KTHP
                 {
 
                     DataTable dt = new DataTable();
-                    string query = "select Diem.MaSinhVien,Diem.ChuyenCan,Diem.KiemTraGK,Diem.ThucHanh,Diem.ThiKetThuc,Diem.ThaoLuan,Diem.TongKetHP,Diem.DiemChu from Diem,KhoaHoc,GiangVien,Nhomhp,KeHoachDaoTao,SinhVien Where KhoaHoc.KyHoc='" + cbbkyhoc_qldsv.SelectedItem.ToString() + "' and KhoaHoc.MaKhoaHoc=KeHoachDaoTao.MaKhoaHoc and KeHoachDaoTao.MaKHDT=Nhomhp.MaKHDT and Nhomhp.MaGV=GiangVien.MaGV and Nhomhp.MaNhomHP=Diem.MaNhomHP and GiangVien.MaGV='" + this.username + "' and SinhVien.MaSinhVien=Diem.MaSinhVien and SinhVien.TenLop='" + cbblop_qldsv.SelectedItem.ToString() + "'";
+                    string query = "select Diem.MaSinhVien,Diem.ChuyenCan,Diem.KiemTraGK,Diem.ThucHanh,Diem.ThiKetThuc,Diem.ThaoLuan,Diem.TongKetHP,Diem.DiemChu,Diem.MaNhomHP from Diem,KhoaHoc,GiangVien,Nhomhp,KeHoachDaoTao,SinhVien Where KhoaHoc.KyHoc='" + cbbkyhoc_qldsv.SelectedItem.ToString() + "' and KhoaHoc.MaKhoaHoc=KeHoachDaoTao.MaKhoaHoc and KeHoachDaoTao.MaKHDT=Nhomhp.MaKHDT and Nhomhp.MaGV=GiangVien.MaGV and Nhomhp.MaNhomHP=Diem.MaNhomHP and GiangVien.MaGV='" + this.username + "' and SinhVien.MaSinhVien=Diem.MaSinhVien and SinhVien.TenLop='" + cbblop_qldsv.SelectedItem.ToString() + "'";
                     SqlCommand cmd = new SqlCommand(query, conn);
                     SqlDataAdapter data = new SqlDataAdapter(cmd);
                     data.Fill(dt);
@@ -172,7 +172,7 @@ namespace Thi_KTHP
                 else
                 {
                     DataTable dt = new DataTable();
-                    string query = "select Diem.MaSinhVien,Diem.ChuyenCan,Diem.KiemTraGK,Diem.ThucHanh,Diem.ThiKetThuc,Diem.ThaoLuan,Diem.TongKetHP,Diem.DiemChu from Diem,KhoaHoc,GiangVien,Nhomhp,KeHoachDaoTao,SinhVien Where KhoaHoc.KyHoc='" + cbbkyhoc_qldsv.SelectedItem.ToString() + "' and KhoaHoc.MaKhoaHoc=KeHoachDaoTao.MaKhoaHoc and KeHoachDaoTao.MaKHDT=Nhomhp.MaKHDT and Nhomhp.MaGV=GiangVien.MaGV and Nhomhp.MaNhomHP=Diem.MaNhomHP and GiangVien.MaGV='" + this.username + "' and SinhVien.MaSinhVien=Diem.MaSinhVien and SinhVien.TenLop='" + cbblop_qldsv.SelectedItem.ToString() + "' and Diem.MaSinhVien='" + cbbmasv_qldsv.SelectedItem.ToString() + "'";
+                    string query = "select Diem.MaSinhVien,Diem.ChuyenCan,Diem.KiemTraGK,Diem.ThucHanh,Diem.ThiKetThuc,Diem.ThaoLuan,Diem.TongKetHP,Diem.DiemChu,Diem.MaNhomHP from Diem,KhoaHoc,GiangVien,Nhomhp,KeHoachDaoTao,SinhVien Where KhoaHoc.KyHoc='" + cbbkyhoc_qldsv.SelectedItem.ToString() + "' and KhoaHoc.MaKhoaHoc=KeHoachDaoTao.MaKhoaHoc and KeHoachDaoTao.MaKHDT=Nhomhp.MaKHDT and Nhomhp.MaGV=GiangVien.MaGV and Nhomhp.MaNhomHP=Diem.MaNhomHP and GiangVien.MaGV='" + this.username + "' and SinhVien.MaSinhVien=Diem.MaSinhVien and SinhVien.TenLop='" + cbblop_qldsv.SelectedItem.ToString() + "' and Diem.MaSinhVien='" + cbbmasv_qldsv.SelectedItem.ToString() + "'";
                     SqlCommand cmd = new SqlCommand(query, conn);
                     SqlDataAdapter data = new SqlDataAdapter(cmd);
                     data.Fill(dt);
@@ -195,8 +195,9 @@ namespace Thi_KTHP
             txtthuchanh_qldsv.Text = i.Cells[3].Value.ToString();
             txtthiketthuc_qldsv.Text = i.Cells[4].Value.ToString();
             txtthaoluan_qldsv.Text = i.Cells[5].Value.ToString();
-            lbltongketHP_qldsv.Text = i.Cells[6].Value.ToString();
+            lbltongketHP_qldsv.Text =  i.Cells[6].Value.ToString();
             lbldiemchu_qldsv.Text = i.Cells[7].Value.ToString();
+            txtmanhomhp.Text = i.Cells[8].Value.ToString();
         }
 
         private void cbbluachon_qldsv_SelectedIndexChanged(object sender, EventArgs e)
@@ -205,13 +206,11 @@ namespace Thi_KTHP
             {
                 txtthuchanh_qldsv.Enabled = true;
                 txtthaoluan_qldsv.Enabled = false;
-                cbbluachon_qldsv.Enabled = false;
             }
             else if (cbbluachon_qldsv.SelectedItem.Equals("Thảo luận"))
             {
                 txtthaoluan_qldsv.Enabled = true;
                 txtthuchanh_qldsv.Enabled = false;
-                cbbluachon_qldsv.Enabled = false;
             }
             else
             {
@@ -234,22 +233,24 @@ namespace Thi_KTHP
                 cmd.Parameters.AddWithValue("@ThiKetThuc", txtthiketthuc_qldsv.Text);
                 cmd.Parameters.AddWithValue("@TongKetHP", float.Parse(txtchuyencan_qldcsv.Text) * 0.1 + float.Parse(txtgiuaki_qldsv.Text) * 0.2 + float.Parse(txtthiketthuc_qldsv.Text) * 0.7);
                 float dc = float.Parse(lbltongketHP_qldsv.Text);
-                if (dc >= 8.5 && dc <= 10) cmd.Parameters.AddWithValue("@DiemChu", "A");
-                else if (dc >= 8 && dc < 8.5) cmd.Parameters.AddWithValue("@DiemChu", "B+");
-                else if (dc >= 7 && dc < 8) cmd.Parameters.AddWithValue("@DiemChu", "B");
-                else if (dc >= 6 && dc < 7) cmd.Parameters.AddWithValue("@DiemChu", "C+");
-                else if (dc >= 5.5 && dc < 6) cmd.Parameters.AddWithValue("@DiemChu", "C");
-                else if (dc >= 5.1 && dc < 5.5) cmd.Parameters.AddWithValue("@DiemChu", "D+");
-                else if (dc >= 4 && dc < 5.1) cmd.Parameters.AddWithValue("@DiemChu", "D");
-                else cmd.Parameters.AddWithValue("@DiemChu", "F");
+                if (dc >= 8.5 && dc <= 10) lbldiemchu_qldsv.Text = "A";
+                else if (dc >= 8 && dc < 8.5) lbldiemchu_qldsv.Text = "B+";
+                else if (dc >= 7 && dc < 8) lbldiemchu_qldsv.Text = "B";
+                else if (dc >= 6 && dc < 7) lbldiemchu_qldsv.Text = "C+";
+                else if (dc >= 5.5 && dc < 6) lbldiemchu_qldsv.Text = "C";
+                else if (dc >= 5.1 && dc < 5.5) lbldiemchu_qldsv.Text = "D+";
+                else if (dc >= 4 && dc < 5.1) lbldiemchu_qldsv.Text = "D";
+                else lbldiemchu_qldsv.Text = "F";
+                cmd.Parameters.AddWithValue("@DiemChu", lbldiemchu_qldsv.Text);
                 cmd.ExecuteNonQuery();
                 conn.Close();
-                // frmqldiemsv_gv(sender, e);
+                QuanLyDiem_gv_Load(sender, e);
                 txtchuyencan_qldcsv.Enabled = false;
                 txtgiuaki_qldsv.Enabled = false;
                 txtthuchanh_qldsv.Enabled = false;
                 txtthiketthuc_qldsv.Enabled = false;
                 txtthaoluan_qldsv.Enabled = false;
+                txtmanhomhp.Enabled = false;
                 btnluu_qldsv.Enabled = false;
                 btnsua_qldsv.Enabled = true;
                 cbbluachon_qldsv.Enabled = false;
@@ -258,8 +259,9 @@ namespace Thi_KTHP
             {
                 conn.Open();
                 DataTable dt = new DataTable();
-                string query = "update Diem set ChuyenCan=@ChuyenCan,KiemTraGK=@KiemTraGK, ThucHanh=@ThucHanh, ThiKetThuc=@ThiKetThuc, TongKetHP=@TongKetHP, DiemChu=@DiemChu where MaSinhVien=@MaSinhVien";
+                string query = "update Diem set ChuyenCan=@ChuyenCan,KiemTraGK=@KiemTraGK, ThucHanh=@ThucHanh, ThiKetThuc=@ThiKetThuc, TongKetHP=@TongKetHP, DiemChu=@DiemChu where MaSinhVien=@MaSinhVien and MaNhomHP=@MaNhomHP";
                 SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@MaNhomHP", txtmanhomhp.Text);
                 cmd.Parameters.AddWithValue("@MaSinhVien", lblmasv_qldsv.Text);
                 cmd.Parameters.AddWithValue("@ChuyenCan", txtchuyencan_qldcsv.Text);
                 cmd.Parameters.AddWithValue("@KiemTraGK", txtgiuaki_qldsv.Text);
@@ -277,6 +279,7 @@ namespace Thi_KTHP
                 else cmd.Parameters.AddWithValue("@DiemChu", "F");
                 cmd.ExecuteNonQuery();
                 conn.Close();
+                QuanLyDiem_gv_Load(sender, e);
                 txtchuyencan_qldcsv.Enabled = false;
                 txtgiuaki_qldsv.Enabled = false;
                 txtthuchanh_qldsv.Enabled = false;
@@ -285,17 +288,19 @@ namespace Thi_KTHP
                 btnluu_qldsv.Enabled = false;
                 btnsua_qldsv.Enabled = true;
                 cbbluachon_qldsv.Enabled = false;
+              
             }
             else if (txtthaoluan_qldsv.Enabled == true)
             {
                 conn.Open();
                 DataTable dt = new DataTable();
-                string query = "update Diem set ChuyenCan=@ChuyenCan,KiemTraGK=@KiemTraGK, ThaoLuan=@ThaoLuan, ThiKetThuc=@ThiKetThuc, TongKetHP=@TongKetHP,DiemChu=@DiemChu where MaSinhVien=@MaSinhVien";
+                string query = "update Diem set ChuyenCan=@ChuyenCan,KiemTraGK=@KiemTraGK, ThaoLuan=@ThaoLuan, ThiKetThuc=@ThiKetThuc, TongKetHP=@TongKetHP,DiemChu=@DiemChu where MaSinhVien=@MaSinhVien and MaNhomHP=@MaNhomHP";
                 SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@MaNhomHP", txtmanhomhp.Text);
                 cmd.Parameters.AddWithValue("@MaSinhVien", lblmasv_qldsv.Text);
                 cmd.Parameters.AddWithValue("@ChuyenCan", txtchuyencan_qldcsv.Text);
                 cmd.Parameters.AddWithValue("@KiemTraGK", txtgiuaki_qldsv.Text);
-                cmd.Parameters.AddWithValue("@ThoaLuan", txtthaoluan_qldsv.Text);
+                cmd.Parameters.AddWithValue("@ThaoLuan", txtthaoluan_qldsv.Text);
                 cmd.Parameters.AddWithValue("@ThiKetThuc", txtthiketthuc_qldsv.Text);
                 cmd.Parameters.AddWithValue("@TongKetHP", float.Parse(txtchuyencan_qldcsv.Text) * 0.1 + float.Parse(txtgiuaki_qldsv.Text) * 0.1 + float.Parse(txtthaoluan_qldsv.Text) * 0.1 + float.Parse(txtthiketthuc_qldsv.Text) * 0.7);
                 float dc = float.Parse(lbltongketHP_qldsv.Text);
@@ -309,6 +314,7 @@ namespace Thi_KTHP
                 else cmd.Parameters.AddWithValue("@DiemChu", "F");
                 cmd.ExecuteNonQuery();
                 conn.Close();
+                QuanLyDiem_gv_Load(sender, e);
                 txtchuyencan_qldcsv.Enabled = false;
                 txtgiuaki_qldsv.Enabled = false;
                 txtthuchanh_qldsv.Enabled = false;
@@ -317,7 +323,9 @@ namespace Thi_KTHP
                 btnluu_qldsv.Enabled = false;
                 btnsua_qldsv.Enabled = true;
                 cbbluachon_qldsv.Enabled = false;
+         
             }
+       
         }
 
         private void btnsua_qldsv_Click(object sender, EventArgs e)
