@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.grbdoimk = new System.Windows.Forms.GroupBox();
+            this.txtusername = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnxacnhan = new System.Windows.Forms.Button();
             this.chkshowpass = new System.Windows.Forms.CheckBox();
             this.txtmkmoi = new System.Windows.Forms.TextBox();
             this.txtmkcu = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnxacnhan = new System.Windows.Forms.Button();
-            this.txtusername = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.grbdoimk.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,6 +57,32 @@
             this.grbdoimk.TabIndex = 1;
             this.grbdoimk.TabStop = false;
             this.grbdoimk.Text = "Thông tin";
+            // 
+            // txtusername
+            // 
+            this.txtusername.Location = new System.Drawing.Point(208, 44);
+            this.txtusername.Name = "txtusername";
+            this.txtusername.Size = new System.Drawing.Size(247, 34);
+            this.txtusername.TabIndex = 5;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 44);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(196, 29);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Tên Người Dùng:";
+            // 
+            // btnxacnhan
+            // 
+            this.btnxacnhan.Location = new System.Drawing.Point(208, 197);
+            this.btnxacnhan.Name = "btnxacnhan";
+            this.btnxacnhan.Size = new System.Drawing.Size(214, 43);
+            this.btnxacnhan.TabIndex = 2;
+            this.btnxacnhan.Text = "Xác Nhận";
+            this.btnxacnhan.UseVisualStyleBackColor = true;
+            this.btnxacnhan.Click += new System.EventHandler(this.btnxacnhan_Click);
             // 
             // chkshowpass
             // 
@@ -104,36 +130,11 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Mật Khẩu Cũ:";
             // 
-            // btnxacnhan
-            // 
-            this.btnxacnhan.Location = new System.Drawing.Point(208, 197);
-            this.btnxacnhan.Name = "btnxacnhan";
-            this.btnxacnhan.Size = new System.Drawing.Size(214, 43);
-            this.btnxacnhan.TabIndex = 2;
-            this.btnxacnhan.Text = "Xác Nhận";
-            this.btnxacnhan.UseVisualStyleBackColor = true;
-            this.btnxacnhan.Click += new System.EventHandler(this.btnxacnhan_Click);
-            // 
-            // txtusername
-            // 
-            this.txtusername.Location = new System.Drawing.Point(208, 44);
-            this.txtusername.Name = "txtusername";
-            this.txtusername.Size = new System.Drawing.Size(247, 34);
-            this.txtusername.TabIndex = 5;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 44);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(196, 29);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Tên Người Dùng:";
-            // 
             // frmqtdoimk
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightBlue;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.grbdoimk);
             this.Name = "frmqtdoimk";

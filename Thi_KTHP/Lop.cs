@@ -95,7 +95,7 @@ namespace Thi_KTHP
 
 
                     txtqttenlop.Enabled = false;
-                    cboqtmanganh.Enabled = true;
+                    cboqtmanganh.Enabled = false;
                     txtqtghichu.Enabled = true;
                     txtqttklop.Enabled = false;
 
@@ -252,7 +252,7 @@ namespace Thi_KTHP
                 }
                 if (status == "edit" && check == true)
                 {
-                    if (cboqtmanganh.Text.Equals(a) && txtqtghichu.Text.Equals(b))
+                    if (txtqtghichu.Text.Equals(b))
                     {
                         MessageBox.Show("Bạn Chưa Thay Đổi Dữ Liệu");
                         cboqtmanganh.Focus();

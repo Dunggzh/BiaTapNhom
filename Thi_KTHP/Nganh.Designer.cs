@@ -60,6 +60,7 @@
             // 
             this.floqtnut.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.floqtnut.BackColor = System.Drawing.Color.LightBlue;
             this.floqtnut.Controls.Add(this.btnqtthemnganh);
             this.floqtnut.Controls.Add(this.btnqtsuanganh);
             this.floqtnut.Controls.Add(this.btnqtxoanganh);
@@ -146,6 +147,7 @@
             // 
             this.pnlqttruong.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlqttruong.BackColor = System.Drawing.Color.LightBlue;
             this.pnlqttruong.Controls.Add(this.txtqttknganh);
             this.pnlqttruong.Controls.Add(this.label5);
             this.pnlqttruong.Controls.Add(this.cboqtmakhoa);
@@ -237,7 +239,7 @@
             this.pnlqtcsdl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlqtcsdl.BackColor = System.Drawing.SystemColors.Control;
+            this.pnlqtcsdl.BackColor = System.Drawing.Color.LightBlue;
             this.pnlqtcsdl.Controls.Add(this.dgvqtnganh);
             this.pnlqtcsdl.Location = new System.Drawing.Point(171, 167);
             this.pnlqtcsdl.Name = "pnlqtcsdl";

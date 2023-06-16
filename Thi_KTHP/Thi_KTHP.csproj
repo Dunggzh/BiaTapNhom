@@ -422,5 +422,50 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Trangchu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\quản lý sinh viên.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Thống kê.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hỗ trợ.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\người dùng.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Trang chủ.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Them.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sửa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\xoa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ghi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\huy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\excel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\timkiem.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Đăng nhập.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\thoat.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -37,17 +37,17 @@
             this.btnqtxoatk = new System.Windows.Forms.Button();
             this.btnqtghitk = new System.Windows.Forms.Button();
             this.btnqthuytk = new System.Windows.Forms.Button();
+            this.btnqtxuatexcell = new System.Windows.Forms.Button();
+            this.btnqttktaikhoan = new System.Windows.Forms.Button();
             this.pnlqttruong = new System.Windows.Forms.Panel();
             this.txtqtquyen = new System.Windows.Forms.TextBox();
+            this.txtqttktaikhoan = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtqtpass = new System.Windows.Forms.TextBox();
             this.txtqtusername = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnqtxuatexcell = new System.Windows.Forms.Button();
-            this.btnqttktaikhoan = new System.Windows.Forms.Button();
-            this.txtqttktaikhoan = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.errorbatloi = new System.Windows.Forms.ErrorProvider(this.components);
             this.pnlqtcsdl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvqttaikhoan)).BeginInit();
@@ -61,7 +61,7 @@
             this.pnlqtcsdl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlqtcsdl.BackColor = System.Drawing.SystemColors.Control;
+            this.pnlqtcsdl.BackColor = System.Drawing.Color.LightBlue;
             this.pnlqtcsdl.Controls.Add(this.dgvqttaikhoan);
             this.pnlqtcsdl.Location = new System.Drawing.Point(172, 159);
             this.pnlqtcsdl.Name = "pnlqtcsdl";
@@ -90,6 +90,7 @@
             // 
             this.floqtnut.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.floqtnut.BackColor = System.Drawing.Color.LightBlue;
             this.floqtnut.Controls.Add(this.btnqtthemtk);
             this.floqtnut.Controls.Add(this.btnqtsuatk);
             this.floqtnut.Controls.Add(this.btnqtxoatk);
@@ -152,10 +153,31 @@
             this.btnqthuytk.UseVisualStyleBackColor = true;
             this.btnqthuytk.Click += new System.EventHandler(this.btnqthuytk_Click);
             // 
+            // btnqtxuatexcell
+            // 
+            this.btnqtxuatexcell.Location = new System.Drawing.Point(3, 378);
+            this.btnqtxuatexcell.Name = "btnqtxuatexcell";
+            this.btnqtxuatexcell.Size = new System.Drawing.Size(144, 69);
+            this.btnqtxuatexcell.TabIndex = 14;
+            this.btnqtxuatexcell.Text = "Export Excell";
+            this.btnqtxuatexcell.UseVisualStyleBackColor = true;
+            this.btnqtxuatexcell.Click += new System.EventHandler(this.btnqtxuatexcell_Click);
+            // 
+            // btnqttktaikhoan
+            // 
+            this.btnqttktaikhoan.Location = new System.Drawing.Point(3, 453);
+            this.btnqttktaikhoan.Name = "btnqttktaikhoan";
+            this.btnqttktaikhoan.Size = new System.Drawing.Size(144, 69);
+            this.btnqttktaikhoan.TabIndex = 15;
+            this.btnqttktaikhoan.Text = "Tìm Kiếm";
+            this.btnqttktaikhoan.UseVisualStyleBackColor = true;
+            this.btnqttktaikhoan.Click += new System.EventHandler(this.btnqttktaikhoan_Click);
+            // 
             // pnlqttruong
             // 
             this.pnlqttruong.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlqttruong.BackColor = System.Drawing.Color.LightBlue;
             this.pnlqttruong.Controls.Add(this.txtqtquyen);
             this.pnlqttruong.Controls.Add(this.txtqttktaikhoan);
             this.pnlqttruong.Controls.Add(this.label5);
@@ -176,6 +198,24 @@
             this.txtqtquyen.Name = "txtqtquyen";
             this.txtqtquyen.Size = new System.Drawing.Size(208, 27);
             this.txtqtquyen.TabIndex = 5;
+            // 
+            // txtqttktaikhoan
+            // 
+            this.txtqttktaikhoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtqttktaikhoan.Location = new System.Drawing.Point(250, 111);
+            this.txtqttktaikhoan.Name = "txtqttktaikhoan";
+            this.txtqttktaikhoan.Size = new System.Drawing.Size(314, 27);
+            this.txtqttktaikhoan.TabIndex = 17;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(246, 88);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(85, 20);
+            this.label5.TabIndex = 16;
+            this.label5.Text = "Tìm Kiếm:";
             // 
             // label3
             // 
@@ -222,44 +262,6 @@
             this.label2.Size = new System.Drawing.Size(88, 20);
             this.label2.TabIndex = 1;
             this.label2.Text = "Password:";
-            // 
-            // btnqtxuatexcell
-            // 
-            this.btnqtxuatexcell.Location = new System.Drawing.Point(3, 378);
-            this.btnqtxuatexcell.Name = "btnqtxuatexcell";
-            this.btnqtxuatexcell.Size = new System.Drawing.Size(144, 69);
-            this.btnqtxuatexcell.TabIndex = 14;
-            this.btnqtxuatexcell.Text = "Export Excell";
-            this.btnqtxuatexcell.UseVisualStyleBackColor = true;
-            this.btnqtxuatexcell.Click += new System.EventHandler(this.btnqtxuatexcell_Click);
-            // 
-            // btnqttktaikhoan
-            // 
-            this.btnqttktaikhoan.Location = new System.Drawing.Point(3, 453);
-            this.btnqttktaikhoan.Name = "btnqttktaikhoan";
-            this.btnqttktaikhoan.Size = new System.Drawing.Size(144, 69);
-            this.btnqttktaikhoan.TabIndex = 15;
-            this.btnqttktaikhoan.Text = "Tìm Kiếm";
-            this.btnqttktaikhoan.UseVisualStyleBackColor = true;
-            this.btnqttktaikhoan.Click += new System.EventHandler(this.btnqttktaikhoan_Click);
-            // 
-            // txtqttktaikhoan
-            // 
-            this.txtqttktaikhoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtqttktaikhoan.Location = new System.Drawing.Point(250, 111);
-            this.txtqttktaikhoan.Name = "txtqttktaikhoan";
-            this.txtqttktaikhoan.Size = new System.Drawing.Size(314, 27);
-            this.txtqttktaikhoan.TabIndex = 17;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(246, 88);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(85, 20);
-            this.label5.TabIndex = 16;
-            this.label5.Text = "Tìm Kiếm:";
             // 
             // errorbatloi
             // 

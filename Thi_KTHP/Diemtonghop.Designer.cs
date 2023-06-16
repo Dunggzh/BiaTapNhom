@@ -180,9 +180,9 @@
             // 
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel2.Controls.Add(this.dgvdiemth);
-            this.panel2.Location = new System.Drawing.Point(1, 166);
+            this.panel2.Location = new System.Drawing.Point(1, 179);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(802, 272);
+            this.panel2.Size = new System.Drawing.Size(802, 259);
             this.panel2.TabIndex = 4;
             // 
             // dgvdiemth
@@ -196,13 +196,14 @@
             this.dgvdiemth.RowHeadersVisible = false;
             this.dgvdiemth.RowHeadersWidth = 51;
             this.dgvdiemth.RowTemplate.Height = 24;
-            this.dgvdiemth.Size = new System.Drawing.Size(796, 251);
+            this.dgvdiemth.Size = new System.Drawing.Size(796, 238);
             this.dgvdiemth.TabIndex = 3;
             // 
             // frmdiemtonghop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightBlue;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);

@@ -118,7 +118,6 @@ C:\Users\Dell\source\repos\BiaTapNhom\Thi_KTHP\obj\Debug\Thi_KTHP.frmthongtingv.
 C:\Users\Dell\source\repos\BiaTapNhom\Thi_KTHP\obj\Debug\Thi_KTHP.frmtrangchugv.resources
 C:\Users\Nguyen Tien Dung\source\repos\BiaTapNhom\Thi_KTHP\obj\Debug\Thi_KTHP.frmquanlysinhvien.resources
 C:\Users\Nguyen Tien Dung\source\repos\BiaTapNhom\Thi_KTHP\obj\Debug\Thi_KTHP.frmthongtinhp.resources
-C:\Users\Nguyen Tien Dung\source\repos\BiaTapNhom\Thi_KTHP\obj\Debug\Thi_KTHP.frmthongtingv.resources
 C:\Users\Nguyen Tien Dung\source\repos\BiaTapNhom\Thi_KTHP\obj\Debug\Thi_KTHP.frmtrangchugv.resources
 C:\Users\Nguyen Tien Dung\source\repos\BiaTapNhom\Thi_KTHP\obj\Debug\Thi_KTHP.frmthongtintk.resources
 C:\Users\Nguyen Tien Dung\source\repos\BiaTapNhom\Thi_KTHP\obj\Debug\Thi_KTHP.frmqtdoimk.resources
@@ -245,3 +244,7 @@ C:\Users\Dell\Source\Repos\BiaTapNhom16\6\Thi_KTHP\obj\Debug\Thi_KTHP.frmthongti
 C:\Users\Dell\Source\Repos\BiaTapNhom16\6\Thi_KTHP\obj\Debug\Thi_KTHP.QuanLyDiem_gv.resources
 C:\Users\Dell\Source\Repos\BiaTapNhom16\6\Thi_KTHP\obj\Debug\Thi_KTHP.frmsuathongtincanhan_gv.resources
 C:\Users\Dell\Source\Repos\BiaTapNhom16\6\Thi_KTHP\obj\Debug\Thi_KTHP.ThongKediem_Gv.resources
+C:\Users\Nguyen Tien Dung\source\repos\BiaTapNhom\Thi_KTHP\obj\Debug\Thi_KTHP.QuanLyDiem_gv.resources
+C:\Users\Nguyen Tien Dung\source\repos\BiaTapNhom\Thi_KTHP\obj\Debug\Thi_KTHP.frmsuathongtincanhan_gv.resources
+C:\Users\Nguyen Tien Dung\source\repos\BiaTapNhom\Thi_KTHP\obj\Debug\Thi_KTHP.ThongKediem_Gv.resources
+C:\Users\Nguyen Tien Dung\source\repos\BiaTapNhom\Thi_KTHP\obj\Debug\Thi_KTHP.frmthongtin_gv.resources

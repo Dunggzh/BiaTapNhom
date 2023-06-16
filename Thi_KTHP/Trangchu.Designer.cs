@@ -30,10 +30,13 @@
         {
             this.pnltrangchu = new System.Windows.Forms.Panel();
             this.mnu1 = new System.Windows.Forms.MenuStrip();
+            this.mnuthoat = new System.Windows.Forms.ToolStripMenuItem();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.mnutrangchu = new System.Windows.Forms.ToolStripMenuItem();
             this.mnudangnhap = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuthoat = new System.Windows.Forms.ToolStripMenuItem();
+            this.pnltrangchu.SuspendLayout();
             this.mnu1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnltrangchu
@@ -41,13 +44,15 @@
             this.pnltrangchu.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnltrangchu.Location = new System.Drawing.Point(0, 63);
+            this.pnltrangchu.Controls.Add(this.pictureBox1);
+            this.pnltrangchu.Location = new System.Drawing.Point(0, 76);
             this.pnltrangchu.Name = "pnltrangchu";
-            this.pnltrangchu.Size = new System.Drawing.Size(800, 436);
+            this.pnltrangchu.Size = new System.Drawing.Size(800, 423);
             this.pnltrangchu.TabIndex = 1;
             // 
             // mnu1
             // 
+            this.mnu1.AutoSize = false;
             this.mnu1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.mnu1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnutrangchu,
@@ -55,30 +60,46 @@
             this.mnuthoat});
             this.mnu1.Location = new System.Drawing.Point(0, 0);
             this.mnu1.Name = "mnu1";
-            this.mnu1.Size = new System.Drawing.Size(800, 28);
+            this.mnu1.Size = new System.Drawing.Size(800, 73);
             this.mnu1.TabIndex = 2;
             this.mnu1.Text = "menuStrip1";
             // 
+            // mnuthoat
+            // 
+            this.mnuthoat.Image = global::Thi_KTHP.Properties.Resources.thoat;
+            this.mnuthoat.Name = "mnuthoat";
+            this.mnuthoat.Size = new System.Drawing.Size(81, 69);
+            this.mnuthoat.Text = "Thoát";
+            this.mnuthoat.Click += new System.EventHandler(this.mnuthoat_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Image = global::Thi_KTHP.Properties.Resources.Trang_chủ;
+            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(794, 417);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // mnutrangchu
             // 
+            this.mnutrangchu.Image = global::Thi_KTHP.Properties.Resources.Trangchu;
             this.mnutrangchu.Name = "mnutrangchu";
-            this.mnutrangchu.Size = new System.Drawing.Size(87, 24);
+            this.mnutrangchu.Size = new System.Drawing.Size(107, 69);
             this.mnutrangchu.Text = "Trang chủ";
             this.mnutrangchu.Click += new System.EventHandler(this.mnutrangchu_Click);
             // 
             // mnudangnhap
             // 
+            this.mnudangnhap.Image = global::Thi_KTHP.Properties.Resources.Đăng_nhập;
             this.mnudangnhap.Name = "mnudangnhap";
-            this.mnudangnhap.Size = new System.Drawing.Size(99, 24);
+            this.mnudangnhap.Size = new System.Drawing.Size(119, 69);
             this.mnudangnhap.Text = "Đăng Nhập";
             this.mnudangnhap.Click += new System.EventHandler(this.mnudangnhap_Click);
-            // 
-            // mnuthoat
-            // 
-            this.mnuthoat.Name = "mnuthoat";
-            this.mnuthoat.Size = new System.Drawing.Size(61, 24);
-            this.mnuthoat.Text = "Thoát";
-            this.mnuthoat.Click += new System.EventHandler(this.mnuthoat_Click);
             // 
             // frmtrangchu
             // 
@@ -91,10 +112,11 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Trang Chủ";
             this.Load += new System.EventHandler(this.frmtrangchu_Load);
+            this.pnltrangchu.ResumeLayout(false);
             this.mnu1.ResumeLayout(false);
             this.mnu1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -104,5 +126,6 @@
         private System.Windows.Forms.ToolStripMenuItem mnutrangchu;
         private System.Windows.Forms.ToolStripMenuItem mnudangnhap;
         private System.Windows.Forms.ToolStripMenuItem mnuthoat;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

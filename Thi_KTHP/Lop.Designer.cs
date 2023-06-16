@@ -60,6 +60,7 @@
             // 
             this.floqtnut.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.floqtnut.BackColor = System.Drawing.Color.LightBlue;
             this.floqtnut.Controls.Add(this.btnqtthemlop);
             this.floqtnut.Controls.Add(this.btnqtsualop);
             this.floqtnut.Controls.Add(this.btnqtxoalop);
@@ -69,7 +70,7 @@
             this.floqtnut.Controls.Add(this.btnqttklop);
             this.floqtnut.Location = new System.Drawing.Point(1, 3);
             this.floqtnut.Name = "floqtnut";
-            this.floqtnut.Size = new System.Drawing.Size(163, 545);
+            this.floqtnut.Size = new System.Drawing.Size(152, 545);
             this.floqtnut.TabIndex = 3;
             // 
             // btnqtthemlop
@@ -146,6 +147,7 @@
             // 
             this.pnlqttruong.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlqttruong.BackColor = System.Drawing.Color.LightBlue;
             this.pnlqttruong.Controls.Add(this.txtqttklop);
             this.pnlqttruong.Controls.Add(this.label5);
             this.pnlqttruong.Controls.Add(this.txtqtghichu);
@@ -154,9 +156,9 @@
             this.pnlqttruong.Controls.Add(this.label1);
             this.pnlqttruong.Controls.Add(this.txtqttenlop);
             this.pnlqttruong.Controls.Add(this.label2);
-            this.pnlqttruong.Location = new System.Drawing.Point(170, 3);
+            this.pnlqttruong.Location = new System.Drawing.Point(159, 3);
             this.pnlqttruong.Name = "pnlqttruong";
-            this.pnlqttruong.Size = new System.Drawing.Size(615, 133);
+            this.pnlqttruong.Size = new System.Drawing.Size(626, 198);
             this.pnlqttruong.TabIndex = 4;
             // 
             // txtqttklop
@@ -237,11 +239,11 @@
             this.pnlqtcsdl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlqtcsdl.BackColor = System.Drawing.SystemColors.Control;
+            this.pnlqtcsdl.BackColor = System.Drawing.Color.LightBlue;
             this.pnlqtcsdl.Controls.Add(this.dgvqtlop);
-            this.pnlqtcsdl.Location = new System.Drawing.Point(170, 156);
+            this.pnlqtcsdl.Location = new System.Drawing.Point(159, 207);
             this.pnlqtcsdl.Name = "pnlqtcsdl";
-            this.pnlqtcsdl.Size = new System.Drawing.Size(615, 395);
+            this.pnlqtcsdl.Size = new System.Drawing.Size(626, 344);
             this.pnlqtcsdl.TabIndex = 5;
             // 
             // dgvqtlop
@@ -254,11 +256,11 @@
             this.dgvqtlop.BackgroundColor = System.Drawing.SystemColors.ButtonShadow;
             this.dgvqtlop.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvqtlop.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvqtlop.Location = new System.Drawing.Point(3, 60);
+            this.dgvqtlop.Location = new System.Drawing.Point(3, 24);
             this.dgvqtlop.Name = "dgvqtlop";
             this.dgvqtlop.RowHeadersWidth = 51;
             this.dgvqtlop.RowTemplate.Height = 24;
-            this.dgvqtlop.Size = new System.Drawing.Size(609, 332);
+            this.dgvqtlop.Size = new System.Drawing.Size(620, 317);
             this.dgvqtlop.TabIndex = 4;
             this.dgvqtlop.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvqtlop_CellClick);
             // 

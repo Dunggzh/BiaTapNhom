@@ -51,11 +51,13 @@
             this.txtqtsdt = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.errorbatloi = new System.Windows.Forms.ErrorProvider(this.components);
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pnlqtcsdl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvqtkhoa)).BeginInit();
             this.floqtnut.SuspendLayout();
             this.pnlqttruong.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorbatloi)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlqtcsdl
@@ -63,11 +65,11 @@
             this.pnlqtcsdl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlqtcsdl.BackColor = System.Drawing.SystemColors.Control;
+            this.pnlqtcsdl.BackColor = System.Drawing.Color.LightBlue;
             this.pnlqtcsdl.Controls.Add(this.dgvqtkhoa);
-            this.pnlqtcsdl.Location = new System.Drawing.Point(167, 203);
+            this.pnlqtcsdl.Location = new System.Drawing.Point(167, 237);
             this.pnlqtcsdl.Name = "pnlqtcsdl";
-            this.pnlqtcsdl.Size = new System.Drawing.Size(615, 420);
+            this.pnlqtcsdl.Size = new System.Drawing.Size(615, 386);
             this.pnlqtcsdl.TabIndex = 1;
             // 
             // dgvqtkhoa
@@ -80,11 +82,11 @@
             this.dgvqtkhoa.BackgroundColor = System.Drawing.SystemColors.ButtonShadow;
             this.dgvqtkhoa.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvqtkhoa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvqtkhoa.Location = new System.Drawing.Point(3, 60);
+            this.dgvqtkhoa.Location = new System.Drawing.Point(3, 28);
             this.dgvqtkhoa.Name = "dgvqtkhoa";
             this.dgvqtkhoa.RowHeadersWidth = 51;
             this.dgvqtkhoa.RowTemplate.Height = 24;
-            this.dgvqtkhoa.Size = new System.Drawing.Size(609, 357);
+            this.dgvqtkhoa.Size = new System.Drawing.Size(609, 355);
             this.dgvqtkhoa.TabIndex = 4;
             this.dgvqtkhoa.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvqtkhoa_CellClick);
             // 
@@ -92,6 +94,7 @@
             // 
             this.floqtnut.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.floqtnut.BackColor = System.Drawing.Color.LightBlue;
             this.floqtnut.Controls.Add(this.btnqtthemkhoa);
             this.floqtnut.Controls.Add(this.btnqtsuakhoa);
             this.floqtnut.Controls.Add(this.btnqtxoakhoa);
@@ -106,6 +109,9 @@
             // 
             // btnqtthemkhoa
             // 
+            this.btnqtthemkhoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnqtthemkhoa.Image = global::Thi_KTHP.Properties.Resources.Them;
+            this.btnqtthemkhoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnqtthemkhoa.Location = new System.Drawing.Point(3, 3);
             this.btnqtthemkhoa.Name = "btnqtthemkhoa";
             this.btnqtthemkhoa.Size = new System.Drawing.Size(144, 69);
@@ -116,6 +122,9 @@
             // 
             // btnqtsuakhoa
             // 
+            this.btnqtsuakhoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnqtsuakhoa.Image = global::Thi_KTHP.Properties.Resources.sửa;
+            this.btnqtsuakhoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnqtsuakhoa.Location = new System.Drawing.Point(3, 78);
             this.btnqtsuakhoa.Name = "btnqtsuakhoa";
             this.btnqtsuakhoa.Size = new System.Drawing.Size(144, 69);
@@ -126,6 +135,9 @@
             // 
             // btnqtxoakhoa
             // 
+            this.btnqtxoakhoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnqtxoakhoa.Image = global::Thi_KTHP.Properties.Resources.xoa;
+            this.btnqtxoakhoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnqtxoakhoa.Location = new System.Drawing.Point(3, 153);
             this.btnqtxoakhoa.Name = "btnqtxoakhoa";
             this.btnqtxoakhoa.Size = new System.Drawing.Size(144, 69);
@@ -136,6 +148,9 @@
             // 
             // btnqtghikhoa
             // 
+            this.btnqtghikhoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnqtghikhoa.Image = global::Thi_KTHP.Properties.Resources.ghi;
+            this.btnqtghikhoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnqtghikhoa.Location = new System.Drawing.Point(3, 228);
             this.btnqtghikhoa.Name = "btnqtghikhoa";
             this.btnqtghikhoa.Size = new System.Drawing.Size(144, 69);
@@ -146,6 +161,9 @@
             // 
             // btnqthuykhoa
             // 
+            this.btnqthuykhoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnqthuykhoa.Image = global::Thi_KTHP.Properties.Resources.huy;
+            this.btnqthuykhoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnqthuykhoa.Location = new System.Drawing.Point(3, 303);
             this.btnqthuykhoa.Name = "btnqthuykhoa";
             this.btnqthuykhoa.Size = new System.Drawing.Size(144, 69);
@@ -156,16 +174,22 @@
             // 
             // btnqtxuatexcell
             // 
+            this.btnqtxuatexcell.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnqtxuatexcell.Image = global::Thi_KTHP.Properties.Resources.excel;
+            this.btnqtxuatexcell.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnqtxuatexcell.Location = new System.Drawing.Point(3, 378);
             this.btnqtxuatexcell.Name = "btnqtxuatexcell";
             this.btnqtxuatexcell.Size = new System.Drawing.Size(144, 69);
             this.btnqtxuatexcell.TabIndex = 5;
-            this.btnqtxuatexcell.Text = "Export Excell";
+            this.btnqtxuatexcell.Text = "Excell";
             this.btnqtxuatexcell.UseVisualStyleBackColor = true;
             this.btnqtxuatexcell.Click += new System.EventHandler(this.btnqtxuatexcell_Click);
             // 
             // btnqttkkhoa
             // 
+            this.btnqttkkhoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnqttkkhoa.Image = global::Thi_KTHP.Properties.Resources.timkiem;
+            this.btnqttkkhoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnqttkkhoa.Location = new System.Drawing.Point(3, 453);
             this.btnqttkkhoa.Name = "btnqttkkhoa";
             this.btnqttkkhoa.Size = new System.Drawing.Size(144, 69);
@@ -178,7 +202,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(21, 6);
+            this.label1.Location = new System.Drawing.Point(19, 30);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(80, 20);
             this.label1.TabIndex = 0;
@@ -188,7 +212,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(331, 6);
+            this.label2.Location = new System.Drawing.Point(329, 30);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(82, 20);
             this.label2.TabIndex = 1;
@@ -197,7 +221,7 @@
             // txtqtmakhoa
             // 
             this.txtqtmakhoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtqtmakhoa.Location = new System.Drawing.Point(25, 38);
+            this.txtqtmakhoa.Location = new System.Drawing.Point(23, 62);
             this.txtqtmakhoa.Name = "txtqtmakhoa";
             this.txtqtmakhoa.Size = new System.Drawing.Size(208, 27);
             this.txtqtmakhoa.TabIndex = 2;
@@ -205,7 +229,7 @@
             // txtqttenkhoa
             // 
             this.txtqttenkhoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtqttenkhoa.Location = new System.Drawing.Point(335, 38);
+            this.txtqttenkhoa.Location = new System.Drawing.Point(333, 62);
             this.txtqttenkhoa.Name = "txtqttenkhoa";
             this.txtqttenkhoa.Size = new System.Drawing.Size(208, 27);
             this.txtqttenkhoa.TabIndex = 3;
@@ -214,25 +238,17 @@
             // 
             this.pnlqttruong.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlqttruong.Controls.Add(this.txtqttkkhoa);
-            this.pnlqttruong.Controls.Add(this.label5);
-            this.pnlqttruong.Controls.Add(this.txtqtghichu);
-            this.pnlqttruong.Controls.Add(this.label4);
-            this.pnlqttruong.Controls.Add(this.txtqtsdt);
-            this.pnlqttruong.Controls.Add(this.label3);
-            this.pnlqttruong.Controls.Add(this.label1);
-            this.pnlqttruong.Controls.Add(this.txtqttenkhoa);
-            this.pnlqttruong.Controls.Add(this.txtqtmakhoa);
-            this.pnlqttruong.Controls.Add(this.label2);
+            this.pnlqttruong.BackColor = System.Drawing.Color.LightBlue;
+            this.pnlqttruong.Controls.Add(this.groupBox1);
             this.pnlqttruong.Location = new System.Drawing.Point(167, 3);
             this.pnlqttruong.Name = "pnlqttruong";
-            this.pnlqttruong.Size = new System.Drawing.Size(615, 194);
+            this.pnlqttruong.Size = new System.Drawing.Size(615, 228);
             this.pnlqttruong.TabIndex = 3;
             // 
             // txtqttkkhoa
             // 
             this.txtqttkkhoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtqttkkhoa.Location = new System.Drawing.Point(25, 153);
+            this.txtqttkkhoa.Location = new System.Drawing.Point(23, 177);
             this.txtqttkkhoa.Name = "txtqttkkhoa";
             this.txtqttkkhoa.Size = new System.Drawing.Size(314, 27);
             this.txtqttkkhoa.TabIndex = 9;
@@ -241,7 +257,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(21, 131);
+            this.label5.Location = new System.Drawing.Point(19, 155);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(85, 20);
             this.label5.TabIndex = 8;
@@ -250,7 +266,7 @@
             // txtqtghichu
             // 
             this.txtqtghichu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtqtghichu.Location = new System.Drawing.Point(335, 101);
+            this.txtqtghichu.Location = new System.Drawing.Point(333, 125);
             this.txtqtghichu.Name = "txtqtghichu";
             this.txtqtghichu.Size = new System.Drawing.Size(208, 27);
             this.txtqtghichu.TabIndex = 7;
@@ -259,7 +275,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(331, 78);
+            this.label4.Location = new System.Drawing.Point(329, 102);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(72, 20);
             this.label4.TabIndex = 6;
@@ -268,7 +284,7 @@
             // txtqtsdt
             // 
             this.txtqtsdt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtqtsdt.Location = new System.Drawing.Point(25, 101);
+            this.txtqtsdt.Location = new System.Drawing.Point(23, 125);
             this.txtqtsdt.Name = "txtqtsdt";
             this.txtqtsdt.Size = new System.Drawing.Size(208, 27);
             this.txtqtsdt.TabIndex = 5;
@@ -277,7 +293,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(21, 78);
+            this.label3.Location = new System.Drawing.Point(19, 102);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(111, 20);
             this.label3.TabIndex = 4;
@@ -286,6 +302,26 @@
             // errorbatloi
             // 
             this.errorbatloi.ContainerControl = this;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.txtqttkkhoa);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.txtqtghichu);
+            this.groupBox1.Controls.Add(this.txtqtmakhoa);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.txtqttenkhoa);
+            this.groupBox1.Controls.Add(this.txtqtsdt);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(16, 3);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(587, 215);
+            this.groupBox1.TabIndex = 5;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Thông Tin Khoa";
             // 
             // frmqtkhoa
             // 
@@ -301,8 +337,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvqtkhoa)).EndInit();
             this.floqtnut.ResumeLayout(false);
             this.pnlqttruong.ResumeLayout(false);
-            this.pnlqttruong.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorbatloi)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -330,5 +367,6 @@
         private System.Windows.Forms.TextBox txtqttkkhoa;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ErrorProvider errorbatloi;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

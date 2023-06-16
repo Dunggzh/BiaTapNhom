@@ -37,9 +37,9 @@
             this.loimkcu = new System.Windows.Forms.ErrorProvider(this.components);
             this.loimkmoi = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtnhaplaimk = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.loinhaplaimk = new System.Windows.Forms.ErrorProvider(this.components);
-            this.txtnhaplaimk = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.loimkcu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.loimkmoi)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -117,6 +117,14 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông Tin Tài Khoản Mật Khẩu";
             // 
+            // txtnhaplaimk
+            // 
+            this.txtnhaplaimk.Location = new System.Drawing.Point(317, 160);
+            this.txtnhaplaimk.Name = "txtnhaplaimk";
+            this.txtnhaplaimk.Size = new System.Drawing.Size(100, 30);
+            this.txtnhaplaimk.TabIndex = 5;
+            this.txtnhaplaimk.TextChanged += new System.EventHandler(this.txtnhaplaimk_TextChanged);
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -131,18 +139,11 @@
             // 
             this.loinhaplaimk.ContainerControl = this;
             // 
-            // txtnhaplaimk
-            // 
-            this.txtnhaplaimk.Location = new System.Drawing.Point(317, 160);
-            this.txtnhaplaimk.Name = "txtnhaplaimk";
-            this.txtnhaplaimk.Size = new System.Drawing.Size(100, 30);
-            this.txtnhaplaimk.TabIndex = 5;
-            this.txtnhaplaimk.TextChanged += new System.EventHandler(this.txtnhaplaimk_TextChanged);
-            // 
             // frmdoimatkhau
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightBlue;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmdoimatkhau";

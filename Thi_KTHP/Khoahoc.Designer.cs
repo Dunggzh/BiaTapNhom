@@ -35,7 +35,11 @@
             this.btnqtxoakhoahoc = new System.Windows.Forms.Button();
             this.btnqtghikhoahoc = new System.Windows.Forms.Button();
             this.btnqthuykhoahoc = new System.Windows.Forms.Button();
+            this.btnqtxuatexcell = new System.Windows.Forms.Button();
+            this.btnqttkkhoahoc = new System.Windows.Forms.Button();
             this.pnlqttruong = new System.Windows.Forms.Panel();
+            this.txtqttkkhoahoc = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.txtqttenkhoahoc = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtqtkyhoc = new System.Windows.Forms.TextBox();
@@ -44,10 +48,6 @@
             this.txtqtmakhoahoc = new System.Windows.Forms.TextBox();
             this.pnlqtcsdl = new System.Windows.Forms.Panel();
             this.dgvqtkhoahoc = new System.Windows.Forms.DataGridView();
-            this.btnqtxuatexcell = new System.Windows.Forms.Button();
-            this.btnqttkkhoahoc = new System.Windows.Forms.Button();
-            this.txtqttkkhoahoc = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.errorbatloi = new System.Windows.Forms.ErrorProvider(this.components);
             this.floqtnut.SuspendLayout();
             this.pnlqttruong.SuspendLayout();
@@ -60,6 +60,7 @@
             // 
             this.floqtnut.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.floqtnut.BackColor = System.Drawing.Color.LightBlue;
             this.floqtnut.Controls.Add(this.btnqtthemkhoahoc);
             this.floqtnut.Controls.Add(this.btnqtsuakhoahoc);
             this.floqtnut.Controls.Add(this.btnqtxoakhoahoc);
@@ -122,10 +123,31 @@
             this.btnqthuykhoahoc.UseVisualStyleBackColor = true;
             this.btnqthuykhoahoc.Click += new System.EventHandler(this.btnqthuykhoahoc_Click);
             // 
+            // btnqtxuatexcell
+            // 
+            this.btnqtxuatexcell.Location = new System.Drawing.Point(3, 378);
+            this.btnqtxuatexcell.Name = "btnqtxuatexcell";
+            this.btnqtxuatexcell.Size = new System.Drawing.Size(144, 69);
+            this.btnqtxuatexcell.TabIndex = 6;
+            this.btnqtxuatexcell.Text = "Export Excell";
+            this.btnqtxuatexcell.UseVisualStyleBackColor = true;
+            this.btnqtxuatexcell.Click += new System.EventHandler(this.btnqtxuatexcell_Click);
+            // 
+            // btnqttkkhoahoc
+            // 
+            this.btnqttkkhoahoc.Location = new System.Drawing.Point(3, 453);
+            this.btnqttkkhoahoc.Name = "btnqttkkhoahoc";
+            this.btnqttkkhoahoc.Size = new System.Drawing.Size(144, 69);
+            this.btnqttkkhoahoc.TabIndex = 7;
+            this.btnqttkkhoahoc.Text = "Tìm Kiếm";
+            this.btnqttkkhoahoc.UseVisualStyleBackColor = true;
+            this.btnqttkkhoahoc.Click += new System.EventHandler(this.btnqttkkhoahoc_Click);
+            // 
             // pnlqttruong
             // 
             this.pnlqttruong.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlqttruong.BackColor = System.Drawing.Color.LightBlue;
             this.pnlqttruong.Controls.Add(this.txtqttkkhoahoc);
             this.pnlqttruong.Controls.Add(this.label5);
             this.pnlqttruong.Controls.Add(this.txtqttenkhoahoc);
@@ -138,6 +160,24 @@
             this.pnlqttruong.Name = "pnlqttruong";
             this.pnlqttruong.Size = new System.Drawing.Size(615, 147);
             this.pnlqttruong.TabIndex = 4;
+            // 
+            // txtqttkkhoahoc
+            // 
+            this.txtqttkkhoahoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtqttkkhoahoc.Location = new System.Drawing.Point(253, 98);
+            this.txtqttkkhoahoc.Name = "txtqttkkhoahoc";
+            this.txtqttkkhoahoc.Size = new System.Drawing.Size(314, 27);
+            this.txtqttkkhoahoc.TabIndex = 11;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(249, 76);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(85, 20);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Tìm Kiếm:";
             // 
             // txtqttenkhoahoc
             // 
@@ -198,7 +238,7 @@
             this.pnlqtcsdl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlqtcsdl.BackColor = System.Drawing.SystemColors.Control;
+            this.pnlqtcsdl.BackColor = System.Drawing.Color.LightBlue;
             this.pnlqtcsdl.Controls.Add(this.dgvqtkhoahoc);
             this.pnlqtcsdl.Location = new System.Drawing.Point(170, 156);
             this.pnlqtcsdl.Name = "pnlqtcsdl";
@@ -222,44 +262,6 @@
             this.dgvqtkhoahoc.Size = new System.Drawing.Size(609, 387);
             this.dgvqtkhoahoc.TabIndex = 4;
             this.dgvqtkhoahoc.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvqtkhoahoc_CellClick);
-            // 
-            // btnqtxuatexcell
-            // 
-            this.btnqtxuatexcell.Location = new System.Drawing.Point(3, 378);
-            this.btnqtxuatexcell.Name = "btnqtxuatexcell";
-            this.btnqtxuatexcell.Size = new System.Drawing.Size(144, 69);
-            this.btnqtxuatexcell.TabIndex = 6;
-            this.btnqtxuatexcell.Text = "Export Excell";
-            this.btnqtxuatexcell.UseVisualStyleBackColor = true;
-            this.btnqtxuatexcell.Click += new System.EventHandler(this.btnqtxuatexcell_Click);
-            // 
-            // btnqttkkhoahoc
-            // 
-            this.btnqttkkhoahoc.Location = new System.Drawing.Point(3, 453);
-            this.btnqttkkhoahoc.Name = "btnqttkkhoahoc";
-            this.btnqttkkhoahoc.Size = new System.Drawing.Size(144, 69);
-            this.btnqttkkhoahoc.TabIndex = 7;
-            this.btnqttkkhoahoc.Text = "Tìm Kiếm";
-            this.btnqttkkhoahoc.UseVisualStyleBackColor = true;
-            this.btnqttkkhoahoc.Click += new System.EventHandler(this.btnqttkkhoahoc_Click);
-            // 
-            // txtqttkkhoahoc
-            // 
-            this.txtqttkkhoahoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtqttkkhoahoc.Location = new System.Drawing.Point(253, 98);
-            this.txtqttkkhoahoc.Name = "txtqttkkhoahoc";
-            this.txtqttkkhoahoc.Size = new System.Drawing.Size(314, 27);
-            this.txtqttkkhoahoc.TabIndex = 11;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(249, 76);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(85, 20);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "Tìm Kiếm:";
             // 
             // errorbatloi
             // 

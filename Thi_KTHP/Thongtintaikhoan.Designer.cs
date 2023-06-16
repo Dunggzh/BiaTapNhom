@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.grbthongtintk = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtusername = new System.Windows.Forms.TextBox();
-            this.txtpass = new System.Windows.Forms.TextBox();
             this.chkshowpass = new System.Windows.Forms.CheckBox();
+            this.txtpass = new System.Windows.Forms.TextBox();
+            this.txtusername = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.grbthongtintk.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,41 +52,6 @@
             this.grbthongtintk.TabStop = false;
             this.grbthongtintk.Text = "Thông tin";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 43);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(196, 29);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Tên Người Dùng:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(83, 83);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(119, 29);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Mật Khẩu:";
-            // 
-            // txtusername
-            // 
-            this.txtusername.Location = new System.Drawing.Point(208, 43);
-            this.txtusername.Name = "txtusername";
-            this.txtusername.ReadOnly = true;
-            this.txtusername.Size = new System.Drawing.Size(247, 34);
-            this.txtusername.TabIndex = 2;
-            // 
-            // txtpass
-            // 
-            this.txtpass.Location = new System.Drawing.Point(208, 83);
-            this.txtpass.Name = "txtpass";
-            this.txtpass.ReadOnly = true;
-            this.txtpass.Size = new System.Drawing.Size(247, 34);
-            this.txtpass.TabIndex = 3;
-            this.txtpass.UseSystemPasswordChar = true;
-            // 
             // chkshowpass
             // 
             this.chkshowpass.AutoSize = true;
@@ -99,10 +64,46 @@
             this.chkshowpass.UseVisualStyleBackColor = true;
             this.chkshowpass.CheckedChanged += new System.EventHandler(this.chkshowpass_CheckedChanged);
             // 
+            // txtpass
+            // 
+            this.txtpass.Location = new System.Drawing.Point(208, 83);
+            this.txtpass.Name = "txtpass";
+            this.txtpass.ReadOnly = true;
+            this.txtpass.Size = new System.Drawing.Size(247, 34);
+            this.txtpass.TabIndex = 3;
+            this.txtpass.UseSystemPasswordChar = true;
+            // 
+            // txtusername
+            // 
+            this.txtusername.Location = new System.Drawing.Point(208, 43);
+            this.txtusername.Name = "txtusername";
+            this.txtusername.ReadOnly = true;
+            this.txtusername.Size = new System.Drawing.Size(247, 34);
+            this.txtusername.TabIndex = 2;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(83, 83);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(119, 29);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Mật Khẩu:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 43);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(196, 29);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Tên Người Dùng:";
+            // 
             // frmthongtintk
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightBlue;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.grbthongtintk);
             this.Name = "frmthongtintk";

@@ -33,6 +33,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.chkshowpass = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btndangnhap = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -40,7 +41,6 @@
             this.txtusername = new System.Windows.Forms.TextBox();
             this.errpass = new System.Windows.Forms.ErrorProvider(this.components);
             this.errusername = new System.Windows.Forms.ErrorProvider(this.components);
-            this.chkshowpass = new System.Windows.Forms.CheckBox();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errpass)).BeginInit();
@@ -49,14 +49,16 @@
             // 
             // panel3
             // 
-            this.panel3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel3.BackgroundImage")));
             this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.panel4);
-            this.panel3.Location = new System.Drawing.Point(0, 43);
+            this.panel3.Location = new System.Drawing.Point(0, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(800, 337);
+            this.panel3.Size = new System.Drawing.Size(800, 449);
             this.panel3.TabIndex = 6;
             // 
             // label3
@@ -65,7 +67,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(335, 50);
+            this.label3.Location = new System.Drawing.Point(335, 106);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(138, 25);
             this.label3.TabIndex = 7;
@@ -82,10 +84,21 @@
             this.panel4.Controls.Add(this.label2);
             this.panel4.Controls.Add(this.txtpass);
             this.panel4.Controls.Add(this.txtusername);
-            this.panel4.Location = new System.Drawing.Point(233, 144);
+            this.panel4.Location = new System.Drawing.Point(233, 200);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(362, 118);
             this.panel4.TabIndex = 6;
+            // 
+            // chkshowpass
+            // 
+            this.chkshowpass.AutoSize = true;
+            this.chkshowpass.Location = new System.Drawing.Point(297, 48);
+            this.chkshowpass.Name = "chkshowpass";
+            this.chkshowpass.Size = new System.Drawing.Size(62, 20);
+            this.chkshowpass.TabIndex = 6;
+            this.chkshowpass.Text = "Show";
+            this.chkshowpass.UseVisualStyleBackColor = true;
+            this.chkshowpass.CheckedChanged += new System.EventHandler(this.chkshowpass_CheckedChanged);
             // 
             // label1
             // 
@@ -147,17 +160,6 @@
             // 
             this.errusername.ContainerControl = this;
             // 
-            // chkshowpass
-            // 
-            this.chkshowpass.AutoSize = true;
-            this.chkshowpass.Location = new System.Drawing.Point(297, 48);
-            this.chkshowpass.Name = "chkshowpass";
-            this.chkshowpass.Size = new System.Drawing.Size(62, 20);
-            this.chkshowpass.TabIndex = 6;
-            this.chkshowpass.Text = "Show";
-            this.chkshowpass.UseVisualStyleBackColor = true;
-            this.chkshowpass.CheckedChanged += new System.EventHandler(this.chkshowpass_CheckedChanged);
-            // 
             // frmdangnhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -165,7 +167,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.panel3);
             this.Name = "frmdangnhap";
-            this.Text = "DangNhap";
+            this.Text = "Đăng Nhập";
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
